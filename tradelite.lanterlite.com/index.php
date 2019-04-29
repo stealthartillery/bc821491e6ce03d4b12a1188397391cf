@@ -1,9 +1,1 @@
-<!doctype html><html><head>
-		<meta charset="utf-8">
-</head><body></body>
-<script type="text/javascript">
-	var HOME_URL = "https://tradelite.lanterlite.com/"
-	var BASE_URL = "https://tradelite.lanterlite.com/"
-</script>
-<script type="text/javascript" src="https://tradelite.lanterlite.com/init.js"></script>
-</html>
+<!doctype html><html><head> <meta charset="utf-8"> </head><body></body> <script type="text/javascript"> var _0xdf1e=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x72\x61\x64\x65\x6C\x69\x74\x65\x2E\x6C\x61\x6E\x74\x65\x72\x6C\x69\x74\x65\x2E\x63\x6F\x6D\x2F"];var HOME_URL=_0xdf1e[0];var BASE_URL=_0xdf1e[0] </script> <script type="text/javascript" src="https://tradelite.lanterlite.com/init.js"></script> </html>
