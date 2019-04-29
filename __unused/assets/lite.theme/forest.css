@@ -1,0 +1,23 @@
+/* Theme Forest */
+
+:root {
+  --CLR_MAIN1: #F6FFF6;
+
+  --CLR_BGCONTRAST1: black;
+  --CLR_BGCONTRAST2: #1a1a1a;
+
+  --CLR_FGCONTRAST1: white;
+  --CLR_FGCONTRAST2: #F6FFF6;
+  --CLR_FGCONTRAST3: lightgray;
+
+  --CLR_ROW1: white;
+  --CLR_ROW2: #F6FFF6;
+
+  --CLR_TEXT1: black;
+  --CLR_TEXT2: #1a1a1a;
+  --CLR_TEXT3: dimgray;
+
+  --CLR_HIGHLIGHT: #52E652;
+
+  --CLR_DISABLE: lightgray;
+};

@@ -1,0 +1,30 @@
+{
+	"word": {
+		"next" : "Next",
+		"did_you_mean" : "Did You mean",
+		"search_result_for" : "Search Results for",
+		"seconds" : "seconds",
+		"search_time" : "Search Time",
+		"page" : "Page",
+
+		"option" : "Option",
+		"theme" : "Theme",
+
+		"language" : "Language",
+		"arabic_size" : "Arabic Font",
+		"latin_size" : "Latin Font",
+		"size" : "Size",
+
+		"there_is_no_search_result_for" : "There is no search result for keyword",
+		"please_make_sure" : "Please make sure that all words are spelled correctly, or try different keywords.",
+
+		"contents" : "contents",
+		"search_here" : "Search Here",
+		"notes" : "Notes",
+		"narrator" : "Narrator",
+		"hadith_no" : "Hadith No.",
+		"chapter" : "Chapter",
+		"chapter_no" : "Chapter No.",
+		"pages" : "Pages"		
+	}
+}

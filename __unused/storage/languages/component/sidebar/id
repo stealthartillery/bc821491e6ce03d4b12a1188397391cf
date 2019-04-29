@@ -1,0 +1,20 @@
+{
+	"sidebar": [
+		{
+			"title" : "Beranda",
+			"link" : "/"
+		},
+		{
+			"title" : "Produk",
+			"link" : "/product"
+		},
+		{
+			"title" : "Tentang",
+			"link" : "/about"
+		},
+		{
+			"title" : "Artikel",
+			"link" : "/article"
+		}
+	]
+}

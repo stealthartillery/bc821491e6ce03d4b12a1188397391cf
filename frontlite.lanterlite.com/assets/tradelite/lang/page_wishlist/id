@@ -1,0 +1,14 @@
+{
+	"tag" : {
+	  "title" : "Wishlist | Trade Center",
+	   "meta" : {
+	      "description": "Kumpulan barang yang ada dalam wishlist di Lanterlite Trade Center."
+	    }
+	},
+
+	"word" : {
+		"wishlist" : "Wishlist",
+		"item_detail" : "Detil Barang",
+		"no_item_in_wishlist" : "Tidak ada barang di dalam Wishlist."
+	}
+}

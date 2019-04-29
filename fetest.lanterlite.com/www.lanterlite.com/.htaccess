@@ -1,0 +1,30 @@
+DirectoryIndex index.php
+ErrorDocument 403 index.php
+
+# Enable RewriteEngine to rewrite URL patterns
+RewriteEngine On
+
+#(done) slash removing
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /(.*)/$
+RewriteRule ^ /%1 [R,L] <-- =301 added slash here too, don't forget it
+
+#RewriteBase /app/fetest.lanterlite.com/
+
+# Every URI that not (! operator) ends with one of .php, .css, .js, .gif, .png, .jpg, .jpeg or .pdf
+RewriteCond %{REQUEST_URI} !\.(php|css|js|gif|png|jpe?g|pdf)$
+
+# Will be redirected to templates/index.php
+#RewriteRule (.*)$ /index.php
+
+#(done) redirect browser to https
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://fetest.lanterlite.com/$1 [R,L]
+
+##(done) refer to index.php
+RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]

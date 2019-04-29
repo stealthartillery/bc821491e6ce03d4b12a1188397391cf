@@ -1,0 +1,37 @@
+{
+	"word": {
+		"notification" : "Notifikasi",
+		"profile" : "Profil",
+		"information" : "Informasi",
+
+		"username" : "Username",
+		"fullname" : "Nama Lengkap",
+		"status" : "Status",
+		"verified" : "Terverifikasi",
+		"not_verified" : "Belum Terverifikasi",
+		"send_verification_email" : "Kirim email verifikasi",
+		"ver_email_has_sent" : "Email verifikasi telah dikirimkan ke email anda.",
+
+		"buy_license_card" : "Beli Kartu Lisensi",
+
+		"license_card" : "Kartu Lisensi",
+		"no_license_card" : "Tidak ada kartu lisensi",
+		"achievement" : "Pencapaian",
+		"no_achievement" : "Tidak ada pencapaian",
+
+		"email" : "email",
+		"password" : "kata sandi",
+		"sign_in" : "Masuk",
+		"sign_up" : "Buat",
+		"sign_out" : "Keluar",
+
+		"email_empty" : "Email tidak boleh kosong.",
+		"pass_empty" : "Kata sandi tidak boleh kosong.",
+		"email_invalid" : "Email tidak valid.",
+
+		"email_pass_incorrect" : "Email atau kata sandi salah.",
+		"email_unregistered" : "Email tidak terdaftar.",
+
+		"search_here" : "Telusuri di sini"
+	}
+}

@@ -1,0 +1,85 @@
+{
+	"tag" : {
+	  "title" : "Toko | Lanterlite",
+	   "meta" : {
+	      "description": "Daftar Toko di Lanterlite Trade Center."
+	    }
+	},
+
+	"slide" : [
+		{
+			"title" : "Toko",
+			"sub"	: "Mempelajari konsep dan ide baru.",
+			"img"	: "page_store/banner/banner_goods.png"
+		},
+		{
+			"title" : "Koleksi Toko",
+			"sub"	: "Artikel Islam dan Teknologi.",
+			"img"	: "page_store/banner/banner_transfer.png"
+		}
+	],
+
+	"post" : [ 
+		{
+			"title" : "Toko",
+			"content" : [
+				{
+					"title" : "Apple",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Microsoft",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Google",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Lanterlite",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Apple",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Microsoft",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Google",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				},
+				{
+					"title" : "Lanterlite",
+					"date"	: "",
+					"sub"	: "",
+					"img"	: "page_store/stores/licensecard.png",
+					"link"	: { "title" : "Kunjungi", "url": "article/190301" }
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"tag" : {
+	  "title" : "Wishlist | Trade Center",
+	   "meta" : {
+	      "description": "List of item that collected inside wishlist in Lanterlite Trade Center."
+	    }
+	},
+
+	"word" : {
+		"wishlist" : "Wishlist",
+		"no_item_in_wishlist" : "There is no item inside Wishlist."
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"tag" : {
+	  "title" : "Lanterlite Trade Center",
+	   "meta" : {
+	      "description": "Informasi utama dari web Lanterlite Trade Center."
+	    }
+	},
+
+	"word" : {
+		"news" : "Berita",
+		"read" : "Baca"
+	},
+
+	"slide" : [
+		{
+			"title" : "Transaksi Jual-Beli",
+			"sub"	: "Menerapkan aturan jual-beli dalam islam.",
+			"img"	: "page_home/banner/banner_transfer.png"
+		},
+		{
+			"title" : "Barang Berkualitas",
+			"sub"	: "Membantu menjual produk berkualitas.",
+			"img"	: "page_home/banner/banner_goods.png"
+		}
+	],
+
+	"post" : [ 
+		{
+			"title" : "Etalase Utama",
+			"content" : [
+				{
+					"title" : "Lanterlite License Card",
+					"price"	: "Rp 25.000",
+					"store"	: "Lanterlite",
+					"img"	: "page_home/news/licensecard.png",
+					"link"	: { "title" : "Detail Barang", "url": "item/licensecard" }
+				}
+			]
+		}
+	]
+}

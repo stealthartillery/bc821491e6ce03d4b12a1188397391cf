@@ -1,0 +1,37 @@
+{
+	"tag" : {
+	  "title" : "Enlite",
+	   "meta" : {
+	      "description": "Mesin Pencari Islami."
+	    }
+	},
+
+	"word": {
+		"next" : "Selanjutnya",
+		"did_you_mean" : "Apakah maksud Anda",
+		"search_result_for" : "Hasil Pencarian untuk",
+		"seconds" : "detik",
+		"search_time" : "Waktu Pencarian",
+		"page" : "Halaman",
+
+		"option" : "Opsi",
+		"theme" : "Tema",
+
+		"language" : "Bahasa",
+		"arabic_size" : "Font Arab",
+		"latin_size" : "Font Latin",
+		"size" : "Ukuran",
+
+		"there_is_no_search_result_for" : "Tidak ada hasil pencarian untuk kata kunci",
+		"please_make_sure" : "Mohon untuk memeriksa kembali pengejaan semua kata, atau mencoba kata kunci yang lain.",
+
+		"contents" : "konten",
+		"search_here" : "Telusuri di Sini",
+		"notes" : "Catatan",
+		"narrator" : "Narator",
+		"hadith_no" : "No. Hadits",
+		"chapter" : "Bab",
+		"chapter_no" : "No. Bab",
+		"pages" : "Halaman"
+	}
+}

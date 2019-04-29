@@ -1,0 +1,14 @@
+{
+	"tag" : {
+	  "title" : "The Order has been Received | Lanterlite Trade Center",
+	   "meta" : {
+	      "description": "The Order has been Received."
+	    }
+	},
+
+	"word" : {
+		"order_has_received" : "The Order has been Received",
+		"thankyou_for_ordering" : "Thank you for ordering items at Lanterlite Trade Center. Please complete the payment to get the ordered items.",
+		"back_to_home" : "Back to Home"
+	}
+}

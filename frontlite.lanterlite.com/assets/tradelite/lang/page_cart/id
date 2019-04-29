@@ -1,0 +1,14 @@
+{
+	"tag" : {
+	  "title" : "Keranjang | Trade Center",
+	   "meta" : {
+	      "description": "Kumpulan barang yang ada dalam keranjang di Lanterlite Trade Center."
+	    }
+	},
+
+	"word" : {
+		"cart" : "Keranjang",
+		"item_detail" : "Detil Barang",
+		"no_item_in_cart" : "Tidak ada barang di dalam keranjang."
+	}
+}

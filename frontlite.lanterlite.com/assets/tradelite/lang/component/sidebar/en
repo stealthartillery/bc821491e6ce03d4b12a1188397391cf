@@ -1,0 +1,14 @@
+{
+	"sidebar": [
+		{
+			"title" : "Home",
+			"icon" : "home",
+			"link" : "change_page()"
+		},
+		{
+			"title" : "Store",
+			"icon" : "store",
+			"link" : "change_page(\"store\")"
+		}
+	]
+}

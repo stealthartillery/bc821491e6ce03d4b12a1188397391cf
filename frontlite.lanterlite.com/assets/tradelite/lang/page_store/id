@@ -1,0 +1,29 @@
+{
+	"tag" : {
+	  "title" : "Toko Lanterlite | Trade Center",
+	   "meta" : {
+	      "description": "Toko Lanterlite di Lanterlite Trade Center."
+	    }
+	},
+
+	"slide" : [
+		{
+			"title" : "Daftar Toko",
+			"sub"	: "Daftar toko di Lanterlite Trade Center",
+			"img"	: "page_store/banner/banner_store.png"
+		},
+		{
+			"title" : "Menjadi Toko Online",
+			"sub"	: "Membantu penguasaha menjual produk secara online",
+			"img"	: "page_store/banner/banner_transfer.png"
+		}
+	],
+
+	"post" : [ 
+		{
+			"title" : "Toko",
+			"content" : [
+			]
+		}
+	]
+}

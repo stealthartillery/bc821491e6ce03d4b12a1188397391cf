@@ -1,0 +1,25 @@
+RewriteEngine On
+allow from all
+
+RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+Header add Access-Control-Allow-Headers: "*"
+
+HTTP/1.1 200 OK
+Content-Length: 0
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
+
+#Header add Access-Control-Allow-Origin "*"
+#Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+
+#Access-Control-Allow-Origin: https://lanterlite.com
+#Access-Control-Allow-Credentials: true
+#Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+#Access-Control-Allow-Headers: Content-Type

@@ -1,0 +1,12 @@
+{
+	"sidebar": [
+		{
+			"title" : "Opsi",
+			"link" : "func_opt()"
+		},
+		{
+			"title" : "Tema",
+			"link" : "func_theme()"
+		}
+	]
+}

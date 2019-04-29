@@ -1,0 +1,71 @@
+{
+	"word" : {
+		"license" : "Lisensi",
+		"electronic" : "Elektronik",
+		"fashion" : "Gaya Hidup",
+
+		"category" : "Kategori",
+		"subcategory" : "Sub Kategori",
+		"color" : "Warna",
+		"weight" : "Berat",
+		"brand" : "Merek",
+		"type" : "Tipe"
+		"Size" : "Ukuran"
+	},
+
+	"category" : {
+		"license" : {
+			"subcategory" : ["lisensi Perangkat Lunak", "Lainnya"],
+			"period" : ["Seumur Hidup", "Satu Tahun", "Lainnya"]
+		},
+
+		"electronic" : {
+			"subcategory" : [
+				"Komputer", 
+				"Handphone", 
+				"Headset", 
+				"Televisi"
+			],
+			"color" : [
+				"Red",
+				"Orange",
+				"Yellow",
+				"Gold",
+				"Green",
+				"Blue",
+				"Purple",
+				"Brown",
+				"Magenta",
+				"Cyan",
+				"Olive",
+				"Maroon",
+				"Navy",
+				"Aquamarine",
+				"Turquoise",
+				"Silver",
+				"Lime",
+				"Teal",
+				"Indigo",
+				"Violet",
+				"Pink",
+				"Black",
+				"White",
+				"Gray",
+				"Silver",
+				"Other"
+			]
+			"weight" : "",
+			"brand" : "",
+			"type" : ""
+		},
+
+		"fashion" : {
+			"subcategory" : "Kategori",
+			"color" : "Warna",
+			"weight" : "Berat",
+			"brand" : "Merek",
+			"type" : "Tipe",
+			"Size" : "Ukuran"
+		}
+	}
+}

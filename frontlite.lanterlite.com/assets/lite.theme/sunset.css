@@ -1,0 +1,39 @@
+/* Theme Sunset */
+
+.theme_clr_main1 {color:#F6FFF6;}
+.theme_bgclr_main1 {background-color: #2E0000;}
+
+.theme_clr_text1 {color:#FF7800;}
+.theme_clr_text2 {color:ivory;}
+.theme_clr_text3 {color:lightgray;}
+
+.theme_clr_bg1 {background-color:black;}
+.theme_clr_bg2 {background-color:#1a1a1a;}
+.theme_clr_bg3 {background-color:dimgray;}
+
+.theme_clr_bg1_hover:hover {background-color:black;}
+.theme_clr_bg2_hover:hover {background-color:#1a1a1a;}
+.theme_clr_bg3_hover:hover {background-color:dimgray;}
+
+.theme_clr_bgcontrast1 {background-color:black;}
+.theme_clr_bgcontrast2 {background-color:#1a1a1a;}
+.theme_clr_bgcontrast3 {background-color:dimgray;}
+
+.theme_clr_fgcontrast1 {color:white;}
+.theme_clr_fgcontrast2 {color:#F6FFF6;}
+.theme_clr_fgcontrast3 {color:lightgray;}
+
+.theme_clr_row1 {color:#F5DEB3;}
+.theme_clr_row2 {color:#ECC188;}
+
+.theme_clr_highlight {color:#52E652;}
+.theme_clr_disable {color:dimgray;}
+.theme_bgclr_disable {background-color:gray;}
+
+.theme_clr_contrastblue {color:#FF7800;}
+.theme_clr_contrastred {color:orangered;}
+.theme_clr_contrastgreen {color:#FFBD00;}
+.theme_clr_contrastgrey {color:lightgray;}
+.theme_clr_contrastgoldenrod {color:goldenrod;}
+
+.theme_clr_link {color:#FF7800;}

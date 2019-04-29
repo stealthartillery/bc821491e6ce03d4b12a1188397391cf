@@ -1,0 +1,14 @@
+{
+	"tag" : {
+	  "title" : "Pesanan Berhasil | Lanterlite Trade Center",
+	   "meta" : {
+	      "description": "Pesanan Berhasil Dilakukan."
+	    }
+	},
+
+	"word" : {
+		"order_has_received" : "Pesanan Diterima",
+		"thankyou_for_ordering" : "Terimakasih telah memesan barang di Lanterlite Trade Center. Silakan selesaikan pembayaran untuk mendapatkan barang yang dipesan.",
+		"back_to_home" : "Kembali ke Beranda"
+	}
+}

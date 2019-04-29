@@ -1,0 +1,18 @@
+{
+	"word": {
+		"email" : "email",
+		"password" : "password",
+		"sign_in" : "Sign In",
+		"sign_up" : "Sign Up",
+		"sign_out" : "Sign Out",
+
+		"email_empty" : "Email is Empty.",
+		"pass_empty" : "Password is Empty.",
+		"email_invalid" : "Email is Invalid.",
+
+		"email_pass_incorrect" : "Email or password incorrect.",
+		"email_unregistered" : "Email unregistered.",
+
+		"search_here" : "Search Here"
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"tag" : {
+	  "title" : "Metode Library | Lanterlite",
+	  "meta" : {
+	    "description": "Cara menghafal Al-Qur'an menggunakan metode library."
+	  }
+	},
+
+	"post" : [
+		{"title": "Metode Library"},
+		{"sub": "Cara menghafal Al-Qur'an menggunakan metode Library"},
+		
+		{"date" : "Mar 1, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Bismillah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Menjadi penghafal Al-Qur'an adalah dambaan setiap orang yang beriman. Kaum muslimin dijanjikan derajat Surga tertinggi bagi yang hafal Al-Qur'an. Oleh sebab itu, beragam metode dalam menghafal Al-Qur'an coba untuk dilakukan, seperti metode menghafal menggunakan warna, menghafal dengan mengoptmasi indra penglihatan, pendengaran, gerakan, dan lain sebagainya."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Pada artikel ini, saya akan membagikan cara menghafal saya menggunakan metode library (perpustakaan). Saya belum pernah mendengar metode yang mirip dengan ini sebelumnya, melainkan ini hanya merupakan hasil bentukan dari cara menghafal Al-Qur'an yang saya inginkan."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Metode ini menggunakan konsep perpustakaan yang terdiri dari sejumlah rak buku yang tersusun berjajar. Pada metode ini, space (ruang untuk menyimpan buku) dari rak tersebut tersusun menjadi 10 baris dan 5 kolom (10x5)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"img-body": "/page_article/article/librarymethod.webp"},
+		{"span-img": "Gambar Metode Library untuk menghafal Al-Qur'an."},
+		{"elm" : "<br>"},
+
+		{"span": "Setiap space menyimpan kata pertama dari satu ayat, untuk satu surat dalam Al-Qur'an. Juga setiap space memiliki nomor yang disamakan dengan nomor ayat tersebut. Sehingga kita cukup membayangkan rak buku ini ketika menghafal satu surat dalam Al-Qur'an."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Salah satu manfaat yang bisa saya dapatkan dengan cara ini, yaitu secara perlahan saya dapat melihat pola dari sejumlah ayat dalam satu surat, maupun pola dari sejumlah surat. Pola yang dimaksud salah satunya ialah pola keterkaitan antara nomor ayat (atau surat) dan makna dari ayat tersebut. Seperti contoh, surat Ar-Rahman (no. 55) dan Al-Waqi'ah (no. 56) sama-sama membahas tentang penghuni neraka dimulai dari ayat 41, di mana ayat-ayat sebelumnya pada masing-masing surat membahas tentang surga atau tentang kebesaran Allah. Masyaa Allah. Sehingga kita dapat memperdalam pengetahuan kita terkait mu'jizat susunan surat dan ayat yang ada pada Al-Qur'an."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Cara menghafal ini sudah saya coba lakukan selama kurang lebih 2 tahun dan sejauh ini saya merasa cocok dengan metode ini. Saya coba membagikan cara menghafal seperti ini kepada anda yang mungkin sama-sama dapat mempelajari Al-Qur'an lebih baik dengan cara seperti ini. Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Metode menghafal ini sudah ada di aplikasi Qulite yang anda bisa dapatkan di Playstore (link di bawah)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Link:"},
+		{"elm" : "<br>"},
+		{"span": "1. "},
+		{"link" : "<a href=\"https://play.google.com/store/apps/details?id=com.lanterlite.quranic\">Qulite Mobile</a>"}
+	]
+}

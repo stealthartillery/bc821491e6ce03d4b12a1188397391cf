@@ -1,0 +1,1 @@
+<img onclick="document.getElementById('upload').click(); return false" class="profile-image" id="user_img_register" src="<?php echo base_url(); ?>assets/images/default_avatar.jpg" height="200" alt="Image preview..."></br>

@@ -1,0 +1,45 @@
+{
+	"tag" : {
+	  "title" : "Product Compatibility | Lanterlite",
+	  "meta" : {
+	    "description": "Information about the compatibility of Lanterlite products."
+	  }
+	},
+
+	"post" : [
+		{"title": "Product Compatibility"},
+		{"sub" : "Compatibility test of Lanterlite products"},
+
+		{"date" : "Mar 22, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span": "We have tested our product compatibility with several supporting applications. We conducted the test using several samples of supporting applications that were grouped by classes, such as operating systems, browsers, device types, and so on. Then we made four parameters to conclude the test: 'supported', 'maybe supported', 'not supported', and 'maybe not supported'. The following are the results of the compatibility test conclusions displayed in table form."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"img-body": "/page_compat/table/lanterlite.web.webp"},
+		{"span-img": "Table of Lanterlite Web Compatibility."},
+		{"elm" : "<br>"},
+
+		{"img-body": "/page_compat/table/enlite.mobile.webp"},
+		{"span-img": "Table of Enlite Mobile Compatibility."},
+		{"elm" : "<br>"},
+
+		{"img-body": "/page_compat/table/enlite.web.webp"},
+		{"span-img": "Table of Enlite Web Compatibility."},
+		{"elm" : "<br>"},
+
+		{"img-body": "/page_compat/table/qulite.mobile.webp"},
+		{"span-img": "Table of Qulite Mobile Compatibility."},
+		{"elm" : "<br>"},
+
+		{"span": "Before you download Lanterlite applications, it's better if firstly you check the compatibility of your device with Lanterlite application in the table above. We will update this information periodically along with the updates made on Lanterlite applications, insyaa Allah."},
+		{"elm" : "<br>"}
+	]
+}

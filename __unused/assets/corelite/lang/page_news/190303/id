@@ -1,0 +1,50 @@
+{
+	"tag" : {
+	  "title" : "Lanterlite Dua Bahasa | Lanterlite",
+	  "meta" : {
+	    "description": "Lanterlite telah mendukung bahasa Inggris dan Indonesia."
+	  }
+	},
+
+	"post" : [
+		{"title": "Lanterlite Dua Bahasa"},
+		{"sub": "Lanterlite telah mendukung bahasa Inggris dan Indonesia."},
+
+		{"date" : "Mar 3, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span":"Alhamdulillah lanterlite.com sepenuhnya telah mendukung bahasa Indonesia dan Inggris. Sehingga teman-teman dari luar Indonesia insyaa Allah tidak akan ketinggalan terkait informasi terbaru dari Lanterlite. Situs lanterlite.com juga saat ini telah mampu untuk mendeteksi secara otomatis bahasa yang teman-teman mungkin gunakan sehari-hari berdasarkan lokasi perangkat teman-teman. Untuk kedepannya, Lanterlite akan berusaha untuk memuat bahasa Arab sebagai bahasa ketiga yang dimuat di lanterlite.com, Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Selain itu, alhamdulillah, lanterlite.com telah memiliki halaman artikel yang diperuntukkan untuk mempublikasikan artikel-artikel terkait islam dan teknologi yang bersifat komprehensif dengan mematuhi syariat Islam, insyaa Allah. Artikel pertama yang dimuat adalah artikel terkait metode menghafal Al-Qur'an yang ada pada aplikasi Qulite, yaitu metode Library. Untuk teman-teman yang ingin mengetahui lebih jauh terkait metode ini, teman-teman dapat mengunjungi artikel tersebut (link artikel di bawah)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Juga alhamdulillah, dari sisi keamanan server telah ditingkatkan pada beberapa titik sehingga lebih baik dari sebelumnya agar menunjang keamanan dan kenyamanan pengguna."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Semoga postingan ini bermanfaat."},
+		{"elm" : "<br>"},
+
+		{"span":"Selamat berkarya positif!"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Wassalamu'alaikum warahmatullah wabarakaatuh."},
+		{"elm" : "<br>"},
+
+		{"span":"Link:"},
+		{"elm" : "<br>"},
+
+		{"span" : "1. "},
+		{"link" : "<a href=\"https://lanterlite.com/article/01\">Artikel Metode Library</a>"}
+	]
+}

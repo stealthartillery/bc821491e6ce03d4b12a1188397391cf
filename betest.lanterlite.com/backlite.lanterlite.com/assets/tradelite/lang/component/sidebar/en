@@ -1,0 +1,20 @@
+{
+	"sidebar": [
+		{
+			"title" : "Home",
+			"link" : "/"
+		},
+		{
+			"title" : "Product",
+			"link" : "/product"
+		},
+		{
+			"title" : "About",
+			"link" : "/about"
+		},
+		{
+			"title" : "Article",
+			"link" : "/article"
+		}
+	]
+}

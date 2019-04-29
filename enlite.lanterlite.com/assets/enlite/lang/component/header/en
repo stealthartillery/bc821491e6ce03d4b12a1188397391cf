@@ -1,0 +1,37 @@
+{
+	"word": {
+		"notification" : "Notification",
+		"profile" : "Profile",
+		"information" : "Information",
+
+		"username" : "Username",
+		"fullname" : "Fullname",
+		"status" : "Status",
+		"verified" : "Verificated",
+		"not_verified" : "Not Verificated",
+		"send_verification_email" : "Send Verification Email",
+		"ver_email_has_sent" : "Verification email has sent to your email.",
+
+		"buy_license_card" : "Buy License Card",
+
+		"license_card" : "License Card",
+		"no_license_card" : "No License Card",
+		"achievement" : "Achievement",
+		"no_achievement" : "No Achievement",
+
+		"email" : "email",
+		"password" : "password",
+		"sign_in" : "Sign In",
+		"sign_up" : "Sign Up",
+		"sign_out" : "Sign Out",
+
+		"email_empty" : "Email is Empty.",
+		"pass_empty" : "Password is Empty.",
+		"email_invalid" : "Email is Invalid.",
+
+		"email_pass_incorrect" : "Email or password incorrect.",
+		"email_unregistered" : "Email unregistered.",
+
+		"search_here" : "Search Here"
+	}
+}

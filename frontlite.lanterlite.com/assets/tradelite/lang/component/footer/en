@@ -1,0 +1,12 @@
+{
+	"footer": {
+		"language" 		: "Language",
+		"follow_us" 	: "Follow Us",
+		"product" 		: "Product",
+		"company": {
+			"title"			: "Company",
+			"about"			: "Our Mission",
+			"team"			: "Team Profile"
+		}
+	}
+}

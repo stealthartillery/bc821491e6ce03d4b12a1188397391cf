@@ -1,0 +1,56 @@
+/* Theme Day */
+
+:root {
+  --CLR_MAIN1: white;
+
+  --CLR_BGCONTRAST1: black;
+  --CLR_BGCONTRAST2: #1a1a1a;
+
+  --CLR_FGCONTRAST1: white;
+  --CLR_FGCONTRAST2: ivory;
+  --CLR_FGCONTRAST3: lightgray;
+
+  --CLR_ROW1: white;
+  --CLR_ROW2: ivory;
+
+  --CLR_TEXT1: black;
+  --CLR_TEXT2: #1a1a1a;
+  --CLR_TEXT3: dimgray;
+
+  --CLR_HIGHLIGHT: yellow;
+
+  --CLR_DISABLE: lightgray;
+
+  --CLR_CONTRAST_BLUE: #0600AD;
+  --CLR_CONTRAST_RED: red;
+  --CLR_CONTRAST_GREEN: #008000;
+  --CLR_CONTRAST_GREY: #1a1a1a;
+  --CLR_CONTRAST_GOLDENROD: darkgoldenrod;
+};
+
+.theme_clr_main1 {color:white;}
+.theme_bgclr_main1 {background-color:white;}
+
+.theme_clr_text1 {color:black;}
+.theme_clr_text2 {color:#1a1a1a;}
+.theme_clr_text3 {color:dimgray;}
+
+.theme_clr_bgcontrast1 {color:black;}
+.theme_clr_bgcontrast2 {color:#1a1a1a;}
+
+.theme_clr_fgcontrast1 {color:white;}
+.theme_clr_fgcontrast2 {color:ivory;}
+.theme_clr_fgcontrast3 {color:lightgray;}
+
+.theme_clr_row1 {color:white;}
+.theme_clr_row2 {color:ivory;}
+
+.theme_clr_highlight {color:yellow;}
+.theme_clr_disable {color:lightgray;}
+.theme_bgclr_disable {background-color:lightgray;}
+
+.theme_clr_contrastblue {color:#0600AD;}
+.theme_clr_contrastred {color:red;}
+.theme_clr_contrastgreen {color:#008000;}
+.theme_clr_contrastgrey {color:#1a1a1a;}
+.theme_clr_contrastgoldenrod {color:darkgoldenrod;}

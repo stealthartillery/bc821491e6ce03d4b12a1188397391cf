@@ -1,0 +1,50 @@
+{
+	"tag" : {
+	  "title" : "Lanterlite Dual Languages | Lanterlite",
+	  "meta" : {
+	    "description": "Lanterlite now supports for Bahasa and English language."
+	  }
+	},
+
+	"post" : [
+		{"title": "Lanterlite Dual Languages"},
+		{"sub": "Lanterlite now supports for Bahasa and English language."},
+
+		{"date" : "Mar 3, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span":"Alhamdulillah lanterlite.com now fully supports Bahasa and English language. So that for those of You who are from outside of Indonesia, Insyaa Allah, will not miss the latest information from Lanterlite. Also, currently lanterlite.com site is able to automatically detect languages that You might use everyday based on the location of Your devices. In the future, Lanterlite will try to load Arabic as the third language published on lanterlite.com, Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"In addition, Alhamdulillah, Lanterlite.com has a new page called 'article' which will be intended to publish articles related to Islam and technology that are comprehensive in compliance with Islamic law, Insyaa Allah. The first article that was published was an article related to the method of memorizing the Qur'an in the Qulite app, the Library method. For those of You who want to know more about this method, You can visit the article (article link below)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Also, alhamdulillah, from the server security side, it has been improved at several points so that it is better than before in order to support the security and convenience of our users."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Hopefully this post is useful."},
+		{"elm" : "<br>"},
+
+		{"span":"Let's do positive work!"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Wassalamu'alaikum warahmatullah wabarakaatuh."},
+		{"elm" : "<br>"},
+
+		{"span":"Link:"},
+		{"elm" : "<br>"},
+
+		{"span" : "1. "},
+		{"link" : "<a href=\"https://lanterlite.com/article/01\">Library Method Article</a>"}
+	]
+}

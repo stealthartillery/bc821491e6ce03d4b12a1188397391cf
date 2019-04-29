@@ -1,0 +1,42 @@
+{
+	"tag" : {
+	  "title" : "Library Method | Lanterlite",
+	  "meta" : {
+	    "description": "How to memorize the Quran using the library method."
+	  }
+	},
+
+	"post" : [
+		{"img-body": "page_team/team_profile/ifandhanip.webp"},
+
+		{"title": "Ifan Dhani"},
+		{"sub": "Founder and CEO of Lanterlite"},
+		
+		{"span": "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span": "Ifan Dhani Prasojo is the founder and CEO of Lanterlite."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "In 2012, Ifan, who was still in high school at the time, had the desire to create a company that is engaged in improving the welfare of Muslims. This desire arose from his concern at seeing oppressed Muslims in Palestine. So that encouraged him to make a community called 'Seribu Lentera'. Then he and his friends used this name as a means for preaching and motivating people through social medias and articles."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "In 2015, Ifan, who had entered second grade at the Bandung State Polytechnic (Polban), began studying Islam through his indirect teacher, Ustaz Khalid Basalamah, whom he met through the internet. Until at one point, he felt there was a discrepancy between the system he used in Seribu Lentera with Islamic law that he had learned at that time. So in 2016, he decided to dismiss Seribu Lentera and make a new community called 'Lanterlite' with a new system."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Since then, he began developing Lanterlite by himself. Ifan, who at that time entered Informatics faculty, made him recognize and study programming science in his campus, so he could develop the first mobile application called \"Al-Khulafa Ar-Rasyidun Encyclopedia: ID\", an application that contains the history of the first four leaders in Islam after the death of Prophet Muhammad (peace be upon him) which originated from the Book of <i>Al-Bidayah wan Nihayah</i> by Imam Ibn Kathir. Then, he published the application on February 10, 2017, which he made as the date of the establishment of Lanterlite."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "In mid 2017, Ifan faced obstacles in developing Lanterlite due to his busy life in college. This was  continued until his graduation in mid-2018."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "After his graduation in August 2018, Ifan back to develop Lanterlite more freely so that in December 2018 to January 2019, Ifan successfully publishes two mobile applications, Qulite (digital Qur'an) and Enlite (Islamic content search engine). At its peak, on February 3, 2019, he announced the start operation of www.lanterlite.com to the public and made him CEO and founder at Lanterlite until today."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"}
+	]
+}

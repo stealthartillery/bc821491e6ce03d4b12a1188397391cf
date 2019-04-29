@@ -1,0 +1,14 @@
+{
+	"sidebar": [
+		{
+			"title" : "Beranda",
+			"icon" : "home",
+			"link" : ""
+		},
+		{
+			"title" : "Toko",
+			"icon" : "store",
+			"link" : "store"
+		}
+	]
+}

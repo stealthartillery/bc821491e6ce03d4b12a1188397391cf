@@ -1,0 +1,61 @@
+{
+
+	"category" : [
+		"license",
+		"electronic",
+		"fashion"
+	],
+
+	"spec" : {
+		"license" : {
+			"subcategory" : [
+				"lisensi Perangkat Lunak", 
+				"Lainnya"
+			],
+			"store" : "(contoh: Microsoft)",
+			"shortdesc": "(contoh: Lisensi Microsoft Office adalah...)",
+			"title" : "(contoh: Lisensi Microsoft Office)",
+			"condition" : "(contoh: Baru)",
+			"period" : "(contoh: Seumur Hidup)",
+			"brand" : "(contoh: Microsoft)",
+			"software" : "(contoh: Microsoft Office)"
+		},
+
+		"electronic" : {
+			"subcategory" : [
+				"Komputer", 
+				"Handphone", 
+				"Headset", 
+				"Televisi",
+				"Lainnya"
+			],
+			"store" : "(contoh: Samsung)",
+			"shortdesc": "(contoh: Samsung GT-S6310 adalah...)",
+			"title" : "(contoh: Samsung GT-S6310 Gold)",
+			"condition" : "(contoh: Baru)",
+			"color" : "(contoh: Biru)",
+			"weight" : "(contoh: 500)",
+			"brand" : "(contoh: Samsung)",
+			"type" : "(contoh: GT-S6310)"
+		},
+
+		"fashion" : {
+			"subcategory" : [
+				"Tas", 
+				"Jaket", 
+				"Busana Muslim", 
+				"Sepatu",
+				"Sendal",
+				"Lainnya"
+			],
+			"store" : "(contoh: Elzatta)",
+			"shortdesc": "(contoh: Baju muslim pria ini...)",
+			"title" : "(contoh: Baju Muslim Pria)",
+			"condition" : "(contoh: Baru)",
+			"color" : "(contoh: Biru)",
+			"weight" : "(contoh: 500)",
+			"brand" : "(contoh: Elzatta)",
+			"Size" : "(contoh: L)"
+		}
+	}
+}

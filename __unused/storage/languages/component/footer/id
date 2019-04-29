@@ -1,0 +1,11 @@
+{
+	"footer": {
+		"language" 		: "Bahasa",
+		"follow_us" 	: "Ikuti",
+		"product" 		: "Produk",
+		"company": {
+			"title"			: "Perusahaan",
+			"about"			: "Misi Kami"
+		}
+	}
+}
