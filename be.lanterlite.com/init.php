@@ -11,8 +11,8 @@ defined('FE_BASE_URL') OR define('FE_BASE_URL', 'https://frontlite.lanterlite.co
 defined('FE_URL') OR define('FE_URL', 'https://be.lanterlite.com');
 defined('SEC_KEY') OR define('SEC_KEY', 'IUEYAFC9832C3N98YHDNS98DSYHFNE9239282C39R83CN98SWD');
 defined('CUR_DIR') OR define('CUR_DIR', getcwd());
-error_reporting(0);
-ini_set('display_errors', 0);
+// error_reporting(0);
+// ini_set('display_errors', 0);
 
 include BASE_DIR .'lanterlite.gen.php';
 
