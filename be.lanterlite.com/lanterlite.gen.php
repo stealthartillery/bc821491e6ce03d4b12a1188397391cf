@@ -133,7 +133,7 @@ class Lanterlite {
 
 
 	/* RETURN: RES_STAT->SUCCESS */
-	function json_save($file_dir, $file_name, $json_obj) {
+	function json_save($file_dir, $file_name, $json_obj, $minify=false) {
 		$dir = rtrim($file_dir,'/');
 		// echo $dir;
 		if (substr($file_dir, -1) == '/') // returns "s" 
@@ -145,8 +145,13 @@ class Lanterlite {
 		// file_put_contents(CUR_DIR . '/' . $file_dir . $file_name, $json_obj);
 		// $i = 0;
 		$file = fopen($file_dir . $file_name, 'w');
-		$str = json_encode($json_obj, JSON_PRETTY_PRINT);
-		$str = str_replace("    ","  ",$str);
+		if ($minify) {
+			$str = json_encode($json_obj);
+		}
+		else {
+			$str = json_encode($json_obj, JSON_PRETTY_PRINT);
+			$str = str_replace("    ","  ",$str);
+		}
 		fwrite($file, $str);
 		// foreach ($gemList as $gem)
 		// {
@@ -201,6 +206,10 @@ class Lanterlite {
 
 	function is_exist_json_key($json, $key) {
 		return array_key_exists ($key, $json);
+	}
+
+	function arr_index_exist($arr, $index) {
+		return isset($arr[$index]);
 	}
 
 	function json_to_php ($file_path, $data) {
@@ -565,7 +574,8 @@ class Lanterlite {
 	}
 
 	function word_activate() {
-		$this->kata_kerja_dasar = self::json_read(BASE_DIR . 'storages/enlite/words3.json')[DATA];
+		$this->kata_kerja_dasar = self::json_read(BASE_DIR . 'storages/enlite/words4.json')[DATA];
+		// $this->kata_kerja_dasar = [];
 		$this->vokal = ['a', 'i', 'u', 'e', 'o'];
 		$this->alfabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 		$this->konsonan = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
@@ -573,7 +583,7 @@ class Lanterlite {
 		// $this->prefiks = ['menge', 'meng', 'meny', 'mem', 'men', 'me', 'ber', 'di', 'ter', 'pen', 'per', 'se', 'ke'];
 		$this->prefiks = ['meng', 'meny', 'mem', 'men', 'me', 'ber', 'di', 'ter', 'pen', 'per', 'se', 'ke'];
 		$this->infiks = ['el', 'em', 'er', 'e', 'in'];
-		$this->sufiks = ['kan', 'an', 'i', 'annya', 'nya', 'lah'];
+		$this->sufiks = ['kan', 'an', 'i', 'annya', 'nya', 'lah', 'ku', 'mu'];
 	}
 
 	function root_word($str) {
@@ -598,13 +608,13 @@ class Lanterlite {
 			return $result;
 		}
 
+		// echo 'atas '. $result . '<br>';
 		for ($i=0; $i<sizeof($this->sufiks); $i++) {
 			if ($this->sufiks[$i] == substr($result, -strlen($this->sufiks[$i]))) {
 				$result = substr($result, 0, -strlen($this->sufiks[$i]));
 				$i=sizeof($this->sufiks);
 			}
 		}
-
 		for ($i=0; $i<sizeof($this->prefiks); $i++) {
 			if ($this->prefiks[$i] == substr($result, 0, strlen($this->prefiks[$i]))) {
 				$result = substr($result, strlen($this->prefiks[$i]));
@@ -638,6 +648,7 @@ class Lanterlite {
 			$result = $str;
 		}
 
+		// echo 'bawah '. $result . '<br>';
 		return $result;
 	}
 

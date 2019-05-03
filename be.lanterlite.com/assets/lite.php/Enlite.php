@@ -33,31 +33,48 @@ class EnliteGen {
 		}
 		else {
 			// $str = include $dir .'/newbm.json.php';
-			$str = file_get_contents($dir .'/result.mto2.json');
-			$json = json_decode($str, true);
+			// $str = file_get_contents($dir .'/result.mto2.json');
+			// $json = json_decode($str, true);
+
+			$index = $content_id;
+			$src_id = substr($index, 0, 2);
+			$json_2 = $this->L->json_read($dir.'/'.'sources/'.$src_id.'/'.$index)[DATA];
 
 			$asd_tot = [];
-			foreach($json as $item) {
-				$tot_match = 0;
-				if($item['id'] == $content_id) {
-			// foreach($json as $item => $value) {
-					// $keys = array_keys($json[0]);
-					// foreach ($keys as $key) {
-					// 	$asd[$key] = $item[$key];
-					// }
-					// array_push($asd_tot, $asd);
-					$asd['title'] = $item['chapter'];
-					$asd['subtitle_1'] = $item['source'];
-					$asd['subtitle_2'] = $item['hadith_no'];
-					// $asd['precontent'] = $item['narrator'];
-					$asd['content'] = $item['content'];
-					$asd['arabic_content'] = $item['arabic'];
-					// $asd['postcontent_1'] = $item['collector'];
-					// $asd['postcontent_2'] = $item['degree'];
-					// $asd['addition'] = $item['comment'];
-					array_push($asd_tot, $asd);
-			  }
-			}	
+
+			$asd['title'] = $json_2['chapter'];
+			$asd['subtitle_1'] = $json_2['source'];
+			$asd['subtitle_2'] = $json_2['hadith_no'];
+			// $asd['precontent'] = $item['narrator'];
+			$asd['content'] = $json_2['content'];
+			$asd['arabic_content'] = $json_2['arabic'];
+			// $asd['postcontent_1'] = $item['collector'];
+			// $asd['postcontent_2'] = $item['degree'];
+			// $asd['addition'] = $item['comment'];
+			array_push($asd_tot, $asd);
+
+			// $asd_tot = [];
+			// foreach($json as $item) {
+			// 	$tot_match = 0;
+			// 	if($item['id'] == $content_id) {
+			// // foreach($json as $item => $value) {
+			// 		// $keys = array_keys($json[0]);
+			// 		// foreach ($keys as $key) {
+			// 		// 	$asd[$key] = $item[$key];
+			// 		// }
+			// 		// array_push($asd_tot, $asd);
+			// 		$asd['title'] = $item['chapter'];
+			// 		$asd['subtitle_1'] = $item['source'];
+			// 		$asd['subtitle_2'] = $item['hadith_no'];
+			// 		// $asd['precontent'] = $item['narrator'];
+			// 		$asd['content'] = $item['content'];
+			// 		$asd['arabic_content'] = $item['arabic'];
+			// 		// $asd['postcontent_1'] = $item['collector'];
+			// 		// $asd['postcontent_2'] = $item['degree'];
+			// 		// $asd['addition'] = $item['comment'];
+			// 		array_push($asd_tot, $asd);
+			//   }
+			// }	
 		}
 
 		if (!isset($asd)) {
@@ -262,16 +279,19 @@ class EnliteGen {
 			// $json_2 = $this->L->json_read($db_file)[DATA];
 
 			$dir = BASE_DIR .'/storages/enlite/';
-			$json = $this->L->json_read($dir.'result.invix.json')[DATA];
-			$json_2 = $this->L->json_read($dir.'result.mto2.json')[DATA];
-			// $this->L->printJson($json);
-			// $this->L->printJson($dir);
-			// $this->L->printJson($this->L->json_read($dir.'result.invix.json'));
+			// $json = $this->L->json_read($dir.'result.invix.json')[DATA];
+			// $arrjson_match = [];
+			// foreach ($arr_user_keywords as $_kkey => $_kval) {
+			// 	$_res = self::get_json_from_arrjson_by_str($json, $_kval, 'word');
+			// 	if ($_res != null)
+			// 		array_push($arrjson_match, $_res);
+			// }
 			$arrjson_match = [];
 			foreach ($arr_user_keywords as $_kkey => $_kval) {
-				$_res = self::get_json_from_arrjson_by_str($json, $_kval, 'word');
-				if ($_res != null)
-					array_push($arrjson_match, $_res);
+				$_kval = $this->L->root_word($_kval);
+				$json = $this->L->json_read($dir.'words/'.$_kval);
+				if ($json[RES_STAT] == SUCCESS)
+					array_push($arrjson_match, $json[DATA]);
 			}
 
 			$arr_match = [];
@@ -298,20 +318,23 @@ class EnliteGen {
 			}
 	
 			$this->content_tot = sizeof($arr_match);
-			// $this->L->printJson($arr_match);
 			$scores = [];
 
 			foreach ($arr_match as $_mkey => $_mval) {
+				$src_id = substr($_mval, 0, 2);
+				// echo $dir.'/'.$src_id.'/'.$_mval;
+				$json_2 = $this->L->json_read($dir.'/'.'sources/'.$src_id.'/'.$_mval)[DATA];
+			
 				$pos = [];
 				foreach ($arr_user_keywords as $_kkey => $_kval) {
-					$_result = $this->L->str_cmp($json_2[$_mval]['content'], $_kval);
+					$_result = $this->L->str_cmp($json_2['content'], $_kval);
 					if($_result['is_same']) {
 				  	array_push($pos, $_result['pos']);
 				  }
 				  if($_kkey == sizeof($arr_user_keywords)-1) {
 				  	$score = $this->priority_get($pos);
 				  	$_obj['score'] = 10 + $score;
-				  	$_obj['index'] = $json_2[$_mval]['index'];
+				  	$_obj['index'] = $json_2['id'];
 				  	array_push($scores, $_obj);
 					}
 				}
@@ -325,11 +348,20 @@ class EnliteGen {
 			foreach ($this->scores as $_skey => $_sval) {
 				if ($this->content_index_start <= $_skey && $_skey <= $this->content_index_end) {
 					$index = $_sval['index'];
+					$src_id = substr($index, 0, 2);
+					// $this->L->printJson($this->scores);
+					// echo $dir.'/'.$src_id.'/'.$index . '<br>';
+					$json_2 = $this->L->json_read($dir.'/'.'sources/'.$src_id.'/'.$index)[DATA];
 					// $this->L->printJson($json_2[$index]['content']);
-			  	$item2 = $this->title_content_make($json_2[$index]['content'], $arr_user_keywords);
-					$data['id'] = $json_2[$index]['id'];
-					$data['type'] = $this->type_make($json_2[$index]);
-					$data['title'] = $item2['title'];
+			  	$item2 = $this->title_content_make($json_2['content'], $arr_user_keywords);
+					$data['id'] = $json_2['id'];
+					$data['type'] = $this->type_make($json_2);
+					// $data['title'] = $item2['title'];
+					if (isset($json_2['chapter']))
+						$data['title'] = $json_2['chapter'].' | '.$json_2['source'];
+					else
+						$data['title'] = $json_2['surah'].' | '.$json_2['source'];
+
 					$data['desc'] = $item2['content'];
 					$data['priority'] = $_sval['score'];
 					array_push($this->arr_content, $data);
@@ -474,45 +506,147 @@ class EnliteGen {
 		return $result;
 	}
 
-	function title_content_make($string, $word) {
-		$arr = explode(" ",$string);
+	function plain_word_bold($word) {
+		$clean = $word;
+		$first = null;
+		if (strcmp(substr($clean, 0, 1), '(') == 0) {
+			$first = '(';
+			$clean = substr($clean, 1, strlen($clean)-1);
+		}
 
-		if (sizeof($arr) != 0) {
+		$last = null;
+		$arrback = [];
+		array_push($arrback, array('sign' => '),', 'total' => 2));
+		array_push($arrback, array('sign' => ').', 'total' => 2));
+		array_push($arrback, array('sign' => ')', 'total' => 1));
+		array_push($arrback, array('sign' => '.', 'total' => 1));
+		array_push($arrback, array('sign' => ',', 'total' => 1));
+		array_push($arrback, array('sign' => ';', 'total' => 1));
+
+		foreach ($arrback as $key => $value) {
+			if (strcmp(substr($clean, -$value['total']), $value['sign']) == 0) {
+				$last = $value['sign'];
+				$clean = substr($clean, 0, strlen($clean)-$value['total']);
+				break;
+			}
+		}
+
+		if ($first != null && $last != null){
+			$clean = $first.'<b>'.$clean.'</b>'.$last;
+		}
+		else if ($first != null) {
+			$clean = $first.'<b>'.$clean.'</b>';	
+		}
+		else if ($last != null) {
+			$clean = '<b>'.$clean.'</b>'.$last;	
+		}
+		else {
+			$clean = '<b>'.$clean.'</b>';
+		}
+
+		return $clean;
+	}
+
+	function title_content_make($prgph, $word) {
+		$arr_prgph = explode(" ", $prgph);
+
+		for ($i=0; $i<sizeof($word); $i++) {
+			$word[$i] = $this->L->root_word($word[$i]);
+		}
+
+		for ($i=0; $i<sizeof($arr_prgph); $i++) {
+			for ($j=0; $j<sizeof($word); $j++) {
+				$root_word = $this->L->root_word($arr_prgph[$i]);
+				if ($this->L->str_cmp_case_insen($root_word, $word[$j], 'part')) {
+					$arr_prgph[$i] = $this->plain_word_bold($arr_prgph[$i]);
+					$index = $i;
+				}
+			}
+		}
+
+		// $title2 = $this->arrstr_from_index_to_index_backward_get($arr_prgph, sizeof($arr_prgph), $index);
+		$title2 = $this->arrstr_from_index_to_index_forward_get($arr_prgph, $index-20, $index+20);
+		if ($arr_prgph[0] != $title2[0]) {
+			array_unshift($title2, '...');
+		}
+		if ($arr_prgph[sizeof($arr_prgph)-1] != $title2[sizeof($title2)-1]) {
+			array_push($title2, '...');
+		}
+		// $title2 = $this->getArrayValueUntilIndex($arr_prgph, $index);
+		$title2 = $this->L->arr_to_str($title2);
+
+		$result['title'] = '';
+		$result['content'] = $title2;
+		// $result['content'] = $this->L->arr_to_str($arr_prgph);
+		return $result;
+	}
+
+	function arrstr_from_index_to_index_backward_get($arrstr, $from_index, $to_index) {
+		$arrstr_res = [];
+		for ($i=$to_index; $i<$from_index; $i++) {
+			if ($this->L->arr_index_exist($arrstr, $i)) {
+				array_push($arrstr_res, $arrstr[$i]);
+			}
+		}
+		return $arrstr_res;
+	}
+	
+	function arrstr_from_index_to_index_forward_get($arrstr, $from_index, $to_index) {
+		$arrstr_res = [];
+		for ($i=$from_index; $i<$to_index; $i++) {
+			if ($this->L->arr_index_exist($arrstr, $i)) {
+				array_push($arrstr_res, $arrstr[$i]);
+			}
+		}
+		return $arrstr_res;
+	}
+
+	function title_content_make2($prgph, $word) {
+		$arr_prgph = explode(" ", $prgph);
+
+		for ($i=0; $i<sizeof($word); $i++) {
+			$word[$i] = $this->L->root_word($word[$i]);
+		}
+
+		if (sizeof($arr_prgph) != 0) {
 			$index = 0;
 			$is_found = false;
-			for ($i=0; $i<sizeof($arr); $i++) {
+			for ($i=0; $i<sizeof($arr_prgph); $i++) {
 				for ($j=0; $j<sizeof($word); $j++) {
-					$root_word = $this->L->root_word($arr[$i]);
+					$root_word = $this->L->root_word($arr_prgph[$i]);
+					// echo $root_word . '<br>';
 					if ($this->L->str_cmp_case_insen($root_word, $word[$j], 'part')) {
 						$index = $i;
 						$is_found = true;
-						$i = sizeof($arr);
+						$i = sizeof($arr_prgph);
 						$j = sizeof($word);
 					}
 				}
 			}
 			// echo $index . '<br>';
-			// $this->L->printJson($arr);
+			// $this->L->printJson($arr_prgph);
 			// $this->L->printJson($word);
 
 			$str_after = [];
 			$isEnd = false;
 			// $this->L->printJson($string);
 			for ($i=$index+1; $i<$index+20; $i++) {
-				if (array_key_exists($i, $arr)) {
+				if (array_key_exists($i, $arr_prgph)) {
 					$match = false;
-					$_word = $this->L->root_word($arr[$i]);
+					$_word = $this->L->root_word($arr_prgph[$i]);
 
 					for ($j=0; $j<sizeof($word); $j++) {
 						$_word2 = $this->L->root_word($word[$j]);
+						// echo '$_word2 ' . $_word2 .'<br>';
+						// echo '$_word ' . $_word .'<br>';
 						if ($this->L->str_cmp_case_insen($_word, $_word2, 'part')) {
-							array_push($str_after, '<b>' . $arr[$i] . '</b>');
+							array_push($str_after, '<b>' . $arr_prgph[$i] . '</b>');
 							$match = true;
 							$j = sizeof($word);
 						}
 					}
 					if (!$match) {
-						array_push($str_after, $arr[$i]);
+						array_push($str_after, $arr_prgph[$i]);
 					}
 				}
 				else {
@@ -528,19 +662,21 @@ class EnliteGen {
 			$isEnd = false;
 			$str_before = [];
 			for ($i=$index-1; $i>$index-20; $i--) {
-				if (array_key_exists($i, $arr)) {
+				if (array_key_exists($i, $arr_prgph)) {
 					$match = false;
-					$_word = $this->L->root_word($arr[$i]);
+					$_word = $this->L->root_word($arr_prgph[$i]);
 					for ($j=0; $j<sizeof($word); $j++) {
 						$_word2 = $this->L->root_word($word[$j]);
+						// echo '$_word2 ' . $_word2 .'<br>';
+						// echo '$_word ' . $_word .'<br>';
 						if ($this->L->str_cmp_case_insen($_word, $_word2, 'part')) {
-							array_unshift($str_before, '<b>' . $arr[$i] . '</b>');
+							array_unshift($str_before, '<b>' . $arr_prgph[$i] . '</b>');
 							$match = true;
 							$j = sizeof($word);
 						}
 					}
 					if (!$match) {
-						array_unshift($str_before, $arr[$i]);
+						array_unshift($str_before, $arr_prgph[$i]);
 					}
 				}
 				else {
@@ -564,17 +700,17 @@ class EnliteGen {
 			// $this->L->printJson($str_before);
 			// $this->L->printJson($str_after);
 			if ($is_found) {
-				$result['content'] = $str_before . ' <b>' . $arr[$index] . '</b> ' . $str_after;
+				$result['content'] = $str_before . ' <b>' . $arr_prgph[$index] . '</b> ' . $str_after;
 			}
 			else {
-				$result['content'] = $str_before . ' ' . $arr[$index] . ' ' . $str_after;				
+				$result['content'] = $str_before . ' ' . $arr_prgph[$index] . ' ' . $str_after;				
 			}
-			// $result['title'] = ucfirst($arr[$index]) . ' ' . $title;
+			// $result['title'] = ucfirst($arr_prgph[$index]) . ' ' . $title;
 			if ($title2 != '') {
-				$result['title'] = '... ' . $title2 . ' ' . $arr[$index] . ' ' . $title;
+				$result['title'] = '... ' . $title2 . ' ' . $arr_prgph[$index] . ' ' . $title;
 			}
 			else {
-				$result['title'] = ucfirst($arr[$index]) . ' ' . $title;
+				$result['title'] = ucfirst($arr_prgph[$index]) . ' ' . $title;
 			}
 			// echo $index . '<br>';
 			// $this->L->printJson($result['content']);
