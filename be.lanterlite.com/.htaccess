@@ -9,9 +9,6 @@ RewriteCond $1 !^(index\.php|images|robots\.txt)
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
 Header add Access-Control-Allow-Headers: "*"
-Header always set Access-Control-Allow-Origin "*"
-Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
-Header always set Access-Control-Allow-Headers "append,delete,entries,foreach,get,has,keys,set,values,Authorization,Data"
 
 HTTP/1.1 200 OK
 Content-Length: 0

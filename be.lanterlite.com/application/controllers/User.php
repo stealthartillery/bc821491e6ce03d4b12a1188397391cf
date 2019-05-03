@@ -14,17 +14,10 @@ class User extends CI_Controller{
 
 	public function index() {
 		$data = json_decode(file_get_contents("php://input"), true);
-			// header('Content-Type: application/json');
-			header("HTTP/1.1 200 OK");
-			echo 'asd';
-		// $this->L->printJson($data);
 		if ($data !== null && $this->L->is_exist_json_key($data, "Data") and $this->L->is_exist_json_key($data, 'LSSK')) {
 			// if (true) {
-			// echo $data['LSSK'];
-			// echo LSSK;
 			if ($data['LSSK'] == LSSK) {
 				// $this->L->printJson($data);
-				header('Content-Type: application/json');
 				echo eval($data[DATA]);
 			}
 			else {
