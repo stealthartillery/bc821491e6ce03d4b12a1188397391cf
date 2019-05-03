@@ -16,6 +16,8 @@ class User extends CI_Controller{
 		$data = json_decode(file_get_contents("php://input"), true);
 		if ($data !== null && $this->L->is_exist_json_key($data, "Data") and $this->L->is_exist_json_key($data, 'LSSK')) {
 			// if (true) {
+			echo $data['LSSK'];
+			echo LSSK;
 			if ($data['LSSK'] == LSSK) {
 				// $this->L->printJson($data);
 				header('Content-Type: application/json');
