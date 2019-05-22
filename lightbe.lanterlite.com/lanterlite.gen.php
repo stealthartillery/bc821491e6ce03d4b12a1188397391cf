@@ -212,6 +212,10 @@ class Lanterlite {
 		return isset($arr[$index]);
 	}
 
+	function arr_value_exist($arr, $value) {
+		return in_array($value, $arr);
+	}
+
 	function obj_to_json($obj) {
 		return get_object_vars($obj);;
 	}
