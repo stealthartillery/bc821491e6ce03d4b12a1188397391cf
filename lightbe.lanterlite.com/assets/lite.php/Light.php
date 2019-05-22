@@ -8,7 +8,7 @@ class LightGen {
 		if(!class_exists('lanterlite')) { include 'init.php'; }
 		$this->L = new Lanterlite();
 		set_time_limit ( 0 );
-		$this->speed = 0.5;
+		$this->speed = 1;
 		$this->left_key = 37;
 		$this->top_key = 38;
 		$this->right_key = 39;
