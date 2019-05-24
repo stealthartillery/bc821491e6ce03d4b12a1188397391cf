@@ -1,0 +1,14 @@
+{
+	"tag" : {
+	  "title" : "Happy Fasting! | Lanterlite Trade Center",
+	   "meta" : {
+	      "description": "Lanterlite Trading Center will be closed on Saturday, Ramadhan 21, 1440H (May 25, 2019) until Tuesday, Shawwal 1, 1440H (June 4, 2019) to motivate Muslims to maximize their worship to Allah in the last 10 days of Ramadhan."
+	    }
+	},
+
+	"word" : {
+		"order_has_received" : "Happy Fasting!",
+		"thankyou_for_ordering" : "Lanterlite Trading Center will be closed on Saturday, Ramadhan 21, 1440H (May 25, 2019) until Tuesday, Shawwal 1, 1440H (June 4, 2019) to motivate Muslims to maximize their worship to Allah in the last 10 days of Ramadhan.",
+		"back_to_home" : "www.lanterlite.com"
+	}
+}
