@@ -1,5 +1,5 @@
-#!C:\xampp\perl\bin\perl.exe
 #!/usr/bin/perl
+##!C:\xampp\perl\bin\perl.exe
 # The above line is perl execution path in xampp
 # The below line tells the browser, that this script will send html content.
 # If you miss this line then it will show "malformed header from script" error.
@@ -10,12 +10,6 @@ print "Content-type: text/html\n\n";
 
 use strict;
 use warnings;
-
-@ages = (25, 30, 40);             
-@names = ("John Paul", "Lisa", "Kumar");
-
-print "\$ages[0] = $ages[0]\n";
-print "\$ages[1] = $ages[1]\n";
 
 filenames_read('asd/');
 sub filenames_read {

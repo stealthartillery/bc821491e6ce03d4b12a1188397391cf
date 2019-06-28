@@ -1,9 +1,6 @@
 DirectoryIndex index.php
 ErrorDocument 403 index.php
 
-Options +ExecCGI
-AddHandler cgi-script .pl
-
 # Enable RewriteEngine to rewrite URL patterns
 RewriteEngine On
 
