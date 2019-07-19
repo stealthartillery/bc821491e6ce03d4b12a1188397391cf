@@ -1,0 +1,30 @@
+{
+  "char_id" : "Thariq",
+  "char_gender": "male",
+  "char_title" : "Shields Seller",
+  "position" : {
+    "x": -95,
+    "y": 0,
+    "z": -65
+  },
+  "rotation": {
+    "x": 0,
+    "y": 1.57,
+    "z": 0
+  },
+  "appearence": {
+    "headskin": "char\/head\/color_1",
+    "hair": "char\/hair\/female\/leaf_sided/color_1",
+    "eyes": "",
+    "rhand": "",
+    "lhand": "",
+    "suit": "char\/suits/tuxedo",
+    "gloves": "char\/gloves\/simple_gloves",
+    "shoes": "char\/shoes\/simple_shoes",
+    "head": "",
+    "glasses": "",
+    "mask": "",
+    "back": "",
+    "top": ""
+  }
+}

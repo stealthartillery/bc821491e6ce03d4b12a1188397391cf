@@ -1,0 +1,18 @@
+[
+	{
+		"name": "Gazania Garden",
+	  "building_id": "portal1",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "gazania",
+	  	"rotation" : {"x": 0, "y": 0, "z": 0 },
+	  	"position": {"x": 0, "y": 0, "z": -105 }
+  	},
+	  "icon": "portal",
+	  "position": {"x": 0, "y": 0, "z": 112 },
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	}
+]

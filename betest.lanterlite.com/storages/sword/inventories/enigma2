@@ -1,0 +1,15 @@
+{
+  "table_left": [
+    {
+      "slot_num": "0",
+      "item_id": "item\/weapons\/simple_sword"
+    }
+  ],
+  "table_right": [
+    {
+      "slot_num": 1,
+      "item_id": "item\/weapons\/simple_sword",
+      "item_quantity": 1
+    }
+  ]
+}

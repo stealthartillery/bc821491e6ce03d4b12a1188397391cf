@@ -1,0 +1,104 @@
+{
+	"south_ground": {
+	  "building_id": "south_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": 0, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"north_ground": {
+	  "building_id": "north_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": 0, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"east_ground": {
+	  "building_id": "east_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": -238, "y": 0, "z": 0 },
+	  "size": 15
+	},
+	"west_ground": {
+	  "building_id": "west_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": 238, "y": 0, "z": 0 },
+	  "size": 15
+	},
+	"southwest_ground": {
+	  "building_id": "southwest_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": 238, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"southeast_ground": {
+	  "building_id": "southeast_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": -238, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"northeast_ground": {
+	  "building_id": "northeast_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": 238, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"northhwest_ground": {
+	  "building_id": "northhwest_ground",
+	  "filename": "ground_desert",
+	  "position": {"x": -238, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"fence1": {
+	  "building_id": "fence1",
+	  "filename": "fence_desert",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": -124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence2": {
+	  "building_id": "fence2",
+	  "filename": "fence_desert",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": -124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"fence3":	{
+	  "building_id": "fence3",
+	  "filename": "fence_desert",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": 124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence4": {
+	  "building_id": "fence4",
+	  "filename": "gate_desert",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": 124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"portal_gravel5": {
+	  "name": "Gravel Desert",
+	  "building_id": "portal_gravel5",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "gravel5",
+	  	"rotation" : {"x": 0,"y": 3.141592653589793, "z": 0},
+	  	"position": {"x": 0,"y": 0,"z": -105}
+  	},
+	  "duration": "",
+	  "icon": "portal",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": 0, "y": 0, "z": 112},
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25},
+	  "size": 5
+	}
+}

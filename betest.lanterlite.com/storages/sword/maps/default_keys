@@ -1,0 +1,12 @@
+{
+	"name": "",
+  "building_id": "",
+  "filename": "",
+  "duration": "",
+  "icon": "",
+  "rotation": {"x": 0, "y": 0, "z": 0},
+  "position": {"x": 9,"y": 0, "z": 9},
+  "collision_size": {"x": "", "z": ""},
+  "icon_size": {"x": 0, "z": 0},
+  "size": 2
+}

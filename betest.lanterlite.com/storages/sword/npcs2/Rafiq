@@ -1,0 +1,30 @@
+{
+  "char_id" : "Rafiq",
+  "char_gender": "male",
+  "char_title" : "Musafir",
+  "position" : {
+    "x": 80,
+    "y": 0,
+    "z": -113
+  },
+  "rotation": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "appearence": {
+    "headskin": "char\/head\/color_1",
+    "hair": "char\/hair\/female\/leaf_sided/color_1",
+    "eyes": "",
+    "rhand": "",
+    "lhand": "",
+    "suit": "char\/suits/tuxedo",
+    "gloves": "char\/gloves\/simple_gloves",
+    "shoes": "char\/shoes\/simple_shoes",
+    "head": "",
+    "glasses": "",
+    "mask": "",
+    "back": "",
+    "top": ""
+  }
+}

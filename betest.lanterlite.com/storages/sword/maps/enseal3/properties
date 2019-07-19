@@ -1,0 +1,44 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_forest", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "fence_forest", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_forest", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_forest", "facedir": "north"},
+
+	{"prop": "tent", "position": {"x": 90, "y": 0, "z": -31 }, "filename": "tent1", "facedir": "west"},
+
+	{"prop": "tree", "position": {"x": -40, "y": 0, "z": -80 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 40, "y": 0, "z": -80 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": -80, "y": 0, "z": 40 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": -80, "y": 0, "z": -40 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 80, "y": 0, "z": 40 }, "filename": "tree1"},
+
+	{"prop": "tree_n9", "position": {"x": 80, "y": 0, "z": -80 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": 80, "y": 0, "z": 80 }, "filename": "tree1_n9"},
+	
+	{"prop": "tree_n9", "position": {"x": 0, "y": 0, "z": -80 }, "filename": "tree1_n9"},
+
+	{"prop": "tree_n9", "position": {"x": -80, "y": 0, "z": 0 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": -80, "y": 0, "z": 80 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": -80, "y": 0, "z": -80 }, "filename": "tree1_n9"},
+
+	{"prop": "training_doll", "position": {"x": 0, "y": 0, "z": 0 }, "filename": "training_doll", "facedir": "north"},
+	{"prop": "training_doll", "position": {"x": 50, "y": 0, "z": 0 }, "filename": "training_doll", "facedir": "south"},
+	{"prop": "training_doll", "position": {"x": -50, "y": 0, "z": 0 }, "filename": "training_doll", "facedir": "north"},
+	{"prop": "training_doll", "position": {"x": 0, "y": 0, "z": 50 }, "filename": "training_doll", "facedir": "south"},
+	{"prop": "training_doll", "position": {"x": 50, "y": 0, "z": 50 }, "filename": "training_doll", "facedir": "east"},
+	{"prop": "training_doll", "position": {"x": -50, "y": 0, "z": 50 }, "filename": "training_doll", "facedir": "west"},
+	{"prop": "training_doll", "position": {"x": 0, "y": 0, "z": -50 }, "filename": "training_doll", "facedir": "south"},
+	{"prop": "training_doll", "position": {"x": 50, "y": 0, "z": -50 }, "filename": "training_doll", "facedir": "west"},
+	{"prop": "training_doll", "position": {"x": -50, "y": 0, "z": -50 }, "filename": "training_doll", "facedir": "east"},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Enseal Forest", "to":"enseal2"}
+]

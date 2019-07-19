@@ -1,0 +1,8 @@
+{
+  "filename": "tree1",
+  "position": {"x": 0, "y": 0, "z": 0 },
+  "collision_size": {"x": 3, "z": 3 },
+  "icon": "tree",
+  "icon_size": {"x": 15, "z": 15 },
+  "size": 10
+}

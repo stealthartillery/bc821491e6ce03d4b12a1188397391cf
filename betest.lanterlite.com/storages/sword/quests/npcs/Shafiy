@@ -1,0 +1,43 @@
+{
+  "default" : {
+    "text": [
+      "Mempelajari akhlak Nabi Muhammad (saw.) dan para sahabat adalah hal yang sangat penting sebagai rujukan bagaimana kita berperilaku."
+    ]
+  },
+  "quest" : [
+    {
+      "title": "Pemegang Bendera Perang Kaum Muslimin.",
+      "type": "question_answer",
+      "level_limit": 2,
+      "is_repeatable": false,
+      "is_false_tolerant": false,
+      "require_item" : "",
+      "require_item_quantity" : 0,
+      "reward_item" : "item/weapons/simple_sword",
+      "reward_item_quantity" : 1,
+      "reward_gold" : 20,
+      "reward_exp" : 20,
+      "question": [
+        {"type":"xchoice", "text":"Aku butuh bantuanmu untuk mencari tahu nama seorang tokoh muslim yang mendapat julukan 'al-khair'."},
+        {"type":"xchoice", "text":"Dia adalah sahabat Nabi Muhammad (saw.) yang berperan memegang bendera kaum muslimin di Perang Badr pada tahun 2 Hijriah."},
+        {"type":"xchoice", "text":"Siapa Namanya?"},
+        {"type":"choice", "text":["input", "Saya akan mencari tahu"]}
+      ],
+      "answer" : [
+        "musab bin umair"
+      ],
+      "not_answer" : [
+        {"type":"xchoice", "text":"Tidak mengapa."},
+        {"type":"xchoice", "text":"Kamu bisa cari jawabannya di Enlite."}
+      ],
+      "right_answer" : [
+        {"type":"xchoice", "text":"Kamu benar."},
+        {"type":"xchoice", "text":"Terimakasih telah mengingatkanku."}
+      ],
+      "wrong_answer" : [
+        {"type":"xchoice", "text":"Aku rasa jawabanmu kurang tepat."},
+        {"type":"xchoice", "text":"Maaf sepertinya aku akan coba tanya ke orang lain."}
+      ]
+    }
+  ]
+}

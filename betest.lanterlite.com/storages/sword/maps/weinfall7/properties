@@ -1,0 +1,36 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+
+	{"prop": "woodboard2", "position": {"x": -14, "y": 0, "z": -113 }, "filename": "woodboard2"},
+
+	{"prop": "tree", "position": {"x": 26, "y": 0, "z": 93 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 20, "y": 0, "z": 70 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": -20, "y": 0, "z": 70 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 26, "y": 0, "z": -43 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 16, "y": 0, "z": -63 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": -16, "y": 0, "z": -87 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 16, "y": 0, "z": -115 }, "filename": "tree1"},
+
+	{"prop": "tree_n9", "position": {"x": 0, "y": 0, "z": 9 }, "filename": "tree1_n9"},
+	{"prop": "tree_n49", "position": {"x": 80, "y": 0, "z": -80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": 80, "y": 0, "z": 80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": 80, "y": 0, "z": 0 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": 80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": -80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": 0 }, "filename": "tree1_n49"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_forest", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "gate_forest", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_forest", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_forest", "facedir": "north"},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": -112 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall8"},
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall2"}
+]

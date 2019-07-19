@@ -1,0 +1,61 @@
+{
+  "char_id": "IfanDhani",
+  "char_gender": "male",
+  "char_current_action": "",
+  "active_date": 1562898853.573132,
+  "char_health": {
+    "current": 1000,
+    "max": 1000
+  },
+  "char_stamina": {
+    "current": 1000,
+    "max": 1000
+  },
+  "appearence": {
+    "headskin": "char\/head\/color_2",
+    "hair": "char\/hair\/male\/simple\/color_1",
+    "eyes": "",
+    "rhand": "",
+    "lhand": "",
+    "suit": "char\/suits\/flamelight",
+    "gloves": "char\/gloves\/simple_gloves",
+    "shoes": "char\/shoes\/simple_shoes",
+    "head": "",
+    "glasses": "",
+    "mask": "",
+    "back": "",
+    "top": ""
+  },
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 112
+  },
+  "camera_direction": "south",
+  "pressed_keys": [
+    87
+  ],
+  "enemies": [],
+  "move_directions": [
+    "south"
+  ],
+  "chat": "",
+  "char_guild": "",
+  "confirmation": "",
+  "trade_id": "",
+  "confirmation_id": "",
+  "gold": 7500,
+  "system_chat": "",
+  "duel_id": "",
+  "battle_id": "",
+  "is_health_increasing": false,
+  "stamina_changed": false,
+  "map_id": "archendia",
+  "map_changed": false
+}

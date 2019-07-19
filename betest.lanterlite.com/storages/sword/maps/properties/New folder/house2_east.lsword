@@ -1,0 +1,10 @@
+{
+	  "building_id": "east_house2",
+	  "filename": "house2",
+	  "icon": "house",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": 100, "y": 0, "z": -90},
+	  "collision_size": {"x": 12, "z": 20 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	}

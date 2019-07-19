@@ -1,0 +1,15 @@
+{
+  "headskin": "char\/head\/color_2",
+  "hair": "char\/hair\/male\/spike\/color_1",
+  "eyes": "",
+  "rhand": "item\/weapons/simple_sword",
+  "lhand": "item\/shields/amazon_shield",
+  "suit": "char\/suits\/moonlight",
+  "gloves": "char\/gloves\/simple_gloves",
+  "shoes": "char\/shoes\/simple_shoes",
+  "head": "",
+  "glasses": "",
+  "mask": "",
+  "back": "",
+  "top": ""
+}

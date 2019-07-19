@@ -1,0 +1,17 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_city"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_city", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "fence_city", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "gate_city", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "fence_city", "facedir": "north"},
+
+	{"prop": "portal", "position": {"x": 112, "y": 0, "z": 0 }, "filename": "portal", "name":"Town Square", "to":"archendia_town_square"}
+]

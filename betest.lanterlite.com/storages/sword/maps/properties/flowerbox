@@ -1,0 +1,9 @@
+{
+  "filename": "flowerbox",
+  "icon": "flowerbox",
+  "rotation": {"x": 0, "y": 0, "z": 0 },
+  "position": {"x": 0, "y": 0, "z": 0 },
+  "collision_size": {"x": 36, "z": 36 },
+  "icon_size": {"x": 110, "z": 110 },
+  "size": 6
+}

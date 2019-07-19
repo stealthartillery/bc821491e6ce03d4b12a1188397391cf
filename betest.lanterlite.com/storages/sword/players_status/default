@@ -1,0 +1,8 @@
+{
+	"is_health_increasing" : false,
+	"stamina_changed" : false,
+	"enemies" : [],
+	"trade_id" : "",
+	"confirmation_id" : "",
+	"duel_id" : ""
+}

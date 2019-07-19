@@ -1,0 +1,50 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_city"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_city", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "gate_city", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_city", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_city", "facedir": "north"},
+
+	{"prop": "flowerbox", "position": {"x": 50, "y": 0, "z": -50 }, "filename": "flowerbox"},
+	{"prop": "flowerbox", "position": {"x": -50, "y": 0, "z": 50 }, "filename": "flowerbox"},
+	{"prop": "flowerbox", "position": {"x": -50, "y": 0, "z": -50 }, "filename": "flowerbox"},
+	{"prop": "flowerbox", "position": {"x": 50, "y": 0, "z": 50 }, "filename": "flowerbox"},
+
+	{"prop": "lantern", "position": {"x": -110, "y": 0, "z": 0 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 110, "y": 0, "z": 0 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": -110, "y": 0, "z": -110 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 110, "y": 0, "z": 110 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 110, "y": 0, "z": -110 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": -110, "y": 0, "z": 110 }, "filename": "lantern1"},
+
+	{"prop": "long_parkbench", "position": {"x": 90, "y": 0, "z": 110 }, "filename": "long_parkbench", "facedir" : "north"},
+	{"prop": "long_parkbench", "position": {"x": 60, "y": 0, "z": 110 }, "filename": "long_parkbench", "facedir" : "north"},
+	{"prop": "long_parkbench", "position": {"x": -90, "y": 0, "z": 110 }, "filename": "long_parkbench", "facedir" : "north"},
+	{"prop": "long_parkbench", "position": {"x": -60, "y": 0, "z": 110 }, "filename": "long_parkbench", "facedir" : "north"},
+
+	{"prop": "long_parkbench", "position": {"x": 90, "y": 0, "z": -110 }, "filename": "long_parkbench", "facedir" : "south"},
+	{"prop": "long_parkbench", "position": {"x": 60, "y": 0, "z": -110 }, "filename": "long_parkbench", "facedir" : "south"},
+	{"prop": "long_parkbench", "position": {"x": -90, "y": 0, "z": -110 }, "filename": "long_parkbench", "facedir" : "south"},
+	{"prop": "long_parkbench", "position": {"x": -60, "y": 0, "z": -110 }, "filename": "long_parkbench", "facedir" : "south"},
+
+	{"prop": "long_parkbench", "position": {"x": 110, "y": 0, "z": 90 }, "filename": "long_parkbench", "facedir" : "west"},
+	{"prop": "long_parkbench", "position": {"x": 110, "y": 0, "z": 60 }, "filename": "long_parkbench", "facedir" : "west"},
+	{"prop": "long_parkbench", "position": {"x": 110, "y": 0, "z": -90 }, "filename": "long_parkbench", "facedir" : "west"},
+	{"prop": "long_parkbench", "position": {"x": 110, "y": 0, "z": -60 }, "filename": "long_parkbench", "facedir" : "west"},
+
+	{"prop": "long_parkbench", "position": {"x": -110, "y": 0, "z": 90 }, "filename": "long_parkbench", "facedir" : "east"},
+	{"prop": "long_parkbench", "position": {"x": -110, "y": 0, "z": 60 }, "filename": "long_parkbench", "facedir" : "east"},
+	{"prop": "long_parkbench", "position": {"x": -110, "y": 0, "z": -90 }, "filename": "long_parkbench", "facedir" : "east"},
+	{"prop": "long_parkbench", "position": {"x": -110, "y": 0, "z": -60 }, "filename": "long_parkbench", "facedir" : "east"},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": -112 }, "filename": "portal", "name":"Town Square", "to":"archendia_town_square"},
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall1"}
+]

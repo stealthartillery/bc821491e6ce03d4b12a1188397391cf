@@ -1,0 +1,24 @@
+{
+  "invent_left": [
+    {
+      "slot_num": "1"
+    }
+  ],
+  "invent_right": {
+    "1": {
+      "slot_num": 2,
+      "item_id": "item1",
+      "item_quantity": 1
+    },
+    "2": {
+      "slot_num": 1,
+      "item_id": "item1",
+      "item_quantity": 1
+    },
+    "3": {
+      "slot_num": 3,
+      "item_id": "item2",
+      "item_quantity": 5
+    }
+  }
+}

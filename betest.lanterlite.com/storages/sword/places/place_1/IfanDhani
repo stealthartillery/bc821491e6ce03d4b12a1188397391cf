@@ -1,0 +1,55 @@
+{
+  "char_id": "IfanDhani",
+  "char_gender": "male",
+  "char_current_action": "",
+  "active_date": 1562404626.538188,
+  "char_health": {
+    "current": 1000,
+    "max": 1000
+  },
+  "char_stamina": {
+    "current": 815,
+    "max": 1000
+  },
+  "appearence": {
+    "headskin": "char\/head\/color_2",
+    "hair": "char\/hair\/male\/simple\/color_1",
+    "eyes": "char\/eyes\/color_3",
+    "rhand": "item\/weapons\/simple_sword",
+    "lhand": "",
+    "suit": "char\/suits\/moonlight",
+    "gloves": "char\/gloves\/simple_gloves",
+    "shoes": "char\/shoes\/simple_shoes",
+    "head": "",
+    "glasses": "",
+    "mask": "",
+    "back": "",
+    "top": ""
+  },
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "position": {
+    "x": -3.9030662740798334,
+    "y": 0,
+    "z": 23.68986283848335
+  },
+  "camera_direction": "north",
+  "pressed_keys": [],
+  "enemies": [],
+  "move_directions": [],
+  "chat": "",
+  "char_guild": "",
+  "confirmation": "",
+  "trade_id": "",
+  "confirmation_id": "",
+  "gold": 7500,
+  "system_chat": "",
+  "duel_id": "",
+  "battle_id": "",
+  "is_health_increasing": false,
+  "stamina_changed": false
+}

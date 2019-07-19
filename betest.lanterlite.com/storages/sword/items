@@ -1,0 +1,43 @@
+{
+  "item/weapons/simple_sword": {
+    "name":"Simple Sword",
+    "type":"weapon_1hand",
+    "atk":"5",
+    "is_quantable_item": false
+  },
+  "item/weapons/thin_sword": {
+    "name":"Horned Sword",
+    "type":"weapon_2hand",
+    "atk":"10",
+    "is_quantable_item": false
+  },
+  "item/weapons/hachet": {
+    "name":"Hachet",
+    "type":"weapon_1hand",
+    "atk":"5",
+    "is_quantable_item": false
+  },
+  "item/weapons/simple_shield": {
+    "name":"Simple Shield",
+    "type":"shield",
+    "def":"5",
+    "is_quantable_item": false
+  },
+  "item/weapons/mirror_shield": {
+    "name":"Simple Shield",
+    "type":"shield",
+    "def":"5",
+    "is_quantable_item": false
+  },
+  "item/shields/amazon_shield": {
+    "name":"Simple Shield",
+    "type":"shield",
+    "def":"5",
+    "is_quantable_item": false
+  },
+  "item2": {
+    "name":"potion",
+    "type":"consumable",
+    "is_quantable_item": true
+  }
+}

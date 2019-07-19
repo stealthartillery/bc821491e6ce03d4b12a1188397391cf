@@ -1,0 +1,42 @@
+[
+	{
+	  "building_id": "south_treeinpot1",
+	  "filename": "treeinpot2",
+	  "icon": "tree",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": 52, "y": 0, "z": -100 },
+	  "collision_size": {"x": 2, "z": 2 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	{
+	  "building_id": "south_treeinpot2",
+	  "filename": "treeinpot2",
+	  "icon": "tree",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": -52, "y": 0, "z": -100 },
+	  "collision_size": {"x": 2, "z": 2 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	{
+	  "building_id": "north_treeinpot1",
+	  "filename": "treeinpot2",
+	  "icon": "tree",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": 52, "y": 0, "z": 100 },
+	  "collision_size": {"x": 2, "z": 2 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	{
+	  "building_id": "north_treeinpot2",
+	  "filename": "treeinpot2",
+	  "icon": "tree",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": -52, "y": 0, "z": 100 },
+	  "collision_size": {"x": 2, "z": 2 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	}
+]

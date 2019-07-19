@@ -1,0 +1,9 @@
+{
+	  "filename": "house4",
+	  "icon": "house",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 100, "y": 0, "z": 35},
+	  "collision_size": {"x": 24, "z": 14 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+}

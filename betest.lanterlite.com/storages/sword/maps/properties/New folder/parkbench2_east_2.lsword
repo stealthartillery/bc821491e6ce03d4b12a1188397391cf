@@ -1,0 +1,10 @@
+{
+	  "building_id": "parkbench2_east_2",
+	  "filename": "parkbench2",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": 48, "y": 0, "z": 6 },
+	  "collision_size": {"x": 0, "z": 3 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	}

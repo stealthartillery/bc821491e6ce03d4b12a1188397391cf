@@ -1,0 +1,20 @@
+{
+  "building_id": "fence3",
+  "filename": "fence",
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 4.71238898038469,
+    "z": 0
+  },
+  "position": {
+    "x": 120,
+    "y": 0,
+    "z": 0
+  },
+  "collision_size": {
+    "x": 5,
+    "z": 120
+  },
+  "size": 15
+}

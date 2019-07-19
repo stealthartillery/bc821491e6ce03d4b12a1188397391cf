@@ -1,0 +1,11 @@
+{
+  "name": "Fountain",
+  "building_id": "fountain",
+  "filename": "fountain",
+  "duration": "5",
+  "icon": "fountain",
+  "position": {"x": 0, "y": 0, "z": 0 },
+  "collision_size": {"x": 16, "z": 16 },
+  "icon_size": {"x": 25, "z": 25 },
+  "size": 3
+}

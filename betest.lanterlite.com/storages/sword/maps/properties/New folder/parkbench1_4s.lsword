@@ -1,0 +1,42 @@
+[
+	{
+	  "building_id": "parkbench1_s1",
+	  "filename": "parkbench1",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": -26, "y": 0, "z": -102 },
+	  "collision_size": {"x": 3, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "parkbench1_s2",
+	  "filename": "parkbench1",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": -13, "y": 0, "z": -102 },
+	  "collision_size": {"x": 3, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "parkbench1_s3",
+	  "filename": "parkbench1",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 13, "y": 0, "z": -102 },
+	  "collision_size": {"x": 3, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "parkbench1_s4",
+	  "filename": "parkbench1",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 26, "y": 0, "z": -102 },
+	  "collision_size": {"x": 3, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	}
+]

@@ -1,0 +1,9 @@
+{
+  "filename": "tent1",
+  "rotation": {"x": 0, "y": 0, "z": 0 },
+  "position": {"x": 0, "y": 0, "z": -90 },
+  "collision_size": {"x": 7, "z": 7 },
+  "icon": "tent",
+  "icon_size": {"x": 5, "z": 5 },
+  "size": 7
+}

@@ -1,0 +1,10 @@
+{
+	  "building_id": "treeinpot2",
+	  "filename": "treeinpot",
+	  "icon": "tree",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 50, "y": 0, "z": 50 },
+	  "collision_size": {"x": 0, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	}

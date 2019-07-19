@@ -1,0 +1,38 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_desert"},
+
+	{"prop": "rock", "position": {"x": 75, "y": 0, "z": 70 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 70, "y": 0, "z": -60 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": -45, "y": 0, "z": 40 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": -76, "y": 0, "z": -80 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 30, "y": 0, "z": -35 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 30, "y": 0, "z": -35 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 56, "y": 0, "z": 38 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 43, "y": 0, "z": -38 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": -43, "y": 0, "z": 0 }, "filename": "rock1"},
+
+	{"prop": "tent", "position": {"x": -20, "y": 0, "z": -79 }, "filename": "tent1", "facedir": "south"},
+
+	{"prop": "tree_oasis", "position": {"x": -20, "y": 0, "z": 49 }, "filename": "tree_oasis", "facedir": "south"},
+	{"prop": "tree_oasis", "position": {"x": 20, "y": 0, "z": 49 }, "filename": "tree_oasis", "facedir": "south"},
+	{"prop": "tree_oasis", "position": {"x": -46, "y": 0, "z": 13 }, "filename": "tree_oasis", "facedir": "west"},
+	{"prop": "tree_oasis", "position": {"x": 48, "y": 0, "z": 5 }, "filename": "tree_oasis", "facedir": "east"},
+	{"prop": "tree_oasis", "position": {"x": 20, "y": 0, "z": -45 }, "filename": "tree_oasis", "facedir": "east"},
+	{"prop": "tree_oasis", "position": {"x": -35, "y": 0, "z": -45 }, "filename": "tree_oasis", "facedir": "west"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_desert", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "fence_desert", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_desert", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_desert", "facedir": "north"},
+
+	{"prop": "well", "position": {"x": 0, "y": 0, "z": 0 }, "filename": "well2", "size": 10},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Gravel Desert", "to":"gravel4"}
+]

@@ -1,0 +1,6 @@
+{
+  "collision_size": {"x": 1, "z": 1 },
+  "icon": "tree",
+  "icon_size": {"x": 15, "z": 15 },
+  "size": 15
+}

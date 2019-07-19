@@ -1,0 +1,9 @@
+{
+	  "building_id": "fence1",
+	  "filename": "fence_forest",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": -124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+},

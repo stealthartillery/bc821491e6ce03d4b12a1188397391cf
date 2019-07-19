@@ -1,0 +1,36 @@
+{
+  "title": "Carrier of Muslim Flag in Battle of Badr.",
+  "type": "question_answer",
+  "level_limit": 2,
+  "is_repeatable": false,
+  "is_false_tolerant": false,
+  "require_item" : "",
+  "require_item_quantity" : 0,
+  "reward_item" : "item/weapons/simple_sword",
+  "reward_item_quantity" : 1,
+  "reward_gold" : 20,
+  "reward_exp" : 20,
+  "question": [
+    {"text":"Aku butuh bantuanmu untuk mencari tahu nama seorang tokoh muslim yang mendapat julukan 'al-khair'."},
+    {"text":"Dia adalah sahabat Nabi Muhammad (saw.) yang berperan memegang bendera kaum muslimin di Perang Badr pada tahun 2 Hijriah."},
+    {"text":"Siapa Namanya?", "choice":["input", "Saya akan mencari tahu"]}
+  ],
+  "answer" : [
+    "musab bin umair"
+  ],
+  "not_answer" : [
+    {"text":"Tidak mengapa."},
+    {"text":"Kamu bisa cari jawabannya di Enlite."}
+  ],
+  "right_answer" : [
+    {"text":"Kamu benar."},
+    {"text":"Terimakasih telah mengingatkanku."},
+    {"text":"Siapa Namanya?",
+      "items":["item/weapons/simple_sword"]
+    }
+  ],
+  "wrong_answer" : [
+    {"text":"Aku rasa jawabanmu kurang tepat."},
+    {"text":"Maaf sepertinya aku akan coba tanya ke orang lain."}
+  ]
+}

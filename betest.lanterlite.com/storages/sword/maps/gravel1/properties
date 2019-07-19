@@ -1,0 +1,27 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_desert"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "gate_forest", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "gate_desert", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_desert", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_desert", "facedir": "north"},
+
+	{"prop": "rock", "position": {"x": 62, "y": 0, "z": -67 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": 104, "y": 0, "z": -75 }, "filename": "rock1"},
+	{"prop": "rock", "position": {"x": -10, "y": 0, "z": 0 }, "filename": "rock1"},
+	{"prop": "tent", "position": {"x": 104, "y": 0, "z": -107 }, "filename": "tent1", "facedir": "west"},
+
+	{"prop": "rock_n49", "position": {"x": 80, "y": 0, "z": 0 }, "filename": "rock_n49", "size": 11},
+	{"prop": "rock_n49", "position": {"x": 80, "y": 0, "z": 80 }, "filename": "rock_n49", "size": 11},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": -112 }, "filename": "portal", "name":"Gravel Desert", "to":"gravel3"},
+	{"prop": "portal", "position": {"x": -112, "y": 0, "z": 0 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall6"},
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Gravel Desert", "to":"gravel2"}
+]

@@ -1,0 +1,7 @@
+{
+	"type":"need_help",
+  "text": [
+  	{"text":"Assalamu'alaikum."},
+  	{"text":"Ada yang bisa kubantu?", "choice":["Trade", "Quest"]}
+	]
+}

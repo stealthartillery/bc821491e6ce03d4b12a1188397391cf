@@ -1,0 +1,20 @@
+{
+  "ifandhanip": {
+    "char_id": "ifandhanip",
+    "place_id": "place_1",
+    "position_x": 3.512563132923543,
+    "position_y": 0,
+    "position_z": 18.762563132923532,
+    "current_action": "walk_north_east",
+    "map": []
+  },
+  "enigma": {
+    "char_id": "enigma",
+    "place_id": "place_1",
+    "position_x": 10,
+    "position_y": 0,
+    "position_z": 10,
+    "current_action": "walk_north_east",
+    "map": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "filename": "tree1_multiple49",
+  "position": {"x": 0, "y": 0, "z": 0 },
+  "collision_size": {"x": 33, "z": 33 },
+  "icon": "tree",
+  "icon_size": {"x": 50, "z": 50 },
+  "size": 10
+}

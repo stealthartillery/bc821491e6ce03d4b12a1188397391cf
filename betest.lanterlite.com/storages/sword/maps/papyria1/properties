@@ -1,0 +1,40 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+
+	{"prop": "well", "position": {"x": 90, "y": 0, "z": -90}, "filename": "papyria_well", "size": 5},
+	{"prop": "well", "position": {"x": 90, "y": 0, "z": 90}, "filename": "papyria_well", "size": 5},
+
+	{"prop": "tree_n9", "position": {"x": 92, "y": 0, "z": -37 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": 92, "y": 0, "z": 37 }, "filename": "tree1_n9"},
+	{"prop": "tree", "position": {"x": 52, "y": 0, "z": -41 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 52, "y": 0, "z": -1 }, "filename": "tree1"},
+	{"prop": "woodboard2", "position": {"x": 110, "y": 0, "z": -13 }, "filename": "woodboard2", "facedir": "west"},
+
+	{"prop": "tree", "position": {"x": 16, "y": 0, "z": -109 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 22, "y": 0, "z": -63 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": 22, "y": 0, "z": 97 }, "filename": "tree1"},
+	{"prop": "tree", "position": {"x": -18, "y": 0, "z": 47 }, "filename": "tree1"},
+
+	{"prop": "tree_n9", "position": {"x": 0, "y": 0, "z": 0 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": 20, "y": 0, "z": 60 }, "filename": "tree1_n9"},
+	{"prop": "tree_n9", "position": {"x": -20, "y": 0, "z": -60 }, "filename": "tree1_n9"},
+
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": 80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": -80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": 0 }, "filename": "tree1_n49"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "fence_forest", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "gate_forest", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "gate_forest", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "fence_forest", "facedir": "north"},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": -112 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall3"},
+	{"prop": "portal", "position": {"x": 112, "y": 0, "z": 0 }, "filename": "portal", "name":"Papyria Well", "to":"papyria2"}
+]

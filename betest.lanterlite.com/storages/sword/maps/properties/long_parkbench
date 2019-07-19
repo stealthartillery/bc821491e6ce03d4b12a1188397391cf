@@ -1,0 +1,9 @@
+{
+  "filename": "long_parkbench",
+  "icon": "parkbench",
+  "rotation": {"x": 0, "y": 0, "z": 0 },
+  "position": {"x": 0, "y": 0, "z": 0 },
+  "collision_size": {"x": 8, "z": 1 },
+  "icon_size": {"x": 25, "z": 25 },
+  "size": 2
+}

@@ -1,0 +1,253 @@
+{
+  "table_right": [
+    {
+      "slot_num": 0,
+      "item": {
+        "item_id": "item\/weapons\/simple_sword",
+        "item_quantity": 1
+      }
+    },
+    {
+      "slot_num": 1,
+      "item": ""
+    },
+    {
+      "slot_num": 2,
+      "item": ""
+    },
+    {
+      "slot_num": 3,
+      "item": ""
+    },
+    {
+      "slot_num": 4,
+      "item": ""
+    },
+    {
+      "slot_num": 5,
+      "item": ""
+    },
+    {
+      "slot_num": 6,
+      "item": ""
+    },
+    {
+      "slot_num": 7,
+      "item": ""
+    },
+    {
+      "slot_num": 8,
+      "item": ""
+    },
+    {
+      "slot_num": 9,
+      "item": ""
+    },
+    {
+      "slot_num": 10,
+      "item": ""
+    },
+    {
+      "slot_num": 11,
+      "item": ""
+    },
+    {
+      "slot_num": 12,
+      "item": ""
+    },
+    {
+      "slot_num": 13,
+      "item": ""
+    },
+    {
+      "slot_num": 14,
+      "item": ""
+    },
+    {
+      "slot_num": 15,
+      "item": ""
+    },
+    {
+      "slot_num": 16,
+      "item": ""
+    },
+    {
+      "slot_num": 17,
+      "item": ""
+    },
+    {
+      "slot_num": 18,
+      "item": ""
+    },
+    {
+      "slot_num": 19,
+      "item": ""
+    },
+    {
+      "slot_num": 20,
+      "item": ""
+    },
+    {
+      "slot_num": 21,
+      "item": ""
+    },
+    {
+      "slot_num": 22,
+      "item": ""
+    },
+    {
+      "slot_num": 23,
+      "item": ""
+    },
+    {
+      "slot_num": 24,
+      "item": ""
+    },
+    {
+      "slot_num": 25,
+      "item": ""
+    },
+    {
+      "slot_num": 26,
+      "item": ""
+    },
+    {
+      "slot_num": 27,
+      "item": ""
+    },
+    {
+      "slot_num": 28,
+      "item": ""
+    },
+    {
+      "slot_num": 29,
+      "item": {
+        "item_id": "item\/weapons\/thin_sword",
+        "item_quantity": 1
+      }
+    },
+    {
+      "slot_num": 30,
+      "item": ""
+    },
+    {
+      "slot_num": 31,
+      "item": ""
+    },
+    {
+      "slot_num": 32,
+      "item": ""
+    },
+    {
+      "slot_num": 33,
+      "item": ""
+    },
+    {
+      "slot_num": 34,
+      "item": ""
+    },
+    {
+      "slot_num": 35,
+      "item": ""
+    },
+    {
+      "slot_num": 36,
+      "item": ""
+    },
+    {
+      "slot_num": 37,
+      "item": ""
+    },
+    {
+      "slot_num": 38,
+      "item": ""
+    },
+    {
+      "slot_num": 39,
+      "item": ""
+    },
+    {
+      "slot_num": 40,
+      "item": ""
+    },
+    {
+      "slot_num": 41,
+      "item": ""
+    },
+    {
+      "slot_num": 42,
+      "item": ""
+    },
+    {
+      "slot_num": 43,
+      "item": ""
+    },
+    {
+      "slot_num": 44,
+      "item": ""
+    },
+    {
+      "slot_num": 45,
+      "item": ""
+    },
+    {
+      "slot_num": 46,
+      "item": ""
+    },
+    {
+      "slot_num": 47,
+      "item": ""
+    },
+    {
+      "slot_num": 48,
+      "item": ""
+    },
+    {
+      "slot_num": 49,
+      "item": ""
+    }
+  ],
+  "table_left": [
+    {
+      "slot_num": 0,
+      "item": ""
+    },
+    {
+      "slot_num": 1,
+      "item": ""
+    },
+    {
+      "slot_num": 2,
+      "item": ""
+    },
+    {
+      "slot_num": 3,
+      "item": ""
+    },
+    {
+      "slot_num": 4,
+      "item": ""
+    },
+    {
+      "slot_num": 5,
+      "item": ""
+    },
+    {
+      "slot_num": 6,
+      "item": ""
+    },
+    {
+      "slot_num": 7,
+      "item": ""
+    },
+    {
+      "slot_num": 8,
+      "item": ""
+    },
+    {
+      "slot_num": 9,
+      "item": ""
+    }
+  ],
+  "gold": 7500
+}

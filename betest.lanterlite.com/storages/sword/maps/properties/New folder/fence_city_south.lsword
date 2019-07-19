@@ -1,0 +1,9 @@
+{
+	  "building_id": "fence4",
+	  "filename": fence_city",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": 124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+}

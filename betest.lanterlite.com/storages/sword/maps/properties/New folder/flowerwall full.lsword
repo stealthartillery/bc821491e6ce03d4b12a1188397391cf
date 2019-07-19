@@ -1,0 +1,82 @@
+[
+	{
+	  "building_id": "south_east_flowerwall1",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_h",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": -24, "y": 0, "z": -50 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	{
+	  "building_id": "flowerwall1",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_v",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": -50, "y": 0, "z": -28 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	{
+	  "building_id": "south_west_flowerwall1",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_h",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 24, "y": 0, "z": -50 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	{
+	  "building_id": "south_west_flowerwall2",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_v",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": 50, "y": 0, "z": -28 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	{
+	  "building_id": "north_west_flowerwall1",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_h",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 24, "y": 0, "z": 50 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	"north_west_flowerwall2": {
+	  "building_id": "north_west_flowerwall2",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_v",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": 50, "y": 0, "z": 28 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	"north_east_flowerwall1": {
+	  "building_id": "north_east_flowerwall1",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_h",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": -24, "y": 0, "z": 50 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	},
+	"north_east_flowerwall2": {
+	  "building_id": "north_east_flowerwall2",
+	  "filename": "flowerwall",
+	  "icon": "flowerwall_v",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": -50, "y": 0, "z": 28 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	}
+]

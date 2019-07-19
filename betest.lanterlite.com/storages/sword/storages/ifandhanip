@@ -1,0 +1,42 @@
+{
+  "char_id": "ifandhanip",
+  "char_gender": "female",
+  "char_body": "body-1",
+  "char_head": "face1",
+  "char_hair": "hair2-color1",
+  "char_eyes": "eyes1",
+  "char_cloth": "cloth-1",
+  "char_gloves": "gloves-1",
+  "char_shoes": "shoes-1",
+  "char_back": "back-1",
+  "char_right_hand": "sword-1",
+  "char_left_hand": "shield-1",
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 4.71238898038469,
+    "z": 0
+  },
+  "position": {
+    "x": -4.0969337259201595,
+    "y": 0,
+    "z": -19.310137161516632
+  },
+  "camera_direction": "west",
+  "pressed_keys": [],
+  "enemies": [],
+  "move_directions": [],
+  "chat": "",
+  "size": {
+    "x": [
+      -4,
+      -6,
+      -3
+    ],
+    "z": [
+      -19,
+      -21,
+      -18
+    ]
+  }
+}

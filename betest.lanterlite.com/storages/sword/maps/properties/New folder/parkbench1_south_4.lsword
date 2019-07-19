@@ -1,0 +1,10 @@
+{
+	  "building_id": "parkbench1_south_4",
+	  "filename": "parkbench1",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 26, "y": 0, "z": -102 },
+	  "collision_size": {"x": 3, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	}

@@ -1,0 +1,28 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_forest"},
+
+	{"prop": "lantern", "position": {"x": -40, "y": 0, "z": -110 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 40, "y": 0, "z": -110 }, "filename": "lantern1"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "gate_forest", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "gate_city", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "gate_forest", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_forest", "facedir": "north"},
+
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": 80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": 80, "y": 0, "z": 80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": 80, "y": 0, "z": -80 }, "filename": "tree1_n49"},
+	{"prop": "tree_n49", "position": {"x": -80, "y": 0, "z": -80 }, "filename": "tree1_n49"},
+
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": -112 }, "filename": "portal", "name":"Archendia Garden", "to":"archendia_garden"},
+	{"prop": "portal", "position": {"x": -112, "y": 0, "z": 0 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall2"},
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall4"},
+	{"prop": "portal", "position": {"x": 112, "y": 0, "z": 0 }, "filename": "portal", "name":"Weinfall Forest", "to":"weinfall5"}
+]

@@ -1,0 +1,72 @@
+[
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 0, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 0 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": 238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": 238, "y": 0, "z": -238 }, "filename": "ground_city"},
+	{"prop": "ground", "position": {"x": -238, "y": 0, "z": 238 }, "filename": "ground_city"},
+
+	{"prop": "fence", "position": {"x": -124, "y": 0, "z": 0 }, "filename": "gate_city", "facedir": "east"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": -124 }, "filename": "fence_city", "facedir": "south"},
+	{"prop": "fence", "position": {"x": 124, "y": 0, "z": 0 }, "filename": "fence_city", "facedir": "west"},
+	{"prop": "fence", "position": {"x": 0, "y": 0, "z": 124 }, "filename": "gate_city", "facedir": "north"},
+
+	{"prop": "house2", "position": {"x": 100, "y": 0, "z": -90 }, "filename": "house2", "facedir": "west"},
+	{"prop": "house3", "position": {"x": 100, "y": 0, "z": -35 }, "filename": "house3", "facedir": "west"},
+	{"prop": "house4", "position": {"x": 100, "y": 0, "z": 35 }, "filename": "house4", "facedir": "west"},
+	{"prop": "house1", "position": {"x": 100, "y": 0, "z": 90 }, "filename": "house1", "facedir": "west"},
+
+	{"prop": "house2", "position": {"x": -100, "y": 0, "z": -90 }, "filename": "house2", "facedir": "east"},
+	{"prop": "house1", "position": {"x": -100, "y": 0, "z": 90 }, "filename": "house1", "facedir": "east"},
+
+	{"prop": "lantern", "position": {"x": -75, "y": 0, "z": 0 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 75, "y": 0, "z": 0 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 0, "y": 0, "z": -75 }, "filename": "lantern1"},
+	{"prop": "lantern", "position": {"x": 0, "y": 0, "z": 75 }, "filename": "lantern1"},
+
+	{"prop": "treeinpot", "position": {"x": 50, "y": 0, "z": -50 }, "filename": "treeinpot"},
+	{"prop": "treeinpot", "position": {"x": 50, "y": 0, "z": 50 }, "filename": "treeinpot"},
+	{"prop": "treeinpot", "position": {"x": -50, "y": 0, "z": -50 }, "filename": "treeinpot"},
+	{"prop": "treeinpot", "position": {"x": -50, "y": 0, "z": 50 }, "filename": "treeinpot"},
+
+	{"prop": "parkbench2", "position": {"x": -48, "y": 0, "z": -6 }, "filename": "parkbench2", "facedir": "east"},
+	{"prop": "parkbench2", "position": {"x": -48, "y": 0, "z": 6 }, "filename": "parkbench2", "facedir": "east"},
+	{"prop": "parkbench2", "position": {"x": 48, "y": 0, "z": -6 }, "filename": "parkbench2", "facedir": "east"},
+	{"prop": "parkbench2", "position": {"x": 48, "y": 0, "z": 6 }, "filename": "parkbench2", "facedir": "east"},
+
+	{"prop": "parkbench1", "position": {"x": -26, "y": 0, "z": -102 }, "filename": "parkbench1", "facedir": "south"},
+	{"prop": "parkbench1", "position": {"x": 26, "y": 0, "z": -102 }, "filename": "parkbench1", "facedir": "south"},
+	{"prop": "parkbench1", "position": {"x": -13, "y": 0, "z": -102 }, "filename": "parkbench1", "facedir": "south"},
+	{"prop": "parkbench1", "position": {"x": 13, "y": 0, "z": -102 }, "filename": "parkbench1", "facedir": "south"},
+
+	{"prop": "boxes", "position": {"x": -70, "y": 0, "z": -105 }, "filename": "boxes"},
+	{"prop": "boxes", "position": {"x": 70, "y": 0, "z": -105 }, "filename": "boxes"},
+	{"prop": "boxes", "position": {"x": -70, "y": 0, "z": 105 }, "filename": "boxes"},
+	{"prop": "boxes", "position": {"x": 70, "y": 0, "z": 105 }, "filename": "boxes"},
+
+	{"prop": "flowerwall", "position": {"x": -24, "y": 0, "z": -50 }, "filename": "flowerwall", "facedir": "north"},
+	{"prop": "flowerwall", "position": {"x": -50, "y": 0, "z": -28 }, "filename": "flowerwall", "facedir": "east"},
+	{"prop": "flowerwall", "position": {"x": 24, "y": 0, "z": -50 }, "filename": "flowerwall", "facedir": "north"},
+	{"prop": "flowerwall", "position": {"x": 50, "y": 0, "z": -28 }, "filename": "flowerwall", "facedir": "east"},
+
+	{"prop": "flowerwall", "position": {"x": 24, "y": 0, "z": 50 }, "filename": "flowerwall", "facedir": "north"},
+	{"prop": "flowerwall", "position": {"x": 50, "y": 0, "z": 28 }, "filename": "flowerwall", "facedir": "east"},
+	{"prop": "flowerwall", "position": {"x": -24, "y": 0, "z": 50 }, "filename": "flowerwall", "facedir": "north"},
+	{"prop": "flowerwall", "position": {"x": -50, "y": 0, "z": 28 }, "filename": "flowerwall", "facedir": "east"},
+
+	{"prop": "treeinpot", "position": {"x": -100, "y": 0, "z": 52 }, "filename": "treeinpot2"},
+	{"prop": "treeinpot", "position": {"x": -100, "y": 0, "z": -52 }, "filename": "treeinpot2"},
+
+	{"prop": "treeinpot", "position": {"x": 52, "y": 0, "z": -100 }, "filename": "treeinpot2"},
+	{"prop": "treeinpot", "position": {"x": -52, "y": 0, "z": -100 }, "filename": "treeinpot2"},
+	{"prop": "treeinpot", "position": {"x": 52, "y": 0, "z": 100 }, "filename": "treeinpot2"},
+	{"prop": "treeinpot", "position": {"x": -52, "y": 0, "z": 100 }, "filename": "treeinpot2"},
+
+	{"prop": "trashbox", "position": {"x": 0, "y": 0, "z": -102 }, "filename": "trashbox"},
+	{"prop": "fountain", "position": {"x": 0, "y": 0, "z": 0 }, "filename": "fountain"},
+
+	{"prop": "portal", "position": {"x": -112, "y": 0, "z": 0 }, "filename": "portal", "name":"Battle Arena", "to":"archendia_battle_arena"},
+	{"prop": "portal", "position": {"x": 0, "y": 0, "z": 112 }, "filename": "portal", "name":"Garden", "to":"archendia_garden", "p_rot":{"x": 0, "y": 0, "z": 0 }, "p_pos": {"x": 0, "y": 0, "z": -105 }}
+]

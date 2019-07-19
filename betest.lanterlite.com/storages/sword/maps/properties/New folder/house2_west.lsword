@@ -1,0 +1,10 @@
+{
+	  "building_id": "west_house2",
+	  "filename": "house2",
+	  "icon": "house",
+	  "rotation": {"x": 0, "y": 1.5707963267948966, "z": 0 },
+	  "position": {"x": -100, "y": 0, "z": -90},
+	  "collision_size": {"x": 14, "z": 24 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 3
+	}

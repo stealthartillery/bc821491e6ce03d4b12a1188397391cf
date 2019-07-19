@@ -1,0 +1,8 @@
+{
+	  "filename": "gate_city",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 130, "z": 5 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+}

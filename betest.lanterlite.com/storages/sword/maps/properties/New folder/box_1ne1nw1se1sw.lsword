@@ -1,0 +1,38 @@
+[
+	{
+	  "building_id": "box_sw",
+	  "filename": "box",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -80, "y": 0, "z": 110 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "box_se",
+	  "filename": "box",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 80, "y": 0, "z": 110 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "box_nw",
+	  "filename": "box",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -80, "y": 0, "z": -110 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	{
+	  "building_id": "box_ne",
+	  "filename": "box",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 80, "y": 0, "z": -110 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	}
+]

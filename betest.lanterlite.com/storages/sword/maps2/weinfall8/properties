@@ -1,0 +1,174 @@
+{
+	"fence1": {
+	  "building_id": "fence1",
+	  "filename": "fence_forest",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": -124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence2": {
+	  "building_id": "fence2",
+	  "filename": "fence_forest",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": -124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"fence3":	{
+	  "building_id": "fence3",
+	  "filename": "fence_forest",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": 124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence4": {
+	  "building_id": "fence4",
+	  "filename": "gate_forest",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": 124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"tent1": {
+	  "building_id": "tent1",
+	  "filename": "tent1",
+	  "rotation": {"x": 0, "y": 4.71, "z": 0 },
+	  "position": {"x": -50, "y": 0, "z": -90 },
+	  "collision_size": {"x": 7, "z": 7 },
+	  "icon": "tree",
+	  "icon_size": {"x": 5, "z": 5 },
+	  "size": 7
+	},
+	"tree1_multiple49_southwest": {
+	  "building_id": "tree1_multiple49_southwest",
+	  "filename": "tree1_multiple49",
+	  "position": {"x": -80, "y": 0, "z": 80 },
+	  "collision_size": {"x": 33, "z": 33 },
+	  "icon": "tree",
+	  "icon_size": {"x": 50, "z": 50 },
+	  "size": 10
+	},
+	"tree1_multiple49_east": {
+	  "building_id": "tree1_multiple49_east",
+	  "filename": "tree1_multiple49",
+	  "position": {"x": 80, "y": 0, "z": 0 },
+	  "collision_size": {"x": 33, "z": 33 },
+	  "icon": "tree",
+	  "icon_size": {"x": 50, "z": 50 },
+	  "size": 10
+	},
+	"tree1_multiple49_southeast": {
+	  "building_id": "tree1_multiple49_southeast",
+	  "filename": "tree1_multiple49",
+	  "position": {"x": 80, "y": 0, "z": 80 },
+	  "collision_size": {"x": 33, "z": 33 },
+	  "icon": "tree",
+	  "icon_size": {"x": 50, "z": 50 },
+	  "size": 10
+	},
+	"tree1_multiple49_northeast": {
+	  "building_id": "tree1_multiple49_northeast",
+	  "filename": "tree1_multiple49",
+	  "position": {"x": 80, "y": 0, "z": -80 },
+	  "collision_size": {"x": 33, "z": 33 },
+	  "icon": "tree",
+	  "icon_size": {"x": 50, "z": 50 },
+	  "size": 10
+	},
+	"tree1_multiple9_3": {
+	  "building_id": "tree1_multiple9_3",
+	  "filename": "tree1_multiple9",
+	  "position": {"x": 0, "y": 0, "z": 60 },
+	  "collision_size": {"x": 10, "z": 10 },
+	  "icon": "tree",
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 10
+	},
+	"tree1_multiple9_2": {
+	  "building_id": "tree1_multiple9_2",
+	  "filename": "tree1_multiple9",
+	  "position": {"x": 0, "y": 0, "z": -95 },
+	  "collision_size": {"x": 10, "z": 10 },
+	  "icon": "tree",
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 10
+	},
+	"tree1_multiple9_1": {
+	  "building_id": "tree1_multiple9_1",
+	  "filename": "tree1_multiple9",
+	  "position": {"x": -90, "y": 0, "z": -7 },
+	  "collision_size": {"x": 10, "z": 10 },
+	  "icon": "tree",
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 10
+	},
+	"tree5": {
+	  "building_id": "tree5",
+	  "filename": "tree1",
+	  "position": {"x": -55, "y": 0, "z": -105 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon": "tree",
+	  "icon_size": {"x": 15, "z": 15 },
+	  "size": 10
+	},
+	"tree4": {
+	  "building_id": "tree4",
+	  "filename": "tree1",
+	  "position": {"x": -85, "y": 0, "z": -105 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon": "tree",
+	  "icon_size": {"x": 15, "z": 15 },
+	  "size": 10
+	},
+	"tree3": {
+	  "building_id": "tree3",
+	  "filename": "tree1",
+	  "position": {"x": 5, "y": 0, "z": -25 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon": "tree",
+	  "icon_size": {"x": 15, "z": 15 },
+	  "size": 10
+	},
+	"tree2": {
+	  "building_id": "tree2",
+	  "filename": "tree1",
+	  "position": {"x": 20, "y": 0, "z": 15 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon": "tree",
+	  "icon_size": {"x": 15, "z": 15 },
+	  "size": 10
+	},
+	"tree1": {
+	  "building_id": "tree1",
+	  "filename": "tree1",
+	  "position": {"x": 0, "y": 0, "z": 0 },
+	  "collision_size": {"x": 3, "z": 3 },
+	  "icon": "tree",
+	  "icon_size": {"x": 15, "z": 15 },
+	  "size": 10
+	},
+	"portal_weinfall7": {
+	  "name": "Weinfall Forest",
+	  "building_id": "portal_weinfall7",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "weinfall2",
+	  	"rotation" : {"x": 0, "y": 0, "z": 0},
+	  	"position": {"x": 0, "y": 0, "z": -105} 
+	 	},
+	  "duration": "",
+	  "icon": "portal",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": 0, "y": 0, "z": 112},
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25},
+	  "size": 5
+	}
+}

@@ -1,0 +1,382 @@
+{
+	"south_ground": {
+	  "building_id": "south_ground",
+	  "filename": "ground_forest",
+	  "position": {"x": 0, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"north_ground": {
+	  "building_id": "north_ground",
+	  "filename": "ground_city",
+	  "position": {"x": 0, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"east_ground": {
+	  "building_id": "east_ground",
+	  "filename": "ground_city",
+	  "position": {"x": -238, "y": 0, "z": 0 },
+	  "size": 15
+	},
+	"west_ground": {
+	  "building_id": "west_ground",
+	  "filename": "ground_city",
+	  "position": {"x": 238, "y": 0, "z": 0 },
+	  "size": 15
+	},
+	"southwest_ground": {
+	  "building_id": "southwest_ground",
+	  "filename": "ground_forest",
+	  "position": {"x": 238, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"southeast_ground": {
+	  "building_id": "southeast_ground",
+	  "filename": "ground_forest",
+	  "position": {"x": -238, "y": 0, "z": 238 },
+	  "size": 15
+	},
+	"northeast_ground": {
+	  "building_id": "northeast_ground",
+	  "filename": "ground_city",
+	  "position": {"x": 238, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"northhwest_ground": {
+	  "building_id": "northhwest_ground",
+	  "filename": "ground_city",
+	  "position": {"x": -238, "y": 0, "z": -238 },
+	  "size": 15
+	},
+	"fence1": {
+	  "building_id": "fence1",
+	  "filename": "gate_city",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": -124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence2": {
+	  "building_id": "fence2",
+	  "filename": "gate_city",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": -124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"fence3":	{
+	  "building_id": "fence3",
+	  "filename": "gate_city",
+	  "rotation": {"x": 0, "y": 4.71238898038469, "z": 0 },
+	  "position": {"x": 124, "y": 0, "z": 0 },
+	  "collision_size": {"x": 5, "z": 130 },
+	  "icon_size": {"x": 10, "z": 400 },
+	  "size": 30
+	},
+	"fence4": {
+	  "building_id": "fence4",
+	  "filename": "fence_city",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 0, "y": 0, "z": 124 },
+	  "collision_size": {"x": 130, "z": 7 },
+	  "icon_size": {"x": 400, "z": 10 },
+	  "size": 30
+	},
+	"flowerbox1": {
+	  "building_id": "flowerbox1",
+	  "filename": "flowerbox",
+	  "icon": "flowerbox",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 50, "y": 0, "z": -50 },
+	  "collision_size": {"x": 36, "z": 36 },
+	  "icon_size": {"x": 110, "z": 110 },
+	  "size": 6
+	},
+	"flowerbox2": {
+	  "building_id": "flowerbox2",
+	  "filename": "flowerbox",
+	  "icon": "flowerbox",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -50, "y": 0, "z": 50 },
+	  "collision_size": {"x": 36, "z": 36 },
+	  "icon_size": {"x": 110, "z": 110 },
+	  "size": 6
+	},
+	"flowerbox3": {
+	  "building_id": "flowerbox3",
+	  "filename": "flowerbox",
+	  "icon": "flowerbox",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -50, "y": 0, "z": -50 },
+	  "collision_size": {"x": 36, "z": 36 },
+	  "icon_size": {"x": 110, "z": 110 },
+	  "size": 6
+	},
+	"flowerbox4": {
+	  "building_id": "flowerbox4",
+	  "filename": "flowerbox",
+	  "icon": "flowerbox",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 50, "y": 0, "z": 50 },
+	  "collision_size": {"x": 36, "z": 36 },
+	  "icon_size": {"x": 110, "z": 110 },
+	  "size": 6
+	},
+	"northeast_lantern": {
+	  "building_id": "northeast_lantern",
+	  "filename": "lantern",
+	  "icon": "lantern",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": -110 },
+	  "collision_size": {"x": 0, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	"southeast_lantern": {
+	  "building_id": "southeast_lantern",
+	  "filename": "lantern",
+	  "icon": "lantern",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": 110 },
+	  "collision_size": {"x": 0, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	"northwest_lantern": {
+	  "building_id": "northwest_lantern",
+	  "filename": "lantern",
+	  "icon": "lantern",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": -110 },
+	  "collision_size": {"x": 0, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	"southwest_lantern": {
+		"name": "",
+	  "building_id": "lantern6",
+	  "filename": "lantern",
+	  "duration": "",
+	  "icon": "lantern",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": 110 },
+	  "collision_size": {"x": 0, "z": 0 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 5
+	},
+	"south_parkbench1": {
+	  "building_id": "south_parkbench1",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": 90, "y": 0, "z": 110 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"south_parkbench2": {
+	  "building_id": "south_parkbench2",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": 60, "y": 0, "z": 110},
+	  "collision_size": {"x": 8, "z": 1},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"south_parkbench3": {
+	  "building_id": "south_parkbench3",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0 },
+	  "position": {"x": -90, "y": 0, "z": 110 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"south_parkbench4": {
+	  "building_id": "south_parkbench4",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": -60, "y": 0, "z": 110},
+	  "collision_size": {"x": 8, "z": 1},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"north_parkbench1": {
+	  "building_id": "north_parkbench1",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": 90, "y": 0, "z": -110 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"north_parkbench2": {
+	  "building_id": "north_parkbench2",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0},
+	  "position": {"x": 60, "y": 0, "z": -110},
+	  "collision_size": {"x": 8, "z": 1},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"north_parkbench3": {
+	  "building_id": "north_parkbench3",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0 },
+	  "position": {"x": -90, "y": 0, "z": -110 },
+	  "collision_size": {"x": 8, "z": 1 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"north_parkbench4": {
+	  "building_id": "north_parkbench4",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 0, "z": 0},
+	  "position": {"x": -60, "y": 0, "z": -110},
+	  "collision_size": {"x": 8, "z": 1},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"east_parkbench1": {
+	  "building_id": "east_parkbench1",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 4.71, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": 90 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"east_parkbench2": {
+	  "building_id": "east_parkbench2",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 4.71, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": 60},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"east_parkbench5": {
+	  "building_id": "east_parkbench5",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 4.71, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": -60},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"east_parkbench6": {
+	  "building_id": "east_parkbench6",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 4.71, "z": 0 },
+	  "position": {"x": 110, "y": 0, "z": -90},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"west_parkbench1": {
+	  "building_id": "west_parkbench1",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 1.57, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": 90 },
+	  "collision_size": {"x": 1, "z": 8 },
+	  "icon_size": {"x": 25, "z": 25 },
+	  "size": 2
+	},
+	"west_parkbench2": {
+	  "building_id": "west_parkbench2",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 1.57, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": 60},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"west_parkbench5": {
+	  "building_id": "west_parkbench5",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 1.57, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": -60},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"west_parkbench6": {
+	  "building_id": "west_parkbench6",
+	  "filename": "long_parkbench",
+	  "icon": "parkbench",
+	  "rotation": {"x": 0, "y": 1.57, "z": 0 },
+	  "position": {"x": -110, "y": 0, "z": -90},
+	  "collision_size": {"x": 1, "z": 8},
+	  "icon_size": {"x": 25,"z": 25},
+	  "size": 2
+	},
+	"portal_crescentia": {
+	  "name": "Crescentia City",
+	  "building_id": "portal_crescentia",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "crescentia",
+	  	"rotation" : {"x": 0,"y": 3.141592653589793, "z": 0},
+	  	"position": {"x": 0,"y": 0,"z": 105}
+  	},
+	  "duration": "",
+	  "icon": "portal",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": 0, "y": 0, "z": -112},
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25},
+	  "size": 5
+	},
+	"portal_enseal2": {
+	  "name": "Enseal Forest",
+	  "building_id": "portal_enseal2",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "enseal2",
+	  	"rotation" : {"x": 0, "y": 0, "z": 0},
+	  	"position": {"x": -105, "y": 0, "z": 0} 
+	 	},
+	  "duration": "",
+	  "icon": "portal",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": 112, "y": 0, "z": 0},
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25},
+	  "size": 5
+	},
+	"portal_enseal1": {
+	  "name": "Enseal Forest",
+	  "building_id": "portal_enseal1",
+	  "filename": "portal",
+	  "type" : {
+	  	"id": "portal",
+	  	"to": "enseal1",
+	  	"rotation" : {"x": 0, "y": 0, "z": 0},
+	  	"position": {"x": 105, "y": 0, "z": 0} 
+	 	},
+	  "duration": "",
+	  "icon": "portal",
+	  "rotation": {"x": 0, "y": 3.14, "z": 0},
+	  "position": {"x": -112, "y": 0, "z": 0},
+	  "collision_size": {"x": "2", "z": "2"},
+	  "icon_size": {"x": 25, "z": 25},
+	  "size": 5
+	}
+}

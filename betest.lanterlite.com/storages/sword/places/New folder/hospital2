@@ -1,0 +1,21 @@
+{
+  "building_id": "hospital2",
+  "filename": "hospital",
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 3.141592653589793,
+    "z": 0
+  },
+  "position": {
+    "x": 50,
+    "y": 0,
+    "z": 0
+  },
+  "collision_type": "rectangle",
+  "collision_size": {
+    "x": 13,
+    "z": 23
+  },
+  "size": 7
+}

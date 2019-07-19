@@ -1,0 +1,56 @@
+{
+  "char_id": "Enigma",
+  "char_gender": "male",
+  "char_current_action": "",
+  "active_date": 1562406485.472514,
+  "appearence": {
+    "headskin": "char\/head\/color_2",
+    "hair": "char\/hair\/male\/spike\/color_1",
+    "eyes": "char\/eyes\/color_3",
+    "rhand": "item\/weapons\/simple_sword",
+    "lhand": "",
+    "suit": "char\/suits\/flamelight",
+    "gloves": "char\/gloves\/simple_gloves",
+    "shoes": "char\/shoes\/simple_shoes",
+    "head": "",
+    "glasses": "",
+    "mask": "",
+    "back": "",
+    "top": ""
+  },
+  "place_id": "place_1",
+  "rotation": {
+    "x": 0,
+    "y": 1.5707963267948966,
+    "z": 0
+  },
+  "position": {
+    "x": 18.903066274079833,
+    "y": 0,
+    "z": 11.68986283848335
+  },
+  "camera_direction": "east",
+  "pressed_keys": [],
+  "enemies": [],
+  "move_directions": [],
+  "chat": "",
+  "char_guild": "",
+  "char_health": {
+    "current": 1000,
+    "max": 1000
+  },
+  "char_stamina": {
+    "current": 735,
+    "max": 1000
+  },
+  "confirmation": "",
+  "trade_id": "",
+  "confirmation_id": "",
+  "gold": 3600,
+  "system_chat": "",
+  "duel_id": "",
+  "battle_id": "",
+  "is_health_increasing": false,
+  "stamina_changed": false,
+  "map_id": "archendia"
+}

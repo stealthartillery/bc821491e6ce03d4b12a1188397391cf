@@ -1,0 +1,6 @@
+{
+	"type":"default",
+  "text": [
+  	{"text":"Ada yang bisa kubantu?", "choice":["Trade", "Quest"]}
+	]
+}
