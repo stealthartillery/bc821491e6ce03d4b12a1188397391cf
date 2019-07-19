@@ -1004,11 +1004,11 @@ function get_map_name($map_id, $encoded=true) {
 
 function get_char_data($char_id, $encoded=true) {
 	$char_data = get_player($char_id);
-	$default_data = get_player('default');
-	foreach ($default_data as $key => $value) {
-		$char_data[$key] = $value;
-		set_player($char_id, $key, $value);
-	}
+	// $default_data = get_player('default');
+	// foreach ($default_data as $key => $value) {
+	// 	$char_data[$key] = $value;
+	// 	set_player($char_id, $key, $value);
+	// }
 
 	if ($encoded)
 		$char_data = json_encode($char_data);
