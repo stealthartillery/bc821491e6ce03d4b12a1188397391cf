@@ -542,6 +542,7 @@ function handle_collision_with_players(&$client_char, &$server_char, $json) {
 
 function post_char_data($char_data) {
 
+	// echo findKb(json_encode($char_data));
 	$player_status = get_player($char_data['char_id']);
 
 	/* init json (response) */
@@ -609,7 +610,12 @@ function post_char_data($char_data) {
 	// error_log($json);
 	// error_log($json['chars'][$char_data['char_id']]['char_id']);
 
+	// findKb($json);
+	// echo ' - ';
+	// $json['chars'][$char_data['char_id']] = json_rmv_key($json['chars'][$char_data['char_id']], "inventory");
+	unset($json['chars'][$char_data['char_id']]['inventory']);
 	$json = json_encode($json);
+	// echo findKb($json);
 	return $json;
 }
 
