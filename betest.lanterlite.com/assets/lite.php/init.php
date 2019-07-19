@@ -1,5 +1,5 @@
 <?php 
 
-include 'E:/liteapps/lanterlite.gen.php';
+include 'lanterlite.gen.php';
 
 ?>
