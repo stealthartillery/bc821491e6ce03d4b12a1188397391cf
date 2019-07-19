@@ -811,7 +811,11 @@ function face_to(&$char_data, $direction) {
     $char_data['rotation']['y'] = pi() * 2/4;
 	else if ($direction == 'west')
     $char_data['rotation']['y'] = pi() * 6/4;
-  set_player($char_data['char_id'], 'rotation', $char_data['rotation']);
+  $rot['x'] = 0;
+  $rot['y'] = $char_data['rotation']['y'];
+  $rot['z'] = 0;
+  $char_data['rotation'] = $rot;
+  set_player($char_data['char_id'], 'rotation', $rot);
 }
 
 function move_top(&$char_data) {
