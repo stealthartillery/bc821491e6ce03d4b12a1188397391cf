@@ -31,12 +31,12 @@
 	scene.add( light_direction );
 
 
-	gltfLoader.load('obj/fountain/obj.gltf', function (gltf) {
+	gltfLoader.load('obj/rock1/obj.gltf', function (gltf) {
 	    ground_mesh = gltf.scene;
 	    ground_mesh.position.x = 0;
 	    ground_mesh.position.y = 0;
 	    ground_mesh.position.z = 0;
-	    ground_mesh.scale.set(5,5,5);
+	    ground_mesh.scale.set(8,8,8);
 	    scene.add(ground_mesh);		
 	});
 
