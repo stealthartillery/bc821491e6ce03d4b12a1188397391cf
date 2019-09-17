@@ -1,0 +1,53 @@
+{
+	"tag" : {
+	  "title" : "Lanterlite",
+	   "meta" : {
+	      "description": "Create Your Lanterlite Account."
+	    }
+	},
+
+	"words" : {
+		"lanterlite_account" : "Lanterlite Account",
+		
+		"account_purpose" : "Lanterlite account is used for connecting user account to other Lanterlite products so any in-app achievements will give same result to other application.",
+		
+		"create_account" : "Create Account",
+  	
+  	"done_create_account"	: "You have created Lanterlite account successfully. Please check Your email for email verification. If you do not receive any, please tap button below.",
+		
+		"resend_ver_email" : "Resend Verification Email",
+
+		"full_name" : "Full Name",
+
+		"username" : "Username",
+
+		"email" : "Email",
+
+		"password" : "Password",
+
+		"password_confirmation" : "Password Confirmation",
+
+		"terms_statement_1" : "I agree with ",
+
+		"terms_statement_2" : "Lanterlite account Privacy and Terms.",
+
+		"fullname_empty" : "Fullname is empty.",
+
+		"username_empty" : "Username is empty.",
+		"username_min" : "Username should contains min. 4 characters.",
+		"username_max" : "Username should contains max. 10 characters.",
+		"username_spec" : "Username should contains only alphanumeric (A-Z. a-z, number).",
+
+		"email_invalid" : "Email is invalid.",
+		"email_empty" : "Email is empty.",
+
+		"pass_min" : "Password must contains 7-15 characters: at least one numeric and a special character.",
+		"pass_empty" : "Password is empty.",
+		"cpass_empty" : "Confirm password is empty.",
+		"pass_not_match" : "Password does not match",
+		
+		"username_exist" : "Username is exist.",
+		"email_exist" : "Email is exist."
+
+	}
+}

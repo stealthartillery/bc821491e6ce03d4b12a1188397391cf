@@ -1,0 +1,14 @@
+[
+	{
+		"title" : "Lanter Search",
+		"sub"	: "Islamic Search Engine: find informaation about islam from clear reference. Insyaa Allah.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/products/lantersearch.webp",
+		"link"	: { "title" : "Get from Playstore", "url": "news/190412" }
+	},
+	{
+		"title" : "Lanter Quran",
+		"sub"	: "Lanterlite Digital Quran: for reading, understanding, and memorizing faster. Insyaa Allah.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/products/lanterquran.webp",
+		"link"	: { "title" : "Get from Playstore", "url": "news/190317" }
+	}
+]

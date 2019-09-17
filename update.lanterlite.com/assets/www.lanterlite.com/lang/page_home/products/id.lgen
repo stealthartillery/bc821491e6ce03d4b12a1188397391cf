@@ -1,0 +1,14 @@
+[
+	{
+		"title" : "Lanter Search",
+		"sub"	: "Mesin Pencari Islami: temukan informasi tentang islam dengan sumber yang jelas. Insyaa Allah.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/products/lantersearch.webp",
+		"link"	: { "title" : "Dapatkan di Playstore", "url": "news/190412" }
+	},
+	{
+		"title" : "Lanter Quran",
+		"sub"	: "Al-Qur'an Digital Lanterlite: membaca, memahami, dan menghafal dengan cepat. Insyaa Allah.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/products/lanterquran.webp",
+		"link"	: { "title" : "Dapatkan di Playstore", "url": "news/190317" }
+	}
+]

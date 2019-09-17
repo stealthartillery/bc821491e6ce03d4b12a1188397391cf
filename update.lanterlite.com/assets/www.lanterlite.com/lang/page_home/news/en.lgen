@@ -1,0 +1,30 @@
+[
+	{
+		"title" : "Available on Windows Store",
+		"date"	: "Apr 12, 2019",
+		"sub"	: "Enlite and Qulite now support Windows Desktop Platform and now available on Windows Store.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/news/190412.webp",
+		"link"	: { "title" : "Read", "url": "news/190412" }
+	},
+	{
+		"title" : "Invix inside Enlite",
+		"date"	: "Mar 17, 2019",
+		"sub"	: "Enlite implements Invix as Lanterlite data retrieval method and has reached level III of intelligence.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/news/190317.webp",
+		"link"	: { "title" : "Read", "url": "news/190317" }
+	},
+	{
+		"title" : "Lanterlite Dual Languages",
+		"date"	: "Mar 3, 2019",
+		"sub"	: "Lanterlite now supports for Bahasa and English language.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/news/190303.webp",
+		"link"	: { "title" : "Read", "url": "news/190303" }
+	},
+	{
+		"title" : "Qulite Evolved",
+		"date"	: "Feb 24, 2019",
+		"sub"	: "Announcement of Qulite 'Evolved' features.",
+		"img"	: "assets/www.lanterlite.com/img/page_home/news/190224.webp",
+		"link"	: { "title" : "Read", "url": "news/190224" }
+	}
+]

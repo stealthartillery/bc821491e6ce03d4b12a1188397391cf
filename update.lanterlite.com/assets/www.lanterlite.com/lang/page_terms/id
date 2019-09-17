@@ -1,0 +1,52 @@
+{
+	"tag" : {
+	  "title" : "Lanterlite",
+	   "meta" : {
+	      "description": "Informasi utama dari web Lanterlite."
+	    }
+	},
+
+	"post" : [
+		{"title": "Privasi dan Ketentuan"},
+
+		{"elm": "<b class=\"arabic\">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم </b>"},
+
+		{"elm": "<h2>Selamat datang di Lanterlite!</h2>"},
+
+		{"sub": "Terima kasih telah menggunakan produk dan layanan kami. Layanan ini disediakan oleh Lanterlite, berlokasi di Palem II, St. Sadang Serang, Kota Bandung 40134, Indonesia."},
+
+		{"sub": "Dengan menggunakan Layanan kami, berarti Anda menyetujui ketentuan ini. Harap ketentuan ini dibaca dengan cermat."},
+
+		{"elm": "<h2>Menggunakan Layanan Kami</h2>"},
+
+		{"sub": "Anda harus mengikuti kebijakan apa pun yang tersedia untuk Anda dalam layanan kami."},
+
+		{"sub": "Jangan menyalahgunakan layanan kami. Misalnya, jangan mengganggu layanan kami atau mencoba mengaksesnya menggunakan metode selain antarmuka dan instruksi yang kami berikan. Kami dapat menangguhkan atau menghentikan penyediaan layanan kami kepada Anda jika Anda tidak mematuhi persyaratan atau kebijakan kami atau jika kami sedang menyelidiki dugaan pelanggaran."},
+
+		{"sub": "Menggunakan layanan kami tidak memberikan Anda kepemilikan atas hak kekayaan intelektual dalam layanan kami atau konten yang Anda akses. Anda tidak boleh menggunakan konten dari layanan kami kecuali Anda mendapatkan izin dari pemiliknya atau diizinkan oleh hukum. Ketentuan ini tidak memberikan Anda hak untuk menggunakan merek atau logo apa pun yang digunakan dalam layanan kami. Jangan menghapus, manyamarkan, atau mengubah pemberitahuan hukum yang ditampilkan dalam atau bersama dengan layanan kami."},
+
+		{"sub": "Sehubungan dengan penggunaan layanan oleh Anda, kami dapat mengirimkan Anda pengumuman layanan, pesan administratif, dan informasi lainnya. Anda dapat memilih untuk berhenti dari beberapa informasi tersebut."},
+
+		{"sub": "Beberapa layanan kami tersedia di perangkat seluler. Jangan menggunakan layanan tersebut yang dapat mengalihkan perhatian Anda sehingga mencegah anda mematuhi peraturan lalu lintas atau keselamatan."},
+
+		{"elm": "<h2>Akun Lanterlite</h2>"},
+
+		{"sub": "Anda mungkin memerlukan Akun Lanterlite untuk menggunakan beberapa layanan kami. Anda dapat membuat Akun Lanterlite Anda sendiri, atau Akun Lanterlite Anda dapat diberikan kepada Anda oleh administrator, seperti perusahaan atau lembaga pendidikan Anda."},
+
+		{"sub": "Untuk melindungi Akun Lanterlite Anda, jaga kerahasiaan kata sandi Anda. Anda bertanggung jawab atas aktivitas yang terjadi pada atau melalui Akun Lanterlite Anda. Cobalah untuk tidak menggunakan kembali kata sandi Akun Lanterlite Anda pada aplikasi pihak ketiga."},
+
+		{"sub": "Kami tidak akan pernah mengekspos informasi Anda keluar dari layanan kami. Namun, kami hanya menggunakan informasi Anda hanya untuk keperluan statistik."},
+
+		{"elm": "<h2>Memodifikasi dan Menghentikan Layanan kami</h2>"},
+
+		{"sub": "Kami terus mengubah dan meningkatkan layanan kami. Kami dapat menambah atau menghapus fungsi atau fitur, selain itu kami juga dapat menangguhkan atau menghentikan suatu layanan."},
+
+		{"sub": "Anda dapat berhenti menggunakan layanan kami kapan saja, meskipun kami akan menyesal melihat Anda pergi. Lanterlite juga dapat berhenti memberikan layanan kepada Anda, atau menambah atau membuat batasan baru untuk Layanan kami kapan saja."},
+
+		{"sub": "Terimakasih."},
+
+		{"elm": "<b class=\"arabic\">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</b>"},
+
+		{"elm": "<p style=\"color: gray; \"><i>Kami selalu berusaha memberikan yang terbaik untuk Anda. Dan kami berharap saran yang membangun dari Anda. Mari kita lakukan yang terbaik untuk umat ini.</i> إن شاء الله </p>"}
+	]
+}

@@ -1,0 +1,2 @@
+to do get/ post outside of localhost:
+copy curl-ca-bundle.crt to C:\xampp\apache\bin

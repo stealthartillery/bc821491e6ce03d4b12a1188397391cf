@@ -1,0 +1,51 @@
+{
+	"tag" : {
+	  "title" : "Tersedia di Windows Store | Berita",
+	  "meta" : {
+	    "description": "Enlite dan Qulite kini mendukung platform Windows dan tersedia di Windows Store."
+	  }
+	},
+
+	"post" : [
+		{"title": "Tersedia di Windows Store"},
+		{"sub": "Enlite dan Qulite kini menjangkau platform Desktop."},
+
+		{"date" : "Apr 12, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"elm": "<b class=\"arabic\">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم </b>"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Alhamdulillah, aplikasi Enlite dan Qulite kini mendukung platform desktop untuk sistem operasi Windows dan telah tersedia di Windows Store (link di bawah). Ini menjadi awal bagi aplikasi-aplikasi Lanterlite untuk dapat mulai berjalan di perangkat-perangkat Laptop dan PC sebagai aplikasi Desktop. Insyaa Allah, secepatnya aplikasi-aplikasi Lanterlite akan mulai merambah ke sistem operasi lain seperti MacOS dan Linux."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Perkembangan fitur juga telah dilakukan pada Enlite dan Qulite, salah satunya yaitu fitur informasi dan pengelolaan akun. Insyaa Allah, Enlite dan Qulite akan terus dikembangkan supaya dapat mempermudah para pengguna dalam memperdalam agama Islam dari aspek apapun."},
+
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Terimakasih."},
+
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"elm": "<b class=\"arabic\">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</b>"},
+
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Link:"},
+		{"elm" : "<br>"},
+
+		{"link" : "<a href=\"https://www.microsoft.com/en-us/p/enlite/9nfbhjvm7xxh?activetab=pivot:overviewtab\">⋅ Enlite (Windows Store)</a>"},
+		{"elm" : "<br>"},
+		{"link" : "<a href=\"https://www.microsoft.com/en-us/p/qulite/9mvpkgmxfwls?activetab=pivot:overviewtab\">⋅ Qulite (Windows Store)</a>"},
+		{"elm" : "<br>"}
+
+	]
+}
