@@ -140,25 +140,6 @@ function write_log($filedir, $txt) {
 	file_put_contents($dir.$filename, $log, FILE_APPEND);
 }
 
-function json_rmv_key($json, $key) {
-	unset($json[$key]);
-	return $json;
-}
-
-function findKb($content) {
-	$count=0;
-	$order = array("\r\n", "\n", "\r", "chr(13)",  "\t", "\0", "\x0B");
-	$content = str_replace($order, "12", $content);
-	for ($index = 0; $index < strlen($content); $index ++){
-	    $byte = ord($content[$index]);
-	    if ($byte <= 127) { $count++; }
-	    else if ($byte >= 194 && $byte <= 223) { $count=$count+2; }
-	    else if ($byte >= 224 && $byte <= 239) { $count=$count+3; }
-	    else if ($byte >= 240 && $byte <= 244) { $count=$count+4; }
-	}
-	return $count;
-}
-
 /* RETURN: RES_STAT->SUCCESS */
 function json_save($file_dir, $file_name, $json_obj, $minify=false) {
 	$dir = rtrim($file_dir,'/');
@@ -198,7 +179,6 @@ function json_read($file_path) {
 		$data[RES_STAT] = SUCCESS; 
 	} 
 	else { 
-		$data[DATA] = json_decode(NOT_FOUND); 
 		$data[RES_STAT] = NOT_FOUND; 
 	} 
 	return $data; 
@@ -291,21 +271,19 @@ function arr_value_exist($arr, $value) {
 	return in_array($value, $arr);
 }
 
-function arr_value_remove_last(&$arr) {
+function arr_value_remove_last($arr) {
 	array_pop($arr);
 	return $arr;
 }
 
-function arr_value_remove_first(&$arr) {
+function arr_value_remove_first($arr) {
 	array_shift($arr);
 	return $arr;
 }
 
-function arr_value_remove_by_value(&$arr, $val) {
-	// return array_diff( $arr, $val );
+function arr_value_remove_by_value($arr, $val) {
 	if (($key = array_search($val, $arr)) !== false) {
     unset($arr[$key]);
-    $arr = array_values($arr);
 	}
 	return $arr;
 }
@@ -322,6 +300,7 @@ function obj_to_json($obj) {
 function json_to_php ($file_path, $data) {
 	$cacheFile = $file_path . '.php';
   file_put_contents($cacheFile, "<?php\n return ".var_export($data, true).";");
+	return $data[RES_STAT] = SUCCESS;
 }
 
 function sortByScore($data) {

@@ -1,0 +1,65 @@
+{
+	"citizens": {
+		"id":"",
+		"email":"",
+		"password":"",
+		"username":"",
+		"fullname":"",
+		"is_verified":0,
+		"verification_code":"",
+		"lang":"id",
+		"theme_color":"ca01",
+		"theme_font":"fa01",
+		"gender":"",
+		"address":"",
+		"phonenum":"",
+		"created_date":"",
+		"silver":0,
+		"point":0
+	},
+	"licenses": {
+		"id":"",
+		"type":"",
+		"created_date":""
+	},
+	"helps": {
+		"id":"",
+		"title_id":"",
+		"title_en":"",
+		"content_id":"",
+		"content_en":"",
+		"created_date":""
+	},
+	"ships": {
+		"ship_id":"",
+		"cit_id":"",
+		"created_date":""
+	},
+
+	"posts": {
+		"id":"",
+		"by":"",
+		"date":"",
+		"img":"",
+		"text":"",
+		"shares":"dir",
+		"likes":"dir",
+		"comments":"dir"
+	},
+	"post/shares": {
+		"id":"",
+		"by":"",
+		"date":""
+	},
+	"post/likes": {
+		"id":"",
+		"by":"",
+		"date":""
+	},
+	"post/comments": {
+		"id":"",
+		"by":"",
+		"content":"",
+		"date":""
+	}
+}

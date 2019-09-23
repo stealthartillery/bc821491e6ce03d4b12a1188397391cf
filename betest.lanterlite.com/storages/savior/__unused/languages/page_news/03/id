@@ -1,0 +1,65 @@
+[
+	{"img": "qulite_evolve.png"},
+
+	{"title": "24/02/19 - \"Qulite Evoluted\""},
+
+	{"span":"Bismillah"},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Setelah beberapa pekan dilakukan pengembangan, alhamdulillah, kini Qulite, aplikasi Al-Quran yang dikembangkan Tim Lanterlite, telah berevolusi sehingga memiliki tampilan baru yang mencirikan Lanterlite dengan tambahan beberapa fitur baru."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Qulite kini memiliki fitur untuk menghafal dengan metode 'perpustakaan' (library). Apa itu metode library? Metode ini menggunakan konsep perpustakaan yang terdiri dari sejumlah rak buku yang tersusun berjajar. Pada metode ini, space (untuk menyimpan buku) dari rak tersebut tersusun menjadi 10 baris dan 5 kolom (10x5)."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Setiap space menyimpan kata pertama dari satu ayat, untuk satu surat dalam Al-Qur'an. Juga setiap space memiliki nomor yang disamakan dengan nomor ayat tersebut. Sehingga kita cukup membayangkan rak buku ini ketika menghafal satu surat dalam Al-Qur'an. Dengan cara ini, saya pribadi, secara perlahan dapat melihat pola dari sejumlah surat, pola tersebut dikaitkan dengan nomor surat dan makna dari ayat tersebut. Seperti contoh, surat Ar-Rahman (no. 55) dan Al-Waqi'ah (no. 56) sama-sama membahas tentang penghuni neraka dimulai dari ayat 41, di mana ayat-ayat sebelumnya membahas tentang surga atau tentang kebeseran Allah. Masyaa Allah. Susunan pada Al-Qur'an itu luar biasa."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Cara menghafal ini sudah saya coba lakukan selama kurang lebih 2 tahun dan sejauh ini saya merasa cocok dengan metode ini. Ini bukanlah satu-satunya metode yang bisa digunakan. Tapi saya coba membagikan cara menghafal seperti ini kepada teman-teman yang mungkin sama-sama dapat mempelajari Al-Qur'an lebih baik dengan cara seperti ini. Insyaa Allah pembahasan lebih lengkapnya tentang metode ini akan diposting di situs lanterlite.com."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Selain itu Qulite juga memiliki fitur terjemah per kalimat, terjemah per kata, dan transliterasi (pengucapan ayat) dalam bahasa indonesia. Semua ini bisa diatur sesuai keinginan teman-teman."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Juga Qulite memiliki fitur tema (perpaduan warna yang membentuk warna latar) yang saat ini memiliki 7 fitur tema. Tema tersebut dikaitkan dengan warna-warna yang ada pada alam, contoh: malam (hitam, goldenrod, dlsb), siang (putih, ivory, dlsb), hutan, angkasa, dlsb."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Sebagian fitur tema ini dijual oleh tim Lanterlite dengan harga yang terjangkau Insyaa Allah. Mengapa? Lanterlite berprinsip untuk tidak membiarkan anggota timnya memakan harta dari hasil sedekah, melainkan harta dari hasil berbisnis. Adapun apabila terdapat pihak yang ingin bersedekah (donasi) untuk memajukan Lanterlite dari berbagai sisi, maka harta tersebut akan digunakan untuk kebutuhan Lanterlite, bukan untuk kebutuhan anggota timnya. Insyaa Allah."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Qulite dibuat untuk mendukung misi Lanterlite dalam memudahkan masyarakat (baik muslim maupun non-muslim) dalam membaca, memahami, dan menghafal Al-Qur'an. Sehingga Qulite akan terus dikembangkan untuk dapat membantu terwujudnya visi Lanterlite di masa yang akan datang. Insyaa Allah."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Qulite saat ini hanya support untuk sistem operasi android versi 5 ke atas. Sementara informasi terkait Qulite versi web insyaa Allah menyusul. Teman-teman yang ingin mencoba Qulite dapat mendownload aplikasi Qulite di playstore (link di bawah)."},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Semoga postingan ini bermanfaat."},
+	{"elm" : "<br>"},
+
+	{"span":"Selamat berkarya positif!"},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Wassalamu'alaikum warahmatullah wabarakaatuh."},
+	{"elm" : "<br>"},
+
+	{"span":"- Ifan Dhani"},
+	{"elm" : "<br>"},
+	{"elm" : "<br>"},
+
+	{"span":"Link:"},
+	{"elm" : "<br>"},
+
+	{"span" : "1. "},
+	{"link" : "<a href=\"https://play.google.com/store/apps/details?id=com.lanterlite.quranic\">Qulite Mobile</a>"}
+]

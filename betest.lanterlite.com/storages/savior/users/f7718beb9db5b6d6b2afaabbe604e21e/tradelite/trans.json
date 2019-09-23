@@ -1,0 +1,18 @@
+[
+  {
+    "user_id": "f7718beb9db5b6d6b2afaabbe604e21e",
+    "item_id": "f484570d7cf557020e11ace406901b10",
+    "quantity": "2",
+    "currency": "idr",
+    "price_per_item": "20000",
+    "price_total": "20000",
+    "status": "purchased",
+    "tx_id": "372194",
+    "date_order": "2019-04-26 : 06:00:03",
+    "date_purchase": "2019-04-26 : 08:15:24",
+    "gateway": "ipaymu",
+    "store_id": "lanterlite",
+    "message": "ada",
+    "category_id": "license"
+  }
+]
