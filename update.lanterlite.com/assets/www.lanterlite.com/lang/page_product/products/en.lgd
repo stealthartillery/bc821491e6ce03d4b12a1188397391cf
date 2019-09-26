@@ -1,0 +1,14 @@
+[
+	{
+		"title" : "Lanter Search",
+		"sub"	: "Make yourself better everyday with Quran and hadith.",
+		"img"	: "assets/www.lanterlite.com/img/page_product/products/lsearch.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('product/lsearch')" }
+	},
+	{
+		"title" : "Lanter Quran",
+		"sub"	: "Read Quran easier, understand better, and memorize faster.",
+		"img"	: "assets/www.lanterlite.com/img/page_product/products/lquran.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('product/lquran')" }
+	}
+]

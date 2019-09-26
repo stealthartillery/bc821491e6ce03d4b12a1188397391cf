@@ -1,0 +1,30 @@
+[
+	{
+		"title" : "New Names",
+		"date"	: "Jun 22, 2019",
+		"sub"	: "Most of Lanterlite apps name has changed.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190622.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190622')"}
+	},
+	{
+		"title" : "Four Reference Books",
+		"date"	: "Mei 5, 2019",
+		"sub"	: "Enlite already contains four reference books.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190505.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190505')"}
+	},
+	{
+		"title" : "Lanterlite Trade Center",
+		"date"	: "Apr 27, 2019",
+		"sub"	: "Lanterlite Trade Center has released.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190427.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190427')"}
+	},
+	{
+		"title" : "Available on Windows Store",
+		"date"	: "Apr 12, 2019",
+		"sub"	: "Enlite and Qulite support on Desktop.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190412.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190412')"}
+	}
+]

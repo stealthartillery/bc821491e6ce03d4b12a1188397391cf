@@ -59,7 +59,8 @@
 					$obj['name'] = LGen('F')->gen_id();
 				}
 			}
-
+			error_log($obj['name']);
+			error_log($dir);
 			// if ($obj['limit'] !== '') {
 			// 	$this->update_dir_by_limit($dir, $obj['limit']);
 			// }
@@ -76,6 +77,7 @@
 							$default[$key] = $obj['val'][$key];
 					}
 					$obj['val'] = $default;
+					error_log(json_encode($obj['val']));
 					LGen('JsonMan')->save($dir, $obj['name'].'.lgd', $this->when_save_encrypt($obj['val']), $minify=false);
 				}
 				else {
@@ -169,14 +171,14 @@
 			// return LGen('GlobVar')->not_found;
 		}
 
-		public function delete($obj) {
+		public function delete_pack($obj) {
 			$this->req_validator($obj);
 
 			$_bridge = $this->gen_bridge($obj['bridge']);
 			$dir = BASE_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
 
 			$filenames = getFileNamesInsideDir($dir);
-			if (LGen('ArrayMan')->is_val_exist($filenames, $obj['name'].'.lgd')) {
+			if (LGen('ArrayMan')->is_val_exist($filenames, $obj['name'])) {
 				dir_delete($dir.$obj['name']);
 				return LGen('GlobVar')->success;
 			}
@@ -192,15 +194,16 @@
 			$_bridge = $this->gen_bridge($obj['bridge']);
 			$dir = BASE_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
 			$filenames = getFileNamesInsideDir($dir);
+			error_log($dir);
 			// error_log(json_encode($filenames));
 			if ($filenames === LGen('GlobVar')->not_found)
-				return LGen('GlobVar')->not_found;
-			$data = LGen('StringMan')->to_json('{}');
+				return [];
 
 			$config_dir = BASE_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
 			$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
 			$default = $default[$obj['def']];
 
+			$data = LGen('StringMan')->to_json('{}');
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {

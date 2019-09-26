@@ -22,6 +22,7 @@ get data if static ip match
 	include 'assets/gen.php/JsonMan.php';
 	include 'assets/gen.php/LogMan.php';
 	include 'assets/gen.php/PropKeyMan.php';
+	include 'assets/gen.php/UserInfo.php';
 
 	// echo LGen('GlobVar')->success;
 	// echo LGen('GlobVar')->failed;

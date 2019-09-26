@@ -1,0 +1,14 @@
+[
+	{
+		"title" : "Lanter Search",
+		"sub"	: "Jadikan diri Anda lebih baik setiap hari dengan Al-Qur'an dan hadits.",
+		"img"	: "assets/www.lanterlite.com/img/page_product/products/lsearch.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('product/lsearch')" }
+	},
+	{
+		"title" : "Lanter Quran",
+		"sub"	: "Membaca Al-Qur'an lebih mudah, memahami lebih baik, dan menghafal lebih cepat.",
+		"img"	: "assets/www.lanterlite.com/img/page_product/products/lquran.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('product/lquran')" }
+	}
+]

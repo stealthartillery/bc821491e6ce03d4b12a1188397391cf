@@ -1,0 +1,8 @@
+[
+	{
+		"title" : "Anggota Tim",
+		"sub"	: "Daftar anggota tim yang berperan sebagai pengurus serta penggerak di Lanterlite.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/abouts/team1.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change('page_team')" }
+	}
+]
