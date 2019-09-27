@@ -2,7 +2,7 @@
 <head>
 	<title>Lanterlite</title>
 	<meta name="title" content="Lanterlite">
-	<meta name="description" content="Lanterlite is a technology company that focuses on the development of Islam. Vision to be the leading IT-based organization in expanding Islam throughout the world. Its mission rests on spreading the teachings of Islam to every human being so that it is easiest to get knowledge about Islam from clear references. Lanterlite moves with its own concepts and techniques in carrying out its mission with the ultimate goal that leads to the welfare of humanity through Islamic science as a guide to human life.">
+	<meta name="description" content="Lanterlite is an IT company that focuses on the development of Islam through technology. Located at Sadang Serang Street, Palem II number 4, Bandung City, Indonesia.">
 	<meta name="keywords" content="lanterlite, lantersearch, lanterquran, lanterstore, lantersquare, lantersword">
 	<meta name="robots" content="index, follow">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
