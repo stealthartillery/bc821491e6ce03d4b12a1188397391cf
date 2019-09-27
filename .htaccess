@@ -4,6 +4,10 @@ ErrorDocument 403 index.php
 # Enable RewriteEngine to rewrite URL patterns
 RewriteEngine On
 
+# == ADD WWW TO DOMAIN
+RewriteCond %{HTTP_HOST} ^lanterlite.com$ [NC]
+RewriteRule (.*) https://www.lanterlite.com/$1 [R=301,L] 
+
 #(done) slash removing
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} /(.*)/$
@@ -15,11 +19,20 @@ RewriteRule ^ /%1 [R,L] <-- =301 added slash here too, don't forget it
 RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|lgd|gif|svg|icon|png|jpe?g|pdf|webp)$
 
 # Will be redirected to templates/index.php
-RewriteRule (.*)$ /index.php
+#RewriteRule (.*)$ /index.php
 
-#(done) double slash solved
-RewriteCond %{REQUEST_URI} ^(.*)/{2,}(.*)$
-RewriteRule . %1/%2 [R=301,L]
+# == REDIRECT TO HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+##(done) refer to index.php
+RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
 
 Header add Access-Control-Allow-Origin "*"
 #Header add Access-Control-Allow-Credentials: "true"
