@@ -36,6 +36,7 @@ function Translator () {
 
 	this.update = update
 	function update(obj) {
+		lprint(obj)
 		if (!obj.hasOwnProperty('type'))
 			obj['type'] = 'innerText'
 
