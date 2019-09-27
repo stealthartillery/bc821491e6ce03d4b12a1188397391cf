@@ -14,7 +14,7 @@ function System() {
 			this.change_url = '/app/'+LGen.app.domain;
 			this.be_domain = 'be.lanterlite.com';
 			this.base_url = "http://localhost/";
-			this.home_url = "http://localhost/app/www.lanterlite.com/";
+			this.home_url = "http://localhost/app/"+LGen.app.domain+"/";
 			this.base_dir = '';
 			this.home_dir = '';
 			// this.CORELITE_URL = host+'www.lanterlite.com/'
@@ -33,6 +33,7 @@ function System() {
 
 		else if (LGen.app.status == 'dep') {
 			this.host = 'https://';
+			this.home_url = "https://"+LGen.app.domain+"/";
 			this.home_dir = '';
 			this.base_dir = '';
 			this.fe_url = 'https://';
