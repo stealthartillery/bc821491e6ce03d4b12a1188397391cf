@@ -38,7 +38,7 @@ function System() {
 			this.base_dir = '';
 			this.fe_url = 'https://';
 			this.be_url = 'https://be.lanterlite.com/';
-			this.change_url = '/';
+			this.change_url = '';
 			this.be_domain = 'be.lanterlite.com';
 			// this.FE_URL = host+'frontlite.lanterlite.com/';
 			// this.FE_base_url = host+'frontlite.lanterlite.com/';
