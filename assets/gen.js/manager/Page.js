@@ -72,12 +72,9 @@ function Page () {
 			go = false
 		if (go) {
 			LGen.citizen.lang = lang
-			var _obj = [
-				LGen.Page.names[LGen.Page.current],
-				// LGen.component.account,
-				// LGen.component.sidebar,
-				// LGen.component.header
-			]
+			var _obj = []
+			if (LGen.Page.current !== '')
+				_obj.push(LGen.Page.names[LGen.Page.current])
 			if (LGen.component.hasOwnProperty('signin'))
 				_obj.push(LGen.component.signin)
 			if (LGen.component.hasOwnProperty('account'))
@@ -105,14 +102,9 @@ function Page () {
 			go = false
 		if (go) {
 			LGen.citizen.theme_color = new_theme
-			// var _obj = {"old_theme":LGen.citizen.theme_color, "new_theme":new_theme}
-			var _obj = [
-				LGen.Page.names[LGen.Page.current],
-				// LGen.component.signin.screen,
-				// LGen.component.account.screen,
-				// LGen.component.sidebar.screen,
-				// LGen.component.header.screen
-			]
+			var _obj = []
+			if (LGen.Page.current !== '')
+				_obj.push(LGen.Page.names[LGen.Page.current])
 			if (LGen.component.hasOwnProperty('signin'))
 				_obj.push(LGen.component.signin)
 			if (LGen.component.hasOwnProperty('account'))
@@ -146,13 +138,9 @@ function Page () {
 			// 	"new_theme":new_theme
 			// }
 			LGen.citizen.theme_font = new_theme
-			var _obj = [
-				LGen.Page.names[LGen.Page.current],
-				// LGen.component.signin.screen,
-				// LGen.component.account.screen,
-				// LGen.component.sidebar.screen,
-				// LGen.component.header.screen
-			]
+			var _obj = []
+			if (LGen.Page.current !== '')
+				_obj.push(LGen.Page.names[LGen.Page.current])
 			if (LGen.component.hasOwnProperty('signin'))
 				_obj.push(LGen.component.signin)
 			if (LGen.component.hasOwnProperty('account'))
@@ -302,6 +290,7 @@ function Page () {
 
 		this.update_color = update_color
 		function update_color(page) {
+			lprint(page)
 			var go = true
 			if (page.theme_color === LGen.citizen.theme_color)
 				go = false
