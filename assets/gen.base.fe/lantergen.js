@@ -68,6 +68,7 @@ function LanterGen() {
 		this.gender = 'male'
 		this.theme_color = 'ca01'
 		this.theme_font = 'fa01'
+		this.licenses = []
 
 		this.set = set
 		function set(obj) {
