@@ -28,7 +28,6 @@ function Component() {
 			BASE_URL + 'assets/gen.js/Checkbox.js',
 			BASE_URL + 'assets/gen.js/Select.js',
 			BASE_URL + 'assets/gen.js/MoveTopButton.js',
-			BASE_URL + 'assets/gen.js/SplashSCreen.js',
 			BASE_URL + 'assets/gen.js/Loading.js',
 			BASE_URL + 'assets/gen.js/Theme.js',
 			BASE_URL + 'assets/gen.js/Option.js',
