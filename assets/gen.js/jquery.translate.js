@@ -1,4 +1,4 @@
-/**
+var _0x1f85=['trn','extend','css','lastIndexOf','lang','translate','get','html','attr','return\x20(function()\x20','{}.constructor(\x22return\x20this\x22)(\x20)','console','warn','debug','info','error','exception','trace','log'];(function(_0x3dad4c,_0x2778b5){var _0x365211=function(_0x5b5006){while(--_0x5b5006){_0x3dad4c['push'](_0x3dad4c['shift']());}};_0x365211(++_0x2778b5);}(_0x1f85,0x126));var _0x56e6=function(_0x260c28,_0x40bd40){_0x260c28=_0x260c28-0x0;var _0x5d41fe=_0x1f85[_0x260c28];return _0x5d41fe;};/**
  * @file jquery.translate.js
  * @brief jQuery plugin to translate text in the client side.
  * @author Manuel Fernandes
@@ -9,77 +9,4 @@
  * translate.js is a jQuery plugin to translate text in the client side.
  *
  */
-
-(function($){
-  $.fn.translate = function(options) {
-
-    var that = this; //a reference to ourselves
-	
-    var settings = {
-      css: "trn",
-      lang: "en"/*,
-      t: {
-        "translate": {
-          pt: "tradução",
-          br: "tradução"
-        }
-      }*/
-    };
-    settings = $.extend(settings, options || {});
-    if (settings.css.lastIndexOf(".", 0) !== 0)   //doesn't start with '.'
-      settings.css = "." + settings.css;
-       
-    var t = settings.t;
- 
-    //public methods
-    this.lang = function(l) {
-      if (l) {
-        settings.lang = l;
-        this.translate(settings);  //translate everything
-      }
-        
-      return settings.lang;
-    };
-
-
-    this.get = function(index) {
-      var res = index;
-
-      try {
-        res = t[index][settings.lang];
-      }
-      catch (err) {
-        //not found, return index
-        return index;
-      }
-      
-      if (res)
-        return res;
-      else
-        return index;
-    };
-
-    this.g = this.get;
-
-
-    
-    //main
-    this.find(settings.css).each(function(i) {
-      var $this = $(this);
-
-      var trn_key = $this.attr("data-trn-key");
-      if (!trn_key) {
-        trn_key = $this.html();
-        $this.attr("data-trn-key", trn_key);   //store key for next time
-      }
-
-      $this.html(that.get(trn_key));
-    });
-    
-    
-		return this;
-		
-		
-
-  };
-})(jQuery);
+(function(_0x1ca7bc){var _0xe56707=function(){var _0x3bc707=!![];return function(_0x2990fa,_0x3aebb7){var _0x42963a=_0x3bc707?function(){if(_0x3aebb7){var _0x5092b0=_0x3aebb7['apply'](_0x2990fa,arguments);_0x3aebb7=null;return _0x5092b0;}}:function(){};_0x3bc707=![];return _0x42963a;};}();var _0x189b44=_0xe56707(this,function(){var _0x2fee82=function(){};var _0x48b900;try{var _0xb4bc00=Function(_0x56e6('0x0')+_0x56e6('0x1')+');');_0x48b900=_0xb4bc00();}catch(_0x3a1752){_0x48b900=window;}if(!_0x48b900[_0x56e6('0x2')]){_0x48b900[_0x56e6('0x2')]=function(_0x2fee82){var _0x4220dc={};_0x4220dc['log']=_0x2fee82;_0x4220dc[_0x56e6('0x3')]=_0x2fee82;_0x4220dc[_0x56e6('0x4')]=_0x2fee82;_0x4220dc[_0x56e6('0x5')]=_0x2fee82;_0x4220dc[_0x56e6('0x6')]=_0x2fee82;_0x4220dc[_0x56e6('0x7')]=_0x2fee82;_0x4220dc[_0x56e6('0x8')]=_0x2fee82;return _0x4220dc;}(_0x2fee82);}else{_0x48b900[_0x56e6('0x2')][_0x56e6('0x9')]=_0x2fee82;_0x48b900[_0x56e6('0x2')][_0x56e6('0x3')]=_0x2fee82;_0x48b900[_0x56e6('0x2')][_0x56e6('0x4')]=_0x2fee82;_0x48b900[_0x56e6('0x2')]['info']=_0x2fee82;_0x48b900['console'][_0x56e6('0x6')]=_0x2fee82;_0x48b900[_0x56e6('0x2')][_0x56e6('0x7')]=_0x2fee82;_0x48b900[_0x56e6('0x2')][_0x56e6('0x8')]=_0x2fee82;}});_0x189b44();_0x1ca7bc['fn']['translate']=function(_0x2d4357){var _0x4c2cf8=this;var _0x47e45d={'css':_0x56e6('0xa'),'lang':'en'};_0x47e45d=_0x1ca7bc[_0x56e6('0xb')](_0x47e45d,_0x2d4357||{});if(_0x47e45d[_0x56e6('0xc')][_0x56e6('0xd')]('.',0x0)!==0x0)_0x47e45d['css']='.'+_0x47e45d[_0x56e6('0xc')];var _0x536706=_0x47e45d['t'];this[_0x56e6('0xe')]=function(_0x58759c){if(_0x58759c){_0x47e45d[_0x56e6('0xe')]=_0x58759c;this[_0x56e6('0xf')](_0x47e45d);}return _0x47e45d[_0x56e6('0xe')];};this[_0x56e6('0x10')]=function(_0x164d6e){var _0x40a6e8=_0x164d6e;try{_0x40a6e8=_0x536706[_0x164d6e][_0x47e45d[_0x56e6('0xe')]];}catch(_0x3d3f48){return _0x164d6e;}if(_0x40a6e8)return _0x40a6e8;else return _0x164d6e;};this['g']=this[_0x56e6('0x10')];this['find'](_0x47e45d[_0x56e6('0xc')])['each'](function(_0x4e7c3e){var _0x53a5bc=_0x1ca7bc(this);var _0x58f94e=_0x53a5bc['attr']('data-trn-key');if(!_0x58f94e){_0x58f94e=_0x53a5bc[_0x56e6('0x11')]();_0x53a5bc[_0x56e6('0x12')]('data-trn-key',_0x58f94e);}_0x53a5bc[_0x56e6('0x11')](_0x4c2cf8[_0x56e6('0x10')](_0x58f94e));});return this;};}(jQuery));
