@@ -40,7 +40,7 @@ function load_init() {
 	], 0, function() {
 		LGen.start()
   	if (LGen.app.status === 'dep') {
-  		lprint = function() {}
+  		// lprint = function() {}
   	}
 	  setTimeout( function(){
 			splash.close()
