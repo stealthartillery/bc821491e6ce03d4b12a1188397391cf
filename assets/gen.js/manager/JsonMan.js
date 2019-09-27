@@ -94,7 +94,7 @@ function JsonMan () {
 
 	this.read = read
 	function read(file_path, callback) {
-		// lprint(file_path)
+		lprint(file_path)
 		$.ajax({
 	    type: "GET",
 	    url: file_path,

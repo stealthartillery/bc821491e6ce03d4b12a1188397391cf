@@ -5,7 +5,7 @@ function Translator () {
 
 	this.set = set
 	function set() {
-	 	LGen.Json.read(LGen.system.home_url+'assets/lang/translator.lgen', function(obj) {
+	 	LGen.Json.read(LGen.system.home_url+'app/app.words', function(obj) {
 	 		LGen.translator.words = obj
 		})
 	}
@@ -36,7 +36,6 @@ function Translator () {
 
 	this.update = update
 	function update(obj) {
-		lprint(obj)
 		if (!obj.hasOwnProperty('type'))
 			obj['type'] = 'innerText'
 
