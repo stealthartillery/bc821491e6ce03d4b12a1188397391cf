@@ -181,6 +181,8 @@ function Signin () {
 	this.close = close
 	function close() {
 		var compo = LGen.component.signin
+    compo.screen.querySelector('.email').value = ''
+    compo.screen.querySelector('.password').value = ''
 		if ($(compo.screen).hasClass("opened")) {
 			$(compo.screen).fadeOut(0)
 			$(compo.screen).removeClass("opened")
