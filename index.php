@@ -14,5 +14,5 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 </head><body></body>
-<script type="text/javascript" src="https://www.lanterlite.com/gate.js"></script>
+<script type="text/javascript" src="https://www.lanterlite.com/app/gate.js"></script>
 </html>
