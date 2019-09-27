@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('no direct script access allowed');
 
 function get_data($obj) {
-	if ($obj['type'] == 'lgen')
+	if ($obj['type'] == 'lgd')
 		return LGen('JsonMan')->read(HOME_DIR . $obj['dir']);
 	// return (HOME_DIR . $dir);
 	if ($obj['type'] == 'img')
