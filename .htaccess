@@ -12,7 +12,7 @@ RewriteRule ^ /%1 [R,L] <-- =301 added slash here too, don't forget it
 #RewriteBase /app/www.lanterlite.com/
 
 # Every URI that not (! operator) ends with one of .php, .css, .js, .gif, .png, .jpg, .jpeg or .pdf
-RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|gif|png|jpe?g|pdf|webp)$
+RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|gif|svg|icon|png|jpe?g|pdf|webp)$
 
 # Will be redirected to templates/index.php
 RewriteRule (.*)$ /index.php
