@@ -31,6 +31,7 @@ function PageContent () {
 			}
 		}
 		LGen.f.send_get('update.lanterlite.com/update/', _obj, function(obj) {
+			lprint(obj)
 			for(var i=0; i<obj.length; i++) {
 				page.content_paths.push(obj[i]['content_path'])
 				page.url_names.push(obj[i]['url_name'])
