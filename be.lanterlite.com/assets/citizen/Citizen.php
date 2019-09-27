@@ -7,15 +7,43 @@
 			set_time_limit ( 0 );
 		}
 
+		public function logout() {
+			$this->unset_ship_id();
+		}
+
+		public function unset_ship_id() {
+			$ship_id = LGen('UserInfo')->get_ip();
+			$_obj = [];
+			$_obj['gate'] = 'savior';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "ships", "puzzled":true}'));
+			// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$ship_id.'", "puzzled":true}'));
+			$_obj['name'] = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$ship_id.'"}'));
+			// $_obj['def'] = 'citizens';
+			// $_obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+
+			$result = LGen('SaviorMan')->delete_pack($_obj);
+			error_log(json_encode($result));
+			return $result;
+		}
+
 		public function set_ship_id($cit_id) {
-			$ship_id = LGen('F')->get_client_ip();
+			$ship_id = LGen('UserInfo')->get_ip();
 			$obj['bridge'] = array(
-				0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}'),
-				1 => LGen('StringMan')->to_json('{"id":'.$ship_id.',"puzzled":true}')
+				0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}')
+				// 1 => LGen('StringMan')->to_json('{"id":"'.$ship_id.'","puzzled":true}')
 			);
 			$obj['gate'] = 'savior';
-			$obj['def'] = 'ship';
-			$obj['name'] = LGen('F')->gen_id($ship_id);
+			$obj['def'] = 'ships';
+			// error_log($ship_id);
+			// error_log(LGen('F')->get_client_ip_server());
+			// error_log(LGen('UserInfo')->get_ip());
+			// error_log(LGen('UserInfo')->get_device());
+			// error_log(LGen('UserInfo')->get_os());
+			// error_log(LGen('UserInfo')->get_browser());
+			// $obj['name'] = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$ship_id.'"}'));
+			$obj['name'] = $ship_id;
+			// error_log($obj['name'] . ' ' . 'name');
 			$obj['val'] = LGen('ArrayMan')->to_json(array(
 				'ship_id' => $ship_id, 
 				'cit_id' => $cit_id
@@ -28,25 +56,54 @@
 			// $obj['bridge'] = [];
 			$obj['bridge'] = array(
 				0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}'),
-				1 => LGen('StringMan')->to_json('{"id":'.LGen('F')->get_client_ip().',"puzzled":true}')
+				1 => LGen('StringMan')->to_json('{"id":"'.LGen('UserInfo')->get_ip().'","puzzled":true}')
 			);
 			$obj['namelist'] = ['client_ip', 'cit_id'];
 			$obj['def'] = 'ships';
-			// $obj['name'] = LGen('F')->get_client_ip();
+			// $obj['name'] = LGen('UserInfo')->get_ip();
 			$result = LGen('SaviorMan')->read($obj);
+			// error_log(json_encode($result));
+			$_result = [];
+			if (sizeof($result)>0) {
+				$result['cit_id'] = base64_decode($result['cit_id']);
+				// error_log(json_encode($result));
+				$_obj = [];
+				$_obj['gate'] = 'savior';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$result['cit_id'].'", "puzzled":false}'));
+				$_obj['def'] = 'citizens';
+				$_obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+
+				$citizen = LGen('SaviorMan')->read($_obj);
+				$_result['id'] = $citizen['id'];
+				$_result['is_verified'] = $citizen['is_verified'];
+				$_result['lang'] = $citizen['lang'];
+				$_result['fullname'] = $citizen['fullname'];
+				$_result['email'] = $citizen['email'];
+				$_result['username'] = $citizen['username'];
+				$_result['gender'] = $citizen['gender'];
+				$_result['address'] = $citizen['address'];
+				$_result['phonenum'] = $citizen['phonenum'];
+				$_result['silver'] = $citizen['silver'];
+				$_result['point'] = $citizen['point'];
+				$_result['theme_font'] = $citizen['theme_font'];
+				$_result['theme_color'] = $citizen['theme_color'];
+			}
+			// error_log('$result ' . json_encode($result));
 			// if ($result === LGen('GlobVar')->not_found) {
 			// 	$obj['bridge'] = array(
 			// 		0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}'),
-			// 		1 => LGen('StringMan')->to_json('{"id":'.LGen('F')->get_client_ip().',"puzzled":true}')
+			// 		1 => LGen('StringMan')->to_json('{"id":'.LGen('UserInfo')->get_ip().',"puzzled":true}')
 			// 	);
-			// 	$obj['name'] = LGen('F')->gen_id(LGen('F')->get_client_ip());
+			// 	$obj['name'] = LGen('F')->gen_id(LGen('UserInfo')->get_ip());
 			// 	$obj['val'] = LGen('ArrayMan')->to_json(array(
 			// 		'cit_id' => '', 
 			// 	))
 			// 	$this->insert($obj)
 			// }
 			// error_log(($result));
-			return $result;
+			return $_result;
 		}
 
 		public function login($obj) {
@@ -58,7 +115,7 @@
 			$dir = BASE_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
 
 			$bridge = $obj['bridge'];
-			$obj['namelist'] = ['email', 'password'];
+			$obj['namelist'] = ['id','email', 'password'];
 			$obj['def'] = 'citizens';
 			$email = $obj['val']['email'];
 			$password = $obj['val']['password'];
@@ -77,12 +134,14 @@
 				array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
 				// $obj['val'] = $val; // keep value encrypted for savior->read purpose.
 				$citizen = LGen('SaviorMan')->read($obj);
+				$citizen['id'] = base64_decode($citizen['id']);
 				$citizen['email'] = base64_decode($citizen['email']);
 				$citizen['password'] = base64_decode($citizen['password']);
+				// error_log(json_encode($citizen));
 				// error_log($citizen['email'] .' '. $email);
 				if ($citizen['email'] === $email and $citizen['password'] === $password) {
 					if ($keep_signin)
-						LGen('SaviorMan')->set_ship_id($citizen['id']);
+						$this->set_ship_id($citizen['id']);
 					$obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
 					$result['id'] = $citizen['id'];
@@ -139,7 +198,7 @@
 			$_obj['fullname'] = $obj['val']['fullname'];
 			$_obj['id'] = $id;
 			$_obj['email'] = $obj['val']['email'];
-			error_log(json_encode($_obj));
+			// error_log(json_encode($_obj));
 			$this->send_ver_email($_obj);
 
 			$obj['bridge'] = [];
@@ -172,7 +231,7 @@
 				// error_log(json_encode($_obj));
 				LGen('SaviorMan')->update($_save);
 			}
-			error_log(json_encode($res));
+			// error_log(json_encode($res));
 			if (!$res['is_verified'])
 				$this->send_ver_email($res);
 			return true;
@@ -263,6 +322,7 @@
 		// }
 
 		public function send_ver_email($obj) {
+			// $user_email = 'sweetcheesepie@gmail.com';
 			$user_email = $obj['email'];
 			// $user_id = $obj['id'];
 			// $user_fullname = $obj['fullname'];
@@ -280,20 +340,21 @@
 			// mail($user_email,$subject,$html,$headers);
 			// return true;
 
-			// require_once('PHPMailer/PHPMailerAutoload.php');
 
 			// use PHPMailer\PHPMailer\PHPMailer;
 			// use PHPMailer\PHPMailer\Exception;
 
-			require 'PHPMailer/src/Exception.php';
-			require 'PHPMailer/src/PHPMailer.php';
-			require 'PHPMailer/src/SMTP.php';
+			// require 'PHPMailer/src/Exception.php';
+			// require 'PHPMailer/src/PHPMailer.php';
+			// require 'PHPMailer/src/SMTP.php';
 			
-			$mail = new PHPMailer\PHPMailer\PHPMailer();
-			// $mail = new PHPMailer(true);
+			// $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+			require_once('PHPMailer/PHPMailerAutoload.php');
+			$mail = new PHPMailer(true);
 
 			try {
-				$mail->SMTPDebug = 2;
+				// $mail->SMTPDebug = 2;
 				$mail->isSMTP();
 				$mail->SMTPAuth = true;
 				$mail->SMTPSecure = 'ssl';
@@ -305,20 +366,21 @@
 
 				$mail->SetFrom('admin@lanterlite.com', 'Lanterlite');
 				$mail->AddAddress($user_email);
-				$mail->AddReplyTo('admin@lanterlite.com', 'Lanterlite');
+				// $mail->AddReplyTo('admin@lanterlite.com', 'Lanterlite');
 
 				$mail->isHTML(true);
 				$mail->Subject = $subject;
+				// $mail->Body = 'This email was recently entered to verify your email address.';
 				$mail->Body = $html;
 		    $mail->AltBody = 'This email was recently entered to verify your email address. Verification Code: '.$vercode.'. You can use this code to verify that this email belongs to you. If this was not you, someone may have mistype their email address. Keep this code to yourself, and no other action is needed at this moment.';
 
-				$mail->addCustomHeader('Organization: Lanterlite');
-				$mail->addCustomHeader('MIME-Version: 1.0');
-				$mail->addCustomHeader('Content-type: text/html; charset=iso-8859-1');
-				$mail->addCustomHeader('X-Priority: 3');
-				// $mail->addCustomHeader('From: admin@lanterlite.com');
-				$mail->addCustomHeader('X-Mailer: PHP'. phpversion());
-				// $mail->AddAddress('ifandhanip@gmail.com');
+				// $mail->addCustomHeader('Organization: Lanterlite');
+				// $mail->addCustomHeader('MIME-Version: 1.0');
+				// $mail->addCustomHeader('Content-type: text/html; charset=iso-8859-1');
+				// $mail->addCustomHeader('X-Priority: 3');
+				// // $mail->addCustomHeader('From: admin@lanterlite.com');
+				// $mail->addCustomHeader('X-Mailer: PHP'. phpversion());
+				// // $mail->AddAddress('ifandhanip@gmail.com');
 
 				$mail->send();
 				return true;

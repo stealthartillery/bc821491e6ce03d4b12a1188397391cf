@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Language",
+		"content": [
+			{"title":"Indonesia (Bahasa)","func":"LGen.Page.update_lang('id')"},
+			{"title":"English","func":"LGen.Page.update_lang('en')"}
+		]
+	},
+	{
+		"title": "Product",
+		"content": [
+			{"title":"Lanter Search","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.enlite', '_blank')"},
+			{"title":"Lanter Quran","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.quranic', '_blank')"},
+			{"title":"Lanter Sword","func":""},
+			{"title":"Lanter Store","func":""},
+			{"title":"Lanter Square","func":""}
+		]
+	},
+	{
+		"title": "Company",
+		"content": [
+			{"title":"About Us","func":"LGen.Page.change('page_about')"},
+			{"title":"Team Profile","func":"LGen.Page.change('page_team')"}
+		]
+	}
+]

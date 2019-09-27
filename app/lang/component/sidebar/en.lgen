@@ -1,0 +1,32 @@
+[
+	{
+		"page_name": "page_home",
+		"icon": "bell",
+		"name": "Home",
+		"func": "LGen.Page.change('page_home')"
+	},
+	{
+		"page_name": "page_news",
+		"icon": "bell",
+		"name": "News",
+		"func": "LGen.Page.change('page_news')"
+	},
+	{
+		"page_name": "page_article",
+		"icon": "bell",
+		"name": "Article",
+		"func": "LGen.Page.change('page_article')"
+	},
+	{
+		"page_name": "page_product",
+		"icon": "bell",
+		"name": "Product",
+		"func": "LGen.Page.change('page_product')"
+	},
+	{
+		"page_name": "page_about",
+		"icon": "bell",
+		"name": "About us",
+		"func": "LGen.Page.change('page_about')"
+	}
+]

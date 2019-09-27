@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Bahasa",
+		"content": [
+			{"title":"Indonesia (Bahasa)","func":"LGen.Page.update_lang('id')"},
+			{"title":"English","func":"LGen.Page.update_lang('en')"}
+		]
+	},
+	{
+		"title": "Produk",
+		"content": [
+			{"title":"Lanter Search","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.enlite', '_blank')"},
+			{"title":"Lanter Quran","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.quranic', '_blank')"},
+			{"title":"Lanter Sword","func":""},
+			{"title":"Lanter Store","func":""},
+			{"title":"Lanter Square","func":""}
+		]
+	},
+	{
+		"title": "Perusahaan",
+		"content": [
+			{"title":"Tentang Kami","func":"LGen.Page.change('page_about')"},
+			{"title":"Profil Tim","func":"LGen.Page.change('page_team')"}
+		]
+	}
+]

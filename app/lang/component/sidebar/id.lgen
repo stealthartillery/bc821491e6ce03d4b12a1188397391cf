@@ -1,0 +1,32 @@
+[
+	{
+		"page_name": "page_home",
+		"icon": "bell",
+		"name": "Utama",
+		"func": "LGen.Page.change('page_home')"
+	},
+	{
+		"page_name": "page_news",
+		"icon": "bell",
+		"name": "Berita",
+		"func": "LGen.Page.change('page_news')"
+	},
+	{
+		"page_name": "page_article",
+		"icon": "bell",
+		"name": "Artikel",
+		"func": "LGen.Page.change('page_article')"
+	},
+	{
+		"page_name": "page_product",
+		"icon": "bell",
+		"name": "Produk",
+		"func": "LGen.Page.change('page_product')"
+	},
+	{
+		"page_name": "page_about",
+		"icon": "bell",
+		"name": "Tentang Kami",
+		"func": "LGen.Page.change('page_about')"
+	}
+]

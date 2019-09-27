@@ -1,0 +1,10 @@
+{
+	"lanterlite_account" : "Lanterlite Account",
+	"username" : "Username",
+	"fullname" : "Fullname",
+	"email" : "Email",
+	"address" : "Address",
+	"gender" : "Gender",
+	"phonenum" : "Phone Number",
+	"lang" : "Language"
+}

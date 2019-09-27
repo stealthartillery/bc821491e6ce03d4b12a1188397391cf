@@ -1,0 +1,60 @@
+{
+	"tag" : {
+	  "title" : "Enlite Upgraded | Lanterlite",
+	  "meta" : {
+ 	    "description": "Enlite has new improvement in processing data."
+  	}
+	},
+
+	"post" : [
+		{"title": "Enlite +1"},
+		{"sub" : "Enlite has new improvement in processing data."},
+
+		{"date" : "Feb 10, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span" : "After last Ahad the Lanterlite website published, I want to introduce one of the products from Lanterlite, namely Enlite. What is Enlite? One of the points of Lanterlite's mission is to spread Islam throughout the world. This means that Lanterlite strives to make anyone at least understand about Islam, from any context, whether it's law, story, heaven and hell, etc. Lanterlite tried to make the faith of Muslims stronger, and the faith of non-Muslims grew. Insyaa Allah. Therefore, that's where Enlite's role is. Enlite is here to provide insight into Islam directly from the sources, namely the Qur'an and hadith, with clear references, even to page numbers of the reference. One of the substance of Lanterlite's mission in spreading Islam is so that people seek knowledge from clear references. Not from articles on the internet that 'impersonate Islam' but are not responsible for providing content. I am reminded of Ustaz Khalid's words, which in essence Muslims must be smart, do not be easily deceived, do not easily be pitted against, do not easily be influenced by unscrupulous people, and must be wise in seeking knowledge. Thus Enlite is present at this point as a partner of Muslims (and non-Muslims) in seeking knowledge about Islam directly from references that are clearly Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Enlite can be accessed via the Google Playstore (link below). But currently only compatible for Android version 5 (lollipop) and above. So Lanterlite, decide to make a web version to make it easier for friends to be able to access Enlite from anywhere, anytime, and with any device (link below)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Enlite has been operating since January. And alhamdulillah, today Enlite has been upgraded so that, insyaa Allah, it is now better to provide content. One of them is the suggestion feature. Also, Enlite's ability has been developed in processing data from before so I call at this stage Enlite has level II intelligence."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Hopefully this post is useful."},
+		{"elm" : "<br>"},
+		
+		{"span" : "Let's do positive work!"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Wassalamu'alaikum warahmatullah wabarakaatuh."},
+		{"elm" : "<br>"},
+
+		{"span" : "- Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Link:"},
+		{"elm" : "<br>"},
+
+		{"span" : "1. "},
+
+		{"link" : "<a href=\"https://play.google.com/store/apps/details?id=com.lanterlite.enlite\">Enlite Mobile</a>"},
+
+		{"elm" : "<br>"},
+
+		{"span" : "2. "},
+		{"link" : "<a href=\"https://enlite.lanterlite.com\">Enlite Web</a>"}
+	]
+}

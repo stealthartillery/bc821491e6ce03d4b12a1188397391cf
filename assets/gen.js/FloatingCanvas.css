@@ -1,0 +1,115 @@
+
+/* =============================================================
+
+FLOATING CANVAS 
+
+============================================================= */ 
+
+@media only screen and (max-width: 450px) {
+  #fcanvas #main {
+    left: 10px !important;
+    right: 10px !important;
+  }
+}
+
+.fcanvas .header {
+  /*background-color: #1a1a1a;*/
+  border-spacing: 0;
+  /*border-radius: 7px;*/
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.fcanvas .header .title {
+  font-family: Montserrat;
+}
+
+.fcanvas .main.large {
+    position: absolute;
+    /*top: 5px;*/
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    /* margin: auto; */
+    /* min-width: 200px; */
+    /* max-width: 500px; */
+    z-index: 10;
+    /* min-height: 100px; */
+    /* min-height: 200px; */
+    /* max-height: 500px; */
+    border: 1px solid #1a1a1a;
+    background-color: goldenrod;    
+}
+
+.fcanvas .main.small {
+  position: absolute;
+  /*top: 75px;*/
+  bottom: 75px;
+  left: 75px;
+  right: 75px;
+  margin: auto;
+  min-width: 200px;
+  max-width: 500px;
+  z-index: 10;
+  min-height: 100px;
+  min-height: 200px;
+  max-height: 500px;
+  border: 1px solid #1a1a1a;
+  background-color: goldenrod;
+}
+
+.fcanvas .body.large {
+  top: 38px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  min-height: 100px;
+}
+
+.fcanvas .body {
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: auto;
+  position: absolute;
+  border: 1px solid goldenrod;
+  z-index: 10;
+}
+
+.fcanvas .body.small {
+  bottom: 75px;
+  top: 38px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 100px;
+  min-height: 50px;
+  max-height: 500px;
+}
+
+.fcanvas .close img {
+  height: 15px;
+}
+
+.fcanvas {
+  display: none;
+  max-width: 500px;
+  max-height: 500px;
+  min-width: 100px;
+  min-height: 100px;
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  z-index: 10;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  background-color: white;
+}

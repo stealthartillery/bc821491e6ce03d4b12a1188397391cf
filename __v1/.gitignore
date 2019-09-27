@@ -1,0 +1,46 @@
+
+# Others
+#-------------------------
+# *.htaccess
+be.lanterlite.com/storages/*
+betest.lanterlite.com/backlite.lanterlite.com/storages/*
+lightbe.lanterlite.com/backlite.lanterlite.com/storages/*
+frontlite.lanterlite.com/storages/*
+__des/
+__src/
+
+
+# Others
+#-------------------------
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+/vendor/
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Text editor files
+#--------------------
+editor/*
+

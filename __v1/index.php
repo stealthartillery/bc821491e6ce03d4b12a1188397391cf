@@ -1,0 +1,1 @@
+<!doctype html><html><head> <meta charset="utf-8"> </head><body></body> <script type="text/javascript">var _0xfdb3=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x6C\x61\x6E\x74\x65\x72\x6C\x69\x74\x65\x2E\x63\x6F\x6D\x2F"];var HOME_URL=_0xfdb3[0]</script> <script type="text/javascript" src="https://www.lanterlite.com/init.js"></script> </html>

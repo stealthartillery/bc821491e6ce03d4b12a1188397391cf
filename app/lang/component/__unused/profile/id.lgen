@@ -1,0 +1,10 @@
+{
+	"lanterlite_account" : "Akun Lanterlite",
+	"username" : "Username",
+	"fullname" : "Nama Lengkap",
+	"email" : "Email",
+	"address" : "Alamat",
+	"gender" : "Jenis Kelamin",
+	"phonenum" : "Nomor Telepon",
+	"lang" : "Bahasa"
+}
