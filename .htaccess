@@ -26,13 +26,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-##(done) refer to index.php
-RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond $1 !^(index\.php|images|robots\.txt)
-RewriteRule ^(.*)$ index.php?/$1 [L]
-
 
 Header add Access-Control-Allow-Origin "*"
 #Header add Access-Control-Allow-Credentials: "true"
