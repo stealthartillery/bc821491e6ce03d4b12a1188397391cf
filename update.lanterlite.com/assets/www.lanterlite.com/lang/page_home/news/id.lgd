@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Lanter Gen Generasi II",
+		"date"	: "Sep 28, 2019",
+		"sub"	: "Versi terbaru dari framework pengembangan aplikasi Lanterlite.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190928')"}
+	},
+	{
 		"title" : "Beralih Nama",
 		"date"	: "Jun 22, 2019",
 		"sub"	: "Sebagian besar aplikasi Lanterlite beralih nama.",
@@ -19,12 +26,5 @@
 		"sub"	: "Lanterlite Trade Center telah dirilis.",
 		"img"	: "assets/www.lanterlite.com/img/page_news/news/190427.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190427')"}
-	},
-	{
-		"title" : "Tersedia di Windows Store",
-		"date"	: "Apr 12, 2019",
-		"sub"	: "Enlite dan Qulite hadir di Desktop.",
-		"img"	: "assets/www.lanterlite.com/img/page_news/news/190412.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190412')"}
 	}
 ]
