@@ -15,7 +15,7 @@ RewriteRule ^ /%1 [R,L] <-- =301 added slash here too, don't forget it
 RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|gif|png|jpe?g|pdf|webp)$
 
 # Will be redirected to templates/index.php
-RewriteRule (.*)$ /www.lanterlite.com/index.php
+RewriteRule (.*)$ /index.php
 
 #(done) double slash solved
 RewriteCond %{REQUEST_URI} ^(.*)/{2,}(.*)$
