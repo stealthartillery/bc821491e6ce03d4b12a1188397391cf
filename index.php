@@ -10,7 +10,7 @@
 	<meta name="revisit-after" content="7 days">
 	<meta name="author" content="Lanterlite Team">
 	<meta charset="utf-8">
-	<link rel="icon" type="image/gif" href="https://www.lanterlite.com/app/gen.base.fe/icon.gif">
+	<link rel="icon" type="image/gif" href="https://www.lanterlite.com/assets/gen.base.fe/icon.gif">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
