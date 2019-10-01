@@ -15,5 +15,9 @@
 </head>
 <style type="text/css">body {background-color: #1a1a1a;}</style>
 <body></body>
+<script type="text/javascript">
+	HOME_URL = 'https://search.lanterlite.com'
+	BASE_URL = 'https://search.lanterlite.com'
+</script>
 <script type="text/javascript" src="https://search.lanterlite.com/app/gate.js"></script>
 </html>
