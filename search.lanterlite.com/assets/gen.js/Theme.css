@@ -1,0 +1,66 @@
+.theme {
+  transition: 
+    background-color 0.25s,
+    visibility 0.25s,
+    opacity 0.25s,
+    color 0.25s,
+    border 0.25s,
+    font-size 0.25s, 
+    top 0.25s,
+    bottom 0.25s,
+    right 0.25s,
+    left 0.25s !important;
+  transition-timing-function: cubic-bezier(0.36, 0.64, 0.41, 0.89);
+}
+
+.theme.fa01 {font-family: 'Montserrat';}
+.theme.fa02 {font-family: 'Montserrat Alternates';}
+.theme.fa03 {font-family: 'Arvo';}
+.theme.fa04 {font-family: 'Capriola';}
+.theme.fa05 {font-family: 'Farro';}
+.theme.fa06 {font-family: 'Armata';}
+.theme.fa07 {font-family: 'Quando';}
+.theme.fa08 {font-family: 'Rubik';}
+.theme.fa09 {font-family: 'Work Sans';}
+.theme.fa10 {font-family: 'Libre Baskerville';}
+
+input.theme.ca01:disabled {background-color: #474747;}
+button.theme.ca01:disabled {background-color: #474747;}
+button.theme.ca01:disabled {background-color: #474747;}
+.theme.ca01.hover1.active1 {background-color: #474747;}
+.theme.ca01.hover1:hover {background-color: #474747;}
+.theme.ca01.hover1:focus {background-color: #474747;}
+.theme.ca01.bgclr1 {background-color: #1A1A1A;}
+.theme.ca01.hover2:hover {background-color: #F5F5F5;}
+.theme.ca01.hover2:focus {background-color: #F5F5F5;}
+.theme.ca01.bgclr2 {background-color: #F5F5F5;}
+.theme.ca01.scroll {background-color: rgb(26, 26, 26, 0.1);}
+.theme.ca01.color1 {color: black;}
+.theme.ca01.color2 {color: #F5F5F5;}
+.theme.ca01.point2 {caret-color: #F5F5F5;}
+
+input.theme.ca02:disabled {background-color: #212F3D;}
+button.theme.ca02:disabled {background-color: #212F3D;}
+.theme.ca02.hover1.active1 {background-color: #212F3D;}
+.theme.ca02.hover1:hover {background-color: #212F3D;}
+.theme.ca02.hover1:focus {background-color: #212F3D;}
+.theme.ca02.bgclr1 {background-color: #17202A;}
+.theme.ca02.hover2:hover {background-color: #EAECEE;}
+.theme.ca02.hover2:focus {background-color: #EAECEE;}
+.theme.ca02.bgclr2 {background-color: #EAECEE;}
+.theme.ca02.scroll {background-color: rgb(23, 32, 42, 0.1);}
+.theme.ca02.color1 {color: black;}
+.theme.ca02.color2 {color: #EAECEE;}
+.theme.ca02.point2 {caret-color: #EAECEE;}
+
+input.theme.ca03:disabled {background-color: #922B21;}
+button.theme.ca03:disabled {background-color: #922B21;}
+.theme.ca03.hover1.active1 {background-color: #922B21;}
+.theme.ca03.hover1:hover {background-color: #922B21;}
+.theme.ca03.bgclr1 {background-color: #641E16;}
+.theme.ca03.hover2:hover {background-color: #F9EBEA;}
+.theme.ca03.bgclr2 {background-color: #F9EBEA;}
+.theme.ca03.scroll {background-color: rgb(100, 30, 22, 0.1);}
+.theme.ca03.color1 {color: purple;}
+.theme.ca03.color2 {color: #F9EBEA;}
+.theme.ca03.point2 {caret-color: #F9EBEA;}

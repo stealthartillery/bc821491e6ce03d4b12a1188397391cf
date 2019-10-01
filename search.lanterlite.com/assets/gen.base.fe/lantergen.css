@@ -1,0 +1,200 @@
+@import url("../gen.css/Fonts.css");
+@import url("../gen.css/Button.css");
+@import url("../gen.css/Input.css");
+@import url("../gen.css/Select.css");
+
+@import url("../gen.js/Offline.css");
+@import url("../gen.js/NotFound.css");
+@import url("../gen.js/Theme.css");
+@import url("../gen.js/Snackbar.css");
+@import url("../gen.js/Tooltip.css");
+@import url("../gen.js/Checkbox.css");
+@import url("../gen.js/SplashScreen.css");
+@import url("../gen.js/Loading.css");
+
+@import url("../gen.js/Signin.css");
+@import url("../gen.js/Header.css");
+@import url("../gen.js/Info.css");
+@import url("../gen.js/Profile.css");
+@import url("../gen.js/NotifMessage.css");
+@import url("../gen.js/Notif.css");
+@import url("../gen.js/Account.css");
+@import url("../gen.js/Sidebar.css");
+@import url("../gen.js/CreateAccount.css");
+@import url("../gen.js/Terms.css");
+@import url("../gen.js/EmailVerification.css");
+@import url("../gen.js/Option.css");
+
+@import url("../gen.js/Footer.css");
+
+@import url("../gen.js/Scrollbar.css");
+
+@import url("../gen.js/MoveTopButton.css");
+@import url("../gen.js/FloatingCanvas.css");
+
+.xdisplay {
+  display: none;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/*div.hover {
+  box-shadow: 0px 0px 10px gold, 0px 0px 10px gold, 0px 0px 10px gold;
+}
+*/
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.arabic {
+  font-family: me_quran !important;
+  transition: font-size 0.25s ease 0s;
+}
+
+.latin {
+  font-family: Calibri !important;
+  transition: font-size 0.25s ease 0s;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+
+.bg.gen {
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bg.dark {
+  display: none;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  left: 0;
+}
+
+/*div.active {
+  background-color: #1a1a1a;
+  color: #ffd700 !important;
+}
+*/
+div.lantersquare {
+  height: 100%;
+  width: 100%;
+  background-color: gold;
+}
+
+.xheight {
+  height: 0px !important;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  /*overflow: hidden;*/
+}
+
+/*::-webkit-scrollbar {
+    width: 0px;
+}
+*/
+
+
+.std_txt {
+  font-family: var(--fontf_1);
+  color: var(--dark_color_1);
+  font-weight: 900;
+}
+
+.color_transparent {
+  color: transparent !important;
+}
+
+
+input.std {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+  /* border: none; */
+  /* -webkit-border-radius: 5px; */
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* box-shadow: 1px 1px 2px 1px #999; */
+   outline: none; 
+  border: 1px solid darkgray;
+}
+
+
+a.std:hover {
+  border-bottom: 2px solid;
+}
+a.std {
+  z-index: 0;
+  cursor: pointer;
+  /* font-family: var(--fontf_1); */
+  -webkit-user-select: none;
+  user-select: none;
+  border: none;
+  text-decoration: none;
+  transition: border 0.25s;
+  color: royalblue;
+  border-bottom: 2px solid transparent;
+}
+
+a.dark:hover {
+  border-bottom: 1px solid var(--dark_color_1);
+}
+a.dark {
+  transition: border 0.25s;
+  border-bottom: 1px solid transparent;
+}
+
+
+:root {
+  --fontf_1 : 'Quando'; 
+  --title_color_1 : #9D8400;
+
+  --orn1_color_1 : #ffd700;
+  --orn1_color_2 : #ffed8d; 
+  --orn1_color_3 : #FFF4BB; 
+
+  --orn2_color_1 : #1E90FF;
+
+  --light_color_1 : #ffffff;
+  --light_color_2 : #F3F3F3; 
+  --light_color_3 : #EBEBEB; 
+  --light_color_4 : #DCDCDC; 
+  
+  --dark_color_1 : #000000;
+  --dark_color_2 : #1a1a1a;
+  --dark_color_3 : #2a2a2a;
+}

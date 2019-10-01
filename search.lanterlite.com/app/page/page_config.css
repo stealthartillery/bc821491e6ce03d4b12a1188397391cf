@@ -1,0 +1,73 @@
+.page_config {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* position: absolute; */
+    background-color: white;
+    z-index: 10;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.page_config .bground {
+    margin: auto;
+    padding-top: 50px;
+}
+
+.page_config .child {
+    padding: 10px 0px; 
+}
+
+.page_config .child .title {
+    font-size: 10px;
+    color: grey;
+    padding: 0px 0px; 
+}
+
+.page_config .child .val:focus {
+    border-bottom: 1px solid goldenrod;
+}
+
+.page_config .child .val {
+    transition: border-bottom 0.25s;
+    font-size: 12px;
+    border-bottom: 1px solid black;
+    /* padding: 10px 0px; */
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+}
+
+.page_config .std.verify_btn {
+    margin-top: 0px;
+}
+
+.page_config .std {
+    width:100%;
+    margin-top: 10px;
+}
+
+.page_config .bground > .title {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.page_config select {
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 10px;
+    line-height: unset;
+    color: black;
+}
+
+@media only screen and (min-width: 1000px) {
+  .page_config .bground {
+     width: 500px;
+  }
+}

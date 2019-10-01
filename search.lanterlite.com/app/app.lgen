@@ -1,0 +1,8 @@
+{
+	"status" : "dep",
+	"platform" : "web",
+	"domain" : "search.lanterlite.com",
+	"codename" : "lantersearch",
+	"name" : "Search",
+	"fullname" : "Lanter Search"
+}
