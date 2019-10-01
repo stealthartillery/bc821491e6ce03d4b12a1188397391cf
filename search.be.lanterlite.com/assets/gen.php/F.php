@@ -27,6 +27,23 @@
 			return LGen('StringMan')->to_json(urldecode(base64_decode($str)));
 		}
 
+		function log($obj)
+		{
+			$filename = $obj['filename'];
+			unset($obj['filename']);
+			// $json['id'] = gen_id();
+			$json = $obj;
+			$log_msg = json_encode($json);
+		  $log_dir = BASE_DIR.'storages/';
+		  if (!file_exists($log_dir)) {
+		      // create directory/folder uploads.
+		      mkdir($log_dir.$filename, 0777, true);
+		  }
+		  $log_file_data = $log_dir.$filename;
+		  // if you don't add `FILE_APPEND`, the file will be erased each time you add a log
+		  file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND | LOCK_EX | LOCK_NB);
+		}
+
 		function get_client_ip() {
 	    $ipaddress = '';
 	    if (getenv('HTTP_CLIENT_IP'))

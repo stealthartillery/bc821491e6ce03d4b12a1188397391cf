@@ -1,6 +1,6 @@
 <?php
-	ini_set("log_errors", 1);
-	ini_set("error_log", BASE_DIR.'storages/search/'. 'search.log');
+	// ini_set("log_errors", 1);
+	// ini_set("error_log", BASE_DIR.'storages/search/'. 'search.log');
 
 	class SearchGen {
 		public function __construct() {
@@ -371,6 +371,14 @@
 
 
 		function search2($obj) {
+			$log = LGen('StringMan')->to_json('{}');
+			$log['ip'] = LGen('F')->get_client_ip();
+			$log['keywords'] = $obj['user_keyword'];
+			$log['page'] = $obj['page'];
+			$log['date'] = gmdate("Y/m/d H:i:s T");
+			$log['filename'] = 'search/citizen.search.log';
+			LGen('F')->log($log);
+
 			$user_keyword = $obj['user_keyword'];
 			$page = $obj['page'];
 			$this->user_keyword = $user_keyword;
