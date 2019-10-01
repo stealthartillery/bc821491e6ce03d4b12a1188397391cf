@@ -9,15 +9,15 @@
 	<meta name="revisit-after" content="7 days">
 	<meta name="author" content="Lanterlite Team">
 	<meta charset="utf-8">
-	<link rel="icon" type="image/gif" href="https://assets/gen.base.fe/icon.gif">
+	<link rel="icon" type="image/gif" href="https://search.lanterlite.com/assets/gen.base.fe/icon.gif">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <style type="text/css">body {background-color: #1a1a1a;}</style>
 <body></body>
 <script type="text/javascript">
-	HOME_URL = 'https://search.lanterlite.com'
-	BASE_URL = 'https://search.lanterlite.com'
+	HOME_URL = 'https://search.lanterlite.com/'
+	BASE_URL = 'https://search.lanterlite.com/'
 </script>
 <script type="text/javascript" src="https://search.lanterlite.com/app/gate.js"></script>
 </html>
