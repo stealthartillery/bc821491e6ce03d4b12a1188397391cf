@@ -2,7 +2,7 @@
 	class GlobVar {
 		public function __construct() {
 
-			$globvars = BASE_DIR.'assets/gen.obj/globvar';
+			$globvars = BASE_DIR.'assets/gen.obj/globvar.lgen';
 			$string = file_get_contents($globvars); 
 			$globvars = json_decode($string, true); 
 			foreach ($globvars as $key => $value) {

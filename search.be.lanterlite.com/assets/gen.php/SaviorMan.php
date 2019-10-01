@@ -1,6 +1,6 @@
 <?php
-	// ini_set("log_errors", 1);
-	// ini_set("error_log", BASE_DIR.'storages/savior/'. 'savior.log');
+	ini_set("log_errors", 1);
+	ini_set("error_log", BASE_DIR.'storages/savior/'. 'savior.log');
 
 	class SaviorMan {
 		public function __construct() {
