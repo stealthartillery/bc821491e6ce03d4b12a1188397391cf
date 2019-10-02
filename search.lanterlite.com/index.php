@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-	<title>Lanterlite</title>
+	<title>Lanter Search</title>
 	<meta name="title" content="Lanterlite">
 	<meta name="description" content="Lanterlite is an IT company that focuses on the development of Islam through technology. Located at Sadang Serang Street, Palem II number 4, Bandung City, Indonesia.">
 	<meta name="keywords" content="lanterlite, lantersearch, lanterquran, lanterstore, lantersquare, lantersword">
