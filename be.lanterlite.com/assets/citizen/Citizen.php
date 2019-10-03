@@ -1,18 +1,21 @@
 <?php
-	// ini_set("log_errors", 1);
-	// ini_set("error_log", BASE_DIR.'storages/savior/'. 'savior.log');
+	ini_set("log_errors", 1);
+	ini_set("error_log", BASE_DIR.'storages/savior/'. 'savior.log');
 
 	class CitizenGen {
 		public function __construct() {
 			set_time_limit ( 0 );
 		}
 
-		public function logout() {
-			$this->unset_ship_id();
+		public function logout($obj) {
+			$this->unset_ship_id($obj);
 		}
 
-		public function unset_ship_id() {
-			$ship_id = LGen('UserInfo')->get_ip();
+		public function unset_ship_id($obj) {
+			if (!LGen('JsonMan')->is_key_exist($obj['val'], 'ship_id'))
+				return [];
+			$ship_id = $obj['val']['ship_id'];
+			// $ship_id = LGen('UserInfo')->get_ip();
 			$_obj = [];
 			$_obj['gate'] = 'savior';
 			$_obj['bridge'] = [];
@@ -27,8 +30,10 @@
 			return $result;
 		}
 
-		public function set_ship_id($cit_id) {
-			$ship_id = LGen('UserInfo')->get_ip();
+		public function set_ship_id($cit) {
+			$cit_id = $cit['cit_id'];
+			$ship_id = $cit['ship_id'];
+			// $ship_id = LGen('UserInfo')->get_ip();
 			$obj['bridge'] = array(
 				0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}')
 				// 1 => LGen('StringMan')->to_json('{"id":"'.$ship_id.'","puzzled":true}')
@@ -49,14 +54,19 @@
 				'cit_id' => $cit_id
 			));
 			LGen('SaviorMan')->insert($obj);
+			// return $ship_id;
 		}
 
 		public function get_ship_id($obj) {
 			LGen('SaviorMan')->req_validator($obj);
 			// $obj['bridge'] = [];
+			if (!LGen('JsonMan')->is_key_exist($obj['val'], 'ship_id'))
+				return [];
+
 			$obj['bridge'] = array(
 				0 => LGen('StringMan')->to_json('{"id":"ships","puzzled":true}'),
-				1 => LGen('StringMan')->to_json('{"id":"'.LGen('UserInfo')->get_ip().'","puzzled":true}')
+				1 => LGen('StringMan')->to_json('{"id":"'.$obj['val']['ship_id'].'","puzzled":true}')
+				// 1 => LGen('StringMan')->to_json('{"id":"'.LGen('UserInfo')->get_ip().'","puzzled":true}')
 			);
 			$obj['namelist'] = ['client_ip', 'cit_id'];
 			$obj['def'] = 'ships';
@@ -140,10 +150,16 @@
 				// error_log(json_encode($citizen));
 				// error_log($citizen['email'] .' '. $email);
 				if ($citizen['email'] === $email and $citizen['password'] === $password) {
-					if ($keep_signin)
-						$this->set_ship_id($citizen['id']);
+					// $ship_id = '';
+					if ($keep_signin && LGen('JsonMan')->is_key_exist($obj['val'], 'ship_id')) {
+						$ship = [];
+						$ship['cit_id'] = $citizen['id'];
+						$ship['ship_id'] = $obj['val']['ship_id'];
+						$this->set_ship_id($ship);
+					}
 					$obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
+					// $result['ship_id'] = $ship_id;
 					$result['id'] = $citizen['id'];
 					$result['is_verified'] = $citizen['is_verified'];
 					$result['lang'] = $citizen['lang'];
