@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Model sistem baru",
+		"date"	: "Okt 6, 2019",
+		"sub"	: "Semua aplikasi Lanterlite telah diterapkan Lanter Gen II.",
+		"img"	: "assets/www.lanterlite.com/img/system1.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191006')"}
+	},
+	{
 		"title" : "Lanter Gen Generasi II",
 		"date"	: "Sep 28, 2019",
 		"sub"	: "Versi terbaru dari framework pengembangan aplikasi Lanterlite.",
@@ -19,12 +26,5 @@
 		"sub"	: "Enlite telah berisi empat kitab rujukan umat muslim.",
 		"img"	: "assets/www.lanterlite.com/img/page_news/news/190505.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190505')"}
-	},
-	{
-		"title" : "Lanterlite Trade Center",
-		"date"	: "Apr 27, 2019",
-		"sub"	: "Lanterlite Trade Center telah dirilis.",
-		"img"	: "assets/www.lanterlite.com/img/page_news/news/190427.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190427')"}
 	}
 ]

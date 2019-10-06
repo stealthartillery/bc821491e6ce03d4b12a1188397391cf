@@ -1,5 +1,19 @@
 [
 	{
+		"title" : "Model sistem baru",
+		"date"	: "Okt 6, 2019",
+		"sub"	: "Semua aplikasi Lanterlite telah diterapkan Lanter Gen II.",
+		"img"	: "assets/www.lanterlite.com/img/system1.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191006')"}
+	},
+	{
+		"title" : "Lanter Gen Generasi II",
+		"date"	: "Sep 28, 2019",
+		"sub"	: "Versi terbaru dari framework pengembangan aplikasi Lanterlite.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190928')"}
+	},
+	{
 		"title" : "Lanter Gen Generasi II",
 		"date"	: "Sep 28, 2019",
 		"sub"	: "Versi terbaru dari framework pengembangan aplikasi Lanterlite.",

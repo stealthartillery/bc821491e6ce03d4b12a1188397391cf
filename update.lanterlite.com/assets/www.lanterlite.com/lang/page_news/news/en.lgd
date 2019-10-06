@@ -1,10 +1,17 @@
 [
 	{
+		"title" : "New system model",
+		"date"	: "Oct 6, 2019",
+		"sub"	: "Lanter Gen II have been planted on all Lanterlite apps.",
+		"img"	: "assets/www.lanterlite.com/img/system1.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191006')"}
+	},
+	{
 		"title" : "Lanter Gen 2nd Generation",
 		"date"	: "Sep 28, 2019",
 		"sub"	: "Latest version of Lanterlite Application Development Framework.",
 		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190928')"}
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190928')"}
 	},
 	{
 		"title" : "New Names",
