@@ -237,34 +237,7 @@ get data if static ip match
 		}	
 	}
 
-	function mysort3($userInput){
 
-		$arr_str = LGen('JsonMan')->read(BASE_DIR . 'storages/search/words.json');
-
-		$arr_inp = LGen('StringMan')->to_arr(strtolower($userInput), ' ');
-		$scores = [];
-		$corrected_words = [];
-
-		for ($j=0; $j<sizeof($arr_inp); $j++) {
-			array_push($scores, 0);
-			array_push($corrected_words, '-');
-		}
-		for ($i=0; $i<sizeof($arr_str); $i++) {
-			for ($j=0; $j<sizeof($arr_inp); $j++) {
-
-			  similar_text($arr_inp[$j], $arr_str[$i], $percentA);
-			  if ($percentA > 50 && $percentA > $scores[$j]) {
-			  	$scores[$j] = $percentA;
-			  	$corrected_words[$j] = $arr_str[$i];						
-			  }
-			}
-		}
-
-		$result['scores'] = $scores;
-		$result['words'] = $corrected_words;
-		// printJson($result);
-		return $result;
-	}
 
 
 	function new_in_array($arr, $val) {
