@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Invix II and Intelligence IV",
+		"date"	: "Oct 13, 2019",
+		"sub"	: "Invix method performance with better intelligence.",
+		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191013')"}
+	},
+	{
 		"title" : "New system model",
 		"date"	: "Oct 6, 2019",
 		"sub"	: "Lanter Gen II have been planted on all Lanterlite apps.",

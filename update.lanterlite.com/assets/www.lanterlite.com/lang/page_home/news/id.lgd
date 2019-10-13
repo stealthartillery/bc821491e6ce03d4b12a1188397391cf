@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Invix II dan Intelejensi IV",
+		"date"	: "Okt 13, 2019",
+		"sub"	: "Performa metode Invix serta Intelejensi yang lebih baik.",
+		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191013')"}
+	},
+	{
 		"title" : "Model sistem baru",
 		"date"	: "Okt 6, 2019",
 		"sub"	: "Semua aplikasi Lanterlite telah diterapkan Lanter Gen II.",
@@ -19,12 +26,5 @@
 		"sub"	: "Sebagian besar aplikasi Lanterlite beralih nama.",
 		"img"	: "assets/www.lanterlite.com/img/page_news/news/190622.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190622')"}
-	},
-	{
-		"title" : "Empat Kitab Rujukan",
-		"date"	: "Mei 5, 2019",
-		"sub"	: "Enlite telah berisi empat kitab rujukan umat muslim.",
-		"img"	: "assets/www.lanterlite.com/img/page_news/news/190505.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190505')"}
 	}
 ]
