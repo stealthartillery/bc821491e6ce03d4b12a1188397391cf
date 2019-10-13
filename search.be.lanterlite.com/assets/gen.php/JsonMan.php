@@ -9,6 +9,10 @@
 			echo "<pre>" . json_encode($json, JSON_PRETTY_PRINT) . "</pre>"; 
 		}
 
+		function get_keys($json) { 
+			return  array_keys($json);
+		}
+
 		function rmv_by_key(&$json, $key) {
 			unset($json[$key]);
 			return $json;

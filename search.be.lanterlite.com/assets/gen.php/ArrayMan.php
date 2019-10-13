@@ -8,6 +8,10 @@
 			return json_decode(json_encode($arr), true);
 		}
 
+		function intersect($arr1, $arr2) {
+			return array_values(array_intersect($arr1, $arr2));
+		}
+
 		function is_index_exist($arr, $index) {
 			return isset($arr[$index]);
 		}
