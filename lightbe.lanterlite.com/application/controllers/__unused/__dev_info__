@@ -1,4 +1,0 @@
-Always use Ucfirst for class file
-
-ipm.php // run on localhost but not deploy
-Ipm.php // run both
