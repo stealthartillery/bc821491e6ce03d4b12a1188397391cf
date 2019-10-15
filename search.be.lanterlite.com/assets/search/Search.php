@@ -1,6 +1,6 @@
 <?php
-	// ini_set("log_errors", 1);
-	// ini_set("error_log", BASE_DIR.'storages/search/'. 'search.log');
+	ini_set("log_errors", 1);
+	ini_set("error_log", BASE_DIR.'storages/search/'. 'search.log');
 	
 	// function mysort3($userInput){
 
@@ -141,6 +141,7 @@
 			// 	$word[$i] = LGen('StringMan')->root_word($wordman, $word[$i]);
 			// }
 
+			$index = 0;
 			$_index = [];
 			for ($j=0; $j<sizeof($word); $j++) {
 				$_index[$word[$j]] = [];
