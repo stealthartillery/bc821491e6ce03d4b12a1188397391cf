@@ -9,6 +9,10 @@ RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|lgd|gif|svg|icon|png|jpe?g|
 
 RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
 
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)betest.lanterlite.com [NC]
+RewriteRule \.(txt)$ - [NC,F,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|images|robots\.txt)
