@@ -96,6 +96,7 @@ class Citizen extends CI_Controller{
 		openssl_private_decrypt($encrypted, $decrypted, $private_key);
 
 		// echo "This is the decrypted text: $decrypted\n\n";
+		echo $decrypted;
 		return $decrypted;
 
 		if (isset($data)) {
