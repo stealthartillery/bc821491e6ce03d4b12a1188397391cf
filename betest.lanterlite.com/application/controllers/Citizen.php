@@ -80,8 +80,8 @@ class Citizen extends CI_Controller{
 		// Q1lGMLO8H8q1NEXWUKEE/hRLQuXy+rl7z7PhsAywpa1CIPviCB5hS7yU3QrYvyvG
 		// doB6qhVry2J84xeixT1a/onofTimKg==
 		// -----END PRIVATE KEY-----";
-		$public_key = file_get_contents(BASE_DIR.'public_key.txt');;
-		$private_key = file_get_contents(BASE_DIR.'private_key.txt');;
+		$public_key = file_get_contents(BASE_DIR.'secret/public_key.txt');;
+		$private_key = file_get_contents(BASE_DIR.'secret/private_key.txt');;
 		$text = 'This is the text to encrypt';
 
 		// echo "This is the original text: $text\n\n";
