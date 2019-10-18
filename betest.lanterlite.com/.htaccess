@@ -4,6 +4,9 @@
 
 RewriteEngine On
 
+# Every URI that not (! operator) ends with one of .php, .css, .js, .gif, .png, .jpg, .jpeg or .pdf
+RewriteCond %{REQUEST_URI} !\.(php|css|js|words|lgen|lgd|gif|svg|icon|png|jpe?g|pdf|webp)$
+
 RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
