@@ -1,8 +1,12 @@
 <?php if (!defined('BASEPATH')) exit('Site protected by Lanterlite Defender.');
 
-/* v 1.0.0 */
+/* v 1.0.1 */
 
 init();
+function get_app() {
+	$res = json_decode(file_get_contents(HOME_DIR."app/app.lgen"), true);
+	return $res;
+}
 
 class Gate extends CI_Controller{
 

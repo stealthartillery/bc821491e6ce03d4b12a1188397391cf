@@ -83,7 +83,7 @@
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$result['cit_id'].'", "puzzled":false}'));
 				$_obj['def'] = 'citizens';
-				$_obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+				$_obj['namelist'] = ['fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 
 				$citizen = LGen('SaviorMan')->read($_obj);
 				$_result['id'] = $citizen['id'];
@@ -99,6 +99,7 @@
 				$_result['point'] = $citizen['point'];
 				$_result['theme_font'] = $citizen['theme_font'];
 				$_result['theme_color'] = $citizen['theme_color'];
+				$_result['fsize'] = $citizen['fsize'];
 			}
 			// error_log('$result ' . json_encode($result));
 			// if ($result === LGen('GlobVar')->not_found) {
@@ -158,7 +159,7 @@
 						$ship['ship_id'] = $obj['val']['ship_id'];
 						$this->set_ship_id($ship);
 					}
-					$obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+					$obj['namelist'] = ['fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
 					// $result['ship_id'] = $ship_id;
 					$result['id'] = $citizen['id'];
@@ -174,6 +175,7 @@
 					$result['point'] = $citizen['point'];
 					$result['theme_font'] = $citizen['theme_font'];
 					$result['theme_color'] = $citizen['theme_color'];
+					$result['fsize'] = $citizen['fsize'];
 				
 					$obj['namelist'] = ['id', 'type', 'created_date'];
 					array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "licenses", "puzzled":true}'));
