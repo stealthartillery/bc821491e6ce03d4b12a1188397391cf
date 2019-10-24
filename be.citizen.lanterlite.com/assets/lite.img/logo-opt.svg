@@ -1,0 +1,41 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="150mm" height="150mm" version="1.1" viewBox="0 0 531.5 531.5" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0 -520.87)">
+  <g transform="matrix(.26342 0 0 .26342 -729.16 298.45)" fill="#fffcc9">
+   <g transform="translate(6.8944 133.9)" fill="#fffcc9">
+    <g display="none">
+     <rect x="-.24264" y="-47.638" width="749.66" height="755.51" fill="#fffcc9"/>
+    </g>
+    <g>
+     <path d="m376.25 55.305-291.16 196.67 291.15 61.66 293.11-60.344z"/>
+     <path d="m71.215 251.97-0.07813-0.0156c0.0099 0.0167 0.02084 0.0325 0.0293 0.0488z"/>
+     <path d="m565.46 302.55-174.69 36.479v236.4l134.07-84.451z"/>
+     <path d="m186.77 302.55 174.69 36.479v236.4l-134.07-84.451z"/>
+    </g>
+   </g>
+  </g>
+  <text x="-525.83002" y="441.74792" fill="#000000" font-family="sans-serif" letter-spacing="0px" stroke-width="1px" word-spacing="0px" style="line-height:0%" xml:space="preserve"><tspan x="-525.83002" y="441.74792" fill="#fffcc9" font-family="Constantia" font-size="80px" style="line-height:125%">Quranic</tspan></text>
+  <g transform="matrix(.79702 0 0 .79702 -34.718 427.77)" fill="#daa520">
+   <g transform="translate(6.8944 133.9)" fill="#daa520">
+    <g display="none">
+     <rect x="-.24264" y="-47.638" width="749.66" height="755.51" fill="#daa520"/>
+    </g>
+    <g>
+     <path d="m376.25 55.305-291.16 196.67 291.15 61.66 293.11-60.344z"/>
+     <path d="m71.215 251.97-0.07813-0.0156c0.0099 0.0167 0.02084 0.0325 0.0293 0.0488z"/>
+     <path d="m565.46 302.55-174.69 36.479v236.4l134.07-84.451z"/>
+     <path d="m186.77 302.55 174.69 36.479v236.4l-134.07-84.451z"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
