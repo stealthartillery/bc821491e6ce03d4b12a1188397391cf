@@ -222,8 +222,8 @@
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {
-					$data[$value] = LGen('JsonMan')->read($dir.$_val);
-					$data[$value] = LGen('White')->get($data[$value]);
+					$_data = LGen('JsonMan')->read($dir.$_val);
+					$data[$value] = LGen('White')->get($_data);
 				}
 				else if (LGen('JsonMan')->is_key_exist($default, $value)) {
 					// $_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}'));
