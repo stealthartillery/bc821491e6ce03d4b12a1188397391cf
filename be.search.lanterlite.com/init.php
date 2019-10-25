@@ -6,7 +6,7 @@ defined('HOME_URL') OR define('HOME_URL', 'https://be.search.lanterlite.com/');
 defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 defined('HOME_DIR') OR define('HOME_DIR', FCPATH);
 
-defined('app_status') OR define('app_status', 'dev');
+defined('app_status') OR define('app_status', 'dep');
 
 function init() {
 	if (app_status === 'dev') {
