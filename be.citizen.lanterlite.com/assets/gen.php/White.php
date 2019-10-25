@@ -43,6 +43,9 @@ class White {
 		$_d = "QakDy61n5vBXsgjw9zLmJKcPuSIdMZqtfUWbhp4eR73HNlCT082VoAGiOrFYxE";
 		// $arr_d = str_split($_d);
 		$arr_str = str_split($str);
+		$str = substr($str, 3, sizeof($arr_str));
+		$arr_str = str_split($str);
+		
 		$num = (int)$arr_str[3];
 		$str = LGen('StringMan')->rmv_val_by_index($str, 3);
 		$arr_str = str_split($str);

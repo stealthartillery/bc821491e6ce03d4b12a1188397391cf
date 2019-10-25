@@ -214,7 +214,7 @@
 
 			$config_dir = HOME_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
 			$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
-			if (app_status === 'dep')
+			if (LGen('Black')->check($default))
 				$default = LGen('White')->get($default);
 			$default = $default[$obj['def']];
 

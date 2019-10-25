@@ -61,7 +61,21 @@ class Black {
 				$str2 .= array_key_exists((strpos($_d, $arr_str[$i])+1), $arr_d)? $arr_d[(strpos($_d, $arr_str[$i])+1)] : $arr_d[(strpos($_d, $arr_str[$i])+1-sizeof($arr_d))];
 		}
 		$str2 = LGen('StringMan')->add_val_by_index($str2, $num, 3);
+		$str2 = 'LTS'.$str2;
 		return $str2;
+	}
+
+	function check($str) {
+		if (!is_string($str))
+			return false;
+		$arr_str = str_split($str);
+		if (sizeof($arr_str)<15)
+			return false;
+		if (!(int)$arr_str[6])
+			return false;
+		if (substr($str, 0, 3) !== "LTS")
+			return false;
+		return true;
 	}
 
 	function get($str) {

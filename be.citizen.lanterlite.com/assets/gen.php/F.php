@@ -67,7 +67,7 @@ class F {
 		// $json['id'] = gen_id();
 		$json = $obj;
 		$log_msg = json_encode($json);
-	  $log_dir = BASE_DIR.'storages/';
+	  $log_dir = HOME_DIR.'storages/';
 	  if (!file_exists($log_dir)) {
 	      // create directory/folder uploads.
 	      mkdir($log_dir.$filename, 0777, true);
