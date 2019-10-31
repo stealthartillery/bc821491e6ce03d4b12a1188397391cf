@@ -1,12 +1,12 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-defined('BASE_URL') OR define('BASE_URL', 'http://localhost/');
-defined('HOME_URL') OR define('HOME_URL', 'http://localhost/app/be.quran.lanterlite.com/');
-defined('BASE_DIR') OR define('BASE_DIR', 'E:/liteapps/');
-defined('HOME_DIR') OR define('HOME_DIR', 'E:/liteapps/app/be.quran.lanterlite.com/');
+defined('BASE_URL') OR define('BASE_URL', 'https://be.quran.lanterlite.com/');
+defined('HOME_URL') OR define('HOME_URL', 'https://be.quran.lanterlite.com/');
+defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
+defined('HOME_DIR') OR define('HOME_DIR', FCPATH);
 
-defined('app_status') OR define('app_status', 'dev');
+defined('app_status') OR define('app_status', 'dep');
 
 function init() {
 	if (app_status === 'dev') {
