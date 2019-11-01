@@ -83,7 +83,7 @@
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$result['cit_id'].'", "puzzled":false}'));
 				$_obj['def'] = 'citizens';
-				$_obj['namelist'] = ['fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+				$_obj['namelist'] = ['created_date', 'verification_code', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 
 				$citizen = LGen('SaviorMan')->read($_obj);
 				$_result['id'] = $citizen['id'];
@@ -100,6 +100,13 @@
 				$_result['theme_font'] = $citizen['theme_font'];
 				$_result['theme_color'] = $citizen['theme_color'];
 				$_result['fsize'] = $citizen['fsize'];
+				$_result['created_date'] = $citizen['created_date'];
+				$_result['verification_code'] = $citizen['verification_code'];
+
+				$_obj['namelist'] = ['id', 'type', 'created_date'];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "licenses", "puzzled":true}'));
+				$licenses = LGen('SaviorMan')->get_all($_obj);
+				$_result['licenses'] = $licenses;
 			}
 			// error_log('$result ' . json_encode($result));
 			// if ($result === LGen('GlobVar')->not_found) {
@@ -159,7 +166,7 @@
 						$ship['ship_id'] = $obj['val']['ship_id'];
 						$this->set_ship_id($ship);
 					}
-					$obj['namelist'] = ['fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+					$obj['namelist'] = ['verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
 					// $result['ship_id'] = $ship_id;
 					$result['id'] = $citizen['id'];
@@ -176,6 +183,8 @@
 					$result['theme_font'] = $citizen['theme_font'];
 					$result['theme_color'] = $citizen['theme_color'];
 					$result['fsize'] = $citizen['fsize'];
+					$result['verification_code'] = $citizen['verification_code'];
+					$result['created_date'] = $citizen['created_date'];
 				
 					$obj['namelist'] = ['id', 'type', 'created_date'];
 					array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "licenses", "puzzled":true}'));
