@@ -198,6 +198,110 @@
 			return 'account is unregistered';
 		}
 
+		public function read($obj) {
+			// error_log('json_encode($citizens)');
+			LGen('SaviorMan')->req_validator($obj);
+
+			$obj['def'] = 'citizens';
+			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$obj['val']['id'].'", "puzzled":false}'));
+			$_bridge = LGen('SaviorMan')->gen_bridge($obj['bridge']);
+			$dir = HOME_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
+
+			$obj['namelist'] = ['verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+			$citizen = LGen('SaviorMan')->read($obj);
+
+			$result['id'] = $citizen['id'];
+			$result['is_verified'] = $citizen['is_verified'];
+			$result['lang'] = $citizen['lang'];
+			$result['fullname'] = $citizen['fullname'];
+			$result['email'] = $citizen['email'];
+			$result['username'] = $citizen['username'];
+			$result['gender'] = $citizen['gender'];
+			$result['address'] = $citizen['address'];
+			$result['phonenum'] = $citizen['phonenum'];
+			$result['silver'] = $citizen['silver'];
+			$result['point'] = $citizen['point'];
+			$result['theme_font'] = $citizen['theme_font'];
+			$result['theme_color'] = $citizen['theme_color'];
+			$result['fsize'] = $citizen['fsize'];
+			$result['verification_code'] = $citizen['verification_code'];
+			$result['created_date'] = $citizen['created_date'];
+		
+			$obj['namelist'] = ['id', 'type', 'created_date'];
+			$obj['def'] = 'citizens/licenses';
+			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "licenses", "puzzled":true}'));
+			$licenses = LGen('SaviorMan')->get_all($obj);
+			$result['licenses'] = $licenses;
+			return $result;
+
+			// // error_log($dir);
+
+			// $bridge = $obj['bridge'];
+			// $obj['namelist'] = ['id','email', 'password'];
+			// $obj['def'] = 'citizens';
+			// $email = $obj['val']['email'];
+			// $password = $obj['val']['password'];
+			// $keep_signin = $obj['val']['keep_signin'];
+			// // $obj['val'] = json_encode($obj['val']);
+			// // $obj['val'] = base64_encode($obj['val']);
+			// // $val = $obj['val']; // keep value encrypted for savior->read purpose.
+
+			// // check citizens
+			// $citizens = getFileNamesInsideDir($dir);
+			// if ($citizens === LGen('GlobVar')->not_found)
+			// 	return LGen('GlobVar')->not_found;
+			// // error_log(json_encode($citizens));
+			// foreach ($citizens as $key => $value) {
+			// 	$obj['bridge'] = $bridge;
+			// 	array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
+			// 	// $obj['val'] = $val; // keep value encrypted for savior->read purpose.
+			// 	$citizen = LGen('SaviorMan')->read($obj);
+			// 	$citizen['id'] = ($citizen['id']);
+			// 	$citizen['email'] = ($citizen['email']);
+			// 	$citizen['password'] = ($citizen['password']);
+			// 	// error_log(json_encode($citizen));
+			// 	error_log($citizen['email'] .' '. $email);
+			// 	if ($citizen['email'] === $email and $citizen['password'] === $password) {
+			// 		// $ship_id = '';
+			// 		if ($keep_signin && LGen('JsonMan')->is_key_exist($obj['val'], 'ship_id')) {
+			// 			$ship = [];
+			// 			$ship['cit_id'] = $citizen['id'];
+			// 			$ship['ship_id'] = $obj['val']['ship_id'];
+			// 			$this->set_ship_id($ship);
+			// 		}
+			// 		$obj['namelist'] = ['verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+			// 		$citizen = LGen('SaviorMan')->read($obj);
+			// 		// $result['ship_id'] = $ship_id;
+			// 		$result['id'] = $citizen['id'];
+			// 		$result['is_verified'] = $citizen['is_verified'];
+			// 		$result['lang'] = $citizen['lang'];
+			// 		$result['fullname'] = $citizen['fullname'];
+			// 		$result['email'] = $citizen['email'];
+			// 		$result['username'] = $citizen['username'];
+			// 		$result['gender'] = $citizen['gender'];
+			// 		$result['address'] = $citizen['address'];
+			// 		$result['phonenum'] = $citizen['phonenum'];
+			// 		$result['silver'] = $citizen['silver'];
+			// 		$result['point'] = $citizen['point'];
+			// 		$result['theme_font'] = $citizen['theme_font'];
+			// 		$result['theme_color'] = $citizen['theme_color'];
+			// 		$result['fsize'] = $citizen['fsize'];
+			// 		$result['verification_code'] = $citizen['verification_code'];
+			// 		$result['created_date'] = $citizen['created_date'];
+				
+			// 		$obj['namelist'] = ['id', 'type', 'created_date'];
+			// 		array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "licenses", "puzzled":true}'));
+			// 		$licenses = LGen('SaviorMan')->get_all($obj);
+			// 		$result['licenses'] = $licenses;
+			// 		return $result;
+			// 	}
+			// 	else if ($citizen['email'] === $email and $citizen['password'] !== $password)
+			// 		return 'wrong email or password';
+			// }
+			// return 'account is unregistered';
+		}
+
 		public function signup($obj) {
 			LGen('SaviorMan')->req_validator($obj);
 
