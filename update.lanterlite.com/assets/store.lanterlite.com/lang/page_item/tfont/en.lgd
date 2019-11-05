@@ -1,0 +1,11 @@
+{
+	"id" : "font_theme_license",
+	"name" : "Font Theme License",
+	"desc"	: "Choose your favourite font type on your Lanterlite apps.",
+	"full_desc"	: "The Font Theme license is used to unlock font features in all Lanterlite applications. There are 10 fonts available throughout the Lanterlite application so you can choose your favorite font while using Lanterlite app. This license applies to one Lanterlite account permanently. This license is sold for 30 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/theme_font.webp"
+	],
+	"price"	: 30
+}

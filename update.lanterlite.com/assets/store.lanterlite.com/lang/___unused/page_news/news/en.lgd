@@ -1,0 +1,86 @@
+[
+	{
+		"title" : "Invix II and Intelligence IV",
+		"date"	: "Oct 13, 2019",
+		"sub"	: "Invix method performance with better intelligence.",
+		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191013')"}
+	},
+	{
+		"title" : "New system model",
+		"date"	: "Oct 6, 2019",
+		"sub"	: "Lanter Gen II have been planted on all Lanterlite apps.",
+		"img"	: "assets/www.lanterlite.com/img/system1.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191006')"}
+	},
+	{
+		"title" : "Lanter Gen 2nd Generation",
+		"date"	: "Sep 28, 2019",
+		"sub"	: "Latest version of Lanterlite Application Development Framework.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190928')"}
+	},
+	{
+		"title" : "New Names",
+		"date"	: "Jun 22, 2019",
+		"sub"	: "Most of Lanterlite apps name has changed.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190622.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190622')"}
+	},
+	{
+		"title" : "Four Reference Books",
+		"date"	: "Mei 5, 2019",
+		"sub"	: "Enlite already contains four reference books.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190505.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190505')"}
+	},
+	{
+		"title" : "Lanterlite Trade Center",
+		"date"	: "Apr 27, 2019",
+		"sub"	: "Lanterlite Trade Center has released.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190427.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190427')"}
+	},
+	{
+		"title" : "Available on Windows Store",
+		"date"	: "Apr 12, 2019",
+		"sub"	: "Enlite and Qulite support on Desktop.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190412.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190412')"}
+	},
+	{
+		"title" : "Invix inside Enlite",
+		"date"	: "Mar 17, 2019",
+		"sub"	: "Invix data retrieval method.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190317.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190317')"}
+	},
+	{
+		"title" : "Lanterlite Dual Languages",
+		"date"	: "Mar 3, 2019",
+		"sub"	: "Lanterlite now supports for Bahasa and English language.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190303.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190303')"}
+	},
+	{
+		"title" : "Qulite Evolved",
+		"date"	: "Feb 24, 2019",
+		"sub"	: "Qulite with new design.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190224.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190224')"}
+	},
+	{
+		"title" : "Enlite Published",
+		"date"	: "Feb 10, 2019",
+		"sub"	: "Lanterlite Islamic Search Engine Published.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190210.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190210')"}
+	},
+	{
+		"title" : "Lanterlite Site Released",
+		"date"	: "Feb 3, 2019",
+		"sub"	: "First released day of www.lanterlite.com.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190203.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190203')"}
+	}
+]

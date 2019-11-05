@@ -1,0 +1,20 @@
+[
+	{
+		"title" : "Islam",
+		"sub"	: "Lanterlite strives to glorify Islam, a living guide for humans.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/allah4.webp",
+		"link"	: { "title" : "Read", "url": "news/190412" }
+	},
+	{
+		"title" : "Technology",
+		"sub"	: "Lanterlite uses its own technologies to do its mission.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/techno1.webp",
+		"link"	: { "title" : "Read", "url": "news/190317" }
+	},
+	{
+		"title" : "Enlightenment",
+		"sub"	: "Lanterlite spreads the knowledges about Islam to make the world better.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/world2.webp",
+		"link"	: { "title" : "Read", "url": "news/190317" }
+	}
+]

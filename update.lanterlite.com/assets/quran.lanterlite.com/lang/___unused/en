@@ -1,0 +1,180 @@
+{
+	"sidebar": {
+		"home" 				: "Home",
+		"product" 		: "Product",
+		"about" 			: "About"		
+	},
+	"header": {
+		"contribute" 	: "Contribute",
+		"sign_in" 		: "Sign In",
+		"sign_up" 		: "Sign Up",
+		"password" 		: "Password",
+		"sign_out" 		: "Sign Out"
+	},
+	"footer": {
+		"language" 		: "Language",
+		"follow_us" 	: "Follow",
+		"product" 		: "Product",
+		"company": {
+			"title"			: "Company",
+			"about"			: "Our Mission"
+		}
+	},
+	"terms_page": {
+    "title" 			: "Terms - Lanterlite",
+    "meta" : {
+      "description"	: "Terms Page. Contains about Terms for creating new Lanterlite Accout."
+    }
+  },
+	"home_page": {
+    "title" 			: "Lanterlite",
+    "meta" : {
+      "description"	: "Main information of Lanterlite Web."
+    },
+		"slide" : {
+			"title_1"		  : "Endless Innovation",
+			"subtitle_1"	: "Treating as the basis of ideas.",
+			"title_2"		  : "Charity",
+			"subtitle_2"	: "Helping others for better world and the hereafter.",
+			"title_3"		  : "OrganiGame",
+			"subtitle_3"	: "Creating new system of organization.",
+			"title_4"		  : "Sunnah",
+			"subtitle_4"	: "Adapting the rules of islam.",
+			"title_5"		  : "Self Development",
+			"subtitle_5"	: "Applying the temperance and courage."
+		},
+		"post" : {
+			"news": {
+	      "bigtitle"   : "News",
+        "title_1"    : "Enlite",
+        "subtitle_1" : "January 2019 <br> Lanterlite launches a search engine called Enlite. Enlite is made to make it easier for people to find the right propositions in the Qur'an and Hadith based on clear references. <br>Insy&#x0101 All&#x0101h.",
+        "btn_1"      : "Download App",
+        "link_1"      : "https://play.google.com/store/apps/details?id=com.lanterlite.enlite",
+				"title_2" 		: "Qulite",
+				"subtitle_2" : "December 2018 <br> Lanterlite launches a digital Quran named Qulite. Qulite is made for everyone to read the Qur'an easier, understanding better, and memorizing it faster. <br>Insy&#x0101 All&#x0101h.",
+				"btn_2"			: "Download App",
+				"link_2"			: "https://play.google.com/store/apps/details?id=com.lanterlite.quranic",
+				"title_3" 		: "Lanterlite Account",
+				"subtitle_3" : "2018 <br> Lanterlite launches a feature called the Lanterlite Account. This account was created to integrate user information in each Lanterlite product. This includes language and user achievement. <br>Insy&#x0101 All&#x0101h.",
+				"btn_3"			: "Create Account",	
+				"link_3"			: "https://lanterlite.com//register"
+			}
+		}
+	},
+	"about_page": {
+    "title" 			: "About | Lanterlite",
+    "meta" : {
+      "description": "Brief description about Lanterlite."
+    },
+		"slide" : {
+      "title_desc"   : "- Our Mission -",
+      "subtitle_desc"  : "\"Become the leading IT-based organization in expanding Islam throughout the world.\"",
+			"title_1"		  : "Islam",
+			"subtitle_1"	: "The religion in the sight of All&#x0101h.",
+			"title_2"		  : "Technology",
+			"subtitle_2"	: "The great engine of change.",
+			"title_3"		  : "Enlightenment",
+			"subtitle_3"	: "Enlight The World with Islam."
+		},
+    "post" : {
+    	"about_us" : {
+        "bigtitle"   : "About Us",
+	      "title_1"   : "Islam",
+	      "subtitle_1"  : "Lanterlite strives to glorify Islam, a living guide for humans. <br>Insy&#x0101 All&#x0101h.",
+	      "title_2"   : "Technology",
+	      "subtitle_2"  : "Lanterlite uses the right technology to do its mission. <br>Insy&#x0101 All&#x0101h.",
+	      "title_3"   : "Enlightenment",
+	      "subtitle_3"  : "Lanterlite spread the knowledges about Islam to make the world better. <br>Insy&#x0101 All&#x0101h."  	
+    	}
+    }
+	},
+  "product_page": {
+    "title" 			: "Product | Lanterlite",
+    "meta" : {
+      "description": "Containing softwares produced by Lanterlite team."
+    },
+    "slide" : {
+      "title_desc"   : "- Moto of Our Product -",
+      "subtitle_desc"  : "\"Best Product for Best Ummah.\"",
+      "title_1"   : "Enlite",
+      "subtitle_1"  : "Your Moslem Partner.",
+      "title_2"   : "Qulite",
+      "subtitle_2"  : "Interact with Quran better."
+    },
+		"post" : {
+			"product": {
+	      "bigtitle"   : "Product",
+	      "title_1"   : "Enlite",
+	      "subtitle_1"  : "Make yourself better everyday with Quran and hadith.",
+	      "title_2"   : "Qulite",
+	      "subtitle_2"  : "Read Quran easier, understand better, and memorize faster."
+			},
+			"coming_product" : {
+	      "bigtitle"   : "Coming Products",
+	      "title_1"   : "Charisma",
+	      "subtitle_1"  : "Everyone can become great muslim leader.",
+	      "title_2"   : "Giora",
+	      "subtitle_2"  : "Be productive gamers.",
+	      "title_3"   : "Machinary",
+	      "subtitle_3"  : "Game for your future.",
+	      "title_4"   : "Quarpp",
+	      "subtitle_4"  : "Learn Qur'an easier with AR Technology."
+			}
+		}
+  },
+	"register_page": {
+    "title" 			: "Account | Lanterlite",
+    "meta" : {
+      "description": "Berisikan produk-produk yang dihasilkan oleh tim Lanterlite."
+    },
+    "post" : {
+    	"title_11"	: "Lanterlite Account",
+    	"subtitle_11"	: "Lanterlite account is used for connecting user account to other Lanterlite products so any in-app achievements will give same result to other application.",
+    	"title_12"	: "Create Account",
+    	"subtitle_12"	: "You have created Lanterlite account successfully. Please check Your email for email verification. If you do not receive any, please tap button below.",
+    	"button_12"	: "Resend Verification Email",
+    	"register_field" : {
+    		"user_image" : "Profile Image",
+    		"user_fullname" : "Full Name",
+    		"user_username" : "Username",
+    		"user_email" : "Email",
+    		"user_password" : "Password",
+    		"user_password_confirm" : "Password Confirmation",
+    		"user_agreement" : "",
+    		"terms_and_conditions_1" : "I agree with ",
+    		"terms_and_conditions_2" : "Lanterlite account terms and conditions.",
+    		"terms_and_conditions_txt" : "",
+    		"create_btn" : "Buat Akun"
+    	}
+    }
+ 	},
+	"play_lanterlite": {
+		"home_page" : {
+	    "title" 			: "Lanterlite",
+	    "meta" : {
+	      "description": "Informasi utama dari web Lanterlite."
+	    },
+			"slide" : {
+				"title_1"		: "Word Search",
+				"subtitle_1"	: "Bergerak menjadikannya sebagai basis inovasi.",
+				"title_2"		: "Word Chain",
+				"subtitle_2"	: "Coming Soon, <br>Insy&#x0101 All&#x0101h.",
+				"title_3"		: "Word Guess",
+				"subtitle_3"	: "Coming Soon, <br>Insy&#x0101 All&#x0101h.",
+				"title_4"		: "",
+				"subtitle_4"	: "",
+				"title_5"		: "",
+				"subtitle_5"	: ""
+			},
+			"post" : {
+	      "bigtitle_21"   :"Word Games",
+				"title_21" 		: "Word Search",
+				"subtitle_21" : "Peluncuran permainan pencarian kata Word Search dengan konten islam seperti nama nabi-nabi dalam islam.",
+				"btn_21"			: "Play",
+				"title_22" 		: "",
+				"subtitle_22" : "",
+				"btn_22"			: ""
+			}
+		}
+	}
+}

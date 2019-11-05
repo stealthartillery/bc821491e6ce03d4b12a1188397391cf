@@ -1,0 +1,20 @@
+[
+	{
+		"title" : "Color Theme License",
+		"sub"	: "Make your Lanterlite apps colorful.",
+		"img"	: "assets/store.lanterlite.com/img/theme_color.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/tcolor')"}
+	},
+	{
+		"title" : "Font Theme License",
+		"sub"	: "Choose your favourite font type on your Lanterlite apps.",
+		"img"	: "assets/store.lanterlite.com/img/theme_font.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/tfont')"}
+	},
+	{
+		"title" : "Full License",
+		"sub"	: "Get all current and next licenses by single license.",
+		"img"	: "assets/store.lanterlite.com/img/full.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/full')"}
+	}
+]

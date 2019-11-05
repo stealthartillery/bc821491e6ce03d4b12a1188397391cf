@@ -1,0 +1,11 @@
+{
+	"id" : "color_theme_license",
+	"name" : "Lisensi Color Theme",
+	"desc"	: "Jadikan aplikasi Lanterlite Anda berwarna-warni.",
+	"full_desc"	: "Lisensi Color Theme digunakan untuk membuka fitur warna pada seluruh aplikasi Lanterlite. Terdapat 10 warna yang tersedia di seluruh aplikasi Lanterlite sehingga dengan mengganti warna dapat memunculkan suasana baru selama menggunakan aplikasi Lanterlite. Lisensi ini berlaku untuk satu akun Lanterlite dan bersifat permanen. Lisensi ini dijual seharga 30 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/theme_color.webp"
+	],
+	"price"	: 30
+}

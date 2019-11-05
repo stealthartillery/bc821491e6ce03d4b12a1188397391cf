@@ -1,0 +1,13 @@
+{
+	"tag" : {
+	  "title" : "Halaman Tidak Ditemukan | Lanterlite",
+	   "meta" : {
+	      "description": "Halaman Tidak Ditemukan."
+	    }
+	},
+
+	"word" : {
+		"page_not_found" : "Halaman Tidak Ditemukan",
+		"back_to_home" : "Kembali ke Beranda"
+	}
+}

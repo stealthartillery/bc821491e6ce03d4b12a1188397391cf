@@ -1,0 +1,8 @@
+[
+	{
+		"title" : "Ifan Dhani",
+		"sub"	: "Founder and CEO.",
+		"img"	: "assets/www.lanterlite.com/img/page_team/members/ifandhanip.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('member/ifandhanip')" }
+	}
+]

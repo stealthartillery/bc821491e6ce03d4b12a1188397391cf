@@ -1,0 +1,80 @@
+{
+	"tag" : {
+	  "title" : "Product | Lanterlite",
+	   "meta" : {
+	      "description": "Containing softwares produced by Lanterlite team."
+	    }
+	},
+
+	"slide" : {
+		"title":"- Moto of Our Product -",
+		"sub":"\"Best Product for Best Ummah.\"",
+		"content" :[
+			{
+				"title" : "Enlite",
+				"sub"	: "Your Moslem Partner.",
+				"img"	: "page_product/banner/enlite.webp"
+			},
+			{
+				"title" : "Qulite",
+				"sub"	: "Interact with Quran better.",
+				"img"	: "page_product/banner/qulite.webp"
+			}
+		]
+	},
+
+	"post" : [ 
+		{
+			"title" : "Product",
+			"content" : [
+				{
+					"title" : "Enlite",
+					"sub"	: "Make yourself better everyday with Quran and hadith.",
+					"img"	: "page_product/product/enlite.webp",
+					"link"	: [
+						{"title" : "⋅ Android (Mobile)", "url": "https://play.google.com/store/apps/details?id=com.lanterlite.enlite" },
+						{"title" : "⋅ Windows (Deskop)", "url": "https://www.microsoft.com/en-us/p/enlite/9nfbhjvm7xxh?activetab=pivot:overviewtab" }
+					]
+				},
+				{
+					"title" : "Qulite",
+					"sub"	: "Read Quran easier, understand better, and memorize faster.",
+					"img"	: "page_product/product/qulite.webp",
+					"link"	: [
+						{"title" : "⋅ Android (Mobile)", "url": "https://play.google.com/store/apps/details?id=com.lanterlite.quranic"},
+						{"title" : "⋅ Windows (Deskop)", "url": "https://www.microsoft.com/en-us/p/qulite/9mvpkgmxfwls?activetab=pivot:overviewtab"}
+					]
+				}
+			]
+		},
+		{
+			"title" : "Coming Products",
+			"content" : [
+				{
+					"title" : "Charisma",
+					"sub"	: "Everyone can become great muslim leader.",
+					"img"	: "page_product/coming_product/charisma.webp",
+					"link"	: ""
+				},
+				{
+					"title" : "Giora",
+					"sub"	: "Be productive gamers.",
+					"img"	: "page_product/coming_product/giora.webp",
+					"link"	: ""
+				},
+				{
+					"title" : "Machinary",
+					"sub"	: "Game for your future.",
+					"img"	: "page_product/coming_product/machinary.webp",
+					"link"	: ""
+				},
+				{
+					"title" : "Quarpp",
+					"sub"	: "Learn Qur'an easier with AR Technology.",
+					"img"	: "page_product/coming_product/quarpp.webp",
+					"link"	: ""
+				}
+			]
+		}
+	]
+}

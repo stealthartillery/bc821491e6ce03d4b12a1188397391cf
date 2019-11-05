@@ -1,0 +1,9 @@
+[
+	{
+		"title" : "Library Method",
+		"date"	: "Mar 1, 2019",
+		"sub"	: "Memorizing Method inside Lanter Quran app.",
+		"img"	: "assets/www.lanterlite.com/img/page_article/articles/book2.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('article/190301')" }
+	}
+]

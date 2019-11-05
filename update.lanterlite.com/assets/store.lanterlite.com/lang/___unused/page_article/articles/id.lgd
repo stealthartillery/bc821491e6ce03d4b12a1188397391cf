@@ -1,0 +1,9 @@
+[
+	{
+		"title" : "Metode Perpustakaan",
+		"date"	: "Mar 1, 2019",
+		"sub"	: "Metode menghafal Al-Qur'an pada aplikasi Lanter Quran.",
+		"img"	: "assets/www.lanterlite.com/img/page_article/articles/book2.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('article/190301')" }
+	}
+]

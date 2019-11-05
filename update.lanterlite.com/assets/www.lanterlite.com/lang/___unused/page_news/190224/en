@@ -1,0 +1,78 @@
+{
+	"tag" : {
+	  "title" : "Qulite Evolve | Lanterlite",
+	  "meta" : {
+	    "description": "Qulite now have a new design."
+	  }
+	},
+
+	"post" : [
+		{"title": "Qulite Evoluted"},
+		{"sub": "Qulite now have a new design."},
+
+		{"date" : "Feb 24, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span":"After several weeks of development, alhamdulillah, now Qulite, the Al-Quran application developed by the Lanterlite Team has evolved to have a new look that characterizes Lanterlite with the several new features."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Qulite now has a feature for memorizing with the 'library' method. What is the library method? This method uses the concept of a library consisting of a number of bookshelves arranged in a row. In this method, space (for storing books) from the shelf is arranged into 10 rows and 5 columns (10x5)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Each space stores the first word of a verse, of a surah in the Qur'an. Also each space has a number that is equated with the verse number. So we just imagine this bookcase when memorizing a surah in the Qur'an. In this way, I personally, can slowly see the pattern of a number of surahs, the pattern is associated with the surah number and meaning of the verse. As an example, the Al-Rahman (No. 55) and Al-Waqi'ah (No. 56) correspond together about the people of hell starting from verse 41, where the previous verses discuss about heaven or the greatness of God. Masyaa Allah. The composition of the Qur'an is amazing."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"I have tried to memorize Quran using this method for about 2 years and so far I feel comfort with it. This is not the only method that can be used. But I tried to share how to memorize with this method to friends who might be able to learn the Qur'an better in this way. Insyaa Allah, a more complete discussion of this method will be posted on the next article."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Besides that, Qulite also has features like per sentence translation, per word translation, and transliteration (pronunciation of verses) in Bahasa. All of this can be arranged according to your needs."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Also Qulite has a theme feature (a combination of colors that make up the background color) which currently has 7 theme features. The theme is associated with colors that exist in nature, for example: night (black, goldenrod, etc.), afternoon (white, ivory, etc.), forest, sky, etc."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Some features of this theme are sold by the Lanterlite team at an affordable price, insyaa Allah. Why? Lanterlite has the principle to not allow the team members to consume wealth of alms, instead wealth from the results of doing business. Whereas if there are parties who want to give charity (donation) for Lanterlite development from various sides, then the property will be used for Lanterlite's needs, not for the needs of its team members. Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Qulite was created to support the Lanterlite mission in facilitating people (both Muslims and non-Muslims) in reading, understanding and memorizing the Qur'an. So that Qulite will be updated periodically to be able to help realize the vision of Lanterlite in the future. Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Qulite is currently only supporting the Android operating system version 5 and above. While the web version of Qulite will be published soon, insyaa Allah. For you who want to try Qulite can download Qulite app in the playstore (link below)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Hopefully this post is useful."},
+		{"elm" : "<br>"},
+		
+		{"span" : "Let's do positive work!"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span" : "Wassalamu'alaikum warahmatullah wabarakaatuh."},
+		{"elm" : "<br>"},
+
+		{"span":"- Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span":"Link:"},
+		{"elm" : "<br>"},
+
+		{"span" : "1. "},
+		{"link" : "<a href=\"https://play.google.com/store/apps/details?id=com.lanterlite.quranic\">Qulite Mobile</a>"}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"tag" : {
+	  "title" : "The Ship has Sailed | Lanterlite",
+	  "meta" : {
+	    "description": "First day lanterlite.com site published."
+	  }
+	},
+
+	"post" : [
+		{"title": "The Ship has Sailed"},
+		{"sub": "First day lanterlite.com site published."},
+
+		{"date": "Feb 3, 2019"},
+		{"elm" : "<br>"},
+
+		{"author": "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"p": "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"p": "Today, the wind blows softly, the sea waves calmly, the sky is bright. I began to lay down the sail, lift up the anchor, and take control of the navigation. In the name of Allah, the Lanterlite ship began to sail. Sail on the virtual ocean called, OrganiGame. Together with ships that have sailed before, such as Google, Apple, and Microsoft. Insyaa Allah, all of them sail in God's watch, and the time will come for one purpose with adequate supplies, Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"p": "In the middle of the journey, I realized that there would be a lot of water waves larger than this ship. But I am sure, these giant waves belong to Allah, and I always wish Him the best. Also, I saw so many ships that were split in the middle of the ocean, destroyed and sank to the bottom of the sea, and everything happened at the will of Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"p": "Ships are just an analogy of a dynamic and valuable system (having a vision and mission). With full supervision from its leader, it developed in the frame of the organization into a giant system that had an impact to the world. With all the attributes of this development, I tried to make an analogy to the life of organizational development in a virtual form and use it during this trip. Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"p": "On this launching day, I hope Lanterlite can bring change to this world someday. I also hope that I and all of my friends (who witnessed this) can do the best in this life to be able to become sufficient provisions in life after this. Hopefully we can all meet again in His Paradise. Aamiin."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"p": "In the name of God, The Ship finally sailed."}
+	]
+}

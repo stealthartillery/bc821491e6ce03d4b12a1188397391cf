@@ -1,0 +1,20 @@
+[
+	{
+		"title" : "Islam",
+		"sub"	: "Lanterlite berjuang untuk memuliakan Islam, pedoman hidup bagi manusia.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/allah4.webp",
+		"link"	: { "title" : "Read", "url": "news/190412" }
+	},
+	{
+		"title" : "Teknologi",
+		"sub"	: "Lanterlite merancang teknologi sendiri untuk menjalankan misinya.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/techno1.webp",
+		"link"	: { "title" : "Read", "url": "news/190317" }
+	},
+	{
+		"title" : "Pencerahan",
+		"sub"	: "Lanterlite menyebarkan ilmu tentang Islam untuk membuat dunia lebih baik.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/banners/world2.webp",
+		"link"	: { "title" : "Read", "url": "news/190317" }
+	}
+]

@@ -1,0 +1,11 @@
+{
+	"id" : "font_theme_license",
+	"name" : "Lisensi Font Theme",
+	"desc"	: "Pilih jenis font favorit Anda pada aplikasi Lanterlite Anda.",
+	"full_desc"	: "Lisensi Font Theme digunakan untuk membuka fitur font di semua aplikasi Lanterlite. Ada 10 font yang tersedia di seluruh aplikasi Lanterlite sehingga Anda dapat memilih font favorit Anda saat menggunakan aplikasi Lanterlite. Lisensi ini berlaku untuk satu akun Lanterlite dan bersifat permanen. Lisensi ini dijual seharga 30 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/theme_font.webp"
+	],
+	"price"	: 30
+}

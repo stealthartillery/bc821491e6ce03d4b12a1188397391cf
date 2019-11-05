@@ -1,0 +1,30 @@
+[
+	{
+		"title" : "Invix II dan Intelejensi IV",
+		"date"	: "Okt 13, 2019",
+		"sub"	: "Performa metode Invix serta Intelejensi yang lebih baik.",
+		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191013')"}
+	},
+	{
+		"title" : "Model sistem baru",
+		"date"	: "Okt 6, 2019",
+		"sub"	: "Semua aplikasi Lanterlite telah diterapkan Lanter Gen II.",
+		"img"	: "assets/www.lanterlite.com/img/system1.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191006')"}
+	},
+	{
+		"title" : "Lanter Gen Generasi II",
+		"date"	: "Sep 28, 2019",
+		"sub"	: "Versi terbaru dari framework pengembangan aplikasi Lanterlite.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190928')"}
+	},
+	{
+		"title" : "Beralih Nama",
+		"date"	: "Jun 22, 2019",
+		"sub"	: "Sebagian besar aplikasi Lanterlite beralih nama.",
+		"img"	: "assets/www.lanterlite.com/img/page_news/news/190622.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190622')"}
+	}
+]

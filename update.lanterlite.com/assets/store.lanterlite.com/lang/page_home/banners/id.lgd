@@ -1,0 +1,20 @@
+[
+	{
+		"title" : "Lisensi Color Theme",
+		"sub"	: "Jadikan aplikasi Lanterlite Anda berwarna-warni.",
+		"img"	: "assets/store.lanterlite.com/img/theme_color.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/tcolor')"}
+	},
+	{
+		"title" : "Lisensi Font Theme",
+		"sub"	: "Pilih jenis font favorit Anda pada aplikasi Lanterlite Anda.",
+		"img"	: "assets/store.lanterlite.com/img/theme_font.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/tfont')"}
+	},
+	{
+		"title" : "Lisensi Full",
+		"sub"	: "Dapatkan semua lisensi yang ada saat ini dan berikutnya cukup dengan satu lisensi.",
+		"img"	: "assets/store.lanterlite.com/img/full.webp",
+		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('detail/full')"}
+	}
+]

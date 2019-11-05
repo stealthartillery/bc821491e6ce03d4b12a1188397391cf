@@ -1,0 +1,11 @@
+{
+	"id" : "color_theme_license",
+	"name" : "Color Theme License",
+	"desc"	: "Make your Lanterlite apps colorful.",
+	"full_desc"	: "The Color Theme license is used to unlock color features in all Lanterlite applications. There are 10 colors available throughout the Lanterlite application so by changing the color can give you new experience while using the Lanterlite application. This license applies to one Lanterlite account permanently. This license is sold for 30 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/theme_color.webp"
+	],
+	"price"	: 30
+}

@@ -1,0 +1,10 @@
+{
+	"name" : "Lanter Silver",
+	"desc"	: "Currency used in Lanterlite.",
+	"full_desc"	: "Lanter Silver is a medium of exchange (currency) that is used to buy digital goods on Lanterlite. 10 Lanter Silver can be purchased for US $1 or Rp10,000. Lanter Silver has the properties: \n1. Data in the form of valuable numbers and stored on the server digitally (intangible). \n2. Obtained by buying using a legal currency (transfer) through a transfer to an official account owned by Lanterlite. \n3. Cannot be exchanged in currency (cashed). \n4. Can only be used to purchase digital products (such as feature licenses, items, etc.) available on the Lanterlite application. \n5. Prices may change under certain conditions. Example: if there is a change in the exchange rate, etc.",
+	"seller"	: "Lanterlite",
+	"price"	: {
+		"id" : 1000,
+		"us" : 1
+	}
+}

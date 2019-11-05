@@ -1,0 +1,11 @@
+{
+	"id" : "full_license",
+	"name" : "Full License",
+	"desc"	: "Get all current and next licenses by single license.",
+	"full_desc"	: "Full license is used to open all licenses on all Lanterlite applications. This license will open all existing (i.e. Font Theme, Color Theme) and future licenses. This license applies to one Lanterlite account permanently. This license is sold for 1000 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/full.webp"
+	],
+	"price"	: 1000
+}

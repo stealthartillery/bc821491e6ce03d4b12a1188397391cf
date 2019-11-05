@@ -1,0 +1,12 @@
+{
+	"name" : "Lanter Silver",
+	"desc"	: "Mata uang yang digunakan di Lanterlite.",
+	"full_desc"	: "Lanter Silver adalah alat tukar (mata uang) yang digunakan untuk membeli barang-barang digital di Lanterlite. 10 Lanter Silver dapat dibeli dengan harga 1 dolar US atau Rp10.000. Lanter Silver memiliki sifat: \n1. Data berupa angka yang bernilai dan tersimpan dalam server secara digital (tidak berwujud).\n2. Diperoleh dengan cara membeli menggunakan mata uang yang sah (legal) melalui transfer ke rekening resmi milik Lanterlite.\n3. Tidak bisa ditukar ke dalam bentuk mata uang (diuangkan).\n4. Hanya dapat digunakan untuk membeli produk-produk digital (seperti lisensi fitur, item, dlsb) yang tersedia pada aplikasi Lanterlite.\n5. Harga dapat berubah pada kondisi tertentu. Contoh: apabila terjadi perubahan kurs mata uang, dlsb.",
+	"seller"	: "Lanterlite",
+	"price"	: {
+		"id" : 1000,
+		"us" : 1
+	}
+}
+
+

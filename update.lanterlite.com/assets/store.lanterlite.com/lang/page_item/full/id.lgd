@@ -1,0 +1,11 @@
+{
+	"id" : "full_license",
+	"name" : "Lisensi Full",
+	"desc"	: "Dapatkan semua lisensi yang ada saat ini dan akan datang cukup dengan satu lisensi.",
+	"full_desc"	: "Lisensi Full digunakan untuk membuka semua lisensi pada seluruh aplikasi Lanterlite. Lisensi ini akan membuka semua lisensi yang ada (contohnya Font Theme, Color Theme) dan yang akan datang. Lisensi ini berlaku untuk satu akun Lanterlite dan bersifat permanen. Lisensi ini dijual seharga 1000 Lanter Silver.",
+	"seller"	: "Lanterlite",
+	"img_list"	: [
+		"assets/store.lanterlite.com/img/full.webp"
+	],
+	"price"	: 1000
+}

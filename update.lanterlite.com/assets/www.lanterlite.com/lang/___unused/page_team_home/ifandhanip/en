@@ -1,0 +1,59 @@
+{
+	"tag" : {
+	  "title" : "Library Method | Lanterlite",
+	  "meta" : {
+	    "description": "How to memorize the Quran using the library method."
+	  }
+	},
+
+	"post" : [
+		{"title": "Library Method"},
+		{"sub": "How to memorize the Quran using the library method."},
+		
+		{"date" : "Mar 1, 2019"},
+		{"elm" : "<br>"},
+		{"author" : "Ifan Dhani"},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Bismillah."},
+		{"elm" : "<br>"},
+
+		{"span": "Being an Hafidzh of Quran is the dream of every believer. Muslims are promised the highest degree of Heaven for those who memorize the Qur'an. Therefore, several methods of memorizing the Qur'an try to be done, such as memorizing methods using colors, memorizing by optimizing the senses of sight, hearing, movement, and so on."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "In this article, I will share how to memorize Quran using library method. I have never heard of a method similar to this before, but this is only the result of the form of memorizing the Qur'an that I want."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "This method uses the concept of a library consisting of a number of bookshelves arranged in a row. In this method, space (space for storing books) from the shelf is arranged into 10 rows and 5 columns (10x5)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"img-body": "page_article/article/librarymethod.webp"},
+		{"span-img": "Pic. Library Method for Quran Memorizing."},
+		{"elm" : "<br>"},
+
+		{"span": "Each space stores the first word from one verse, for one surah in the Quran. Also each space has a number that is equal to the verse number. So we just imagine this bookshelf when memorizing a surah in the Qur'an."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "One of the benefits that I can get by this way is that I can slowly see patterns from a number of verses in one surah, as well as patterns from a number of surahs. One of the patterns I meant is the pattern of the relationship between the verse number (or surah) and the meaning of the verse. For example, surah Ar-Rahman (no. 55) and Al-Waqi'ah (no. 56) together discuss the people of hell starting with verse 41, where the previous verses on each surah discuss heaven or about the greatness of God. Masyaa Allah. So that we can deepen our knowledge regarding the miracle of the arrangement of surahs and verses in the Quran."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "I have tried to memorize this method for about 2 years and so far I feel comfort with it. I try to share how to memorize like this to those of you who might learn the Qur'an better in this way, as I do. Insyaa Allah."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "This memorization method is already in the Qulite Android app that you can get in Playstore (link below)."},
+		{"elm" : "<br>"},
+		{"elm" : "<br>"},
+
+		{"span": "Link:"},
+		{"elm" : "<br>"},
+		{"span": "1. "},
+		{"link" : "<a href=\"https://play.google.com/store/apps/details?id=com.lanterlite.quranic\">Qulite Mobile</a>"}
+	]
+}

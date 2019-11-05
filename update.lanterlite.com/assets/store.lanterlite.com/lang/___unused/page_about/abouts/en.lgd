@@ -1,0 +1,8 @@
+[
+	{
+		"title" : "Team Member",
+		"sub"	: "List of team members who act as administrators and mobilizers on Lanterlite.",
+		"img"	: "assets/www.lanterlite.com/img/page_about/abouts/team1.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change('page_team')" }
+	}
+]
