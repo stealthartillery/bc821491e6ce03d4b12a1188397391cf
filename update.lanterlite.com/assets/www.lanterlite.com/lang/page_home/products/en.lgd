@@ -3,12 +3,12 @@
 		"title" : "Lanter Search",
 		"sub"	: "Islamic Search Engine: find informaation about islam from clear reference. Insyaa Allah.",
 		"img"	: "assets/www.lanterlite.com/img/page_home/products/lsearch.webp",
-		"link"	: { "title" : "See App", "func": "LGen.Page.change_by_url('product/lsearch')" }
+		"link"	: { "title" : "See App", "func": "LGen.Page.change_by_url('lantersearch')" }
 	},
 	{
 		"title" : "Lanter Quran",
 		"sub"	: "Lanterlite Digital Quran: for reading, understanding, and memorizing faster. Insyaa Allah.",
 		"img"	: "assets/www.lanterlite.com/img/page_home/products/lquran.webp",
-		"link"	: { "title" : "See App", "func": "LGen.Page.change_by_url('product/lquran')" }
+		"link"	: { "title" : "See App", "func": "LGen.Page.change_by_url('lanterquran')" }
 	}
 ]

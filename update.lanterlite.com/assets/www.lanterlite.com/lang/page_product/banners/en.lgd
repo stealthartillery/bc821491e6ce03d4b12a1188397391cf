@@ -1,12 +1,12 @@
 [
 	{
-		"title" : "Enlite",
+		"title" : "Lanter Search",
 		"sub"	: "Your Moslem Partner.",
 		"img"	: "assets/www.lanterlite.com/img/page_product/banners/lsearch.webp",
 		"link"	: { "title" : "Read", "url": "news/190412" }
 	},
 	{
-		"title" : "Qulite",
+		"title" : "Lanter Quran",
 		"sub"	: "Interact with Quran better.",
 		"img"	: "assets/www.lanterlite.com/img/page_product/banners/lquran.webp",
 		"link"	: { "title" : "Read", "url": "news/190412" }

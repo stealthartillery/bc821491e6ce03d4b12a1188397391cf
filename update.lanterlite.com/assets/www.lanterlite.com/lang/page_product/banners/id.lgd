@@ -1,12 +1,12 @@
 [
 	{
-		"title" : "Enlite",
+		"title" : "Lanter Search",
 		"sub"	: "Sahabat Muslim Anda.",
 		"img"	: "assets/www.lanterlite.com/img/page_product/banners/lsearch.webp",
 		"link"	: { "title" : "Baca", "url": "news/190412" }
 	},
 	{
-		"title" : "Qulite",
+		"title" : "Lanter Quran",
 		"sub"	: "Interaksi dengan Al-Qur'an lebih baik.",
 		"img"	: "assets/www.lanterlite.com/img/page_product/banners/lquran.webp",
 		"link"	: { "title" : "Baca", "url": "news/190412" }
