@@ -1,3 +1,7 @@
 {
-	"arabic_text": "on"
+	"arabic_text": {
+		"ttl": "Arabic",
+		"opt": ["on","off"],
+		"sel": "on"
+	}
 }

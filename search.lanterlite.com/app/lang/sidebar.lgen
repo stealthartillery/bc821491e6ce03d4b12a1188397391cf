@@ -1,0 +1,32 @@
+[
+	{
+		"page_name": "",
+		"icon": "bell",
+		"name": "Home",
+		"func": "LGen.Page.change_by_url('')"
+	},
+	{
+		"page_name": "lanterlite",
+		"icon": "bell",
+		"name": "Lanterlite",
+		"func": "LGen.Page.change_by_url('lanterlite')"
+	},
+	{
+		"page_name": "lanterstore",
+		"icon": "bell",
+		"name": "Lanter Store",
+		"func": "LGen.Page.change_by_url('lanterstore')"
+	},
+	{
+		"page_name": "lantersearch",
+		"icon": "bell",
+		"name": "App Info",
+		"func": "LGen.Page.change_by_url('lantersearch')"
+	},
+	{
+		"page_name": "guide",
+		"icon": "bell",
+		"name": "Guide",
+		"func": "LGen.Page.names[LGen.Page.current].intro()"
+	}
+]

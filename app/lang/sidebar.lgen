@@ -1,0 +1,32 @@
+[
+	{
+		"page_name": "",
+		"icon": "bell",
+		"name": "Home",
+		"func": "LGen.Page.change_by_url('')"
+	},
+	{
+		"page_name": "news",
+		"icon": "bell",
+		"name": "News",
+		"func": "LGen.Page.change_by_url('news')"
+	},
+	{
+		"page_name": "article",
+		"icon": "bell",
+		"name": "Article",
+		"func": "LGen.Page.change_by_url('article')"
+	},
+	{
+		"page_name": "product",
+		"icon": "bell",
+		"name": "Product",
+		"func": "LGen.Page.change_by_url('product')"
+	},
+	{
+		"page_name": "about",
+		"icon": "bell",
+		"name": "About us",
+		"func": "LGen.Page.change_by_url('about')"
+	}
+]

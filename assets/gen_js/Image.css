@@ -1,0 +1,1 @@
+.img_croppie{width:calc(100% - 200px);height:calc(100% - 200px);top:100px;left:100px;position:fixed;opacity:0;display:none}.img_croppie .cancel_btn{margin:10px 0;float:right;width:100px}.img_croppie .save_btn{margin:10px 0;margin-right:10px;width:100px;float:right}.img_croppie.open{opacity:1}
