@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Versi 2.1 Dirilis",
+		"date"	: "Nov 06, 2019",
+		"sub"	: "Lanter Apps mencapai versi 2.1.",
+		"img"	: "assets/www.lanterlite.com/img/v2.1.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191106')"}
+	},
+	{
 		"title" : "Invix II dan Intelejensi IV",
 		"date"	: "Okt 13, 2019",
 		"sub"	: "Performa metode Invix serta Intelejensi yang lebih baik.",

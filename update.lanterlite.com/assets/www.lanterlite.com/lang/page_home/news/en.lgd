@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Version 2.1 Released",
+		"date"	: "Nov 06, 2019",
+		"sub"	: "Lanter Apps reached version 2.1.",
+		"img"	: "assets/www.lanterlite.com/img/v2.1.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191106')"}
+	},
+	{
 		"title" : "Invix II and Intelligence IV",
 		"date"	: "Oct 13, 2019",
 		"sub"	: "Invix method performance with better intelligence.",
@@ -19,12 +26,5 @@
 		"sub"	: "Latest version of Lanterlite Application Development Framework.",
 		"img"	: "assets/www.lanterlite.com/img/page_news/news/190928.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/190928')"}
-	},
-	{
-		"title" : "New Names",
-		"date"	: "Jun 22, 2019",
-		"sub"	: "Most of Lanterlite apps name has changed.",
-		"img"	: "assets/www.lanterlite.com/img/page_news/news/190622.webp",
-		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/190622')"}
 	}
 ]
