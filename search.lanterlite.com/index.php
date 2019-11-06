@@ -1,4 +1,5 @@
-<!doctype html><html><head>
+<!doctype html><html>
+<head>
 	<title>Lanter Search</title>
 	<meta name="title" content="Lanterlite">
 	<meta name="description" content="Lanterlite is an IT company that focuses on the development of Islam through technology. Located at Sadang Serang Street, Palem II number 4, Bandung City, Indonesia.">
@@ -9,7 +10,7 @@
 	<meta name="revisit-after" content="7 days">
 	<meta name="author" content="Lanterlite Team">
 	<meta charset="utf-8">
-	<link rel="icon" type="image/gif" href="https://search.lanterlite.com/assets/gen.base.fe/icon.gif">
+	<link rel="icon" type="image/gif" href="https://search.lanterlite.com/assets/gen_base_fe/icon.gif">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
@@ -19,5 +20,5 @@
 	HOME_URL = 'https://search.lanterlite.com/'
 	BASE_URL = 'https://search.lanterlite.com/'
 </script>
-<script type="text/javascript" src="https://search.lanterlite.com/app/gate.js"></script>
+<script type="text/javascript" src="https://search.lanterlite.com/assets/gen_base_fe/lantergen.gate.js"></script>
 </html>
