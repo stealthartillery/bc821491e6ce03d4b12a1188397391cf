@@ -1,5 +1,5 @@
 <?php
-	init();
+	
 	$citizen = new CitizenGen();
 
 	class CitizenGen {
@@ -9,6 +9,12 @@
 
 		public function logout($obj) {
 			$this->unset_ship_id($obj);
+		}
+
+		public function get_def($obj) {
+			$config_dir = HOME_DIR.'storages/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
+			$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
+			return $default;
 		}
 
 		public function unset_ship_id($obj) {
@@ -127,7 +133,6 @@
 		public function login($obj) {
 			// error_log('json_encode($citizens)');
 			LGen('SaviorMan')->req_validator($obj);
-
 			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 			$_bridge = LGen('SaviorMan')->gen_bridge($obj['bridge']);
 			$dir = HOME_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
@@ -148,17 +153,25 @@
 			if ($citizens === LGen('GlobVar')->not_found)
 				return LGen('GlobVar')->not_found;
 			// error_log(json_encode($citizens));
+			$_i = 0;
 			foreach ($citizens as $key => $value) {
+				$_i += 1;
 				$obj['bridge'] = $bridge;
 				array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
 				// $obj['val'] = $val; // keep value encrypted for savior->read purpose.
 				$citizen = LGen('SaviorMan')->read($obj);
+				if (!LGen('JsonMan')->is_key_exist($citizen, 'email'))
+					continue;
+				// if ($_i === 4)
+				// 	return $citizen;
+				error_log(json_encode($citizen) .' '. $email);
 				$citizen['id'] = ($citizen['id']);
 				$citizen['email'] = ($citizen['email']);
 				$citizen['password'] = ($citizen['password']);
 				// error_log(json_encode($citizen));
-				error_log($citizen['email'] .' '. $email);
+				// error_log($citizen['email'] .' '. $email);
 				if ($citizen['email'] === $email and $citizen['password'] === $password) {
+					// return $citizen;
 					// $ship_id = '';
 					if ($keep_signin && LGen('JsonMan')->is_key_exist($obj['val'], 'ship_id')) {
 						$ship = [];
