@@ -1,8 +1,3 @@
 [
-	{
-		"title" : "Lanter Sword Pearl",
-		"sub"	: "Get Lanter Sword exclusive items using pearls.",
-		"img"	: "assets/store.lanterlite.com/img/lsword_pearl.webp",
-		"link"	: { "title" : "Detail", "func": "LGen.Page.change_by_url('product/lspearl')" }
-	}
+	"7028104F56C1"
 ]
