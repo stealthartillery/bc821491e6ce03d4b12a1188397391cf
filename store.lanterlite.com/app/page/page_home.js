@@ -258,10 +258,10 @@ function PageHome () {
 						// page.screen.querySelectorAll('.content2 .img2')[i].src = LGen.system.get({'safe':'safe'}).fe_url+'update.lanterlite.com/'+obj[i]['img']
 					}
 				}
+				setTimeout(function() {
+					$(page.screen).css({'opacity':1})
+				}, LGen.Page.speed)
 			})
-			setTimeout(function() {
-				$(page.screen).css({'opacity':1})
-			}, LGen.Page.speed)
 			page.lang_online = LGen.citizen.get({'key':'lang','safe':'safe'})
 		}
 	}
