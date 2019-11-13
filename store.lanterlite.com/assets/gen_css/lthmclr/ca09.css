@@ -1,0 +1,22 @@
+input.theme:disabled {background-color: #EBF5FB;}
+button.theme:disabled {background-color: #1B4F72;}
+button.theme:disabled svg {background-color: #1B4F72;}
+svg.theme.svg_bgclr1 path {fill:#0E293B;}
+svg.theme.svg_bgclr2 path {fill:#EBF5FB;}
+svg.theme.can-hover:hover path {fill:gold;}
+svg.theme.hover path {fill:gold;}
+svg.theme:focus path {fill:gold;}
+.theme.hover1,.theme.hover2{cursor: pointer;}
+.theme.hover1.active1 {background-color: #1B4F72;}
+.theme.hover1.can-hover:hover {background-color: #1B4F72;}
+.theme.hover1.hover {background-color: #1B4F72;}
+.theme.focus1:focus {background-color: #1B4F72;}
+.theme.bgclr1 {background-color: #0E293B;}
+.theme.hover2.can-hover:hover {background-color: #EBF5FB;}
+.theme.hover2.hover {background-color: #EBF5FB;}
+.theme.hover2:focus {background-color: #EBF5FB;}
+.theme.bgclr2 {background-color: #EBF5FB;}
+.theme.scroll {background-color: rgb(100, 30, 22, 0.1);}
+.theme.color1 {color: purple;}
+.theme.color2 {color: #EBF5FB;}
+.theme.point2 {caret-color: #EBF5FB;}

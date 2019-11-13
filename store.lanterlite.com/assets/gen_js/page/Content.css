@@ -1,0 +1,76 @@
+.lgen_page_content {
+  height: calc(100%);
+  width: 100%;
+  overflow-y:auto;
+}
+
+.lgen_page_content ._bground .back_btn {
+  width: 100%;
+}
+
+.lgen_page_content .child .content {
+  padding-bottom: 50px;
+  box-sizing:border-box;
+/*   height: calc(100% - 50px); */
+}
+
+.lgen_page_content ._bground {
+  height: 100%;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+.lgen_page_content ._bground > .bground {
+  margin: auto;
+}
+
+.lgen_page_content .content * {
+  font-size: 12px;
+}
+
+.lgen_page_content .content {
+  padding: 10px;
+}
+
+.lgen_page_content .child p {
+    line-height: 1.5em;
+    font-size: 12px;
+}
+
+.lgen_page_content button.std,
+.lgen_page_content img.std {
+    width:50%;
+    padding: 10px;
+    box-sizing:border-box;
+}
+
+.lgen_page_content .content .author {
+  color: cornflowerblue; font-weight: bold;
+}
+.lgen_page_content .content .date {
+  color: grey; font-size: 10px;;
+}
+
+.lgen_page_content .content .title {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.lgen_page_content .content .subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: grey;
+/*     font-weight: bold; */
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .lgen_page_content ._bground > .bground {
+     width: 750px;
+  }
+}

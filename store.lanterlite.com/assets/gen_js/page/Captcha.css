@@ -1,0 +1,111 @@
+.captcha {
+    background-color: white;
+    z-index: 10;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+/*     width: fit-content; */
+    height: 100%;
+    box-sizing:border-box;
+/*     top: 0; */
+/*     left: 0; */
+    margin: auto;
+    position: absolute;
+/*     display: table; */
+}
+
+.captcha select {
+  text-align-last:center;
+}
+
+.captcha .confirm_btn {
+  margin-right: 10px;
+}
+
+.captcha .question {
+  margin-bottom: 10px;
+}
+
+.captcha .content {
+  display: table-cell;
+    vertical-align: middle;
+}
+
+.captcha .bground {
+    position: relative;
+    display: table;
+    padding: 10px;
+    /*     top: calc(50% - 100px); */
+    /*     line-height: 100px; */
+    /*     left: calc(50% - 150px); */
+    margin: auto;
+    /*     padding-top: auto; */
+    /*     padding-bottom: auto; */
+    max-width: 600px;
+    min-width: 300px;
+    height: 100%;
+}
+
+.captcha .child {
+    padding: 10px 0px; 
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.captcha button {
+    width: 100px !important;
+}
+
+.captcha .child .val:focus {
+    border-bottom: 1px solid goldenrod;
+}
+
+.captcha .child .val:disabled {
+    background-color: transparent;    
+}
+
+.captcha .child .val {
+    cursor: pointer;
+    transition: border-bottom 0.25s;
+    font-size: 12px;
+    border-bottom: 1px solid black;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+}
+
+.captcha .child .val .date {
+    color: darkgoldenrod;
+    font-size: 10px;
+    text-align: right;
+}
+
+.captcha .child .val .title {
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 100%; 
+  height: 1.2em; 
+  white-space: nowrap;
+ }
+.captcha .child .val .title,
+.captcha .child .val .date {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.captcha .std {
+    width:100%;
+    margin-top: 10px;
+}
+
+.captcha .content > .title {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin: 10px 0px;
+    font-size: 30px;
+}

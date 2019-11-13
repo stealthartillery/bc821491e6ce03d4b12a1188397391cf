@@ -1,0 +1,34 @@
+[
+	{"id":"Lanter Silver tidak mencukupi.", "en":"Insufficient Lanter Silver."},
+	{"id":"Lanter Point tidak mencukupi.", "en":"Insufficient Lanter Point."},
+	{"id":"Mohon untuk sign-in terlebih dahulu.", "en":"Please sign in to continue."},
+	{"id":"Mohon untuk memverifikasi email anda terlebih dahulu.", "en":"Please verify your email to continue."},
+	{"id":"Barang berhasil dibeli.", "en":"Item purchased successfully."},
+
+	{"id":"Mohon selesaikan pembayaran agar pesanan Anda dapat terproses secara otomatis.", "en":"Please complete the payment in order to get your order processed automatically."},
+	{"id":"Terimakasih.", "en":"Thankyou."},
+	{"id":"Beli L. Silver", "en":"Buy L. Silver"},
+	{"id":"Tukar L. Point", "en":"Xch. L. Point"},
+
+	{"id":"Tersalin.", "en":"Copied."},
+
+	{"id":"Lisensi", "en":"Licenses"},
+	{"id":"Etalase", "en":"Storefront"},
+	{"id":"Deskripsi", "en":"Description"},
+	{"id":"Pembelian", "en":"Purchase"},
+	{"id":"Ya", "en":"Yes"},
+	{"id":"Tidak", "en":"No"},
+	{"id":"Beli", "en":"Buy"},
+	{"id":"Salin", "en":"Copy"},
+	{"id":"Harga", "en":"Price"},
+	{"id":"Media", "en":"Medium"},
+	{"id":"Catatan", "en":"Note"},
+	{"id":"Info", "en":"Info"},
+	{"id":"Jumlah", "en":"Quantity"},
+
+	{"id":"Deskripsi", "en":"Description"},
+	{"id":"Dolar (US)", "en":"Dollar (US)"},
+	{"id":"Anda akan membeli", "en":"You will buy"},
+	{"id":"seharga", "en":"for"},
+	{"id":"Lanjutkan", "en":"Continue"}
+]

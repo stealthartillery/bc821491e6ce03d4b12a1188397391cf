@@ -1,0 +1,13 @@
+[
+	{"content_path":"www.lanterlite.com/lang/page_team/members/contents/ifandhanip/", "url_name":"member/ifandhanip"},
+
+	{"content_path":"content/lang/lanterpoint/", "url_name":"lanterpoint"},
+	{"content_path":"content/lang/lantersilver/", "url_name":"lantersilver"},
+
+	{"content_path":"content/lang/lanterquran/", "url_name":"lanterquran"},
+	{"content_path":"content/lang/lantersearch/", "url_name":"lantersearch"},
+	{"content_path":"content/lang/lantersquare/", "url_name":"lantersquare"},
+	{"content_path":"content/lang/lantersword/", "url_name":"lantersword"},
+	{"content_path":"content/lang/lanterlite/", "url_name":"lanterlite"},
+	{"content_path":"content/lang/lanterstore/", "url_name":"lanterstore"}
+]

@@ -1,0 +1,20 @@
+[
+	{
+		"page_name": "",
+		"icon": "bell",
+		"name": "Home",
+		"func": "LGen.Page.change_by_url('')"
+	},
+	{
+		"page_name": "lantersilver",
+		"icon": "bell",
+		"name": "Lanter Silver",
+		"func": "LGen.Page.change_by_url('lantersilver')"
+	},
+	{
+		"page_name": "lanterpoint",
+		"icon": "bell",
+		"name": "Lanter Point",
+		"func": "LGen.Page.change_by_url('lanterpoint')"
+	}
+]

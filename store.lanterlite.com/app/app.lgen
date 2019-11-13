@@ -1,12 +1,12 @@
 {
-	"status" : "dev",
+	"status" : "dep",
 	"platform" : "web",
 	"os" : "android",
 	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.store",
 	"version" : "2.1.0",
-	"be_domain" : "be.store.lanterlite.com",
+	"be_domain" : "be.www.lanterlite.com",
 	"domain" : "store.lanterlite.com",
 	"codename" : "lanterstore",
-	"name" : "store",
-	"fullname" : "Lanter store"
+	"name" : "Store",
+	"fullname" : "Lanter Store"
 }
