@@ -275,6 +275,7 @@
 			$final_obj['json'] = $obj;
 			$final_obj['func'] = 'LGen("SaviorMan")->read';
 			$cit = LGen('ReqMan')->send_post($final_obj);
+			return $cit;
 
 			$prod = [];
 			$prod['def'] = 'products';
@@ -283,7 +284,7 @@
 			array_push($prod['bridge'], LGen('StringMan')->to_json('{"id": "products", "puzzled":true}'));
 			array_push($prod['bridge'], LGen('StringMan')->to_json('{"id": "'.$_obj['item_id'].'", "puzzled":false}'));
 			$prod = (LGen('SaviorMan')->read($prod));
-			return $prod;
+			
 			if ($_obj['cur'] === 'price') {
 				$cit['silver'] = (int)$cit['silver'];
 				$final_price = (int)((float)$prod['price']*(int)$_obj['qty']);
