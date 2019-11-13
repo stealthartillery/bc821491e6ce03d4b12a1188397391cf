@@ -19,19 +19,19 @@ function init($app) {
 	}
 	else if (app_status === 'test') {
 		defined('FE_URL') OR define('FE_URL', 'https://');
-		defined('BASE_URL') OR define('BASE_URL', FCPATH);
-		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		defined('HOME_URL') OR define('HOME_URL', 'https://'.$app['be_domain'].'/');
-		defined('HOME_DIR') OR define('HOME_DIR', 'https://'.$app['be_domain'].'/');
+		defined('BASE_URL') OR define('BASE_URL', 'https://'.$app['be_domain'].'/');
+		defined('HOME_DIR') OR define('HOME_DIR', FCPATH);
+		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		ini_set("log_errors", 1);
 		ini_set("error_log", HOME_DIR.'storages/'. 'gate.log');
 	}
 	else {
 		defined('FE_URL') OR define('FE_URL', 'https://');
-		defined('BASE_URL') OR define('BASE_URL', FCPATH);
-		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		defined('HOME_URL') OR define('HOME_URL', 'https://'.$app['be_domain'].'/');
-		defined('HOME_DIR') OR define('HOME_DIR', 'https://'.$app['be_domain'].'/');
+		defined('BASE_URL') OR define('BASE_URL', 'https://'.$app['be_domain'].'/');
+		defined('HOME_DIR') OR define('HOME_DIR', FCPATH);
+		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		error_reporting(0);
 		ini_set('display_errors', 0);
 	}
