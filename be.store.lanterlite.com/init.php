@@ -19,8 +19,8 @@ function init($app) {
 	}
 	else if (app_status === 'test') {
 		defined('FE_URL') OR define('FE_URL', 'https://');
-		defined('BASE_URL') OR define('BASE_URL', FCPATCH);
-		defined('BASE_DIR') OR define('BASE_DIR', FCPATCH);
+		defined('BASE_URL') OR define('BASE_URL', FCPATH);
+		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		defined('HOME_URL') OR define('HOME_URL', 'https://'.$app['be_domain'].'/');
 		defined('HOME_DIR') OR define('HOME_DIR', 'https://'.$app['be_domain'].'/');
 		ini_set("log_errors", 1);
@@ -28,8 +28,8 @@ function init($app) {
 	}
 	else {
 		defined('FE_URL') OR define('FE_URL', 'https://');
-		defined('BASE_URL') OR define('BASE_URL', FCPATCH);
-		defined('BASE_DIR') OR define('BASE_DIR', FCPATCH);
+		defined('BASE_URL') OR define('BASE_URL', FCPATH);
+		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
 		defined('HOME_URL') OR define('HOME_URL', 'https://'.$app['be_domain'].'/');
 		defined('HOME_DIR') OR define('HOME_DIR', 'https://'.$app['be_domain'].'/');
 		error_reporting(0);
