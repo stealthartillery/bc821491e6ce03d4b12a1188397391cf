@@ -275,7 +275,6 @@
 			$final_obj['json'] = $obj;
 			$final_obj['func'] = 'LGen("SaviorMan")->read';
 			$cit = LGen('ReqMan')->send_post($final_obj);
-			return $cit;
 
 			$prod = [];
 			$prod['def'] = 'products';
