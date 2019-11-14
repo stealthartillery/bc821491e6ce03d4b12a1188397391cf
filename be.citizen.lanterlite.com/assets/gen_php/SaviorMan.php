@@ -1,5 +1,5 @@
 <?php
-
+	// init();
 	// ini_set("log_errors", 1);
 	// ini_set("error_log", HOME_DIR.'storages/'. 'savior.log');
 
@@ -13,7 +13,7 @@
 			$obj['gate'] = ''; // app name.
 			// if (!LGen('JsonMan')->is_key_exist($obj,'gate')) $obj['gate'] = ''; // app name.
 			// if (!LGen('JsonMan')->is_key_exist($obj,'gate')) return 'You lost the Gate.'; // app name.
-			if (!LGen('JsonMan')->is_key_exist($obj,'limited')) $obj['limited'] = false;  // limit total golds for a chamber.
+			if (!LGen('JsonMan')->is_key_exist($obj,'branched')) $obj['branched'] = false;  // branch total golds for a chamber.
 			// error_log(json_encode($obj['val']));
 			if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = LGen('StringMan')->to_json('{}');// the gold.
 			// if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = ""; else $obj['val'] = LGen('StringMan')->to_json(base64_decode($obj['val']));// the gold.
@@ -24,7 +24,7 @@
 			if (!LGen('JsonMan')->is_key_exist($obj,'name')) $obj['name'] = ''; // gold name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'keep_name')) $obj['keep_name'] = false; // gold name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'namelist')) $obj['namelist'] = []; // list of gold name.
-			if ($obj['limited']) $obj['limit'] = 1000; else $obj['limit'] = '';
+			if ($obj['branched']) $obj['branch'] = 1000; else $obj['branch'] = '';
 
 			return $obj;
 		}
@@ -37,17 +37,35 @@
 			$dir = HOME_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
 
 			$bridge = $obj['bridge'];
+			// return (($dir));
 
 			$citizens = getFileNamesInsideDir($dir);
+			// return (($citizens));
+			// error_log(json_encode($citizens));
 			$result = [];
 			if ($citizens === LGen('GlobVar')->not_found)
 				return $result;
 			// error_log(json_encode($obj['val']));
 			foreach ($citizens as $key => $value) {
 				$obj['bridge'] = $bridge;
-				array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
-				$citizen = $this->read($obj);
-				array_push($result, $citizen);
+				if ($obj['branched']) {
+					$branches = getFileNamesInsideDir($dir.$value.'/');
+					foreach ($branches as $bkey => $bval) {
+						$obj['bridge'] = $bridge;
+						array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
+						array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$bval.'", "puzzled":false}'));
+						// return $obj;
+						$citizen = $this->read($obj);
+						// return $obj;
+						array_push($result, $citizen);
+					}
+				}
+				else {
+					array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
+					// return $obj;
+					$citizen = $this->read($obj);
+					array_push($result, $citizen);
+				}
 			}
 			return $result;
 		}
@@ -68,16 +86,22 @@
 						$obj['name'] = LGen('F')->gen_id();
 					}
 				}
-			}			
-			// if ($obj['limit'] !== '') {
-			// 	$this->update_dir_by_limit($dir, $obj['limit']);
-			// }
+			}
+
+			if ($obj['keep_name'] && $obj['name'] === '')
+				return false;
+			if ($obj['branched']) {
+				$res = $this->update_dir_by_branch($dir, $obj['branch']);
+				$dir = $res['dir'];
+				$branch_no = $res['branch_no'];
+			}
 
 			// return json_encode($obj['bridge']);
 			if ($obj['def'] !== '') {
 				$config_dir = HOME_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
 				$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
 				$default = $default[$obj['def']];
+							// return $branch_no;
 
 				if ($obj['single']) {
 					foreach ($default as $key => $value) {
@@ -95,6 +119,9 @@
 						if ($key === 'id')
 							$default[$key] = $obj['name'];
 
+						if ($key === 'branch_no')
+							$default[$key] = $branch_no;
+
 						if ($key === 'created_date') {
 							if (LGen('JsonMan')->is_key_exist($obj['val'], $key)) {
 								if ($obj['val'][$key] === '')
@@ -105,12 +132,16 @@
 							}
 						}
 
+						// if ($obj['branched'])
+						// 	$_dir = $dir . $branch_no .'/'.$obj['name'] . '/';
+						// else
 						$_dir = $dir . $obj['name'] . '/';
-						if ($value !== 'dir') {
+						// return $_dir;
+						if ($value !== 'dir') { // always go here.
 							$_filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
 							LGen('JsonMan')->save($_dir, $_filename.'.lgd', LGen('Black')->get($default[$key]), $minify=false);
 						}
-						else {
+						else { // never go here.
 							$_filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
 							mkdir($_dir.$_filename, 0777, true);
 						}
@@ -158,7 +189,7 @@
 					}
 				}
 			}
-
+			// return $data_to_save;
 			foreach ($data_to_save as $key => $value) {
 				$filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
 				LGen('JsonMan')->save($dir, $filename.'.lgd', LGen('Black')->get($obj['val'][$key]), $minify=false);
@@ -197,7 +228,7 @@
 			return LGen('GlobVar')->not_found;
 		}
 
-		public function read_all_by_limit($obj) {
+		public function read_all_by_branch($obj) {
 		}
 
 		public function read($obj) {
@@ -219,6 +250,7 @@
 			$default = $default[$obj['def']];
 
 			$data = LGen('StringMan')->to_json('{}');
+			// return $obj['namelist'];
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');
@@ -254,13 +286,13 @@
 			return $_bridge;
 		}
 
-		public function update_dir_by_limit(&$dir, $limit) {
+		public function update_dir_by_branch(&$dir, $branch=1000) {
 			$inc = 1;
 			$_dir = $dir.'/'.$inc;
 			if (!file_exists($_dir))
 				mkdir($_dir, 0777, true);
 			$filenames = getFileNamesInsideDir($_dir);
-			while (sizeof($filenames) >= $limit) {
+			while (sizeof($filenames) >= $branch) {
 				$inc += 1;
 				$_dir = $dir.'/'.$inc;
 				if (!file_exists($_dir))
@@ -268,7 +300,10 @@
 				$filenames = getFileNamesInsideDir($_dir);
 			}
 			$dir = $_dir . '/';
-			return $dir;
+			$res = [];
+			$res['dir'] = $dir;
+			$res['branch_no'] = $inc;
+			return $res;
 		}
 
 		public function when_save_encrypt($val) {

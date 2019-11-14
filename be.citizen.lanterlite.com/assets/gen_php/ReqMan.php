@@ -1,12 +1,15 @@
 <?php
-	ini_set("log_errors", 1);
-	ini_set("error_log", BASE_DIR.'storages/store/'. 'store.log');
+	// ini_set("log_errors", 1);
+	// ini_set("error_log", BASE_DIR.'storages/store/'. 'store.log');
+	// init();
 	class ReqMan {
-		function send_post($obj) {
+		function send_post($obj, $url='be.citizen.lanterlite.com') {
+			$obj = LGen('Black')->get($obj);
 			$postdata = http_build_query(
 				// $obj
 	    array(
-	        DATA => LGen('F')->encrypt($obj),
+	        DATA => $obj,
+	        // DATA => LGen('F')->encrypt($obj),
 			)
 	    // array(
 	    //     'var1' => 'some content',
@@ -28,7 +31,11 @@
 			$context  = stream_context_create($opts);
 			error_log('json_encode($context)');
 			error_log('asd ' . json_encode($opts));
-			$result = file_get_contents('http://localhost/app/be.citizen.lanterlite.com/gate/', false, $context);
+			if (app_status === 'dev')
+				$result = file_get_contents('http://localhost/app/'.$url.'/gate/', false, $context);
+			else
+				$result = file_get_contents('https://'.$url.'/gate/', false, $context);
+			$result = LGen('White')->get($result);
 			return $result;
 			// $result = file_get_contents('http://example.com/submit.php', false, $context);
 		}
