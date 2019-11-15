@@ -1,19 +1,5 @@
 [
 	{
-		"title" : "Lanter Store Released",
-		"date"	: "Nov 16, 2019",
-		"sub"	: "Lanterlite Digital Store has been released.",
-		"img"	: "assets/www.lanterlite.com/img/lstore_released.webp",
-		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191116')"}
-	},
-	{
-		"title" : "Version 2.1 Released",
-		"date"	: "Nov 06, 2019",
-		"sub"	: "Lanter Apps reached version 2.1.",
-		"img"	: "assets/www.lanterlite.com/img/v2.1.webp",
-		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191106')"}
-	},
-	{
 		"title" : "Invix II and Intelligence IV",
 		"date"	: "Oct 13, 2019",
 		"sub"	: "Invix method performance with better intelligence.",
