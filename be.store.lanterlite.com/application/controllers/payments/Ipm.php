@@ -32,6 +32,8 @@ class Ipm extends CI_Controller {
 	}
 
 	public function ntf() {
+		error_log(json_encode($_GET));
+		error_log(json_encode($_POST));
 		if (isset($_GET["?trx_id"])) {
 			$param = $_GET;
 		}
@@ -106,3 +108,6 @@ class Ipm extends CI_Controller {
 		return true;
 	}
 }
+
+// https://be.store.lanterlite.com/payments/ipm/ntf/?id=LMONF29AIPB&?trx_id=489562&status=berhasil&no_rekening_deposit=asd&total=5000
+// http://localhost/app/be.store.lanterlite.com/payments/ipm/ntf/?id=LMONF29AIPB&?trx_id=489562&status=berhasil&no_rekening_deposit=asd&total=5000
