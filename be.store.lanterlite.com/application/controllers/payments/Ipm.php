@@ -34,6 +34,7 @@ class Ipm extends CI_Controller {
 	public function ntf() {
 		error_log(json_encode($_GET));
 		error_log(json_encode($_POST));
+		$param = [];
 		if (isset($_POST["trx_id"])) {
 			$param = $_POST;
 		}
@@ -79,8 +80,8 @@ class Ipm extends CI_Controller {
 		if ((int)$_tx['is_success'])
 			return false;
 		error_log(json_encode($_tx));
-		if ((int)$tx2['total'] < (int)$_tx['price']*(int)$_tx['qty'])
-			return false;
+		// if ((int)$tx2['total'] < (int)$_tx['price']*(int)$_tx['qty'])
+		// 	return false;
 
 		if ($_tx['item_id'] === 'BF45E033FFEA') {
 			$cit = [];
