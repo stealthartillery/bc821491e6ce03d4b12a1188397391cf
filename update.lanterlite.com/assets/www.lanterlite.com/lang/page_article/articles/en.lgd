@@ -11,6 +11,6 @@
 		"date"	: "Nov 16, 2019",
 		"sub"	: "Mengenal Rasulullah (saw.).",
 		"img"	: "assets/www.lanterlite.com/img/page_article/articles/book2.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('article/MuhammadBinAbdullah')" }
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('article/190302')" }
 	}
 ]
