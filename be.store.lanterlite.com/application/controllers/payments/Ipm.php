@@ -34,11 +34,11 @@ class Ipm extends CI_Controller {
 	public function ntf() {
 		error_log(json_encode($_GET));
 		error_log(json_encode($_POST));
-		if (isset($_GET["?trx_id"])) {
-			$param = $_GET;
-		}
-		else if (isset($_POST["?trx_id"])) {
+		if (isset($_POST["trx_id"])) {
 			$param = $_POST;
+		}
+		if (isset($_GET["id"])) {
+			$param["id"] = $_GET["id"];
 		}
 		else {
 			$param = [];
@@ -62,7 +62,7 @@ class Ipm extends CI_Controller {
 	}
 
 	public function success_tx($tx2) {
-		if (!LGen('JsonMan')->is_key_exist($tx2,'?trx_id'))
+		if (!LGen('JsonMan')->is_key_exist($tx2,'trx_id'))
 			return false;
 		if (!LGen('JsonMan')->is_key_exist($tx2,'id'))
 			return false;
