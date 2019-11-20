@@ -1,7 +1,4 @@
 {
-	"status" : "dep",
-	"platform" : "web",
-	"os" : "android",
 	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.enlite",
 	"version" : "-",
 	"domain" : "search.lanterlite.com",
