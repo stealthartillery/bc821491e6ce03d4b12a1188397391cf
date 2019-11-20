@@ -9,11 +9,11 @@
 	{
 		"title": "Product",
 		"content": [
-			{"title":"Lanter Search","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.enlite', '_blank')"},
-			{"title":"Lanter Quran","func":"window.open('https://play.google.com/store/apps/details?id=com.lanterlite.quranic', '_blank')"},
-			{"title":"Lanter Sword","func":""},
-			{"title":"Lanter Store","func":""},
-			{"title":"Lanter Square","func":""}
+			{"title":"Lanter Search","func":"LGen.Page.change_by_url('lantersearch')"},
+			{"title":"Lanter Quran","func":"LGen.Page.change_by_url('lanterquran')"},
+			{"title":"Lanter Sword","func":"LGen.Page.change_by_url('lantersword')"},
+			{"title":"Lanter Store","func":"LGen.Page.change_by_url('lanterstore')"},
+			{"title":"Lanter Square","func":"LGen.Page.change_by_url('lantersquare')"}
 		]
 	},
 	{

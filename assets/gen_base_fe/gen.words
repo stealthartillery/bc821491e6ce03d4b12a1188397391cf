@@ -52,6 +52,7 @@
 	{"id":"Opsi telah disimpan.", "en":"Option saved successfully."},
 	{"id":"Profil telah disimpan.", "en":"Profile saved successfully."},
 	{"id":"Akun tidak terdaftar.", "en":"Account is unregistered."},
+	{"id":"Akun diblokir.", "en":"Account is banned."},
 	{"id":"Email telah terdaftar.", "en":"Email is exist."},
 	{"id":"Nama pengguna telah terdaftar.", "en":"Username is exist."},
 	{"id":"Email kosong.", "en":"Email is empty."},

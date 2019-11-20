@@ -1,5 +1,7 @@
 {
 	"success": "success",
 	"failed": "failed",
+	"data": "Data",
+	"stat": "Stat",
 	"not_found": "not_found"
 }

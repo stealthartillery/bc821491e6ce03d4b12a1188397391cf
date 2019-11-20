@@ -1,12 +1,9 @@
 {
-	"status" : "dep",
-	"platform" : "web",
-	"os" : "android",
 	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.www",
 	"version" : "-",
 	"domain" : "www.lanterlite.com",
 	"be_domain" : "be.www.lanterlite.com",
-	"codename" : "lanterlite",
-	"name" : "Lanterlite",
+	"codename" : "lantersite",
+	"name" : "Site",
 	"fullname" : "Lanterlite"
 }
