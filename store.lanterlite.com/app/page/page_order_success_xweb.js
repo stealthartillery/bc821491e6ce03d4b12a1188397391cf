@@ -28,15 +28,15 @@ function OrderSuccessXWeb () {
 	this.set_event = set_event
 	function set_event() {
 		var page = page_order_success_xweb
-		LGen.set_button(page.screen.querySelector('.home_btn'))
-		LGen.set_button_click(page.screen.querySelector('.home_btn'), function(_this) {
-			// if (typeof window.parent != "undefined"){
-			// 	var someIframe = window.parent.document.getElementById('ch_iframe');
-			// 	lprint(someIframe)
-			// 	someIframe.parentNode.removeChild(window.parent.document.getElementById('ch_iframe'));
-			// }
-			LGen.Page.change(page.previous_page)
-		})
+		// LGen.set_button(page.screen.querySelector('.home_btn'))
+		// LGen.set_button_click(page.screen.querySelector('.home_btn'), function(_this) {
+		// 	// if (typeof window.parent != "undefined"){
+		// 	// 	var someIframe = window.parent.document.getElementById('ch_iframe');
+		// 	// 	lprint(someIframe)
+		// 	// 	someIframe.parentNode.removeChild(window.parent.document.getElementById('ch_iframe'));
+		// 	// }
+		// 	LGen.Page.change(page.previous_page)
+		// })
 	}
 
 	this.update = update
