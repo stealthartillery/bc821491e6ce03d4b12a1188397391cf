@@ -32,9 +32,9 @@ class Ipm extends CI_Controller {
 		}
 		else {
 			if (app_status === 'dev')
-				header("LOCATION: http://localhost/app/store.lanterlite.com/order_success_xweb");
+				header("LOCATION: http://localhost/app/update.lanterlite.com/success");
 			else
-				header("LOCATION: https://store.lanterlite.com/order_success_xweb");
+				header("LOCATION: https://update.lanterlite.com/success");
 		}
 
 		return true;
