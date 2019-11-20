@@ -24,7 +24,7 @@ class Ipm extends CI_Controller {
 		}
 		error_log(json_encode($param));
 		$this->add_pgtx_id($param['id'],$param['trx_id']);
-		if ($param['platform'] === 'web') {
+		if ($param['pltfm'] === 'web') {
 			if (app_status === 'dev')
 				header("LOCATION: http://localhost/app/store.lanterlite.com/order_success");
 			else
@@ -36,6 +36,7 @@ class Ipm extends CI_Controller {
 			else
 				header("LOCATION: https://store.lanterlite.com/order_success_xweb");
 		}
+
 		return true;
 	}
 

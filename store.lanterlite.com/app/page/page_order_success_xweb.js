@@ -3,7 +3,7 @@ page_order_success_xweb.set()
 
 function OrderSuccessXWeb () {
 	this.name = 'page_order_success_xweb'
-	this.url_names = ['order_success']
+	this.url_names = ['order_success_xweb']
 
 	this.set = set
 	function set () {
