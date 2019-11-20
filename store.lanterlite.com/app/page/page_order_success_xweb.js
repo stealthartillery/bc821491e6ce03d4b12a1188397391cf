@@ -13,13 +13,14 @@ function OrderSuccessXWeb () {
 			'<div class="bground">'+
 				'<div class="title theme fttl">'+'Please complete the payment in order to get your order processed automatically.'+'</div>'+
 				'<div class="title theme fttl">'+'Thankyou.'+'</div>'+
+				// '<button class="std gold home_btn theme fp bgclr1 hover1">'+'Home'+'</button>'+
 			'</div>'+
 			'</div>'
 		)
 		page.lang_elms = [
 			{"elm":page.screen.querySelectorAll('.bground .title')[0]},
 			{"elm":page.screen.querySelectorAll('.bground .title')[1]},
-			{"elm":page.screen.querySelector('.bground .home_btn')},
+			// {"elm":page.screen.querySelector('.bground .home_btn')},
 		]
 		page.set_event()
 		LGen.Page.init(page)
