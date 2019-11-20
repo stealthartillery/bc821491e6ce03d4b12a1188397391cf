@@ -24,10 +24,18 @@ class Ipm extends CI_Controller {
 		}
 		error_log(json_encode($param));
 		$this->add_pgtx_id($param['id'],$param['trx_id']);
-		if (app_status === 'dev')
-			header("LOCATION: http://localhost/app/store.lanterlite.com/order_success");
-		else
-			header("LOCATION: https://store.lanterlite.com/order_success");
+		if ($param['platform'] === 'web') {
+			if (app_status === 'dev')
+				header("LOCATION: http://localhost/app/store.lanterlite.com/order_success");
+			else
+				header("LOCATION: https://store.lanterlite.com/order_success");
+		}
+		else {
+			if (app_status === 'dev')
+				header("LOCATION: http://localhost/app/store.lanterlite.com/order_success_xweb");
+			else
+				header("LOCATION: https://store.lanterlite.com/order_success_xweb");
+		}
 		return true;
 	}
 

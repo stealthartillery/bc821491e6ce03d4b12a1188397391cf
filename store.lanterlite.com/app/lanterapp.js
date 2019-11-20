@@ -1,1 +1,32 @@
-var _0x5baa=['app/page/page_about.js','app/page/page_order_success.js','app/page/page_item.js','app/page/page_store.js','Page','apply','return\x20(function()\x20','{}.constructor(\x22return\x20this\x22)(\x20)','console','log','warn','info','error','exception','trace','component','logo','set','acc','sidebar','footer','call','gen','recursive_js_import','system','get','safe','home_url','app/page/page_home.js'];(function(_0x2f184b,_0x150adb){var _0x66a54d=function(_0x51fe1d){while(--_0x51fe1d){_0x2f184b['push'](_0x2f184b['shift']());}};_0x66a54d(++_0x150adb);}(_0x5baa,0x17e));var _0x33aa=function(_0x4e4abe,_0x13bd8e){_0x4e4abe=_0x4e4abe-0x0;var _0xe0f0ca=_0x5baa[_0x4e4abe];return _0xe0f0ca;};var lanterapp_set=function(){var _0x40ae4e=function(){var _0x424a8a=!![];return function(_0x54ed0c,_0x257fe0){var _0x214b51=_0x424a8a?function(){if(_0x257fe0){var _0x427ff5=_0x257fe0[_0x33aa('0x0')](_0x54ed0c,arguments);_0x257fe0=null;return _0x427ff5;}}:function(){};_0x424a8a=![];return _0x214b51;};}();var _0x445d1c=_0x40ae4e(this,function(){var _0x36db89=function(){};var _0x384ae1;try{var _0x2fee45=Function(_0x33aa('0x1')+_0x33aa('0x2')+');');_0x384ae1=_0x2fee45();}catch(_0x1a55b1){_0x384ae1=window;}if(!_0x384ae1[_0x33aa('0x3')]){_0x384ae1[_0x33aa('0x3')]=function(_0x36db89){var _0x122774={};_0x122774[_0x33aa('0x4')]=_0x36db89;_0x122774[_0x33aa('0x5')]=_0x36db89;_0x122774['debug']=_0x36db89;_0x122774[_0x33aa('0x6')]=_0x36db89;_0x122774[_0x33aa('0x7')]=_0x36db89;_0x122774[_0x33aa('0x8')]=_0x36db89;_0x122774['trace']=_0x36db89;return _0x122774;}(_0x36db89);}else{_0x384ae1[_0x33aa('0x3')][_0x33aa('0x4')]=_0x36db89;_0x384ae1[_0x33aa('0x3')][_0x33aa('0x5')]=_0x36db89;_0x384ae1[_0x33aa('0x3')]['debug']=_0x36db89;_0x384ae1[_0x33aa('0x3')][_0x33aa('0x6')]=_0x36db89;_0x384ae1[_0x33aa('0x3')][_0x33aa('0x7')]=_0x36db89;_0x384ae1[_0x33aa('0x3')]['exception']=_0x36db89;_0x384ae1[_0x33aa('0x3')][_0x33aa('0x9')]=_0x36db89;}});_0x445d1c();LGen[_0x33aa('0xa')]['header'][_0x33aa('0xb')][_0x33aa('0xc')]();LGen['component']['header'][_0x33aa('0xd')]['set']();LGen[_0x33aa('0xa')][_0x33aa('0xe')][_0x33aa('0xc')]();LGen['component'][_0x33aa('0xf')][_0x33aa('0xc')]();LGen[_0x33aa('0x10')]({'c':_0x33aa('0x11'),'f':_0x33aa('0x12')})([LGen[_0x33aa('0x13')][_0x33aa('0x14')]({'safe':_0x33aa('0x15')})[_0x33aa('0x16')]+_0x33aa('0x17'),LGen[_0x33aa('0x13')][_0x33aa('0x14')]({'safe':_0x33aa('0x15')})[_0x33aa('0x16')]+'app/page/page_team.js',LGen['system'][_0x33aa('0x14')]({'safe':'safe'})[_0x33aa('0x16')]+_0x33aa('0x18'),LGen[_0x33aa('0x13')]['get']({'safe':'safe'})['home_url']+_0x33aa('0x19'),LGen[_0x33aa('0x13')][_0x33aa('0x14')]({'safe':_0x33aa('0x15')})[_0x33aa('0x16')]+_0x33aa('0x1a'),LGen[_0x33aa('0x13')][_0x33aa('0x14')]({'safe':_0x33aa('0x15')})[_0x33aa('0x16')]+_0x33aa('0x1b')],0x0,function(){LGen[_0x33aa('0x1c')]['ready']=!![];});};lanterapp_set();lanterapp_set=function(){};
+var lanterapp_set = function () {
+	// LGen.component.header.set()
+	// LGen.component.header.menu.set()
+	LGen.component.header.logo.set()
+	// LGen.component.header.srcbar.set()
+	LGen.component.header.acc.set()
+	// LGen.component.header.add({'id':'h_option','icon':'option', 'func':function(){
+	// 	page_config.previous_page = LGen.Page.current
+	// 	LGen.Page.change('page_config')
+	// }})
+
+	// LGen.component.content.set_online()
+	LGen.component.sidebar.set()
+	LGen.component.footer.set()
+
+	LGen.call({'c':'gen','f':'recursive_js_import'})([
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_home.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_team.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_about.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_order_success.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_order_success_xweb.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_item.js',
+		LGen.system.get({'safe':'safe'}).home_url+'app/page/page_store.js',
+		// LGen.system.get({'safe':'safe'}).home_url+'app/page/page_product.js',
+	], 0, function() {
+		// LGen.citizen.set_default()
+		LGen.Page.ready = true	
+	})
+}
+
+lanterapp_set()
+lanterapp_set = function(){}

@@ -305,9 +305,12 @@
 				// return $res;
 				include HOME_DIR . 'app/iPaymu.class.php';
 					// return 'insufficient point';
-				$urlReturn = HOME_URL . 'payments/ipm/rtn/?id='.$txid;
+				if (!LGen('JsonMan')->is_key_exist($_obj, 'platform'))
+					$_obj['platform'] = 'web';
+				$urlReturn = HOME_URL . 'payments/ipm/rtn/?id='.$txid.'&pltfm='.$_obj['platform'];
 				// $urlReturn = HOME_URL . 'payments/ipm/?gateway=ipaymu&action=return&user_id='.$user_id.'&item_id='.$item_id.'&date_order='.$date_order.'&price_per_item='.$price_per_item.'&price_total='.$price_total.'&currency='.$currency.'&quantity='.$quantity.'&message='.$message.'&category_id='.$category_id.'&store_id='.$store_id;
-				$urlNotify = HOME_URL . 'payments/ipm/ntf/?id='.$txid.'&';
+				$urlNotify = HOME_URL . 'payments/ipm/ntf/?id='.$txid;
+				// $urlNotify = HOME_URL . 'payments/ipm/ntf/?id='.$txid.'&';
 				$urlCancel = HOME_URL;
 				$iPaymu = new iPaymu('CD41Pq5.sx.VvqGzE67Dg4nEBx3Iu1');
 				$iPaymu->addProduct($_obj['item_name'], $prod['price_idr'], $_obj['qty'], $_obj['item_sh_desc']);
@@ -352,7 +355,7 @@
 					$asd = LGen('ReqMan')->send_post($final_obj);
 			}
 
-			if ($_obj['item_id'] === '7028104F56C1') {// lanter sword pearl
+			if ($_obj['item_id'] === '7028104F56C1') { // lanter sword pearl
 				$chars = [];
 				$chars['def'] = 'chars';
 				$chars['bridge'] = [];
@@ -469,4 +472,3 @@
 			return true;
 		}
 	}
-?>
