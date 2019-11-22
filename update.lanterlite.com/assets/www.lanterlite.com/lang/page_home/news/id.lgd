@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Lanter App 2.2",
+		"date"	: "Nov 22, 2019",
+		"sub"	: "Lanterlite merilis aplikasi all-in-one.",
+		"img"	: "assets/www.lanterlite.com/img/v2.2.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191122')"}
+	},
+	{
 		"title" : "Lanter Store Dirilis",
 		"date"	: "Nov 16, 2019",
 		"sub"	: "Lanterlite Digital Store telah dirilis.",
@@ -19,12 +26,5 @@
 		"sub"	: "Performa metode Invix serta Intelejensi yang lebih baik.",
 		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191013')"}
-	},
-	{
-		"title" : "Model sistem baru",
-		"date"	: "Okt 6, 2019",
-		"sub"	: "Semua aplikasi Lanterlite telah diterapkan Lanter Gen II.",
-		"img"	: "assets/www.lanterlite.com/img/system1.webp",
-		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191006')"}
 	}
 ]
