@@ -89,9 +89,11 @@
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$result['cit_id'].'", "puzzled":false}'));
 				$_obj['def'] = 'citizens';
-				$_obj['namelist'] = ['created_date', 'verification_code', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+				$_obj['namelist'] = ['is_banned', 'created_date', 'verification_code', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 
 				$citizen = LGen('SaviorMan')->read($_obj);
+				if ($citizen['is_banned'])
+					return 'account is banned';
 				$_result['id'] = $citizen['id'];
 				$_result['is_verified'] = $citizen['is_verified'];
 				$_result['lang'] = $citizen['lang'];
@@ -153,16 +155,13 @@
 			if ($citizens === LGen('GlobVar')->not_found)
 				return LGen('GlobVar')->not_found;
 			// error_log(json_encode($citizens));
-			$_i = 0;
 			foreach ($citizens as $key => $value) {
-				$_i += 1;
 				$obj['bridge'] = $bridge;
 				array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
 				// $obj['val'] = $val; // keep value encrypted for savior->read purpose.
 				$citizen = LGen('SaviorMan')->read($obj);
 				if (!LGen('JsonMan')->is_key_exist($citizen, 'email'))
 					continue;
-				// if ($_i === 4)
 				// 	return $citizen;
 				error_log(json_encode($citizen) .' '. $email);
 				$citizen['id'] = ($citizen['id']);
@@ -179,8 +178,10 @@
 						$ship['ship_id'] = $obj['val']['ship_id'];
 						$this->set_ship_id($ship);
 					}
-					$obj['namelist'] = ['verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+					$obj['namelist'] = ['is_banned', 'verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
+					if ($citizen['is_banned'])
+						return 'account is banned';
 					// $result['ship_id'] = $ship_id;
 					$result['id'] = $citizen['id'];
 					$result['is_verified'] = $citizen['is_verified'];
@@ -421,7 +422,7 @@
 			// error_log(($val['verification_code']) . ' ' . $obj['verification_code']);
 			if (($val['verification_code']) === $obj['verification_code']) {
 				$_obj = $obj;
-				$_obj['val'] = LGen('StringMan')->to_json('{"is_verified":true}');
+				$_obj['val'] = LGen('StringMan')->to_json('{"is_verified":1}');
 				LGen('SaviorMan')->update($_obj);
 				return true;
 			}
