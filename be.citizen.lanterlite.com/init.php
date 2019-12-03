@@ -6,7 +6,6 @@ $app = json_decode($app, true);
 defined('app_status') OR define('app_status', $app['status']);
 // echo json_encode(app_status);
 // echo json_encode($app);
-return $app;
 init($app);
 function init($app) {
 	if (app_status === 'dev') {
