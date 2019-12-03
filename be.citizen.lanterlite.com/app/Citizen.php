@@ -32,7 +32,7 @@
 			// $_obj['namelist'] = ['theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 
 			$result = LGen('SaviorMan')->delete_pack($_obj);
-			error_log(json_encode($result));
+			// error_log(json_encode($result));
 			return $result;
 		}
 
@@ -89,12 +89,13 @@
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$result['cit_id'].'", "puzzled":false}'));
 				$_obj['def'] = 'citizens';
-				$_obj['namelist'] = ['is_banned', 'created_date', 'verification_code', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+				$_obj['namelist'] = ['img','is_banned', 'created_date', 'verification_code', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 
 				$citizen = LGen('SaviorMan')->read($_obj);
 				if ($citizen['is_banned'])
 					return 'account is banned';
 				$_result['id'] = $citizen['id'];
+				$_result['img'] = $citizen['img'];
 				$_result['is_verified'] = $citizen['is_verified'];
 				$_result['lang'] = $citizen['lang'];
 				$_result['fullname'] = $citizen['fullname'];
@@ -138,7 +139,7 @@
 			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
 			$_bridge = LGen('SaviorMan')->gen_bridge($obj['bridge']);
 			$dir = HOME_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
-			error_log($dir);
+			// error_log($dir);
 
 			$bridge = $obj['bridge'];
 			$obj['namelist'] = ['id','email', 'password'];
@@ -163,7 +164,7 @@
 				if (!LGen('JsonMan')->is_key_exist($citizen, 'email'))
 					continue;
 				// 	return $citizen;
-				error_log(json_encode($citizen) .' '. $email);
+				// error_log(json_encode($citizen) .' '. $email);
 				$citizen['id'] = ($citizen['id']);
 				$citizen['email'] = ($citizen['email']);
 				$citizen['password'] = ($citizen['password']);
@@ -178,12 +179,13 @@
 						$ship['ship_id'] = $obj['val']['ship_id'];
 						$this->set_ship_id($ship);
 					}
-					$obj['namelist'] = ['is_banned', 'verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+					$obj['namelist'] = ['img','is_banned', 'verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 					$citizen = LGen('SaviorMan')->read($obj);
 					if ($citizen['is_banned'])
 						return 'account is banned';
 					// $result['ship_id'] = $ship_id;
 					$result['id'] = $citizen['id'];
+					$result['img'] = $citizen['img'];
 					$result['is_verified'] = $citizen['is_verified'];
 					$result['lang'] = $citizen['lang'];
 					$result['fullname'] = $citizen['fullname'];
@@ -222,10 +224,13 @@
 			$_bridge = LGen('SaviorMan')->gen_bridge($obj['bridge']);
 			$dir = HOME_DIR.'storages/'.$obj['gate'].'/'.$_bridge;
 
-			$obj['namelist'] = ['verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
+			$obj['namelist'] = ['img','is_banned','verification_code', 'created_date', 'fsize', 'theme_color', 'theme_font', 'email', 'lang', 'is_verified', 'id', 'fullname', 'username', 'gender', 'address', 'phonenum', 'silver', 'point'];
 			$citizen = LGen('SaviorMan')->read($obj);
+			if ($citizen['is_banned'])
+				return 'account is banned';
 
 			$result['id'] = $citizen['id'];
+			$result['img'] = $citizen['img'];
 			$result['is_verified'] = $citizen['is_verified'];
 			$result['lang'] = $citizen['lang'];
 			$result['fullname'] = $citizen['fullname'];
@@ -385,28 +390,48 @@
 
 		public function update_profile($obj) {
 			LGen('SaviorMan')->req_validator($obj);
-
+			error_log('message');
 			$val = $obj['val'];
 			$obj['val'] = (($obj['val']));
 
-			$_obj = $obj;
-			$_obj['namelist'] = ['id', 'username', 'email', 'password'];
-			$_obj['bridge'] = [];
-			$_obj['val'] = '';
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id":"citizens", "puzzled":true}'));
-			$citizens = LGen('SaviorMan')->get_all($_obj);
-			foreach ($citizens as $key => $value) {
-				if (!(($value['id']) === $val['id'])) {
-					if (($value['username']) === $val['username'])
-						return 'username is exist';
-					else if (($value['email']) === $val['email'])
-						return 'email is exist';
+			if (LGen('JsonMan')->is_key_exist($obj['val'], 'username') || LGen('JsonMan')->is_key_exist($obj['val'], 'email')) {
+				$_obj = $obj;
+				$_obj['namelist'] = ['id', 'username', 'email', 'password'];
+				$_obj['bridge'] = [];
+				$_obj['val'] = '';
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id":"citizens", "puzzled":true}'));
+				$citizens = LGen('SaviorMan')->get_all($_obj);
+				foreach ($citizens as $key => $value) {
+					error_log(json_encode($value));
+					if (!(($value['id']) === $val['id'])) {
+						if (LGen('JsonMan')->is_key_exist($obj['val'], 'username')) {
+							if (($value['username']) === $val['username'])
+								return 'username is exist';
+						}
+						if (LGen('JsonMan')->is_key_exist($obj['val'], 'email')) {
+							if (($value['email']) === $val['email'])
+								return 'email is exist';
+						}
+					}
 				}
 			}
-
+			$asd = ((LGen('JsonMan')->is_key_exist($obj['val'], 'img') && LGen('StringMan')->is_val_exist($obj['val']['img'], 'base64'))?'asda':'qwea');
+			if (LGen('JsonMan')->is_key_exist($obj['val'], 'img') && LGen('StringMan')->is_val_exist($obj['val']['img'], 'base64')) {
+				/* upload image */
+				$_obj = [];
+				$_obj['gate'] = 'citizens/'.$obj['val']['id'];
+				$_obj['img'] = $obj['val']['img'];
+	
+				$final_obj = [];
+				$final_obj['json'] = $_obj;
+				$final_obj['func'] = '$image->add_image';
+				$obj['val']['img'] = LGen('ReqMan')->send_post($final_obj, 'image.lanterlite.com');
+			}
+			else
+				unset($obj['val']['img']);
 			LGen('SaviorMan')->update($obj);
 			// $result = $this->login($obj);
-			return true;
+			return $obj['val'];
 		}
 
 
