@@ -1,10 +1,10 @@
 {
-	"status" : "test",
+	"status" : "dep",
 	"platform" : "web",
 	"os" : "android",
 	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.citizen",
 	"version" : "2.1.0",
-	"must_signin" : 1,
+	"must_signin" : 0,
 	"be_domain" : "be.citizen.lanterlite.com",
 	"domain" : "citizen.lanterlite.com",
 	"codename" : "lantercitizen",
