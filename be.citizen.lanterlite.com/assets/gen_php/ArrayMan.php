@@ -52,7 +52,7 @@
 			return array_search($val, $arr);
 		}
 
-		function print($array) { 
-			echo "</br>"; for ($i=0; $i<count($array); $i++) echo "[" . $i . "] => " . $array[$i] . "</br>"; 
-		}
+		// function print($array) { 
+		// 	echo "</br>"; for ($i=0; $i<count($array); $i++) echo "[" . $i . "] => " . $array[$i] . "</br>"; 
+		// }
 	}

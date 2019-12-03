@@ -3,6 +3,18 @@
 	// ini_set("error_log", BASE_DIR.'storages/store/'. 'store.log');
 	// init();
 	class ReqMan {
+		function send_get($obj, $url='be.citizen.lanterlite.com') {
+			// $result = file_get_contents($url.'?f='.LGen('Black')->get($obj['f']).'&o='.LGen('Black')->get($obj['f']));
+			if (app_status === 'dev')
+				$url = 'http://localhost/app/'.$url.'/gate/';
+			else
+				$url = 'https://'.$url.'/gate/';
+			// return $url.'?f='.urlencode(LGen('Black')->get($obj));
+			$result = file_get_contents($url.'?f='.urlencode(LGen('Black')->get($obj)));
+			// if ($obj !== undefined)
+			return LGen('White')->get($result);
+		}
+
 		function send_post($obj, $url='be.citizen.lanterlite.com') {
 			$obj = LGen('Black')->get($obj);
 			$postdata = http_build_query(

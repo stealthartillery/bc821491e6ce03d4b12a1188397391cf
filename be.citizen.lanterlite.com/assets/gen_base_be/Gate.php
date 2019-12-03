@@ -2,7 +2,6 @@
 
 /* v 1.0.2 */
 
-init();
 function get_app() {
 	$res = json_decode(file_get_contents(HOME_DIR."app/app.lgen"), true);
 	return $res;

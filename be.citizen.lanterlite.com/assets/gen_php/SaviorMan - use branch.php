@@ -18,8 +18,7 @@
 			if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = LGen('StringMan')->to_json('{}');// the gold.
 			// if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = ""; else $obj['val'] = LGen('StringMan')->to_json(base64_decode($obj['val']));// the gold.
 			if (!LGen('JsonMan')->is_key_exist($obj,'bridge')) $obj['bridge'] = []; // way to the castle.
-			if (!LGen('JsonMan')->is_key_exist($obj,'note')) $obj['note'] = ''; // way to the castle.
-			if (!LGen('JsonMan')->is_key_exist($obj,'def')) $obj['def'] = ''; // default name.
+			if (!LGen('JsonMan')->is_key_exist($obj,'def')) return 'default false'; // default name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'single')) $obj['single'] = false; // want to set for a single gold.
 			if (!LGen('JsonMan')->is_key_exist($obj,'total')) $obj['total'] = 0; // just total.
 			if (!LGen('JsonMan')->is_key_exist($obj,'name')) $obj['name'] = ''; // gold name.
@@ -53,11 +52,11 @@
 					$branches = getFileNamesInsideDir($dir.$value.'/');
 					foreach ($branches as $bkey => $bval) {
 						$obj['bridge'] = $bridge;
-						array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
-						array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$bval.'", "puzzled":false}'));
+						// array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value.'", "puzzled":false}'));
+						array_push($obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$bval.'", "puzzled":false, "branch_no":'.$value.'}'));
 						// return $obj;
 						$citizen = $this->read($obj);
-						// return $obj;
+						// return $citizen;
 						array_push($result, $citizen);
 					}
 				}
@@ -91,8 +90,8 @@
 
 			if ($obj['keep_name'] && $obj['name'] === '')
 				return false;
-			if ($obj['branched']) {
-				$res = $this->update_dir_by_branch($dir, $obj['branch']);
+			if (LGen('JsonMan')->is_key_exist($obj, 'branch_no')) {
+				$res = $this->update_dir_by_branch($dir, $obj['branch_no']);
 				$dir = $res['dir'];
 				$branch_no = $res['branch_no'];
 			}
@@ -155,10 +154,7 @@
 				}
 			}
 
-			if ($obj['note'] === 'return full')
-				return $default;
-			else
-				return $obj['name'];
+			return $obj['name'];
 		}
 
 		public function update($obj) {
@@ -179,7 +175,7 @@
 			// }
 
 			$config_dir = HOME_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
-			// error_log('$config_dir -> '.$config_dir);
+			error_log('$config_dir -> '.$config_dir);
 			$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
 			$default = $default[$obj['def']];
 
@@ -257,7 +253,7 @@
 			// return $obj['namelist'];
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
-				// error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');
+				error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {
 					$_data = LGen('JsonMan')->read($dir.$_val);
 					$data[$value] = LGen('White')->get($_data);
@@ -282,6 +278,9 @@
 		public function gen_bridge($bridge) {
 			$_bridge = '';
 			foreach ($bridge as $key => $value) {
+				if (LGen('JsonMan')->is_key_exist($value, 'branch_no'))
+					$_bridge = $_bridge . $value['branch_no'] . '/';
+
 				if ($value['puzzled'])
 					$_bridge = $_bridge . LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value['id'].'"}')) . '/';
 				else
@@ -291,7 +290,7 @@
 		}
 
 		public function update_dir_by_branch(&$dir, $branch=1000) {
-			$inc = 1;
+			$inc = 0;
 			$_dir = $dir.'/'.$inc;
 			if (!file_exists($_dir))
 				mkdir($_dir, 0777, true);
