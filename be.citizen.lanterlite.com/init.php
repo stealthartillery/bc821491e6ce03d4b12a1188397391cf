@@ -24,8 +24,8 @@ function init($app) {
 		defined('BASE_URL') OR define('BASE_URL', 'https://'.$app['be_domain'].'/');
 		defined('HOME_DIR') OR define('HOME_DIR', FCPATH);
 		defined('BASE_DIR') OR define('BASE_DIR', FCPATH);
-		ini_set("log_errors", 1);
-		ini_set("error_log", HOME_DIR.'storages/'. 'gate.log');
+		// ini_set("log_errors", 1);
+		// ini_set("error_log", HOME_DIR.'storages/'. 'gate.log');
 	}
 	else {
 		defined('FE_URL') OR define('FE_URL', 'https://');
