@@ -8,7 +8,7 @@ defined('app_status') OR define('app_status', $app['status']);
 // echo json_encode($app);
 init($app);
 function init($app) {
-	if (app_status === 'test') {
+	if (app_status === 'dev') {
 		defined('FE_URL') OR define('FE_URL', 'http://localhost/app/');
 		defined('BASE_URL') OR define('BASE_URL', 'http://localhost/');
 		defined('BASE_DIR') OR define('BASE_DIR', 'E:/liteapps/');
