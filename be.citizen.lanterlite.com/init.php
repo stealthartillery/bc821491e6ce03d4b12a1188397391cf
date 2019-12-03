@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $app = file_get_contents('app/app.lgen');
 $app = json_decode($app, true);
-error_log($app);
 defined('app_status') OR define('app_status', $app['status']);
 // echo json_encode(app_status);
 // echo json_encode($app);
