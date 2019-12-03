@@ -1,5 +1,5 @@
 <?php
-	
+
 	$citizen = new CitizenGen();
 
 	class CitizenGen {
