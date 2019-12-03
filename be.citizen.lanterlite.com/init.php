@@ -26,7 +26,7 @@ function init($app) {
 		ini_set("log_errors", 1);
 		ini_set("error_log", HOME_DIR.'storages/'. 'gate.log');
 	}
-	else {
+	else if (app_status === 'dep') {
 		defined('FE_URL') OR define('FE_URL', 'https://');
 		defined('HOME_URL') OR define('HOME_URL', 'https://'.$app['be_domain'].'/');
 		defined('BASE_URL') OR define('BASE_URL', 'https://'.$app['be_domain'].'/');
