@@ -7,8 +7,6 @@ defined('app_status') OR define('app_status', $app['status']);
 // echo json_encode(app_status);
 // echo json_encode($app);
 init($app);
-ini_set("log_errors", 1);
-ini_set("error_log", HOME_DIR.'storages/'. 'gate.log');
 
 function init($app) {
 	if (app_status === 'dev') {
