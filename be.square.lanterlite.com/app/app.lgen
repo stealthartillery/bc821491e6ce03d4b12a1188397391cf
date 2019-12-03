@@ -1,0 +1,13 @@
+{
+	"status" : "dev",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.square",
+	"version" : "2.1.0",
+	"must_signin" : 1,
+	"be_domain" : "be.square.lanterlite.com",
+	"domain" : "square.lanterlite.com",
+	"codename" : "lantersquare",
+	"name" : "square",
+	"fullname" : "Lanter Square"
+}
