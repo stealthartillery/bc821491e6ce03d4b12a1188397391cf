@@ -1146,11 +1146,11 @@
 			$cits = LGen('SaviorMan')->delete_pack($_obj);
 
 			/* del chat id in cit2 citizens/chats */
-			$_obj['bridge'] = [];
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chats", "puzzled":true}'));
-			$cits = LGen('SaviorMan')->delete_pack($_obj);
+			// $_obj['bridge'] = [];
+			// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+			// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+			// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chats", "puzzled":true}'));
+			// $cits = LGen('SaviorMan')->delete_pack($_obj);
 
 			/* del follows in cit 1 */
 			$_obj = [];
