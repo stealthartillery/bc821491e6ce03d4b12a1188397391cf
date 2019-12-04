@@ -491,6 +491,53 @@
 		public function check_like($obj) {
 		}
 
+		public function delete_post($obj) {
+			$cit_id = $obj['val']['cit_id'];
+			$post_id = $obj['val']['post_id'];
+
+			/* get cits in posts/likes */
+			$_obj = [];
+			$_obj['namelist'] = ['id'];
+			$_obj['def'] = 'posts/likes';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "posts", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$post_id.'", "puzzled":false}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "likes", "puzzled":true}'));
+			$cit = LGen('SaviorMan')->get_all($_obj);
+
+			for ($i=0; $i<sizeof($cit) ; $i++) { 
+				/* del post_id in cits/likes */
+				$_obj = [];
+				$_obj['name'] = $post_id;
+				$_obj['def'] = 'citizens/likes';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit[$i]['id'].'", "puzzled":false}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "likes", "puzzled":true}'));
+				LGen('SaviorMan')->delete_pack($_obj);
+			}
+
+			/* del post_id in cits/posts */
+			$_obj = [];
+			$_obj['name'] = $post_id;
+			$_obj['def'] = 'citizens/posts';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id.'", "puzzled":false}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "posts", "puzzled":true}'));
+			LGen('SaviorMan')->delete_pack($_obj);
+
+			/* del post_id in posts */
+			$_obj = [];
+			$_obj['name'] = $post_id;
+			$_obj['def'] = 'posts';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "posts", "puzzled":true}'));
+			LGen('SaviorMan')->delete_pack($_obj);
+
+			return 1;
+		}
+
 		public function like_post($obj) {
 			$cit_id = $obj['val']['cit_id'];
 			$post_id = $obj['val']['post_id'];
@@ -711,7 +758,7 @@
 				$posts[$i]['cit_username'] = $cits[$posts[$i]['cit_id']]['username'];
 				$posts[$i]['cit_fullname'] = $cits[$posts[$i]['cit_id']]['fullname'];
 				$posts[$i]['badge'] = $cits[$posts[$i]['cit_id']]['badge'];
-				$posts[$i]['type'] = 'Citizen';
+				// $posts[$i]['type'] = 'Citizen';
 
 				/* get n likes in post */
 				$_obj = [];
@@ -770,6 +817,7 @@
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chats", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$ci_val['id'].'", "puzzled":false}'));
 				$_chat = LGen('SaviorMan')->read($_obj);
+
 				if ($_chat['type'] === 'personal') {
 					$_obj = [];
 					$_obj['namelist'] = ['id'];
@@ -812,7 +860,7 @@
 			foreach ($cits as $key => $value) {
 				/* get cit img and fullname */
 				$_obj = [];
-				$_obj['namelist'] = ['img', 'fullname'];
+				$_obj['namelist'] = ['img', 'username', 'fullname'];
 				$_obj['def'] = 'citizens';
 				$_obj['bridge'] = [];
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
@@ -821,38 +869,41 @@
 				$data['o'] = $_obj;
 				$data['f'] = "LGen('SaviorMan')->read";
 				$res = LGen('ReqMan')->send_get($data, 'be.citizen.lanterlite.com');
-				// $cits = LGen('SaviorMan')->get_all($_obj);
-				// return $res;
-				// if (LGen('JsonMan')->is_key_exist($res, 'img'))
-					$cits[$key]['img'] = $res['img'];
-				// if (LGen('JsonMan')->is_key_exist($res, 'fullname'))
-					$cits[$key]['name'] = $res['fullname'];
-				// else
-					// $cits[$key]['name'] = '0';
+
+				$cits[$key]['img'] = $res['img'];
+				$cits[$key]['username'] = $res['username'];
+				$cits[$key]['name'] = $res['fullname'];
+				$cits[$key]['type'] = 'Citizen';
+				// $cits[$key]['cit_type'] = '';
 			}
 			// return $cits;
 
 			foreach ($grps as $key => $value) {
 				$_obj = [];
-				$_obj['namelist'] = ['img', 'fullname'];
+				$_obj['namelist'] = ['img', 'username', 'fullname'];
 				$_obj['def'] = 'groups';
 				$_obj['bridge'] = [];
-			// return $cits;
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
 				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value['id'].'", "puzzled":false}'));
 				$res = LGen('SaviorMan')->read($_obj);
-				// $data = [];
-				// $data['o'] = $_obj;
-				// $data['f'] = "LGen('SaviorMan')->read";
-				// $res = LGen('ReqMan')->send_get($data, 'be.citizen.lanterlite.com');
-				// $cits = LGen('SaviorMan')->get_all($_obj);
-				// return $res;
-				// if (LGen('JsonMan')->is_key_exist($res, 'img'))
-					$grps[$key]['img'] = $res['img'];
-				// if (LGen('JsonMan')->is_key_exist($res, 'fullname'))
-					$grps[$key]['name'] = $res['fullname'];
-				// else
-					// $cits[$key]['name'] = '0';
+
+
+				$grps[$key]['img'] = $res['img'];
+				$grps[$key]['username'] = $res['username'];
+				$grps[$key]['name'] = $res['fullname'];
+
+				/* get cit type in guild/members */
+				// $_obj = [];
+				// $_obj['namelist'] = ['type'];
+				// $_obj['def'] = 'groups/members';
+				// $_obj['bridge'] = [];
+				// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
+				// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$value['id'].'", "puzzled":false}'));
+				// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "members", "puzzled":true}'));
+				// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id.'", "puzzled":false}'));
+				// $_mbr = LGen('SaviorMan')->read($_obj);
+				// $grps[$key]['cit_type'] = $_mbr['type'];
+				$grps[$key]['type'] = 'Group';
 			}
 
 			$chats = [];
@@ -1255,39 +1306,137 @@
 			return $chat_id;
 		}
 
+		public function get_cit_detail($obj) {
+			$cit_id1 = $obj['cit_id1'];
+			$cit_id2 = $obj['cit_id2'];
+
+			/* get cit type in guild/members */
+			$_obj = [];
+			$_obj['namelist'] = ['id'];
+			$_obj['def'] = 'citizens';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+			$_cit = LGen('SaviorMan')->read($_obj);
+
+			/* if cit_id2 is citizen */
+			if (sizeof($_cit) > 0) {
+				/* get cit detail citizens */
+				$_obj = [];
+				$_obj['namelist'] = ['id', 'img', 'username', 'fullname'];
+				$_obj['def'] = 'citizens';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				$data = [];
+				$data['o'] = $_obj;
+				$data['f'] = "LGen('SaviorMan')->read";
+				$res = LGen('ReqMan')->send_get($data, 'be.citizen.lanterlite.com');	
+
+				/* get cit type in square/citizens */
+				$_obj = [];
+				$_obj['namelist'] = ['status', 'desc', 'badge'];
+				$_obj['def'] = 'citizens';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				$_mbr = LGen('SaviorMan')->read($_obj);
+
+				$res['status'] = $_mbr['status'];
+				$res['desc'] = $_mbr['desc'];
+				$res['badge'] = $_mbr['badge'];
+
+				$res['type'] = 'Citizen';
+				$res['cit_type'] = '';
+			}
+			else {
+				/* get group detail */
+				$_obj = [];
+				$_obj['namelist'] = ['id', 'img', 'username', 'fullname', 'status', 'desc', 'badge'];
+				$_obj['def'] = 'groups';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				$res = LGen('SaviorMan')->read($_obj);
+
+				/* get cit type in groups/members */
+				$_obj = [];
+				$_obj['namelist'] = ['type'];
+				$_obj['def'] = 'groups/members';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "members", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id1.'", "puzzled":false}'));
+				$_mbr = LGen('SaviorMan')->read($_obj);
+				$res['type'] = 'Group';
+				/* if cit is not group member */
+				if (sizeof($_mbr) === 0)
+					$res['cit_type'] = '';
+				else
+					$res['cit_type'] = $_mbr['type'];
+			}
+			return $res;
+		}
+
+		// public function check_follow_stat($obj) {
+		// 	$cit_id1 = $obj['cit_id1'];
+		// 	$cit_id2 = $obj['cit_id2'];
+
+		// 	$_obj = [];
+		// 	$_obj['namelist'] = ['id'];
+		// 	$_obj['def'] = 'citizens/follows';
+		// 	$_obj['bridge'] = [];
+		// 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+		// 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id1.'", "puzzled":false}'));
+		// 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "follows", "puzzled":true}'));
+		// 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+		// 	$cits = LGen('SaviorMan')->read($_obj);
+		// 	if (sizeof($cits) === 0)
+		// 		return false;
+		// 	return true;
+		// }
+
 		public function check_follow_stat($obj) {
 			$cit_id1 = $obj['cit_id1'];
 			$cit_id2 = $obj['cit_id2'];
 
+			/* get cit type in guild/members */
 			$_obj = [];
 			$_obj['namelist'] = ['id'];
-			$_obj['def'] = 'citizens/follows';
+			$_obj['def'] = 'citizens';
 			$_obj['bridge'] = [];
 			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id1.'", "puzzled":false}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "follows", "puzzled":true}'));
 			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
-			$cits = LGen('SaviorMan')->read($_obj);
-			if (sizeof($cits) === 0)
-				return false;
-			return true;
-		}
+			$_cit = LGen('SaviorMan')->read($_obj);
 
-		public function check_join_stat($obj) {
-			$cit_id = $obj['cit_id'];
-			$grp_id = $obj['grp_id'];
-
-			$_obj = [];
-			$_obj['namelist'] = ['id'];
-			$_obj['def'] = 'citizens/groups';
-			$_obj['bridge'] = [];
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id.'", "puzzled":false}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$grp_id.'", "puzzled":false}'));
-			$cits = LGen('SaviorMan')->read($_obj);
-			if (sizeof($cits) === 0)
-				return false;
+			/* if cit_id2 is group */
+			if (sizeof($_cit) === 0) {
+				$_obj = [];
+				$_obj['namelist'] = ['id'];
+				$_obj['def'] = 'citizens/groups';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id1.'", "puzzled":false}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				$cits = LGen('SaviorMan')->read($_obj);
+				if (sizeof($cits) === 0)
+					return false;
+			}
+			else {
+				$_obj = [];
+				$_obj['namelist'] = ['id'];
+				$_obj['def'] = 'citizens/follows';
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id1.'", "puzzled":false}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "follows", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id2.'", "puzzled":false}'));
+				$cits = LGen('SaviorMan')->read($_obj);
+				if (sizeof($cits) === 0)
+					return false;
+			}
 			return true;
 		}
 
@@ -1313,6 +1462,33 @@
 				$cits = LGen('SaviorMan')->insert($_obj);
 			}
 			return $cits;
+		}
+
+		public function update_group($obj) {
+			$group_id = $obj['val']['group_id'];
+			$img = $obj['val']['img'];
+
+			/* upload image */
+			$_obj = [];
+			$_obj['gate'] = 'groups/'.$group_id;
+			$_obj['img'] = $img;
+
+			$final_obj = [];
+			$final_obj['json'] = $_obj;
+			$final_obj['func'] = '$image->add_image';
+			$img = LGen('ReqMan')->send_post($final_obj, 'image.lanterlite.com');
+
+			/* set group img to groups */
+			$_obj = [];
+			$_obj['val'] = [];
+			$_obj['val']['img'] = $img;
+			$_obj['def'] = 'groups';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "groups", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$group_id.'", "puzzled":false}'));
+			LGen('SaviorMan')->update($_obj);
+
+			return $img;
 		}
 
 		public function add_group($obj) {
