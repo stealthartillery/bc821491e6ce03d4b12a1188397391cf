@@ -1502,6 +1502,18 @@
 			// $obj['img'] = LGen('ReqMan')->send_post($final_obj);
 			$group_id = LGen('F')->gen_id();
 
+			/* check group username */
+			$obj['bridge'] = [];
+			array_push($obj['bridge'], LGen('StringMan')->to_json('{"id":"groups", "puzzled": true}'));
+			$obj['namelist'] = ['username'];
+			$obj['def'] = 'groups';
+			$groups = LGen('SaviorMan')->get_all($obj);
+
+			for ($i=0; $i<sizeof($groups); $i++) { 
+				if ($groups[$i]['username'] === strtolower($obj['val']['username']))
+					return 'username exist';
+			}
+
 			/* upload image */
 			$_obj = [];
 			$_obj['gate'] = 'groups/'.$group_id;
