@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Lanter Square Released",
+		"date"	: "Dec 05, 2019",
+		"sub"	: "Lanterlite Social Network released.",
+		"img"	: "assets/www.lanterlite.com/img/lsquare_released.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191205')"}
+	},
+	{
 		"title" : "Lanter App 2.2",
 		"date"	: "Nov 22, 2019",
 		"sub"	: "Lanterlite releases all-in-one app.",
@@ -19,12 +26,5 @@
 		"sub"	: "Lanter Apps reached version 2.1.",
 		"img"	: "assets/www.lanterlite.com/img/v2.1.webp",
 		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191106')"}
-	},
-	{
-		"title" : "Invix II and Intelligence IV",
-		"date"	: "Oct 13, 2019",
-		"sub"	: "Invix method performance with better intelligence.",
-		"img"	: "assets/www.lanterlite.com/img/speed2.webp",
-		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191013')"}
 	}
 ]

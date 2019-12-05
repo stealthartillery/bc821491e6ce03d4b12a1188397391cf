@@ -11,6 +11,7 @@
 
 	{"id":"Info Aplikasi", "en":"App Info"},
 
+	{"id":"Acak", "en":"Random"},
 	{"id":"Tersalin.", "en":"Copied."},
 	{"id":"Salin", "en":"Copy"}
 ]

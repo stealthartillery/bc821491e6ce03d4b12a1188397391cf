@@ -2,7 +2,7 @@
 	{
 		"page_name": "",
 		"icon": "bell",
-		"name": "Lanter Apps",
+		"name": "Lanter App",
 		"func": "LGen.Page.change_by_switch('')"
 	},
 	{
@@ -28,5 +28,11 @@
 		"icon": "bell",
 		"name": "Lanter Store",
 		"func": "LGen.Page.change_by_switch('store.lanterlite.com')"
+	},
+	{
+		"page_name": "square.lanterlite.com/",
+		"icon": "bell",
+		"name": "Lanter Square",
+		"func": "LGen.Page.change_by_switch('square.lanterlite.com')"
 	}
 ]

@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Lanter Square Released",
+		"date"	: "Dec 05, 2019",
+		"sub"	: "Lanterlite Social Network released.",
+		"img"	: "assets/www.lanterlite.com/img/lsquare_released.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191205')"}
+	},
+	{
 		"title" : "Lanter App 2.2",
 		"date"	: "Nov 22, 2019",
 		"sub"	: "Lanterlite releases all-in-one app.",

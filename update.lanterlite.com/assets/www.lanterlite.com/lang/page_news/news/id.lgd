@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "Lanter Square Dirilis",
+		"date"	: "Dec 05, 2019",
+		"sub"	: "Jejaring Sosial Lanterlite dirilis.",
+		"img"	: "assets/www.lanterlite.com/img/lsquare_released.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191205')"}
+	},
+	{
 		"title" : "Lanter App 2.2",
 		"date"	: "Nov 22, 2019",
 		"sub"	: "Lanterlite merilis aplikasi all-in-one.",
