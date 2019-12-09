@@ -1,5 +1,5 @@
 {
-	"status" : "dep",
+	"status" : "test",
 	"platform" : "web",
 	"os" : "android",
 	"android_app_store" : "https://play.google.com/sketch/apps/details?id=com.lanterlite.sketch",
