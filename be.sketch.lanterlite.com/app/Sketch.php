@@ -117,13 +117,13 @@
 
 			/* update papers */
 			$_obj = [];
-			$_obj['val'] = [];
 			$_obj['val'] = $obj['val'];
 			$_obj['def'] = 'papers';
 			$_obj['bridge'] = [];
 			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
 			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$paper_id.'", "puzzled":false}'));
 			LGen('SaviorMan')->update($_obj);
+			return 1;
 		}
 
 		public function get_paper_detail($obj) {
