@@ -1,0 +1,12 @@
+{
+	"status" : "dep",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_store" : "https://play.google.com/sketch/apps/details?id=com.lanterlite.sketch",
+	"version" : "2.1.0",
+	"be_domain" : "be.sketch.lanterlite.com",
+	"domain" : "sketch.lanterlite.com",
+	"codename" : "lantersketch",
+	"name" : "sketch",
+	"fullname" : "Lanter sketch"
+}
