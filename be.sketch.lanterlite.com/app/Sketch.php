@@ -33,6 +33,84 @@
 			return $cits;
 		}
 
+		public function add_paper($obj) {
+			$cit_id = $obj['val']['cit_id'];
+
+			/* add papers */
+			$_obj = [];
+			$_obj['val'] = $obj['val'];
+			$_obj['def'] = 'papers';
+			$_obj['bridge'] = [];
+			$_obj['note'] = 'return full';
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+			$paper = LGen('SaviorMan')->insert($_obj);
+
+			/* add citizens/papers */
+			$_obj = [];
+			$_obj['val'] = [];
+			$_obj['val']['id'] = $paper['id'];
+			$_obj['keep_name'] = true;
+			$_obj['name'] = $paper['id'];
+			$_obj['def'] = 'citizens/papers';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cit_id.'", "puzzled":false}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+			LGen('SaviorMan')->insert($_obj);
+
+			/* add papers/contributors */
+			$_obj = [];
+			$_obj['val'] = [];
+			$_obj['val']['id'] = $cit_id;
+			$_obj['keep_name'] = true;
+			$_obj['name'] = $cit_id;
+			$_obj['def'] = 'papers/contributors';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$paper['id'].'", "puzzled":false}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "contributors", "puzzled":true}'));
+			LGen('SaviorMan')->insert($_obj);
+
+			return $paper;
+		}
+
+		public function remove_paper($obj) {
+			// $cit_id = $obj['val']['cit_id'];
+			$paper_id = $obj['val']['paper_id'];
+
+			/* get papers/contributors */
+			$_obj = [];
+			$_obj['namelist'] = ['id'];
+			$_obj['def'] = 'papers/contributors';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$paper_id.'", "puzzled":false}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "contributors", "puzzled":true}'));
+			$cits = LGen('SaviorMan')->get_all($_obj);
+			// return $cits;
+			for ($i=0; $i <sizeof($cits) ; $i++) { 
+				/* remove cits/papers */
+				$_obj = [];
+				$_obj['def'] = 'citizens/papers';
+				$_obj['name'] = $paper_id;
+				$_obj['bridge'] = [];
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "citizens", "puzzled":true}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$cits[$i]['id'].'", "puzzled":false}'));
+				array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+				LGen('SaviorMan')->delete_pack($_obj);
+			}
+
+			/* remove papers */
+			$_obj = [];
+			$_obj['def'] = 'papers';
+			$_obj['name'] = $paper_id;
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "papers", "puzzled":true}'));
+			LGen('SaviorMan')->delete_pack($_obj);
+
+			return 1;
+		}
+
 		public function update_paper_detail($obj) {
 			$cit_id = $obj['val']['cit_id'];
 			$paper_id = $obj['val']['paper_id'];
