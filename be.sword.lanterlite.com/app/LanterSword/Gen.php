@@ -109,9 +109,9 @@ function is_defense_key_pressed($char_data) {
 // }
 
 function decrease_status(&$status, $decreased_by) {
-	$status['current'] -= $decreased_by;
-	if ($status['current'] < 0)
-		$status['current'] = 0;
+	$status -= $decreased_by;
+	if ($status < 0)
+		$status = 0;
 }
 
 function increase_status(&$status, $increased_by) {
@@ -567,14 +567,14 @@ function handle_attack($client_char, $server_char, $json) {
 		  	if (char_reached($_client_char, $_other_player)) {
 		  		if ($_other_player['char_current_action'] != 'defense' && $_other_player['health_cur'] > 0) {
 						$_items = LGen('JsonMan')->read(dir.'items');
-						$_status['char_health'] = get_player($value, 'char_health');
+						$_status['health_cur'] = get_player($value, 'health_cur');
 						if ($client_char['char_gender'] == 'male')
-							decrease_status($_status['char_health'], male_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
+							decrease_status($_status['health_cur'], male_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
 							// $_status = decrease_health($_status, male_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
 						else if ($client_char['char_gender'] == 'female')
-							decrease_status($_status['char_health'], female_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
+							decrease_status($_status['health_cur'], female_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
 							// $_status = decrease_health($_status, female_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
-							set_player($value, 'char_health', $_status['char_health']);
+							set_player($value, 'health_cur', $_status['health_cur']);
 		  		}
 		  		break;
 		  	}
