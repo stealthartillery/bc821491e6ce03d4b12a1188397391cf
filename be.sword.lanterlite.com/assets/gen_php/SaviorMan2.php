@@ -24,6 +24,7 @@
 			if (!LGen('JsonMan')->is_key_exist($obj,'namelist')) $obj['namelist'] = []; // list of gold name.
 			if ($obj['branched']) $obj['branch'] = 1000; else $obj['branch'] = '';
 
+			if (!LGen('JsonMan')->is_key_exist($obj,'is_bw')) $obj['is_bw'] = true; // list of gold name.
 			return $obj;
 		}
 
@@ -101,7 +102,11 @@
 
 				$_dir = $dir . $obj['name'] . '/';
 				$_filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
-				LGen('JsonMan')->save($_dir, $_filename.'.lgd', LGen('Black')->get($default[$key]), $minify=false);
+				if ($obj['is_bw'])
+					$final_data = LGen('Black')->get($default[$key]);
+				else
+					$final_data = $default[$key];
+				LGen('JsonMan')->save($_dir, $_filename.'.lgd', $final_data, $minify=false);
 			}
 
 			if ($obj['note'] === 'return full')
@@ -139,7 +144,11 @@
 					continue;
 				$default[$key] = $value;
 				$filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
-				LGen('JsonMan')->save($dir, $filename.'.lgd', LGen('Black')->get($obj['val'][$key]), $minify=false);
+				if ($obj['is_bw'])
+					$final_data = LGen('Black')->get($obj['val'][$key]);
+				else
+					$final_data = $obj['val'][$key];
+				LGen('JsonMan')->save($dir, $filename.'.lgd', $final_data, $minify=false);
 			}
 
 			return 1;
@@ -189,7 +198,9 @@
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {
 					$_data = LGen('JsonMan')->read($dir.$_val);
-					$data[$value] = LGen('White')->get($_data);
+					if (LGen('Black')->check($_data))
+						$_data = LGen('White')->get($_data);
+					$data[$value] = $_data;
 				}
 				else {
 					$_def = $this->get_def($obj, $value.'.lgd');
