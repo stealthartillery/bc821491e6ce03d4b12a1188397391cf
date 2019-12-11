@@ -1,0 +1,371 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2736,
+            "max" : [
+                639
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 640,
+            "max" : [
+                0.8783347010612488,
+                0.9080111980438232,
+                0.8783345222473145
+            ],
+            "min" : [
+                -0.8783344626426697,
+                -0.8812451958656311,
+                -0.8783342838287354
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 640,
+            "max" : [
+                0.9984740614891052,
+                1.0,
+                0.9984740614891052
+            ],
+            "min" : [
+                -0.9984740614891052,
+                -0.5770134329795837,
+                -0.9984740614891052
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 640,
+            "max" : [
+                0.9993151426315308,
+                0.9457592368125916,
+                0.9990283846855164,
+                1.0
+            ],
+            "min" : [
+                -0.9967595934867859,
+                -0.9457592368125916,
+                -0.9979641437530518,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 640,
+            "max" : [
+                1.9722628593444824,
+                1.972262978553772
+            ],
+            "min" : [
+                -0.9722628593444824,
+                -0.972262978553772
+            ],
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 240,
+            "max" : [
+                91
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 92,
+            "max" : [
+                0.8783347010612488,
+                0.11015772819519043,
+                0.8783345222473145
+            ],
+            "min" : [
+                -0.8783344626426697,
+                -0.5354846119880676,
+                -0.8783342838287354
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 92,
+            "max" : [
+                0.8366954326629639,
+                0.600451648235321,
+                0.9792779088020325
+            ],
+            "min" : [
+                -0.8366954326629639,
+                -0.5476241111755371,
+                -0.8366954326629639
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 92,
+            "max" : [
+                0.9993151426315308,
+                0.8803362250328064,
+                0.9990283846855164,
+                1.0
+            ],
+            "min" : [
+                -0.9967595934867859,
+                -0.16463807225227356,
+                -0.9979641437530518,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 92,
+            "max" : [
+                1.9043601751327515,
+                1.5873998403549194
+            ],
+            "min" : [
+                -0.8960005044937134,
+                -0.43620967864990234
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5472,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7680,
+            "byteOffset" : 5472,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7680,
+            "byteOffset" : 13152,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10240,
+            "byteOffset" : 20832,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5120,
+            "byteOffset" : 31072,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 36192,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1104,
+            "byteOffset" : 36672,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1104,
+            "byteOffset" : 37776,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1472,
+            "byteOffset" : 38880,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 736,
+            "byteOffset" : 40352,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 41088,
+            "uri" : "body.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "ornament_1",
+            "uri" : "ornament_1.png"
+        },
+        {
+            "name" : "ornament_2",
+            "uri" : "ornament_2.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "ornament_1",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "ornament_2",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.061",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "NORMAL" : 7,
+                        "POSITION" : 6,
+                        "TANGENT" : 8,
+                        "TEXCOORD_0" : 9
+                    },
+                    "indices" : 5,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sphere.143",
+            "scale" : [
+                0.22015132009983063,
+                0.22015132009983063,
+                0.22015132009983063
+            ],
+            "translation" : [
+                0.0,
+                0.08623433858156204,
+                -0.0
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 3,
+    "scenes" : [
+        {
+            "name" : "new"
+        },
+        {
+            "name" : "Scene"
+        },
+        {
+            "name" : "Scene.001"
+        },
+        {
+            "name" : "SU01",
+            "nodes" : [
+                0
+            ]
+        },
+        {
+            "name" : "SU02"
+        },
+        {
+            "name" : "SU03"
+        },
+        {
+            "name" : "SU04"
+        },
+        {
+            "name" : "SU05"
+        },
+        {
+            "name" : "SU06"
+        },
+        {
+            "name" : "SU07"
+        },
+        {
+            "name" : "SU08"
+        },
+        {
+            "name" : "SU09"
+        },
+        {
+            "name" : "SU10"
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ]
+}

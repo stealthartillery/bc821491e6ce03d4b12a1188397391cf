@@ -1,0 +1,156 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2880,
+            "max" : [
+                481
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 482,
+            "max" : [
+                0.8030602335929871,
+                0.9124108552932739,
+                0.8030596971511841
+            ],
+            "min" : [
+                -0.803059995174408,
+                -1.3343037366867065,
+                -0.8030600547790527
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 482,
+            "max" : [
+                0.99920654296875,
+                1.0,
+                0.99920654296875
+            ],
+            "min" : [
+                -0.99920654296875,
+                -0.999969482421875,
+                -0.99920654296875
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5760,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5784,
+            "byteOffset" : 5760,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5784,
+            "byteOffset" : 11544,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 17328,
+            "uri" : "rleg.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "ornament_3",
+            "uri" : "ornament_3.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "ornament_3",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.091",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sphere.054",
+            "rotation" : [
+                6.150085577930715e-15,
+                8.146035668232798e-08,
+                -1.0,
+                -7.549790126404332e-08
+            ],
+            "scale" : [
+                0.04693702608346939,
+                0.06895111501216888,
+                0.04971766844391823
+            ],
+            "translation" : [
+                0.0,
+                0.05955754965543747,
+                -0.0
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

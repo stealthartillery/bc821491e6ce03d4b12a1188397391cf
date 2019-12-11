@@ -1,0 +1,132 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2898,
+            "max" : [
+                484
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 485,
+            "max" : [
+                1.0501952171325684,
+                1.1774418354034424,
+                1.1674749851226807
+            ],
+            "min" : [
+                -1.2273808717727661,
+                -0.9042568206787109,
+                -0.9807853102684021
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 485,
+            "max" : [
+                0.9985350966453552,
+                1.0,
+                0.9962767362594604
+            ],
+            "min" : [
+                -0.9981994032859802,
+                -1.0,
+                -0.9983519911766052
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5796,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5820,
+            "byteOffset" : 5796,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5820,
+            "byteOffset" : 11616,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 17436,
+            "uri" : "male_hair2_color4.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "male_hair_clr4",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.5918342678522208,
+                    0.640000066757203,
+                    0.20939174010443296,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.076",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "male_hair5",
+            "scale" : [
+                0.11532802134752274,
+                0.11532802134752274,
+                0.11532802134752274
+            ],
+            "translation" : [
+                0.0,
+                0.11479687690734863,
+                -0.015788361430168152
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ]
+}

@@ -1,0 +1,354 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 372,
+            "max" : [
+                63
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 64,
+            "max" : [
+                0.6747826337814331,
+                0.6747826337814331,
+                0.6747825741767883
+            ],
+            "min" : [
+                -0.6747825741767883,
+                -0.6747826337814331,
+                -0.6747827529907227
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 64,
+            "max" : [
+                0.7278664708137512,
+                0.6856898665428162,
+                0.7278664708137512
+            ],
+            "min" : [
+                -0.7278664708137512,
+                -0.6856898665428162,
+                -0.7278664708137512
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 72,
+            "max" : [
+                47
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 48,
+            "max" : [
+                0.3828083276748657,
+                1.5954757928848267,
+                1.0000122785568237
+            ],
+            "min" : [
+                -0.6428017020225525,
+                -3.568777322769165,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 48,
+            "max" : [
+                0.99981689453125,
+                0.9445478916168213,
+                0.34772789478302
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.9985961318016052,
+                -0.34772789478302
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5123,
+            "count" : 36,
+            "max" : [
+                23
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                1.2051337957382202,
+                0.5339068174362183,
+                1.124965786933899
+            ],
+            "min" : [
+                -1.126436471939087,
+                -0.5339068174362183,
+                -1.2066048383712769
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.865489661693573,
+                1.0,
+                0.8754647970199585
+            ],
+            "min" : [
+                -0.8770310878753662,
+                -1.0,
+                -0.8670127987861633
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 744,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 768,
+            "byteOffset" : 744,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 768,
+            "byteOffset" : 1512,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 2280,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 2424,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 3000,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 3576,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 3648,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 3936,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 4224,
+            "uri" : "horned_sword.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "blade",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.7512704484354025,
+                    0.7603193873214629,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "grip",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.640000066757203,
+                    0.0,
+                    0.002034074470908559,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        },
+        {
+            "name" : "rguard",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.640000066757203,
+                    0.3098168896111382,
+                    0.0,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Cube.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 5,
+                        "POSITION" : 4
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.015",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 8,
+                        "POSITION" : 7
+                    },
+                    "indices" : 6,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 1,
+            "name" : "blade_thin",
+            "rotation" : [
+                -5.820249171506475e-08,
+                0.6996471881866455,
+                5.699350325016894e-08,
+                0.7144885659217834
+            ],
+            "scale" : [
+                0.11293590068817139,
+                0.11993540823459625,
+                0.003526934888213873
+            ],
+            "translation" : [
+                1.001285918755434e-16,
+                0.4732993543148041,
+                5.0567926508085834e-17
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "grip_normal",
+            "rotation" : [
+                -3.251895641653846e-09,
+                0.7071067094802856,
+                -0.0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                0.02757318876683712,
+                0.046777646988630295,
+                0.02757318876683712
+            ],
+            "translation" : [
+                0.0,
+                0.00470227375626564,
+                -0.0
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "rguard_slashed",
+            "rotation" : [
+                -1.7583327155401562e-11,
+                -0.9254088401794434,
+                4.3787578007936645e-09,
+                0.37897029519081116
+            ],
+            "scale" : [
+                0.0688716471195221,
+                0.023996323347091675,
+                0.0688716471195221
+            ],
+            "translation" : [
+                5.016583070360136e-17,
+                0.04243940860033035,
+                2.508291535180068e-17
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                2,
+                0,
+                1
+            ]
+        }
+    ]
+}

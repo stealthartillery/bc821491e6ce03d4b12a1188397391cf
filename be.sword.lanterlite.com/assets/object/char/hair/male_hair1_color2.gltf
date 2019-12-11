@@ -1,0 +1,171 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 2898,
+            "max" : [
+                909
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 910,
+            "max" : [
+                1.0501952171325684,
+                0.9807852506637573,
+                1.1931214332580566
+            ],
+            "min" : [
+                -1.2273808717727661,
+                -0.9042568206787109,
+                -0.9807853102684021
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 910,
+            "max" : [
+                0.9985350966453552,
+                1.0,
+                0.9962767362594604
+            ],
+            "min" : [
+                -0.9981994032859802,
+                -1.0,
+                -0.9983519911766052
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 910,
+            "max" : [
+                1.0,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5796,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10920,
+            "byteOffset" : 5796,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10920,
+            "byteOffset" : 16716,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7280,
+            "byteOffset" : 27636,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 34916,
+            "uri" : "male_hair1_color2.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "texture",
+            "uri" : "texture.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "texture",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.058",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TEXCOORD_0" : 3
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "male_hair1",
+            "scale" : [
+                0.11532802134752274,
+                0.11532802134752274,
+                0.11532802134752274
+            ],
+            "translation" : [
+                0.0,
+                0.11769386380910873,
+                -0.012802127748727798
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

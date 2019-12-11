@@ -1,0 +1,202 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 1260,
+            "max" : [
+                273
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 274,
+            "max" : [
+                0.9807855486869812,
+                7.549790126404332e-08,
+                0.9807849526405334
+            ],
+            "min" : [
+                -0.9807853102684021,
+                -0.986540675163269,
+                -0.9807854294776917
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 274,
+            "max" : [
+                0.981749951839447,
+                -0.018585771322250366,
+                0.981749951839447
+            ],
+            "min" : [
+                -0.981749951839447,
+                -0.999969482421875,
+                -0.981749951839447
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 274,
+            "max" : [
+                0.8154706358909607,
+                0.9816038012504578,
+                0.7603369355201721,
+                1.0
+            ],
+            "min" : [
+                -0.5436615943908691,
+                -0.9995619654655457,
+                -0.9998896718025208,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 274,
+            "max" : [
+                0.9906033873558044,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.3334766626358032
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 2520,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3288,
+            "byteOffset" : 2520,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3288,
+            "byteOffset" : 5808,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4384,
+            "byteOffset" : 9096,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2192,
+            "byteOffset" : 13480,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 15672,
+            "uri" : "obj.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "ornament_1",
+            "uri" : "ornament_1.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "ornament_1",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.050",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sphere.033",
+            "scale" : [
+                0.09416718035936356,
+                0.09416718035936356,
+                0.09416718035936356
+            ],
+            "translation" : [
+                -0.002669990062713623,
+                0.09770485758781433,
+                0.008293241262435913
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 1,
+    "scenes" : [
+        {
+            "name" : "MA01"
+        },
+        {
+            "name" : "MA02",
+            "nodes" : [
+                0
+            ]
+        },
+        {
+            "name" : "Scene"
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

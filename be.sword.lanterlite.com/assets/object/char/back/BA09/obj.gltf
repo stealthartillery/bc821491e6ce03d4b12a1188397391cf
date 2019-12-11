@@ -1,0 +1,217 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 1824,
+            "max" : [
+                438
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 439,
+            "max" : [
+                0.9999997615814209,
+                0.8259432315826416,
+                -88.52953338623047
+            ],
+            "min" : [
+                -0.9999997615814209,
+                -0.9702045321464539,
+                -123.49620056152344
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 439,
+            "max" : [
+                0.9958189725875854,
+                0.999786376953125,
+                0.999603271484375
+            ],
+            "min" : [
+                -0.9958189725875854,
+                -0.999603271484375,
+                -0.9311502575874329
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 439,
+            "max" : [
+                1.0,
+                0.9997742772102356,
+                0.8738909363746643,
+                1.0
+            ],
+            "min" : [
+                -0.9999924898147583,
+                -0.9998673796653748,
+                -0.8722231388092041,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 439,
+            "max" : [
+                0.9999999403953552,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 3648,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5268,
+            "byteOffset" : 3648,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5268,
+            "byteOffset" : 8916,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7024,
+            "byteOffset" : 14184,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3512,
+            "byteOffset" : 21208,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 24720,
+            "uri" : "obj.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "ornament_1",
+            "uri" : "ornament_1.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "ornament_1",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.009",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.008",
+            "rotation" : [
+                0.21754777431488037,
+                0.0,
+                -0.0,
+                0.9760496616363525
+            ],
+            "scale" : [
+                0.1485714316368103,
+                0.22991080582141876,
+                0.0029616893734782934
+            ],
+            "translation" : [
+                0.0,
+                -0.016672104597091675,
+                0.05247386544942856
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 4,
+    "scenes" : [
+        {
+            "name" : "BA01-BA05"
+        },
+        {
+            "name" : "BA06"
+        },
+        {
+            "name" : "BA07"
+        },
+        {
+            "name" : "BA08"
+        },
+        {
+            "name" : "BA09",
+            "nodes" : [
+                0
+            ]
+        },
+        {
+            "name" : "wing"
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}
