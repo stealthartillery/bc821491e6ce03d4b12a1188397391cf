@@ -393,6 +393,12 @@ function set_player($player_id, $key, $value) {
 		$_obj['val']['pos_y'] = $value['y'];
 		$_obj['val']['pos_z'] = $value['z'];
 	}
+	else if ($key === 'rotation') {
+		$_obj['val'] = [];
+		$_obj['val']['rot_x'] = $value['x'];
+		$_obj['val']['rot_y'] = $value['y'];
+		$_obj['val']['rot_z'] = $value['z'];
+	}
 
 	LGen('SaviorMan2')->update($_obj);
 }
