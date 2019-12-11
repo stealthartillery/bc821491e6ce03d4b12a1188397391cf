@@ -382,6 +382,7 @@ function set_player($player_id, $key, $value) {
 	$_obj['val'] = [];
 	$_obj['val'][$key] = $value;
 	$_obj['def'] = '@chars';
+	$_obj['is_bw'] = 0;
 	$_obj['bridge'] = [];
 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$player_id.'", "puzzled":false}'));
