@@ -1,0 +1,12 @@
+{
+	"status" : "dep",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.store",
+	"version" : "-",
+	"be_domain" : "be.sword.lanterlite.com",
+	"domain" : "sword.lanterlite.com",
+	"codename" : "lantersword",
+	"name" : "Sword",
+	"fullname" : "Lanter Sword"
+}

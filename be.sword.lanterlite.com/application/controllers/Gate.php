@@ -1,0 +1,65 @@
+<?php if (!defined('BASEPATH')) exit('Site protected by Lanterlite Defender.');
+
+/* v 1.0.2 */
+function get_def($obj) {
+	$config_dir = HOME_DIR.'storages/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
+	$default = getFileNamesInsideDir($config_dir);
+	$dirs = [];
+	$res = [];
+	foreach ($default as $key => $value) {
+		if (LGen('StringMan')->is_val_exist($value, '@')) {
+			$default2 = getFileNamesInsideDir($config_dir.$value);
+
+			$_obj = [];
+			$parent = str_replace('@', '', $value);
+			$res[$parent] = [];
+			$_obj['def'] = $value;
+			foreach ($default2 as $key2 => $val2) {
+				$key = str_replace('.lgd', '', $val2);
+				if (LGen('StringMan')->is_val_exist($val2, '.lgd'))
+					$res[$parent][$key] = LGen('SaviorMan2')->get_def($_obj, $val2);
+			}
+		}
+	}
+
+	// $default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
+	return $res;
+}
+
+function get_app() {
+	$res = json_decode(file_get_contents(HOME_DIR."app/app.lgen"), true);
+	return $res;
+}
+
+class Gate extends CI_Controller{
+
+	public function __construct() {
+		parent::__construct();
+	}
+
+	public function index() {
+		include BASE_DIR . 'assets/gen_base_be/lantergen.php';
+		include HOME_DIR . 'app/lanterapp.php';
+		$data = json_decode(file_get_contents("php://input"), true);
+		if (isset($_POST[DATA]))
+			$data = $_POST;
+
+		if (isset($data))
+			$asd = LGen('White')->get($data[DATA]);
+		else if (isset($_GET["f"]))
+			$asd = LGen('White')->get($_GET["f"]);
+		else 
+			exit();
+		if (array_key_exists('f', $asd))
+			$asd['func'] = $asd['f'];
+		if (array_key_exists('o', $asd))
+			$asd['json'] = $asd['o'];
+		$func = urldecode($asd['func']);
+		$json = $asd['json'];
+		header("HTTP/1.1 200 OK");
+		header('Content-type: text/plain');
+		eval('$result = '.$func.'($json);');
+		echo LGen('Black')->get($result);
+		exit();
+	}
+}
