@@ -17,6 +17,30 @@ function create_id($unique_code='asd') {
 	return $id;
 }
 
+
+function health_increase($player_id) {
+	$increasable = true;
+
+	$health_cur = get_player($player_id, 'health_cur');
+	if (get_player($player_id, 'battle_id') != '' or get_player($player_id, 'duel_id') != '') {
+		if ($health_cur <= 0) {
+			$increasable = false;
+		}
+	}
+
+	if ($increasable and !get_player($player_id, 'is_health_increasing')) {
+		set_player($player_id, 'is_health_increasing', 1);
+
+		$health_max = get_player($player_id, 'health_max');
+		increase_status($health_cur, $health_max, 25);
+		set_player($player_id, 'health_cur', $health_cur);
+
+		sleep(2);
+		set_player($player_id, 'is_health_increasing', 0);
+		return true;
+	}
+}
+
 function stamina_changed($player_id) {
 	// write_log('sword', 'asd');
 	$player_status = get_player($player_id);
@@ -114,10 +138,10 @@ function decrease_status(&$status, $decreased_by) {
 		$status = 0;
 }
 
-function increase_status(&$status, $increased_by) {
-	$status['current'] += $increased_by;
-	if ($status['current'] > $status['max'])
-		$status['current'] = $status['max'];
+function increase_status(&$status_cur, $status_max, $increased_by) {
+	$status_cur += $increased_by;
+	if ($status_cur > $status_max)
+		$status_cur = $status_max;
 }
 
 function decrease_health($player_status, $decreased_by) {
@@ -549,13 +573,12 @@ function handle_camera_position(&$char_data, &$json) {
 }
 
 function handle_attack($client_char, $server_char, $json) {
-	if ($client_char['char_current_action'] == 'attack' && $client_char['stamina_cur'] >= atk_stamina) {
+	if ($client_char['char_current_action'] == 'attack' && $server_char['stamina_cur'] >= atk_stamina) {
 		$server_char = decrease_stamina($server_char, atk_stamina);
-		$client_char = decrease_stamina($client_char, atk_stamina);
-		set_player($client_char['char_id'], 'stamina_cur', $server_char['stamina_cur']);
+		set_player($server_char['char_id'], 'stamina_cur', $server_char['stamina_cur']);
 		
-		if (sizeof($client_char['enemies']) > 0) { // if there is enemy
-	  	$_client_char = $client_char;
+		if (sizeof($server_char['enemies']) > 0) { // if there is enemy
+	  	$_client_char = $server_char;
 	  	$_client_char['face_dir'] = get_face_dir($_client_char);
 	  	if ($_client_char['face_dir'] == 'north')
 	  		$_client_char['position']['z'] -= 4;
@@ -567,25 +590,25 @@ function handle_attack($client_char, $server_char, $json) {
 	  		$_client_char['position']['x'] -= 4;
 			$_client_char['size'] = calculate_collision_size($_client_char);
 
-	  	foreach ($client_char['enemies'] as $key => $value) {
+	  	foreach ($server_char['enemies'] as $key => $value) {
 				$_other_player = $json['chars'][$value];
 				$_other_player['size'] = calculate_collision_size($_other_player);
 		  	if (char_reached($_client_char, $_other_player)) {
 		  		if ($_other_player['char_current_action'] != 'defense' && $_other_player['health_cur'] > 0) {
 						$_items = LGen('JsonMan')->read(dir.'items');
 						$_status['health_cur'] = get_player($value, 'health_cur');
-						if ($client_char['char_gender'] == 'male')
-							decrease_status($_status['health_cur'], male_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
-							// $_status = decrease_health($_status, male_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
-						else if ($client_char['char_gender'] == 'female')
-							decrease_status($_status['health_cur'], female_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
-							// $_status = decrease_health($_status, female_base_atk + $_items[$client_char['appearence']['rhand']]['atk']);
+						if ($server_char['char_gender'] == 'male')
+							decrease_status($_status['health_cur'], male_base_atk + $_items[$server_char['appearence']['rhand']]['atk']);
+						else if ($server_char['char_gender'] == 'female')
+							decrease_status($_status['health_cur'], female_base_atk + $_items[$server_char['appearence']['rhand']]['atk']);
 							set_player($value, 'health_cur', $_status['health_cur']);
 		  		}
 		  		break;
 		  	}
 	  	}
 		}
+		$client_char['stamina_cur'] = $server_char['stamina_cur'];
+		$client_char['health_cur'] = $server_char['health_cur'];
 	}
 	return $client_char;
 }
@@ -714,7 +737,7 @@ function check_level_up($player_id) {
 	}
 }
 
-function post_char_data($char_data) {
+function post_char_data($char_data, $first_load = false) {
 	// echo ($char_data);
 	// echo findKb(($char_data));
 	// echo findKb(($char_data));
@@ -800,12 +823,26 @@ function post_char_data($char_data) {
 		unset($json['chars'][$value]['quest']);
 		unset($json['chars'][$value]['active_date']);
 		unset($json['chars'][$value]['inventory']);
-		unset($json['chars'][$value]['item_mall']);
 		unset($json['chars'][$value]['camera_direction']);
 		unset($json['chars'][$value]['camera_position']);
 		unset($json['chars'][$value]['is_health_increasing']);
 		unset($json['chars'][$value]['stamina_changed']);
-
+		unset($json['chars'][$value]['pos_x']);
+		unset($json['chars'][$value]['pos_y']);
+		unset($json['chars'][$value]['pos_z']);
+		unset($json['chars'][$value]['rot_x']);
+		unset($json['chars'][$value]['rot_y']);
+		unset($json['chars'][$value]['rot_z']);
+		unset($json['chars'][$value]['equipment']);
+		unset($json['chars'][$value]['char_name']);
+		unset($json['chars'][$value]['lang']);
+		unset($json['chars'][$value]['gold']);
+		unset($json['chars'][$value]['pearl']);
+		unset($json['chars'][$value]['confirmation']);
+		unset($json['chars'][$value]['confirmation_id']);
+		unset($json['chars'][$value]['battle_id']);
+		unset($json['chars'][$value]['trade_id']);
+		unset($json['chars'][$value]['duel_id']);
 
 		// $json['chars'][$value]['chat'] = $_appearence;
 		$json['chars'][$value]['appearence'] = $_appearence;
@@ -822,14 +859,16 @@ function post_char_data($char_data) {
 
 	$json['props']['speak_to'] = handle_speak_to_npc($char_data, $npcs);
 	$json['props']['poke_to_player'] = handle_poke_to_player($char_data, $json);
-	$json['chars'][$char_data['char_id']] = $char_data;
-	unset($json['chars'][$char_data['char_id']]['item_mall']);
-	unset($json['chars'][$char_data['char_id']]['quest']);
-	unset($json['chars'][$char_data['char_id']]['active_date']);
-	$json['chars'][$char_data['char_id']]['distance'] = 0;
-	unset($char_data["size"]);
 
-	// handle date and sun position
+	/* clean other players */
+	foreach ($char_names as $key => $value) {
+		unset($json['chars'][$value]['enemies']);
+		unset($json['chars'][$value]['exp_max']);
+		unset($json['chars'][$value]['exp_cur']);
+		unset($json['chars'][$value]['friendlist']);
+	}
+
+	/* handle date and sun position */
 	$json['props']['sun_position']['x'] = 0;
 	$json['props']['sun_position']['y'] = 20;
 	$json['props']['sun_position']['z'] = 10;
@@ -840,22 +879,33 @@ function post_char_data($char_data) {
 	$json['props']['datetime']['minute'] = 1;
 	$json['props']['datetime']['second'] = 1;
 
-	// error_log($json);
-	// error_log($json['chars'][$char_data['char_id']]['char_id']);
+	$json['chars'][$char_data['char_id']] = $char_data;
 
-	// findKb($json);
-	// echo ' - ';
-	// $json['chars'][$char_data['char_id']] = json_rmv_key($json['chars'][$char_data['char_id']], "inventory");
-	// unset($json['chars'][$char_data['char_id']]['inventory']);
+	unset($json['chars'][$char_data['char_id']]['pos_x']);
+	unset($json['chars'][$char_data['char_id']]['pos_y']);
+	unset($json['chars'][$char_data['char_id']]['pos_z']);
+	unset($json['chars'][$char_data['char_id']]['rot_x']);
+	unset($json['chars'][$char_data['char_id']]['rot_y']);
+	unset($json['chars'][$char_data['char_id']]['rot_z']);
+	unset($json['chars'][$char_data['char_id']]['enemies']);
+	unset($json['chars'][$char_data['char_id']]['equipment']);
+	unset($json['chars'][$char_data['char_id']]['char_name']);
+	unset($json['chars'][$char_data['char_id']]['friendlist']);
+	unset($json['chars'][$char_data['char_id']]['quest']);
+	unset($json['chars'][$char_data['char_id']]['active_date']);
 
-	// $config = LGen('JsonMan')->read(BASE_DIR.'storages/config');
-	// if ($config['propkey']) {
-	// 	$propkey = LGen('JsonMan')->read(BASE_DIR.'storages/propkey');
-	// 	LGen('PropKeyMan')->obj_prop_to_key($propkey, $json);
-	// }
-	
-	// echo findKb($json);
-	// $json = ($json);
+	foreach ($char_names as $key => $value) {
+		if (!$first_load) {
+			unset($json['chars'][$value]['char_gender']);
+			unset($json['chars'][$value]['size']);
+			unset($json['chars'][$value]['map_changed']);
+			unset($json['chars'][$value]['active_date']);
+		}
+	}
+
+	$json['chars'][$char_data['char_id']]['distance'] = 0;
+
+
 	return $json;
 }
 

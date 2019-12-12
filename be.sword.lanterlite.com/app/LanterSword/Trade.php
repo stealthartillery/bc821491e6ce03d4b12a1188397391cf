@@ -244,7 +244,9 @@ class Trade {
 		return $this->result($trade, $inventory, $player_id);
 	}
 
-	public function delete($trade_id) {
+	public function delete($trade_id='') {
+		if ($trade_id === '')
+			return true;
 		$res = file_delete(dir. 'trades/'.$trade_id);
 		return true;
 	}

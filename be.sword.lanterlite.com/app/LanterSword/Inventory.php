@@ -13,7 +13,7 @@ class Inventory {
 		// $table_right = get_arr_from_to($inventory, $from, $to);
 		// $inventory = $table_right;
 		
-		$inventory = $inventory;
+		// $inventory = $inventory;
 		return $inventory;
 	}
 
@@ -39,6 +39,7 @@ class Inventory {
 	}
 
 	public function use_item($slot_position, $index, $slot_num, $player_id) {
+		// return 'asd';
 		$inventory = get_player($player_id, 'inventory');
 		$equipment = get_player($player_id, 'equipment');
 

@@ -3,8 +3,8 @@
 const dir = HOME_DIR .'/storages/';
 
 const speed = 2;
-const walk_speed = 10;
-// const walk_speed = 1;
+// const walk_speed = 10;
+const walk_speed = 1;
 
 const camera_direction_key = 1;
 const rhand_key = 2;
