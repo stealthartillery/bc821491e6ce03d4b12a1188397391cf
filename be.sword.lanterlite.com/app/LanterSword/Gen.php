@@ -738,6 +738,8 @@ function check_level_up($player_id) {
 }
 
 function post_char_data($char_data, $first_load = false) {
+	$time_start = microtime_float();
+
 	// echo ($char_data);
 	// echo findKb(($char_data));
 	// echo findKb(($char_data));
@@ -905,7 +907,16 @@ function post_char_data($char_data, $first_load = false) {
 
 	$json['chars'][$char_data['char_id']]['distance'] = 0;
 
+	if (1) {
+		// $propkey = LGen('JsonMan')->read(HOME_DIR.'app/app.propkey.lgen');
+		// LGen('PropKeyMan')->obj_prop_to_key($propkey, $json);
+	}
 
+	$time_end = microtime_float();
+	$time = (string)($time_end - $time_start);
+	$time = substr($time, 0, 4);
+	$json['props']['time'] = $time;
+	
 	return $json;
 }
 

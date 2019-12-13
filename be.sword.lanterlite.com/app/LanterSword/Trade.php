@@ -87,7 +87,8 @@ class Trade {
 					$index = $i;
 			}
 			else if ($trade[$player_id]['table'][$i]['slot_num'] == $slot_num) {
-				return ($slot_num);
+				return $this->trade_to_inventory($i, $player_id, $trade_id);
+				// return 1;
 			}
 		}
 

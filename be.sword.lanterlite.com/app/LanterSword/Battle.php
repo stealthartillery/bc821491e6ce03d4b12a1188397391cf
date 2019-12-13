@@ -95,23 +95,32 @@ class Battle {
 
 		/* recover health to all guild members */
 		for ($i=0;$i<sizeof($g1['member']); $i++) {
-			$char_health = get_player($g1['member'][$i], 'char_health');
-			$char_stamina = get_player($g1['member'][$i], 'char_stamina');
-			$char_health['current'] = $char_health['max']; 
-			$char_stamina['current'] = $char_stamina['max']; 
+			$health_max = get_player($g1['member'][$i], 'health_max');
+			$health_cur = get_player($g2['member'][$i], 'health_cur');
+			$health_cur = $health_max; 
+
+			$stamina_max = get_player($g1['member'][$i], 'stamina_max');
+			$stamina_cur = get_player($g1['member'][$i], 'stamina_cur');
+			$stamina_cur = $stamina_max; 
+
 			set_player($g1['member'][$i], 'enemies', []);
-			set_player($g1['member'][$i], 'char_health', $char_health);
-			set_player($g1['member'][$i], 'char_stamina', $char_stamina);
+			set_player($g1['member'][$i], 'health_cur', $health_cur);
+			set_player($g1['member'][$i], 'stamina_cur', $stamina_cur);
 		}
 
+		/* recover stamina to all guild members */
 		for ($i=0;$i<sizeof($g2['member']); $i++) {
-			$char_health = get_player($g2['member'][$i], 'char_health');
-			$char_stamina = get_player($g2['member'][$i], 'char_stamina');
-			$char_health['current'] = $char_health['max']; 
-			$char_stamina['current'] = $char_stamina['max']; 
+			$health_max = get_player($g2['member'][$i], 'health_max');
+			$health_cur = get_player($g2['member'][$i], 'health_cur');
+			$health_cur = $health_max; 
+
+			$stamina_max = get_player($g1['member'][$i], 'stamina_max');
+			$stamina_cur = get_player($g1['member'][$i], 'stamina_cur');
+			$stamina_cur = $stamina_max; 
+
 			set_player($g2['member'][$i], 'enemies', []);
-			set_player($g2['member'][$i], 'char_health', $char_health);
-			set_player($g2['member'][$i], 'char_stamina', $char_stamina);
+			set_player($g2['member'][$i], 'health_cur', $health_cur);
+			set_player($g2['member'][$i], 'stamina_cur', $stamina_cur);
 		}
 
 		sleep(3);
