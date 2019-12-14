@@ -12,5 +12,12 @@
 		"sub"	: "Mengenal Rasulullah (saw.).",
 		"img"	: "assets/www.lanterlite.com/img/page_article/articles/book2.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('article/muhammad_bin_abdullah')" }
+	},
+	{
+		"title" : "Memilih Pasangan Hidup",
+		"date"	: "Nov 16, 2019",
+		"sub"	: "Panduan dalam memilih pasangan hidup.",
+		"img"	: "assets/www.lanterlite.com/img/page_article/articles/book2.webp",
+		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('article/cara_memilih_pasangan')" }
 	}
 ]
