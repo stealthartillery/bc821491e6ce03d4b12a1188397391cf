@@ -21,19 +21,18 @@ function create_id($unique_code='asd') {
 function health_increase($player_id) {
 	$increasable = true;
 
-	$health_cur = get_player($player_id, 'health_cur');
-	if (get_player($player_id, 'battle_id') != '' or get_player($player_id, 'duel_id') != '') {
-		if ($health_cur <= 0) {
+	$player = get_player($player_id, ['health_cur', 'battle_id', 'duel_id', 'is_health_increasing', 'health_max']);
+	if ($player['battle_id'] != '' or $player['duel_id'] != '') {
+		if ($player['health_cur'] <= 0) {
 			$increasable = false;
 		}
 	}
 
-	if ($increasable and !get_player($player_id, 'is_health_increasing')) {
+	if ($increasable and !$player['is_health_increasing']) {
 		set_player($player_id, 'is_health_increasing', 1);
 
-		$health_max = get_player($player_id, 'health_max');
-		increase_status($health_cur, $health_max, 25);
-		set_player($player_id, 'health_cur', $health_cur);
+		increase_status($player['health_cur'], $player['health_max'], 25);
+		set_player($player_id, 'health_cur', $player['health_cur']);
 
 		sleep(2);
 		set_player($player_id, 'is_health_increasing', 0);
@@ -43,7 +42,7 @@ function health_increase($player_id) {
 
 function stamina_changed($player_id) {
 	// write_log('sword', 'asd');
-	$player_status = get_player($player_id);
+	$player_status = get_player($player_id, ['battle_id', 'duel_id', 'stamina_changed', 'stamina_cur', 'stamina_max', 'pressed_keys']);
 	$increasable = true;
 
 	/* if player is in battle and dead, dont increase */
@@ -270,6 +269,7 @@ function get_char_all($obj) {
 
 	$_obj = [];
 	$_obj['namelist'] = 'all';
+	$_obj['keep_key'] = 1;
 	$_obj['def'] = '@chars';
 	$_obj['bridge'] = [];
 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
@@ -314,6 +314,7 @@ function get_player($player_id, $key='all') {
 		// 	$player[$value] = $pstat;
 		// }
 		$obj = [];
+		$obj['keep_key'] = 1;
 		$obj['val'] = [];
 		$obj['val']['char_id'] = $player_id;
 		$player = get_char_all($obj);
@@ -321,33 +322,35 @@ function get_player($player_id, $key='all') {
 	}
 	else {
 		$_obj = [];
+		$_obj['keep_key'] = 1;
 		$_obj['namelist'] = [];
-		if (gettype($key) === 'array')
-			$_obj['namelist'] = $key;
-		else
-			array_push($_obj['namelist'], $key);
 		$_obj['def'] = '@chars';
 		$_obj['bridge'] = [];
 		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
 		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$player_id.'", "puzzled":false}'));
 
-		if ($key === 'position') {
+		if (gettype($key) === 'array') {
+			$_obj['namelist'] = $key;
+			$pstat = LGen('SaviorMan2')->read($_obj);
+		}
+		else if ($key === 'position') {
 			$_obj['namelist'] = ['pos_x','pos_y','pos_z'];
-			$_pos = LGen('SaviorMan2')->read($_obj)[$key];
+			$_pos = LGen('SaviorMan2')->read($_obj);
 			$pstat = [];
-			$pstat['x'] = $_pos['x'];
-			$pstat['y'] = $_pos['y'];
-			$pstat['z'] = $_pos['z'];
+			$pstat['x'] = $_pos['pos_x'];
+			$pstat['y'] = $_pos['pos_y'];
+			$pstat['z'] = $_pos['pos_z'];
 		}
 		else if ($key === 'rotation') {
 			$_obj['namelist'] = ['rot_x','rot_y','rot_z'];
-			$_rot = LGen('SaviorMan2')->read($_obj)[$key];
+			$_rot = LGen('SaviorMan2')->read($_obj);
 			$pstat = [];
-			$pstat['x'] = $_rot['x'];
-			$pstat['y'] = $_rot['y'];
-			$pstat['z'] = $_rot['z'];
+			$pstat['x'] = $_rot['rot_x'];
+			$pstat['y'] = $_rot['rot_y'];
+			$pstat['z'] = $_rot['rot_z'];
 		}
 		else {
+			array_push($_obj['namelist'], $key);
 			$pstat = LGen('SaviorMan2')->read($_obj)[$key];
 		}
 
@@ -406,6 +409,7 @@ function set_player($player_id, $key, $value) {
 	$_obj['val'] = [];
 	$_obj['val'][$key] = $value;
 	$_obj['def'] = '@chars';
+	$_obj['keep_key'] = 1;
 	$_obj['is_bw'] = 0;
 	$_obj['bridge'] = [];
 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
@@ -446,12 +450,12 @@ function handle_trading(&$client_char, $server_char) {
 
 function handle_map_change(&$client_char, $server_char) {
 	if ($client_char['map_id'] != $server_char['map_id']) {
-		set_player($client_char['char_id'], $server_char['map_id']);
+		set_player($client_char['char_id'], 'map_id', $server_char['map_id']);
 		$client_char['map_changed'] = 1;
 	}
 	else {
 		if ($client_char['map_changed'])
-			set_player($client_char['char_id'], $server_char['map_id']);
+			set_player($client_char['char_id'], 'map_id', $server_char['map_id']);
 		$client_char['map_changed'] = 0;
 	}
 }
@@ -575,7 +579,7 @@ function handle_camera_position(&$char_data, &$json) {
 function handle_attack($client_char, $server_char, $json) {
 	if ($client_char['char_current_action'] == 'attack' && $server_char['stamina_cur'] >= atk_stamina) {
 		$server_char = decrease_stamina($server_char, atk_stamina);
-		set_player($server_char['char_id'], 'stamina_cur', $server_char['stamina_cur']);
+		set_player($client_char['char_id'], 'stamina_cur', $server_char['stamina_cur']);
 		
 		if (sizeof($server_char['enemies']) > 0) { // if there is enemy
 	  	$_client_char = $server_char;
@@ -723,16 +727,16 @@ function add_to_system_chat($player_id, $obj=[]) {
 	set_player($player_id, 'system_chat', $system_chat);
 }
 
-function check_level_up($player_id) {
-	$exp_cur = get_player($player_id, 'exp_cur');
-	$exp_max = get_player($player_id, 'exp_max');
-	if ($exp_cur >= $exp_max) {
-		$exp_cur = $exp_cur - $exp_max;
-		$char_level = get_player($player_id, 'char_level');
-		$char_level += 1;
-		set_player($player_id, 'exp_cur' , $exp_cur);
-		set_player($player_id, 'char_level' , $char_level);
-		include dir.'lang/server/'.get_player($player_id, 'lang').'.php';
+function check_level_up($player_id, $player_status) {
+	// $exp_cur = get_player($player_id, 'exp_cur');
+	// $exp_max = get_player($player_id, 'exp_max');
+	if ($player_status['exp_cur'] >= $player_status['exp_max']) {
+		$player_status['exp_cur'] = $player_status['exp_cur'] - $player_status['exp_max'];
+		// $char_level = get_player($player_id, 'char_level');
+		$player_status['char_level'] += 1;
+		set_player($player_id, 'exp_cur' , $player_status['exp_cur']);
+		set_player($player_id, 'char_level' , $player_status['char_level']);
+		include dir.'lang/server/'.$player_status['lang'].'.php';
 		add_to_system_chat($player_id, LGen('ArrayMan')->to_json(array('type' => 'blue','text' => YOU_HAVE_REACHED_LEVEL . ' ' . $char_level . '.')));
 	}
 }
@@ -743,13 +747,46 @@ function post_char_data($char_data, $first_load = false) {
 	// echo ($char_data);
 	// echo findKb(($char_data));
 	// echo findKb(($char_data));
-	$player_status = get_player($char_data['char_id']);
+
+	$player_status = get_player($char_data['char_id'], [
+		"char_gender", // for duel
+		"system_chat",
+		'health_cur', // for duel
+		'health_max', // for duel
+		'stamina_cur', // for duel
+		'stamina_max', // for duel
+		'lang',
+		'exp_cur',
+		'exp_max',
+		'char_level',
+		'is_banned',
+		'char_guild',
+		'enemies',
+		'gold',
+		'char_guild',
+		'camera_direction',
+		'map_id',
+		'appearence',
+		'trade_id',
+		'battle_id',
+		'duel_id',
+		'confirmation_id',
+		'confirmation',
+		'tasklist'
+	]);
+
+	$player_status['rotation'] = get_player($char_data['char_id'], 'rotation');
+	$player_status['position'] = get_player($char_data['char_id'], 'position');
+
+
+	// $player_status = get_player($char_data['char_id']);
 
 	/* init json (response) */
 	$json['props'] = [];
 	$json['chars'] = [];
 
-	check_level_up($char_data['char_id']);
+	check_level_up($char_data['char_id'], $player_status);
+	// check_level_up($char_data['char_id']);
 
 	/* init char data from server */
 	$char_data['system_chat'] = $player_status['system_chat'];
@@ -761,7 +798,6 @@ function post_char_data($char_data, $first_load = false) {
 	$char_data['exp_cur'] = $player_status['exp_cur'];
 	$char_data['exp_max'] = $player_status['exp_max'];
 	$char_data['char_level'] = $player_status['char_level'];
-	$char_data['char_name'] = $player_status['char_name'];
 	$char_data['char_guild'] = $player_status['char_guild'];
 	$char_data['enemies'] = $player_status['enemies'];
 	$char_data['gold'] = $player_status['gold'];
@@ -817,37 +853,64 @@ function post_char_data($char_data, $first_load = false) {
 		}
 	}
 
+	/* other players without char_id */
 	foreach ($char_names as $key => $value) {
 
-		$_player = get_player($value);
-		$_appearence = $_player['appearence'];
+		$_player = get_player($value, [
+			'move_directions', // moving
+			'char_id', // ?
+			'char_guild', // ?
+			'char_gender', // ?
+			'char_current_action', // for duel
+			'pressed_keys', // for moving
+			'enemies', // for duel
+			"chat", // for chat
+			// 'friendlist',
+			// 'exp_cur',
+			// 'exp_max',
+			'health_cur',
+			'health_max',
+			'stamina_cur',
+			'stamina_max',
+			'char_level',
+			'is_banned',
+			'char_guild',
+			'map_id',
+			'appearence'
+		]);
+
+		$_player['rotation'] = get_player($value, 'rotation');
+		$_player['position'] = get_player($value, 'position');
+
+		// $_player = get_player($value);
+		// $_appearence = $_player['appearence'];
 		$json['chars'][$value] = $_player;
-		unset($json['chars'][$value]['quest']);
-		unset($json['chars'][$value]['active_date']);
-		unset($json['chars'][$value]['inventory']);
-		unset($json['chars'][$value]['camera_direction']);
-		unset($json['chars'][$value]['camera_position']);
-		unset($json['chars'][$value]['is_health_increasing']);
-		unset($json['chars'][$value]['stamina_changed']);
-		unset($json['chars'][$value]['pos_x']);
-		unset($json['chars'][$value]['pos_y']);
-		unset($json['chars'][$value]['pos_z']);
-		unset($json['chars'][$value]['rot_x']);
-		unset($json['chars'][$value]['rot_y']);
-		unset($json['chars'][$value]['rot_z']);
-		unset($json['chars'][$value]['equipment']);
-		unset($json['chars'][$value]['char_name']);
-		unset($json['chars'][$value]['lang']);
-		unset($json['chars'][$value]['gold']);
-		unset($json['chars'][$value]['pearl']);
-		unset($json['chars'][$value]['confirmation']);
-		unset($json['chars'][$value]['confirmation_id']);
-		unset($json['chars'][$value]['battle_id']);
-		unset($json['chars'][$value]['trade_id']);
-		unset($json['chars'][$value]['duel_id']);
+		// unset($json['chars'][$value]['quest']);
+		// unset($json['chars'][$value]['active_date']);
+		// unset($json['chars'][$value]['inventory']);
+		// unset($json['chars'][$value]['camera_direction']);
+		// unset($json['chars'][$value]['camera_position']);
+		// unset($json['chars'][$value]['is_health_increasing']);
+		// unset($json['chars'][$value]['stamina_changed']);
+		// unset($json['chars'][$value]['pos_x']);
+		// unset($json['chars'][$value]['pos_y']);
+		// unset($json['chars'][$value]['pos_z']);
+		// unset($json['chars'][$value]['rot_x']);
+		// unset($json['chars'][$value]['rot_y']);
+		// unset($json['chars'][$value]['rot_z']);
+		// unset($json['chars'][$value]['equipment']);
+		// unset($json['chars'][$value]['char_name']);
+		// unset($json['chars'][$value]['lang']);
+		// unset($json['chars'][$value]['gold']);
+		// unset($json['chars'][$value]['pearl']);
+		// unset($json['chars'][$value]['confirmation']);
+		// unset($json['chars'][$value]['confirmation_id']);
+		// unset($json['chars'][$value]['battle_id']);
+		// unset($json['chars'][$value]['trade_id']);
+		// unset($json['chars'][$value]['duel_id']);
 
 		// $json['chars'][$value]['chat'] = $_appearence;
-		$json['chars'][$value]['appearence'] = $_appearence;
+		// $json['chars'][$value]['appearence'] = $_appearence;
 		$json['chars'][$value]['size'] = calculate_collision_size($_player);
 		$json['chars'][$value]['distance'] = get_distance(get_difference($json['chars'][$value]['position']['x'], $char_data['position']['x']), get_difference($json['chars'][$value]['position']['z'], $char_data['position']['z']));
 	}
@@ -907,16 +970,17 @@ function post_char_data($char_data, $first_load = false) {
 
 	$json['chars'][$char_data['char_id']]['distance'] = 0;
 
-	if (1) {
-		// $propkey = LGen('JsonMan')->read(HOME_DIR.'app/app.propkey.lgen');
-		// LGen('PropKeyMan')->obj_prop_to_key($propkey, $json);
-	}
-
 	$time_end = microtime_float();
 	$time = (string)($time_end - $time_start);
 	$time = substr($time, 0, 4);
 	$json['props']['time'] = $time;
-	
+
+	if (1) {
+		$propkey = LGen('JsonMan')->read(HOME_DIR.'app/app.propkey.lgen');
+		LGen('PropKeyMan')->obj_prop_to_key($propkey, $json);
+	}
+
+
 	return $json;
 }
 

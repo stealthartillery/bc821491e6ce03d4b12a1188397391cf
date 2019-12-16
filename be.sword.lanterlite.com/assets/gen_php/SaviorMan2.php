@@ -21,6 +21,7 @@
 			if (!LGen('JsonMan')->is_key_exist($obj,'total')) $obj['total'] = 0; // just total.
 			if (!LGen('JsonMan')->is_key_exist($obj,'name')) $obj['name'] = ''; // gold name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'keep_name')) $obj['keep_name'] = false; // gold name.
+			if (!LGen('JsonMan')->is_key_exist($obj,'keep_key')) $obj['keep_key'] = false; // gold name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'namelist')) $obj['namelist'] = []; // list of gold name.
 			if ($obj['branched']) $obj['branch'] = 1000; else $obj['branch'] = '';
 
@@ -101,7 +102,10 @@
 					$default[$key] = gmdate("Y/m/d H:i:s T");
 
 				$_dir = $dir . $obj['name'] . '/';
-				$_filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
+				if ($obj['keep_key'])
+					$_filename = $key;
+				else
+					$_filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
 				if ($obj['is_bw'])
 					$final_data = LGen('Black')->get($default[$key]);
 				else
@@ -142,12 +146,19 @@
 					continue;
 				if ($_def === LGen('GlobVar')->failed)
 					continue;
+
 				$default[$key] = $value;
-				$filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
-				if ($obj['is_bw'])
-					$final_data = LGen('Black')->get($obj['val'][$key]);
+				if ($value === '__def__')
+					$default[$key] = $_def;
+
+				if ($obj['keep_key'])
+					$filename = $key;
 				else
-					$final_data = $obj['val'][$key];
+					$filename = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$key.'"}'));
+				if ($obj['is_bw'])
+					$final_data = LGen('Black')->get($default[$key]);
+				else
+					$final_data = $default[$key];
 				LGen('JsonMan')->save($dir, $filename.'.lgd', $final_data, $minify=false);
 			}
 
@@ -195,7 +206,10 @@
 			}
 
 			foreach ($obj['namelist'] as $key => $value) {
-				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
+				if ($obj['keep_key'])
+					$_val = $value.'.lgd';
+				else
+					$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {
 					$_data = LGen('JsonMan')->read($dir.$_val);
 					if (LGen('Black')->check($_data))
