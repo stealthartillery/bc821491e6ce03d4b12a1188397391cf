@@ -136,7 +136,7 @@ class Friendlist {
 				$end_date = ($p1_active_date); 
 				$time = ($end_date - $start_date);
 				// $time = substr($time, 0, 4);
-				if ($time < 1)
+				if ($time < 5)
 					$res = 'on';
 				else
 					$res = 'off';

@@ -177,6 +177,18 @@ class Trade {
 			if ($slot_num2 === '')
 				return $m2 . ' inventory is full.';
 
+			if ($gold1 - $trade[$m1]['gold'] <= 0)
+				return $m1 . '\'s gold is Insufficent.';
+
+			if ($gold2 - $trade[$m2]['gold'] <= 0)
+				return $m2 . '\'s gold is Insufficent.';
+
+			if ($pearl1 - $trade[$m1]['pearl'] <= 0)
+				return $m1 . '\'s pearl is Insufficent.';
+
+			if ($pearl2 - $trade[$m2]['pearl'] <= 0)
+				return $m2 . '\'s pearl is Insufficent.';
+
 			// return (sizeof($trade[$m1]['table']));
 			/* move gold and trade items from m1 to m2 */
 			for ($i=0; $i<sizeof($trade[$m1]['table']); $i++) {

@@ -139,7 +139,7 @@ class Battle {
 	public function init($g1_id, $g2_id) {
 
 		/* init battle file. */
-		$battle_id = create_id($p1_id.$p2_id);
+		$battle_id = create_id($g1_id.$g2_id);
 		$battle['battle_id'] = $battle_id;
 		$battle['is_start'] = false;
 		$battle['battle_time'] = 60;

@@ -268,14 +268,28 @@ function get_char_all($obj) {
 	$char = [];
 
 	$_obj = [];
-	$_obj['namelist'] = 'all';
-	$_obj['keep_key'] = 1;
 	$_obj['def'] = '@chars';
-	$_obj['bridge'] = [];
-	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
-	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$char_id.'", "puzzled":false}'));
-	$base_bridge = $_obj['bridge'];
-	$char = LGen('SaviorMan2')->read($_obj);
+	$defs = LGen('SaviorMan2')->get_def_list($_obj);
+	$char = [];
+	$time = 10;
+	$apc_key = 'chars/'.$char_id.'/';
+	foreach ($defs as $key => $value) {
+		$_apc_key = $apc_key.$value;
+		$char[$value] = apcu_fetch($_apc_key);
+		if (!$char[$value]) {
+			$_obj = [];
+			$_obj['namelist'] = [$value];
+			$_obj['keep_key'] = 1;
+			$_obj['def'] = '@chars';
+			$_obj['bridge'] = [];
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$char_id.'", "puzzled":false}'));
+			$_char = LGen('SaviorMan2')->read($_obj)[$value];
+			$char[$value] = $_char;
+			apcu_store($_apc_key, $char[$value], $time);
+		}
+	}
+
 	$char['position'] = [];
 	$char['position']['x'] = $char['pos_x'];
 	$char['position']['y'] = $char['pos_y'];
@@ -313,14 +327,24 @@ function get_player($player_id, $key='all') {
 		// 	$pstat = LGen('JsonMan')->read(dir.'players/'.$player_id.'/'.$value);
 		// 	$player[$value] = $pstat;
 		// }
-		$obj = [];
-		$obj['keep_key'] = 1;
-		$obj['val'] = [];
-		$obj['val']['char_id'] = $player_id;
-		$player = get_char_all($obj);
+
+		$time = 10;
+		$apc_key = 'chars/'.$player_id;
+		$player = apcu_fetch($apc_key);
+		if (!$player) {
+			$obj = [];
+			$obj['keep_key'] = 1;
+			$obj['val'] = [];
+			$obj['val']['char_id'] = $player_id;
+			$player = get_char_all($obj);
+			apcu_store($apc_key, $player, $time);
+		}
+
 		return $player;
 	}
 	else {
+		$time = 10;
+		$apc_key = 'chars/'.$player_id.'/';
 		$_obj = [];
 		$_obj['keep_key'] = 1;
 		$_obj['namelist'] = [];
@@ -330,28 +354,84 @@ function get_player($player_id, $key='all') {
 		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$player_id.'", "puzzled":false}'));
 
 		if (gettype($key) === 'array') {
-			$_obj['namelist'] = $key;
-			$pstat = LGen('SaviorMan2')->read($_obj);
+			$pstat = [];
+			for ($i=0; $i<sizeof($key); $i++) {
+				$_apc_key = $apc_key.$key[$i];
+				$pstat[$key[$i]] = apcu_fetch($_apc_key);
+				if (!$pstat[$key[$i]]) {
+					$_obj['namelist'] = [$key[$i]];
+					$pstat[$key[$i]] = LGen('SaviorMan2')->read($_obj)[$key[$i]];
+					apcu_store($_apc_key, $pstat[$key[$i]], $time);
+				}
+			}
 		}
 		else if ($key === 'position') {
-			$_obj['namelist'] = ['pos_x','pos_y','pos_z'];
-			$_pos = LGen('SaviorMan2')->read($_obj);
 			$pstat = [];
-			$pstat['x'] = $_pos['pos_x'];
-			$pstat['y'] = $_pos['pos_y'];
-			$pstat['z'] = $_pos['pos_z'];
+			$_apc_key = $apc_key.'pos_x';
+			$pstat['x'] = apcu_fetch($_apc_key);
+			if (!$pstat['x']) {
+				$_obj['namelist'] = ['pos_x'];
+				$_pos_x = LGen('SaviorMan2')->read($_obj)['pos_x'];
+				$pstat['x'] = $_pos_x;
+				apcu_store($_apc_key, $_pos_x, $time);
+			}
+
+			$_apc_key = $apc_key.'pos_y';
+			$pstat['y'] = apcu_fetch($_apc_key);
+			if (!$pstat['y']) {
+				$_obj['namelist'] = ['pos_y'];
+				$pos_y = LGen('SaviorMan2')->read($_obj)['pos_y'];
+				$pstat['y'] = $pos_y;
+				apcu_store($_apc_key, $pos_y, $time);
+			}
+
+			$_apc_key = $apc_key.'pos_z';
+			$pstat['z'] = apcu_fetch($_apc_key);
+			if (!$pstat['z']) {
+				$_obj['namelist'] = ['pos_z'];
+				$pos_z = LGen('SaviorMan2')->read($_obj)['pos_z'];
+				$pstat['z'] = $pos_z;
+				apcu_store($_apc_key, $pos_z, $time);
+			}
 		}
 		else if ($key === 'rotation') {
-			$_obj['namelist'] = ['rot_x','rot_y','rot_z'];
-			$_rot = LGen('SaviorMan2')->read($_obj);
 			$pstat = [];
-			$pstat['x'] = $_rot['rot_x'];
-			$pstat['y'] = $_rot['rot_y'];
-			$pstat['z'] = $_rot['rot_z'];
+			$_apc_key = $apc_key.'rot_x';
+			$pstat['x'] = apcu_fetch($_apc_key);
+			if (!$pstat['x']) {
+				$_obj['namelist'] = ['rot_x'];
+				$_pos_x = LGen('SaviorMan2')->read($_obj)['rot_x'];
+				$pstat['x'] = $_pos_x;
+				apcu_store($_apc_key, $_pos_x, $time);
+			}
+
+			$_apc_key = $apc_key.'rot_y';
+			$pstat['y'] = apcu_fetch($_apc_key);
+			if (!$pstat['y']) {
+				$_obj['namelist'] = ['rot_y'];
+				$pos_y = LGen('SaviorMan2')->read($_obj)['rot_y'];
+				$pstat['y'] = $pos_y;
+				apcu_store($_apc_key, $pos_y, $time);
+			}
+
+			$_apc_key = $apc_key.'rot_z';
+			$pstat['z'] = apcu_fetch($_apc_key);
+			if (!$pstat['z']) {
+				$_obj['namelist'] = ['rot_z'];
+				$pos_z = LGen('SaviorMan2')->read($_obj)['rot_z'];
+				$pstat['z'] = $pos_z;
+				apcu_store($_apc_key, $pos_z, $time);
+			}
 		}
 		else {
-			array_push($_obj['namelist'], $key);
-			$pstat = LGen('SaviorMan2')->read($_obj)[$key];
+			$_apc_key = $apc_key.$key;
+			$pstat = apcu_fetch($_apc_key);
+			if (!$pstat) {
+				array_push($_obj['namelist'], $key);
+				$pstat = LGen('SaviorMan2')->read($_obj)[$key];
+				apcu_store($_apc_key, $pstat, $time);
+			}
+			$pstat = $pstat;
 		}
 
 		// $pstat = LGen('JsonMan')->read(dir.'players/'.$player_id.'/'.$key);
@@ -405,6 +485,9 @@ function get_npc($npc_id, $key='all') {
 function set_player($player_id, $key, $value) {
 	if ($value === null)
 		return 0;
+
+	$time = 10;
+
 	$_obj = [];
 	$_obj['val'] = [];
 	$_obj['val'][$key] = $value;
@@ -418,14 +501,25 @@ function set_player($player_id, $key, $value) {
 	if ($key === 'position') {
 		$_obj['val'] = [];
 		$_obj['val']['pos_x'] = $value['x'];
-		$_obj['val']['pos_y'] = $value['y'];
+		// $_obj['val']['pos_y'] = $value['y'];
 		$_obj['val']['pos_z'] = $value['z'];
+
+		$apc_key = 'chars/'.$player_id.'/pos_x';
+		apcu_store($apc_key, $value['x'], $time);
+		$apc_key = 'chars/'.$player_id.'/pos_z';
+		apcu_store($apc_key, $value['z'], $time);
 	}
 	else if ($key === 'rotation') {
 		$_obj['val'] = [];
-		$_obj['val']['rot_x'] = $value['x'];
+		// $_obj['val']['rot_x'] = $value['x'];
 		$_obj['val']['rot_y'] = $value['y'];
-		$_obj['val']['rot_z'] = $value['z'];
+		// $_obj['val']['rot_z'] = $value['z'];
+		$apc_key = 'chars/'.$player_id.'/rot_y';
+		apcu_store($apc_key, $value['y'], $time);
+	}
+	else {
+		$apc_key = 'chars/'.$player_id.'/'.$key;
+		apcu_store($apc_key, $value, $time);
 	}
 
 	LGen('SaviorMan2')->update($_obj);
@@ -442,7 +536,7 @@ function handle_trading(&$client_char, $server_char) {
 		if ($trade === LGen('GlobVar')->failed) {
 			$server_char['trade_id'] = '';
 			set_player($client_char['char_id'], 'trade_id', $server_char['trade_id']);
-			// $client_char['system_chat'] = 'Trade ended.';
+			add_to_system_chat($client_char['char_id'], LGen('ArrayMan')->to_json(array('type' => 'yellow','text' => 'Trade ended.')));
 		}
 	}
 	$client_char['trade_id'] = $server_char['trade_id'];
@@ -501,6 +595,9 @@ function handle_confirmation(&$client_char, $server_char) {
 }
 
 function handle_moving(&$client_char, $server_char) {
+	$move_directions = $client_char['move_directions'];
+	$pressed_keys = $client_char['pressed_keys'];
+
 	if ($client_char['health_cur'] > 0 and $client_char['stamina_cur'] > 100) {
 		if (is_key_pressed($client_char['pressed_keys'], top_key))
 			move_top($client_char);
@@ -512,7 +609,8 @@ function handle_moving(&$client_char, $server_char) {
 			move_left($client_char);
 		else 
 			$client_char['move_directions'] = [];
-		set_player($client_char['char_id'], 'move_directions', $client_char['move_directions']);
+		if ($move_directions !== $client_char['move_directions'])
+			set_player($client_char['char_id'], 'move_directions', $client_char['move_directions']);
 	}
 	else { // if player is dead or weak (when stamina is lower than 100)
 		if (is_defense_key_pressed($client_char))
@@ -522,7 +620,9 @@ function handle_moving(&$client_char, $server_char) {
   	LGen('ArrayMan')->rmv_by_val($client_char['pressed_keys'], bottom_key);
   	LGen('ArrayMan')->rmv_by_val($client_char['pressed_keys'], left_key);
   	LGen('ArrayMan')->rmv_by_val($client_char['pressed_keys'], right_key);
-		set_player($client_char['char_id'], 'pressed_keys', $client_char['pressed_keys']);
+
+		if ($pressed_keys !== $client_char['pressed_keys'])
+			set_player($client_char['char_id'], 'pressed_keys', $client_char['pressed_keys']);
 	}
 }
 
@@ -741,6 +841,27 @@ function check_level_up($player_id, $player_status) {
 	}
 }
 
+function microtimeFormat($data,$format=null,$lng=null)
+{
+    $duration = microtime(true) - $data;
+    $hours = (int)($duration/60/60);
+    $minutes = (int)($duration/60)-$hours*60;
+    $seconds = $duration-$hours*60*60-$minutes*60;
+    return (int)$seconds;
+    // return number_format((float)$seconds, 1, '.', '');
+    // return number_format((float)$seconds, 2, '.', '');
+}
+
+function set_player_date($char_id) {
+	// $end_date = microtime_float();
+	// $char_data['active_date'] = microtimeFormat($char_data['active_date']);
+	// $time = ($end_date - $char_data['active_date']);
+	// if ($time > 3) {
+	// $char_data['chat'] = $time;
+		set_player($char_id, 'active_date', microtime_float());
+	// }
+}
+
 function post_char_data($char_data, $first_load = false) {
 	$time_start = microtime_float();
 
@@ -765,11 +886,14 @@ function post_char_data($char_data, $first_load = false) {
 		'gold',
 		'char_guild',
 		'camera_direction',
+		'pressed_keys',
+		'move_directions',
 		'map_id',
 		'appearence',
 		'trade_id',
 		'battle_id',
 		'duel_id',
+		'active_date',
 		'confirmation_id',
 		'confirmation',
 		'tasklist'
@@ -789,6 +913,7 @@ function post_char_data($char_data, $first_load = false) {
 	// check_level_up($char_data['char_id']);
 
 	/* init char data from server */
+	$char_data['active_date'] = $player_status['active_date'];
 	$char_data['system_chat'] = $player_status['system_chat'];
 	$char_data['health_cur'] = $player_status['health_cur'];
 	$char_data['health_max'] = $player_status['health_max'];
@@ -801,6 +926,7 @@ function post_char_data($char_data, $first_load = false) {
 	$char_data['char_guild'] = $player_status['char_guild'];
 	$char_data['enemies'] = $player_status['enemies'];
 	$char_data['gold'] = $player_status['gold'];
+	$char_data['move_directions'] = $player_status['move_directions'];
 	// $char_data['duel_id'] = $player_status['duel_id'];
 	// $char_data['battle_id'] = $player_status['battle_id'];
 	$char_data['char_guild'] = $player_status['char_guild'];
@@ -810,15 +936,24 @@ function post_char_data($char_data, $first_load = false) {
 	$char_data['appearence'] = $player_status['appearence'];
 	$char_data['tasklist'] = $player_status['tasklist'];
 
-	$char_data['active_date'] = microtime_float();
-	set_player($char_data['char_id'], 'active_date', $char_data['active_date']);
+	// $end_date = microtime_float();
+	// $char_data['active_date'] = microtimeFormat($char_data['active_date']);
+	// $time = ($end_date - $char_data['active_date']);
+	// if ($time > 3) {
+	// $char_data['chat'] = $time;
+	// 	set_player($char_data['char_id'], 'active_date', $char_data['active_date']);
+	// }
 
 	// if ($player_status['tasklist'] != '')
-	set_player($char_data['char_id'], 'chat', $char_data['chat']);
+	if ($char_data['chat'] !== '')
+		set_player($char_data['char_id'], 'chat', $char_data['chat']);
+	// set_player($char_data['char_id'], 'chat', microtime_float());
 
 	// if (sizeof($char_data['tasklist']) !== 0)
 	// 	set_player($char_data['char_id'], 'tasklist', []);
-	set_player($char_data['char_id'], 'pressed_keys', $char_data['pressed_keys']);
+	// if (sizeof($char_data['pressed_keys']) > 0 || $char_data['pressed_keys'] === $player_status['pressed_keys'])
+	if (sizeof($char_data['pressed_keys']) > 0 || sizeof($player_status['pressed_keys']) > 0)
+		set_player($char_data['char_id'], 'pressed_keys', $char_data['pressed_keys']);
 
 	handle_map_change($char_data, $player_status);
 	handle_trading($char_data, $player_status);
@@ -830,7 +965,7 @@ function post_char_data($char_data, $first_load = false) {
 	handle_camera_position($char_data, $json);
 
 	/* Get all chars in current map. */
-	$char_names = LGen('JsonMan')->read(dir.'maps/'.$char_data['map_id'].'/players');
+	$char_names = get_chars_on_map($char_data['map_id']);
 	if (!LGen('ArrayMan')->is_val_exist($char_names, $char_data['char_id'])) {
 		array_push($char_names, $char_data['char_id']);
 		LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
@@ -846,7 +981,7 @@ function post_char_data($char_data, $first_load = false) {
 			$start_date = ($p2_active_date); 
 			$end_date = ($char_data['active_date']); 
 			$time = ($end_date - $start_date);
-			if ($time >= 1) {
+			if ($time >= 5) {
 				LGen('ArrayMan')->rmv_by_val($char_names, $value);
 				LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
 			}
@@ -918,9 +1053,10 @@ function post_char_data($char_data, $first_load = false) {
 	$char_data = handle_attack($char_data, $player_status, $json);
 
 	$npcs = get_npc_data($char_data['map_id'], false);
-	handle_collision_with_players($char_data, $player_status, $json);
+	$char_data['size'] = calculate_collision_size($char_data);
+	// handle_collision_with_players($char_data, $player_status, $json);
 	handle_collision_with_properties($char_data, $player_status);
-	handle_collision_with_npcs($char_data, $player_status, $npcs);
+	// handle_collision_with_npcs($char_data, $player_status, $npcs);
 
 	$json['props']['speak_to'] = handle_speak_to_npc($char_data, $npcs);
 	$json['props']['poke_to_player'] = handle_poke_to_player($char_data, $json);
@@ -972,7 +1108,7 @@ function post_char_data($char_data, $first_load = false) {
 
 	$time_end = microtime_float();
 	$time = (string)($time_end - $time_start);
-	$time = substr($time, 0, 4);
+	$time = substr($time, 0, 5);
 	$json['props']['time'] = $time;
 
 	if (1) {
@@ -982,6 +1118,17 @@ function post_char_data($char_data, $first_load = false) {
 
 
 	return $json;
+}
+
+function get_chars_on_map($map_id) {
+	$key = 'maps/'.$map_id;
+	$chars_on_map = apcu_fetch($key);
+	if (!$chars_on_map) {
+		$chars_on_map = LGen('JsonMan')->read(dir.'maps/'.$map_id.'/players');
+		$time = 5;
+		apcu_store($key, $chars_on_map, $time);
+	}
+	return $chars_on_map;
 }
 
 function is_speak_key_pressed($char_data) {
@@ -1315,6 +1462,7 @@ function move_right(&$char_data) {
   	$_speed = walk_speed;
   }
 
+  $char_data['move_directions'] = [];
   if (!is_key_pressed($char_data['pressed_keys'], top_key) && !is_key_pressed($char_data['pressed_keys'], bottom_key) && !is_key_pressed($char_data['pressed_keys'], left_key)) {
     if ($char_data["camera_direction"] == 'north') {
     	move_east($char_data, $_speed);
@@ -1347,6 +1495,7 @@ function move_left(&$char_data) {
   	$_speed = walk_speed;
   }
 
+  $char_data['move_directions'] = [];
   if (!is_key_pressed($char_data['pressed_keys'], top_key) && !is_key_pressed($char_data['pressed_keys'], bottom_key) && !is_key_pressed($char_data['pressed_keys'], right_key)) {
     if ($char_data["camera_direction"] == 'north') {
     	move_west($char_data, $_speed);
@@ -1462,10 +1611,19 @@ function get_buysell_items($npc_id) {
 function get_npc_data($map_id, $encoded=true) {
 	$npc_names = LGen('JsonMan')->read(dir. 'maps/' .$map_id.'/'.'npcs');
 	$json = [];
+
+	$time = 5;
+	$key = 'npcs/';
+
 	foreach ($npc_names as $key => $npc_name) {
+		$key = $key.$npc_name;
+		$npc_data = apcu_fetch($key);
+		if (!$npc_data) {
+			$npc_data = get_npc($npc_name, 'all');
+			apcu_store($key, $npc_data, $time);
+		}
+		$json[$npc_name] = $npc_data;
 		// $_json = LGen('JsonMan')->read(dir.'npcs/'.$npc_name);
-		$_json = get_npc($npc_name, 'all');
-		$json[$npc_name] = $_json;
 	}
 
 	// if ($encoded)
@@ -1501,82 +1659,78 @@ function get_property_data($map_id, $encoded=true) {
 	$default = LGen('JsonMan')->read(dir.'maps/default_keys');
 	$result = [];
 	$id = 0;
+
+	$time = 5;
+	$key = 'properties/';
+
 	foreach ($properties as $propkey => $propval) {
-		// if (LGen('JsonMan')->read(dir.'maps/properties/'.$propval['prop']) === LGen('GlobVar')->failed)
-		// 	printJson(dir.'maps/properties/'.$propval['prop']);
-		$prop = LGen('JsonMan')->read(dir.'maps/properties/'.$propval['prop']);
-		// printJson($prop);
-		// break;
-		$prop['building_id'] = $id;
-		foreach ($default as $defkey => $defval) {
-			if (!LGen('JsonMan')->is_key_exist($prop, $defkey)) {
-				$prop[$defkey] = $defval;
-			}
-		}
-		// if ($propval['prop'] == 'flowerwall') {
-		// 	printJson(LGen('JsonMan')->read(dir.'maps/properties/'.$propval['prop']));
-		// 	printJson($prop);
-		// 	break;
-		// }
+		$key = $key.$propval['prop'];
+		$prop = apcu_fetch($key);
+		if (!$prop) {
 
-		$id += 1;
-		foreach ($propval as $subpropkey => $subpropval) {
-			if ($subpropkey == 'size') {
-				$prop['collision_size']['x'] = ceil($subpropval*$prop['collision_size']['x']/ $prop['size']);
-				$prop['collision_size']['z'] = ceil($subpropval*$prop['collision_size']['z']/ $prop['size']);
-				$prop['size'] = $subpropval;
-			}
-			else if ($subpropkey == 'facedir') {
-				if ($subpropval == 'north') {
-					$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>3.14,"z"=>0));
-				}
-				else if ($subpropval == 'south') {
-					$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>0));
-				}
-				else if ($subpropval == 'east') {
-					$temp_x = $prop['collision_size']['x'];
-					$prop['collision_size']['x'] = $prop['collision_size']['z'];
-					$prop['collision_size']['z'] = $temp_x;
-					$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>1.57,"z"=>0));
-				}
-				else if ($subpropval == 'west') {
-					$temp_x = $prop['collision_size']['x'];
-					$prop['collision_size']['x'] = $prop['collision_size']['z'];
-					$prop['collision_size']['z'] = $temp_x;
-					$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>4.71,"z"=>0));
+			$prop = LGen('JsonMan')->read(dir.'maps/properties/'.$propval['prop']);
+			$prop['building_id'] = $id;
+			foreach ($default as $defkey => $defval) {
+				if (!LGen('JsonMan')->is_key_exist($prop, $defkey)) {
+					$prop[$defkey] = $defval;
 				}
 			}
-			else
-				$prop[$subpropkey] = $subpropval;
-		}
 
-		if ($prop['prop'] == 'portal') {
-			if ($prop['position']['x'] == 0 and $prop['position']['z'] == 112) {
-				$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>0));
-				$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>-105));
+			$id += 1;
+			foreach ($propval as $subpropkey => $subpropval) {
+				if ($subpropkey == 'size') {
+					$prop['collision_size']['x'] = ceil($subpropval*$prop['collision_size']['x']/ $prop['size']);
+					$prop['collision_size']['z'] = ceil($subpropval*$prop['collision_size']['z']/ $prop['size']);
+					$prop['size'] = $subpropval;
+				}
+				else if ($subpropkey == 'facedir') {
+					if ($subpropval == 'north') {
+						$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>3.14,"z"=>0));
+					}
+					else if ($subpropval == 'south') {
+						$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>0));
+					}
+					else if ($subpropval == 'east') {
+						$temp_x = $prop['collision_size']['x'];
+						$prop['collision_size']['x'] = $prop['collision_size']['z'];
+						$prop['collision_size']['z'] = $temp_x;
+						$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>1.57,"z"=>0));
+					}
+					else if ($subpropval == 'west') {
+						$temp_x = $prop['collision_size']['x'];
+						$prop['collision_size']['x'] = $prop['collision_size']['z'];
+						$prop['collision_size']['z'] = $temp_x;
+						$prop['rotation'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>4.71,"z"=>0));
+					}
+				}
+				else
+					$prop[$subpropkey] = $subpropval;
 			}
-			else if ($prop['position']['x'] == 0 and $prop['position']['z'] == -112) {
-				$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>3.14,"z"=>0));
-				$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>105));
+
+			if ($prop['prop'] == 'portal') {
+				if ($prop['position']['x'] == 0 and $prop['position']['z'] == 112) {
+					$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>0));
+					$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>-105));
+				}
+				else if ($prop['position']['x'] == 0 and $prop['position']['z'] == -112) {
+					$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>3.14,"z"=>0));
+					$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>0,"z"=>105));
+				}
+				else if ($prop['position']['x'] == 112 and $prop['position']['z'] == 0) {
+					$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>1.57,"z"=>0));
+					$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>-105,"y"=>0,"z"=>0));
+				}
+				else if ($prop['position']['x'] == -112 and $prop['position']['z'] == 0) {
+					$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>4.71,"z"=>0));
+					$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>105,"y"=>0,"z"=>0));
+				}
 			}
-			else if ($prop['position']['x'] == 112 and $prop['position']['z'] == 0) {
-				$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>1.57,"z"=>0));
-				$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>-105,"y"=>0,"z"=>0));
-			}
-			else if ($prop['position']['x'] == -112 and $prop['position']['z'] == 0) {
-				$prop['p_rot'] = LGen('ArrayMan')->to_json(array("x"=>0,"y"=>4.71,"z"=>0));
-				$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>105,"y"=>0,"z"=>0));
-			}
+			apcu_store($key, $prop, $time);
 		}
 		array_push($result, $prop);
 	}
 
-	// if ($encoded)
-	// 	return ($result);
-	// else
-		// return $result;
 	return $result;
-	// return ($properties);
 }
 
 ?>

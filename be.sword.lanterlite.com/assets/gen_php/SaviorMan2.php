@@ -120,6 +120,19 @@
 		}
 
 		/* fixed */
+		public function get_def_list($obj) {
+			$config_dir = HOME_DIR.'storages/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
+			// $config_dir = HOME_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
+			$defs = getFileNamesInsideDir($config_dir.$obj['def'].'/');
+			$defs2 = [];
+			foreach ($defs as $key => $value) {
+				if (LGen('StringMan')->is_val_exist($value, '.lgd'))
+					array_push($defs2, str_replace('.lgd', '', $value));
+			}
+			return $defs2;
+		}
+
+		/* fixed */
 		public function get_dir($obj) {
 			return HOME_DIR.'storages/'.$obj['gate'].'/'.$this->gen_bridge($obj['bridge']);
 		}
