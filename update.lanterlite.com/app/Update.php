@@ -1,5 +1,4 @@
 <?php
-init();
 function get_data($obj) {
 	error_log(HOME_DIR . $obj['dir']);
 	if ($obj['type'] == 'lgd')

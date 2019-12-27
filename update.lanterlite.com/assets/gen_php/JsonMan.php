@@ -5,9 +5,9 @@
 			// return property_exists( $json, $key ); 
 		}
 
-		function print($json) { 
-			echo "<pre>" . json_encode($json, JSON_PRETTY_PRINT) . "</pre>"; 
-		}
+		// function print($json) { 
+		// 	echo "<pre>" . json_encode($json, JSON_PRETTY_PRINT) . "</pre>"; 
+		// }
 
 		function get_keys($json) { 
 			return  array_keys($json);

@@ -1,8 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('Site protected by Lanterlite Defender.');
 
-/* v 1.0.1 */
+/* v 1.0.2 */
 
-init();
 function get_app() {
 	$res = json_decode(file_get_contents(HOME_DIR."app/app.lgen"), true);
 	return $res;
@@ -21,24 +20,18 @@ class Gate extends CI_Controller{
 		if (isset($_POST[DATA]))
 			$data = $_POST;
 
-		if (isset($data)) {
+		if (isset($data))
 			$asd = LGen('White')->get($data[DATA]);
-			if (array_key_exists('f', $asd))
-				$asd['func'] = $asd['f'];
-			if (array_key_exists('o', $asd))
-				$asd['json'] = $asd['o'];
-			$func = urldecode($asd['func']);
-			$json = $asd['json'];
-		}
-		else if (isset($_GET["f"])) {
+		else if (isset($_GET["f"]))
 			$asd = LGen('White')->get($_GET["f"]);
-			if (array_key_exists('f', $asd))
-				$asd['func'] = $asd['f'];
-			if (array_key_exists('o', $asd))
-				$asd['json'] = $asd['o'];
-			$func = urldecode($asd['func']);
-			$json = $asd['json'];
-		}
+		else 
+			exit();
+		if (array_key_exists('f', $asd))
+			$asd['func'] = $asd['f'];
+		if (array_key_exists('o', $asd))
+			$asd['json'] = $asd['o'];
+		$func = urldecode($asd['func']);
+		$json = $asd['json'];
 		header("HTTP/1.1 200 OK");
 		header('Content-type: text/plain');
 		eval('$result = '.$func.'($json);');

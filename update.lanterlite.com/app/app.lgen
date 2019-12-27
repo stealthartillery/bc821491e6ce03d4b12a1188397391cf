@@ -1,0 +1,13 @@
+{
+	"status" : "dep",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.store",
+	"version" : "2.2.2",
+	"server_status" : "",
+	"be_domain" : "update.lanterlite.com",
+	"domain" : "update.lanterlite.com",
+	"codename" : "lanterupdate",
+	"name" : "Update",
+	"fullname" : "Lanter Update"
+}

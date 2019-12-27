@@ -16,6 +16,10 @@
 			return isset($arr[$index]);
 		}
 
+		function is_key_exist($arr, $index) {
+			return isset($arr[$index]);
+		}
+
 		function is_val_exist($arr, $value) {
 			return in_array($value, $arr);
 		}
@@ -52,7 +56,7 @@
 			return array_search($val, $arr);
 		}
 
-		function print($array) { 
-			echo "</br>"; for ($i=0; $i<count($array); $i++) echo "[" . $i . "] => " . $array[$i] . "</br>"; 
-		}
+		// function print($array) { 
+		// 	echo "</br>"; for ($i=0; $i<count($array); $i++) echo "[" . $i . "] => " . $array[$i] . "</br>"; 
+		// }
 	}

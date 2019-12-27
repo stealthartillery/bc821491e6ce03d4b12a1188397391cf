@@ -54,6 +54,10 @@ class StringMan {
 	}
 
 	function is_val_exist($str, $substr) {
+		if(preg_match("/{$substr}/i", $str))
+		    return true;
+		else
+			return false;
 		if (strpos($str, $substr) == false) { 
 	    return false; 
 		} 
