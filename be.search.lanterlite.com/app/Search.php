@@ -1,5 +1,4 @@
 <?php
-	init();	
 	$search = new SearchGen();
 	// function mysort3($userInput){
 

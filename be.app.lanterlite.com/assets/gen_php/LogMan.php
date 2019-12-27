@@ -23,7 +23,5 @@
 		function saveErrorLog($error_msg) { 
 			error_log($error_msg); 
 		}
-
-
 	}
 ?>

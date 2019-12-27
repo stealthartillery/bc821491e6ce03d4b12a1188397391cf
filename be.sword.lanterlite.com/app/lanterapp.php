@@ -1,7 +1,7 @@
 <?php
 
-ini_set("log_errors", 1);
-ini_set("error_log", BASE_DIR.'storages/'. 'error.log');
+// ini_set("log_errors", 1);
+// ini_set("error_log", BASE_DIR.'storages/'. 'error.log');
 
 include 'LanterSword/Global.php';
 include 'LanterSword/Guild.php'; $guild = new Guild();
@@ -18,6 +18,6 @@ include 'LanterSword/Inventory.php'; $inventory = new Inventory();
 include 'LanterSword/ItemMall.php'; $item_mall = new ItemMall();
 include 'LanterSword/Shop.php'; $shop = new Shop();
 include 'LanterSword/Gen.php';
-include 'LanterSword/Gen2.php';
+// include 'LanterSword/Gen2.php';
 
 include 'Sword.php';

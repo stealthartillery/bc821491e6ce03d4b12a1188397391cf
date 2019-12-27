@@ -54,6 +54,7 @@ function stamina_changed($player_id) {
 		// set_player($player_id, 'system_chat', $increasable);
 
 	if ($increasable and !$player_status['stamina_changed']) {
+			// error_log(json_encode($player_status['pressed_keys']));
 		if ($player_status['stamina_cur'] > 0 and key_pressed($player_status['pressed_keys'], 'run')) {
 			$player_status['stamina_changed'] = 1;
 			set_player($player_id, 'stamina_changed', $player_status['stamina_changed']);
@@ -117,7 +118,7 @@ function is_defense_key_pressed($char_data) {
 }
 
 // function is_running($char_data) {
-// 	if (is_key_pressed($char_data['pressed_keys'], triangle_key)) {
+// 	if (is_key_pressed($char_data['pressed_keys'], r1_key)) {
 // 		if (is_key_pressed($char_data['pressed_keys'], top_key))
 // 			return true;
 // 		else if (is_key_pressed($char_data['pressed_keys'], bottom_key))
@@ -189,7 +190,7 @@ function change_map($map_id, &$player, $portal) {
 		LGen('JsonMan')->save(dir.'maps/'.$player['map_id'],'/players', $map, $minify=false);
 	}
 
-
+	// error_log(json_encode($portal));
 	$player['position'] = $portal['p_pos'];
 	$player['rotation'] = $portal['p_rot'];
 	$player['move_directions'] = [];
@@ -282,11 +283,13 @@ function get_char_all($obj) {
 			$_obj['keep_key'] = 1;
 			$_obj['def'] = '@chars';
 			$_obj['bridge'] = [];
-			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
+			error_log(json_encode($char_id));
+			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
 			array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$char_id.'", "puzzled":false}'));
-			$_char = LGen('SaviorMan2')->read($_obj)[$value];
-			$char[$value] = $_char;
-			apcu_store($_apc_key, $char[$value], $time);
+			$_char = LGen('SaviorMan2')->read($_obj);
+			error_log(json_encode($_char));
+			$char[$value] = $_char[$value];
+			apcu_store($_apc_key, $char[$value], apc_time);
 		}
 	}
 
@@ -302,13 +305,13 @@ function get_char_all($obj) {
 	// $_obj['bridge'] = $base_bridge;
 	// $_obj['def'] = '@chars/appearence';
 	// $_obj['namelist'] = ["headskin", "hair", "eyes", "rhand", "lhand", "suit", "gloves", "shoes", "head", "glasses", "mask", "back", "top"];
-	// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "appearence", "puzzled":true}'));
+	// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "appearence", "puzzled":false}'));
 	// $char['appearence'] = LGen('SaviorMan2')->read($_obj);
 
 	// $_obj['bridge'] = $base_bridge;
 	// $_obj['def'] = '@chars/equipment';
 	// $_obj['namelist'] = ["rhand", "lhand", "suit", "gloves", "shoes", "head", "glasses", "mask", "back", "top"];
-	// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "appearence", "puzzled":true}'));
+	// array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "appearence", "puzzled":false}'));
 	// $char['equipment'] = LGen('SaviorMan2')->read($_obj);
 
 	return $char;			
@@ -317,28 +320,23 @@ function get_char_all($obj) {
 
 function get_player($player_id, $key='all') {
 	if ($key == 'all') {
-		// $status = getFileNamesInsideDir(dir.'players/'.$player_id.'/');
-		// if ($status === LGen('GlobVar')->not_found)
-		// 	return $status;
-		// $player = null;
-		// if ($status == null)
-		// 	$player = [];
-		// foreach ($status as $key => $value) {
-		// 	$pstat = LGen('JsonMan')->read(dir.'players/'.$player_id.'/'.$value);
-		// 	$player[$value] = $pstat;
-		// }
+		$obj = [];
+		$obj['keep_key'] = 1;
+		$obj['val'] = [];
+		$obj['val']['char_id'] = $player_id;
+		$player = get_char_all($obj);
 
-		$time = 10;
-		$apc_key = 'chars/'.$player_id;
-		$player = apcu_fetch($apc_key);
-		if (!$player) {
-			$obj = [];
-			$obj['keep_key'] = 1;
-			$obj['val'] = [];
-			$obj['val']['char_id'] = $player_id;
-			$player = get_char_all($obj);
-			apcu_store($apc_key, $player, $time);
-		}
+		// $time = 10;
+		// $apc_key = 'chars/'.$player_id;
+		// $player = apcu_fetch($apc_key);
+		// if (!$player) {
+		// 	$obj = [];
+		// 	$obj['keep_key'] = 1;
+		// 	$obj['val'] = [];
+		// 	$obj['val']['char_id'] = $player_id;
+		// 	$player = get_char_all($obj);
+		// 	apcu_store($apc_key, $player, apc_time);
+		// }
 
 		return $player;
 	}
@@ -350,21 +348,32 @@ function get_player($player_id, $key='all') {
 		$_obj['namelist'] = [];
 		$_obj['def'] = '@chars';
 		$_obj['bridge'] = [];
-		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
+		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
 		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$player_id.'", "puzzled":false}'));
 
 		if (gettype($key) === 'array') {
 			$pstat = [];
 			for ($i=0; $i<sizeof($key); $i++) {
 				$_apc_key = $apc_key.$key[$i];
-				$pstat[$key[$i]] = apcu_fetch($_apc_key);
-				if (!$pstat[$key[$i]]) {
+				$_val = apcu_fetch($_apc_key);
+				if (!$_val) {
 					$_obj['namelist'] = [$key[$i]];
-					$pstat[$key[$i]] = LGen('SaviorMan2')->read($_obj)[$key[$i]];
-					apcu_store($_apc_key, $pstat[$key[$i]], $time);
+					$_res = LGen('SaviorMan2')->read($_obj);
+					// if ($player_id === 'ifandhanip')
+						// error_log('asd '. json_encode($_res) . ' '.sizeof($_res));
+					if (sizeof($_res) > 0) {
+						$pstat[$key[$i]] = $_res[$key[$i]];
+						apcu_store($_apc_key, $pstat[$key[$i]], apc_time);
+					}
 				}
+				else
+					$pstat[$key[$i]] = $_val;
 			}
 		}
+		// else if ($key === 'system_chat') {
+		// 	$_obj['namelist'] = ['system_chat'];
+		// 	$pstat = LGen('SaviorMan2')->read($_obj)['system_chat'];
+		// }
 		else if ($key === 'position') {
 			$pstat = [];
 			$_apc_key = $apc_key.'pos_x';
@@ -373,7 +382,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['pos_x'];
 				$_pos_x = LGen('SaviorMan2')->read($_obj)['pos_x'];
 				$pstat['x'] = $_pos_x;
-				apcu_store($_apc_key, $_pos_x, $time);
+				apcu_store($_apc_key, $_pos_x, apc_time);
 			}
 
 			$_apc_key = $apc_key.'pos_y';
@@ -382,7 +391,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['pos_y'];
 				$pos_y = LGen('SaviorMan2')->read($_obj)['pos_y'];
 				$pstat['y'] = $pos_y;
-				apcu_store($_apc_key, $pos_y, $time);
+				apcu_store($_apc_key, $pos_y, apc_time);
 			}
 
 			$_apc_key = $apc_key.'pos_z';
@@ -391,7 +400,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['pos_z'];
 				$pos_z = LGen('SaviorMan2')->read($_obj)['pos_z'];
 				$pstat['z'] = $pos_z;
-				apcu_store($_apc_key, $pos_z, $time);
+				apcu_store($_apc_key, $pos_z, apc_time);
 			}
 		}
 		else if ($key === 'rotation') {
@@ -402,7 +411,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['rot_x'];
 				$_pos_x = LGen('SaviorMan2')->read($_obj)['rot_x'];
 				$pstat['x'] = $_pos_x;
-				apcu_store($_apc_key, $_pos_x, $time);
+				apcu_store($_apc_key, $_pos_x, apc_time);
 			}
 
 			$_apc_key = $apc_key.'rot_y';
@@ -411,7 +420,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['rot_y'];
 				$pos_y = LGen('SaviorMan2')->read($_obj)['rot_y'];
 				$pstat['y'] = $pos_y;
-				apcu_store($_apc_key, $pos_y, $time);
+				apcu_store($_apc_key, $pos_y, apc_time);
 			}
 
 			$_apc_key = $apc_key.'rot_z';
@@ -420,7 +429,7 @@ function get_player($player_id, $key='all') {
 				$_obj['namelist'] = ['rot_z'];
 				$pos_z = LGen('SaviorMan2')->read($_obj)['rot_z'];
 				$pstat['z'] = $pos_z;
-				apcu_store($_apc_key, $pos_z, $time);
+				apcu_store($_apc_key, $pos_z, apc_time);
 			}
 		}
 		else {
@@ -428,8 +437,13 @@ function get_player($player_id, $key='all') {
 			$pstat = apcu_fetch($_apc_key);
 			if (!$pstat) {
 				array_push($_obj['namelist'], $key);
-				$pstat = LGen('SaviorMan2')->read($_obj)[$key];
-				apcu_store($_apc_key, $pstat, $time);
+				$val = LGen('SaviorMan2')->read($_obj);
+				if (LGen('JsonMan')->is_key_exist($val, $key)) {
+					$pstat = $val[$key];
+					apcu_store($_apc_key, $pstat, apc_time);
+				}
+				else
+					return 'not_found';
 			}
 			$pstat = $pstat;
 		}
@@ -437,7 +451,7 @@ function get_player($player_id, $key='all') {
 		// $pstat = LGen('JsonMan')->read(dir.'players/'.$player_id.'/'.$key);
 		return $pstat;
 	}
-	error_log($pstat);
+	// error_log($pstat);
 }
 
 function get_player2($player_id, $key='all') {
@@ -459,7 +473,7 @@ function get_player2($player_id, $key='all') {
 		$pstat = LGen('JsonMan')->read(dir.'players/'.$player_id.'/'.$key);
 		return $pstat;
 	}
-	error_log($pstat);
+	// error_log($pstat);
 }
 
 function get_npc($npc_id, $key='all') {
@@ -495,7 +509,7 @@ function set_player($player_id, $key, $value) {
 	$_obj['keep_key'] = 1;
 	$_obj['is_bw'] = 0;
 	$_obj['bridge'] = [];
-	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":true}'));
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
 	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$player_id.'", "puzzled":false}'));
 
 	if ($key === 'position') {
@@ -505,9 +519,9 @@ function set_player($player_id, $key, $value) {
 		$_obj['val']['pos_z'] = $value['z'];
 
 		$apc_key = 'chars/'.$player_id.'/pos_x';
-		apcu_store($apc_key, $value['x'], $time);
+		apcu_store($apc_key, $value['x'], apc_time);
 		$apc_key = 'chars/'.$player_id.'/pos_z';
-		apcu_store($apc_key, $value['z'], $time);
+		apcu_store($apc_key, $value['z'], apc_time);
 	}
 	else if ($key === 'rotation') {
 		$_obj['val'] = [];
@@ -515,14 +529,26 @@ function set_player($player_id, $key, $value) {
 		$_obj['val']['rot_y'] = $value['y'];
 		// $_obj['val']['rot_z'] = $value['z'];
 		$apc_key = 'chars/'.$player_id.'/rot_y';
-		apcu_store($apc_key, $value['y'], $time);
+		apcu_store($apc_key, $value['y'], apc_time);
 	}
 	else {
 		$apc_key = 'chars/'.$player_id.'/'.$key;
-		apcu_store($apc_key, $value, $time);
+		apcu_store($apc_key, $value, apc_time);
 	}
-
 	LGen('SaviorMan2')->update($_obj);
+
+
+	return 0;
+	if ($key === 'map_id' && $player_id === 'IfanDhani') {
+		$apc_key = 'chars/'.$player_id.'/'.$key;
+		$el = apcu_fetch($apc_key);
+		$_obj['namelist'] = ['map_id'];
+		$sc = LGen('SaviorMan2')->read($_obj);
+		if ($key === 'map_id') {
+			// error_log(json_encode($el));
+			// error_log(json_encode($sc));
+		}
+	}
 }
 
 function set_player2($player_id, $key, $value) {
@@ -543,14 +569,18 @@ function handle_trading(&$client_char, $server_char) {
 }
 
 function handle_map_change(&$client_char, $server_char) {
+	// error_log($client_char['map_changed'] . ' ' . $client_char['map_id'] . ' ' .  $server_char['map_id']);
+
 	if ($client_char['map_id'] != $server_char['map_id']) {
+		// error_log($client_char['map_id'] . ' ' .  $server_char['map_id']);
 		set_player($client_char['char_id'], 'map_id', $server_char['map_id']);
+		$client_char['map_id'] = $server_char['map_id'];
 		$client_char['map_changed'] = 1;
 	}
-	else {
-		if ($client_char['map_changed'])
-			set_player($client_char['char_id'], 'map_id', $server_char['map_id']);
+	else if ($client_char['map_changed']) {
+		// error_log($client_char['map_id'] . ' ' .  $server_char['map_id']);
 		$client_char['map_changed'] = 0;
+		set_player($client_char['char_id'], 'map_changed', $client_char['map_changed']);
 	}
 }
 
@@ -564,6 +594,154 @@ function handle_duel(&$client_char, $server_char) {
 		}
 	}
 	$client_char['duel_id'] = $server_char['duel_id'];
+}
+
+function order_system_chat($p1_id, $text) {
+	$_obj = [];
+	$_obj['namelist'] = ['role'];
+	$_obj['keep_key'] = 1;
+	$_obj['def'] = '@chars';
+	$_obj['bridge'] = [];
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$p1_id.'", "puzzled":false}'));
+	$p1_role = LGen('SaviorMan2')->read($_obj)['role'];
+
+	if ($p1_role === 'game_master') {
+		$arr = explode(' ', $text);
+		$task = $arr[0];
+		$p_id = $arr[1];
+		$val = $arr[2];
+		if ($task === 'is_banned')
+			set_player($p_id, 'is_banned', (int)$val);
+		else if ($task === 'stamina_cur')
+			set_player($p_id, 'stamina_cur', (int)$val);
+		else if ($task === 'health_cur')
+			set_player($p_id, 'health_cur', (int)$val);
+		else if ($task === 'pearl')
+			set_player($p_id, 'pearl', (int)$val);
+		else if ($task === 'gold')
+			set_player($p_id, 'pearl', (int)$val);
+		else if ($task === 'char_level')
+			set_player($p_id, 'char_level', (int)$val);
+		return 1;
+	}
+	else
+		return 0;
+}
+
+function announce($p1_id, $text) {
+	$_obj = [];
+	$_obj['namelist'] = ['role'];
+	$_obj['keep_key'] = 1;
+	$_obj['def'] = '@chars';
+	$_obj['bridge'] = [];
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$p1_id.'", "puzzled":false}'));
+	$p1_role = LGen('SaviorMan2')->read($_obj)['role'];
+
+	if ($p1_role === 'game_master') {
+		$_obj = [];
+		$_obj['namelist'] = ['char_id', 'active_date'];
+		$_obj['keep_key'] = 1;
+		$_obj['def'] = '@chars';
+		$_obj['bridge'] = [];
+		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+		$all_char_id = LGen('SaviorMan2')->get_all($_obj);
+
+		$_obj = [];
+		$_obj['namelist'] = ['active_date'];
+		$_obj['keep_key'] = 1;
+		$_obj['def'] = '@chars';
+		$_obj['bridge'] = [];
+		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$p1_id.'", "puzzled":false}'));
+		$p1_active_date = LGen('SaviorMan2')->read($_obj)['active_date'];
+		error_log(json_encode($all_char_id));
+		$end_date = $p1_active_date; 
+		foreach ($all_char_id as $key => $value) {
+			$start_date = $value['active_date'];
+			$time = ($end_date - $start_date);
+			if ($time <= 7)
+				add_to_system_chat($value['char_id'], LGen('ArrayMan')->to_json(array('type' => 'announcement','text' => $text)));
+		}
+		return 1;
+	}
+	else
+		return 0;
+}
+
+function safe_zone($char_id) {
+	$client_char = get_player($char_id, ['char_id', 'map_id', 'move_directions', 'position', 'rotation']);
+	$buildings = get_property_data($client_char['map_id'], false);
+	foreach ($buildings as $key => $value) {
+		if ($value['prop'] === "portal") {
+			$buildings2 = get_property_data($value['to'], false);
+			foreach ($buildings2 as $key2 => $value2) {
+				if ($value2['prop'] === "portal" && $value2['to'] === $client_char['map_id']) {
+					change_map($client_char['map_id'], $client_char, $value2);
+					break;
+				}
+			}
+			break;
+		}
+	}
+	$result = get_player($char_id, 'position');
+	return $result;
+}
+
+function shout_all_map($p1_id, $text) {
+	$_obj = [];
+	$_obj['namelist'] = ['char_id', 'active_date'];
+	$_obj['keep_key'] = 1;
+	$_obj['def'] = '@chars';
+	$_obj['bridge'] = [];
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+	$all_char_id = LGen('SaviorMan2')->get_all($_obj);
+
+	$_obj = [];
+	$_obj['namelist'] = ['active_date'];
+	$_obj['keep_key'] = 1;
+	$_obj['def'] = '@chars';
+	$_obj['bridge'] = [];
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+	array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "'.$p1_id.'", "puzzled":false}'));
+	$p1_active_date = LGen('SaviorMan2')->read($_obj)['active_date'];
+
+	// $char_ids = get_all_char_id();
+	$end_date = $p1_active_date; 
+	foreach ($all_char_id as $key => $value) {
+		$start_date = $value['active_date'];
+		$time = ($end_date - $start_date);
+		if ($time <= 7)
+			add_to_system_chat($value['char_id'], LGen('ArrayMan')->to_json(array('type' => 'shout_all_map','text' => $p1_id. ': ' .$text)));
+	}
+}
+
+function shout_one_map($p1_id, $map_id, $text) {
+	$char_ids = get_all_char_id_on_map($map_id);
+	foreach ($char_ids as $key => $value) {
+		add_to_system_chat($value, LGen('ArrayMan')->to_json(array('type' => 'shout_one_map','text' => $p1_id. ': ' .$text)));
+	}
+}
+
+function whisper_player($p1_id, $p2_id, $text) {
+	$p1 = get_player($p1_id, ['char_id', 'active_date']);
+	$p2 = get_player($p2_id, ['char_id', 'active_date']);
+	if (sizeof($p2) > 0) {
+		$start_date = $p2['active_date'];
+		$end_date = $p1['active_date']; 
+		$time = ($end_date - $start_date);
+		if ($time <= 7) {
+			add_to_system_chat($p1['char_id'], LGen('ArrayMan')->to_json(array('type' => 'whisper','text' => $p1['char_id']. ': ' .$text)));
+			add_to_system_chat($p2['char_id'], LGen('ArrayMan')->to_json(array('type' => 'whisper','text' => $p1['char_id']. ': ' .$text)));
+		}
+		else {
+			add_to_system_chat($p1['char_id'], LGen('ArrayMan')->to_json(array('type' => 'whisper','text' => $p2['char_id']. ' is not online.')));
+		}
+	}
+	else {
+		add_to_system_chat($p1_id, LGen('ArrayMan')->to_json(array('type' => 'whisper','text' => 'Player "'.$p2_id.'" is not found.')));
+	}
 }
 
 function handle_battle(&$client_char, $server_char) {
@@ -627,8 +805,8 @@ function handle_moving(&$client_char, $server_char) {
 }
 
 function handle_camera_direction(&$client_char) {
-	if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], r1_key)) {
-	  if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], circle_key) ) {
+	if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], r2_key)) {
+	  if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], right_key) ) {
 		  if ($client_char['camera_direction'] == 'north')
 		    $client_char['camera_direction'] = 'west';
 		  else if ($client_char['camera_direction'] == 'west')
@@ -638,8 +816,9 @@ function handle_camera_direction(&$client_char) {
 		  else if ($client_char['camera_direction'] == 'east')
 		    $client_char['camera_direction'] = 'north';
 		  set_player($client_char['char_id'], 'camera_direction', $client_char['camera_direction']);
+		  return 1;
 		}
-	  else if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], square_key) ) {
+	  else if (LGen('ArrayMan')->is_val_exist($client_char['pressed_keys'], left_key) ) {
 		  if ($client_char['camera_direction'] == 'north')
 		    $client_char['camera_direction'] = 'east';
 		  else if ($client_char['camera_direction'] == 'east')
@@ -649,11 +828,14 @@ function handle_camera_direction(&$client_char) {
 		  else if ($client_char['camera_direction'] == 'west')
 		    $client_char['camera_direction'] = 'north';
 		  set_player($client_char['char_id'], 'camera_direction', $client_char['camera_direction']);
+		  return 1;
 		}
 	}
+  return 0;
 }
 
 function handle_camera_position(&$char_data, &$json) {
+	// error_log(json_encode($char_data['camera_direction']));
 	if ($char_data['camera_direction'] == 'north') {
 		$json['props']['camera_position']['x'] = 35;
 		$json['props']['camera_position']['y'] = 30;
@@ -674,6 +856,47 @@ function handle_camera_position(&$char_data, &$json) {
 		$json['props']['camera_position']['y'] = 30;
 		$json['props']['camera_position']['z'] = -35;
 	}
+}
+
+function handle_attack_down($client_char, $server_char, $json) {
+	if ($client_char['char_current_action'] == 'attack_down' && $server_char['stamina_cur'] >= atk_stamina) {
+		$server_char = decrease_stamina($server_char, atk_stamina);
+		set_player($client_char['char_id'], 'stamina_cur', $server_char['stamina_cur']);
+		
+		if (sizeof($server_char['enemies']) > 0) { // if there is enemy
+	  	$_client_char = $server_char;
+	  	$_client_char['face_dir'] = get_face_dir($_client_char);
+	  	if ($_client_char['face_dir'] == 'north')
+	  		$_client_char['position']['z'] -= 4;
+	  	else if ($_client_char['face_dir'] == 'south')
+	  		$_client_char['position']['z'] += 4;
+	  	else if ($_client_char['face_dir'] == 'east')
+	  		$_client_char['position']['x'] += 4;
+	  	else if ($_client_char['face_dir'] == 'west')
+	  		$_client_char['position']['x'] -= 4;
+			$_client_char['size'] = calculate_collision_size($_client_char);
+
+	  	foreach ($server_char['enemies'] as $key => $value) {
+				$_other_player = $json['chars'][$value];
+				$_other_player['size'] = calculate_collision_size($_other_player);
+		  	if (char_reached($_client_char, $_other_player)) {
+		  		if (!is_key_pressed($_other_player['pressed_keys'], triangle_key) && $_other_player['health_cur'] > 0) {
+						$_items = LGen('JsonMan')->read(dir.'items');
+						$_status['health_cur'] = get_player($value, 'health_cur');
+						if ($server_char['char_gender'] == 'male')
+							decrease_status($_status['health_cur'], male_base_atk + $_items[$server_char['appearence']['rhand']]['atk'] - 5);
+						else if ($server_char['char_gender'] == 'female')
+							decrease_status($_status['health_cur'], female_base_atk + $_items[$server_char['appearence']['rhand']]['atk'] - 5);
+							set_player($value, 'health_cur', $_status['health_cur']);
+		  		}
+		  		break;
+		  	}
+	  	}
+		}
+		$client_char['stamina_cur'] = $server_char['stamina_cur'];
+		$client_char['health_cur'] = $server_char['health_cur'];
+	}
+	return $client_char;
 }
 
 function handle_attack($client_char, $server_char, $json) {
@@ -698,6 +921,8 @@ function handle_attack($client_char, $server_char, $json) {
 				$_other_player = $json['chars'][$value];
 				$_other_player['size'] = calculate_collision_size($_other_player);
 		  	if (char_reached($_client_char, $_other_player)) {
+		  		// error_log(json_encode($_client_char['char_current_action']));
+		  		// error_log(json_encode($_other_player['char_current_action']));
 		  		if ($_other_player['char_current_action'] != 'defense' && $_other_player['health_cur'] > 0) {
 						$_items = LGen('JsonMan')->read(dir.'items');
 						$_status['health_cur'] = get_player($value, 'health_cur');
@@ -719,6 +944,7 @@ function handle_attack($client_char, $server_char, $json) {
 
 
 function handle_poke_to_player(&$client_char, $json) {
+	// error_log('message');
   if (is_speak_key_pressed($client_char)) {
   	$_char_data = $client_char;
   	$_char_data['face_dir'] = get_face_dir($_char_data);
@@ -780,8 +1006,30 @@ function handle_collision_with_npcs(&$client_char, $server_char, $npcs) {
 	}
 }
 
+function get_distance_prop($distances, $char_data, $prop_data, $prop_name) {
+	if (isset($distances[$prop_name])) {
+		$prop1 = $distances[$prop_name];
+		$prop2 = get_distance(
+			get_difference($prop_data['position']['x'], $char_data['position']['x']), 
+			get_difference($prop_data['position']['z'], $char_data['position']['z'])
+		);
+		$prop2 = $prop2 - ($prop_data['size']*5);
+		if ($prop2 < $prop1)
+			$distances[$prop_name] = $prop2;
+	}
+	else {
+		$distances[$prop_name] = get_distance(
+			get_difference($prop_data['position']['x'], $char_data['position']['x']), 
+			get_difference($prop_data['position']['z'], $char_data['position']['z'])
+		);
+		$distances[$prop_name] = $distances[$prop_name] - ($prop_data['size']*5);
+	}
+	return $distances;
+}
+
 function handle_collision_with_properties(&$client_char, $server_char) {
 	$buildings = get_property_data($client_char['map_id'], false);
+	$distances = [];
 	foreach ($buildings as $key => $value) {
 		$is_colladed_building = check_collision_building($client_char, $value);
 		if ($is_colladed_building) {
@@ -795,7 +1043,14 @@ function handle_collision_with_properties(&$client_char, $server_char) {
 				break;
 			}
 		}
+		// error_log(json_encode($distances));
+		if ($value['prop'] === "well")
+			$distances = get_distance_prop($distances, $client_char, $value, 'well');
+		else if ($value['prop'] === "fountain") {
+			$distances = get_distance_prop($distances, $client_char, $value, 'fountain');
+		}
 	}
+	return $distances;
 }
 
 function handle_collision_with_players(&$client_char, &$server_char, $json) {
@@ -824,6 +1079,10 @@ function add_to_system_chat($player_id, $obj=[]) {
 			array_push($system_chat, $value); 
 		}
 	}
+	// if ($player_id === 'Enigma') {
+	// 	error_log(json_encode($system_chat));
+	// }
+
 	set_player($player_id, 'system_chat', $system_chat);
 }
 
@@ -837,7 +1096,7 @@ function check_level_up($player_id, $player_status) {
 		set_player($player_id, 'exp_cur' , $player_status['exp_cur']);
 		set_player($player_id, 'char_level' , $player_status['char_level']);
 		include dir.'lang/server/'.$player_status['lang'].'.php';
-		add_to_system_chat($player_id, LGen('ArrayMan')->to_json(array('type' => 'blue','text' => YOU_HAVE_REACHED_LEVEL . ' ' . $char_level . '.')));
+		add_to_system_chat($player_id, LGen('ArrayMan')->to_json(array('type' => 'blue','text' => YOU_HAVE_REACHED_LEVEL . ' ' . $player_status['char_level'] . '.')));
 	}
 }
 
@@ -876,18 +1135,19 @@ function post_char_data($char_data, $first_load = false) {
 		'health_max', // for duel
 		'stamina_cur', // for duel
 		'stamina_max', // for duel
-		'lang',
 		'exp_cur',
 		'exp_max',
+		'lang',
 		'char_level',
-		'is_banned',
 		'char_guild',
+		'is_banned',
 		'enemies',
 		'gold',
 		'char_guild',
 		'camera_direction',
 		'pressed_keys',
 		'move_directions',
+		'chat',
 		'map_id',
 		'appearence',
 		'trade_id',
@@ -896,6 +1156,7 @@ function post_char_data($char_data, $first_load = false) {
 		'active_date',
 		'confirmation_id',
 		'confirmation',
+		'char_current_action',
 		'tasklist'
 	]);
 
@@ -911,8 +1172,10 @@ function post_char_data($char_data, $first_load = false) {
 
 	check_level_up($char_data['char_id'], $player_status);
 	// check_level_up($char_data['char_id']);
+	$player_status['system_chat'] = get_player($char_data['char_id'], 'system_chat');
 
 	/* init char data from server */
+	$char_data['map_id'] = $player_status['map_id'];
 	$char_data['active_date'] = $player_status['active_date'];
 	$char_data['system_chat'] = $player_status['system_chat'];
 	$char_data['health_cur'] = $player_status['health_cur'];
@@ -945,8 +1208,22 @@ function post_char_data($char_data, $first_load = false) {
 	// }
 
 	// if ($player_status['tasklist'] != '')
-	if ($char_data['chat'] !== '')
+	// set_player($char_data['char_id'], 'chat', substr($char_data['chat'], 0, 1) .' ' . microtime_float());
+
+	// if (substr($char_data['chat'], 0, 3) === '%40') {
+	// 	$asd = explode(' ', $char_data['chat']);
+	// 	// set_player($char_data['char_id'], 'chat', substr($char_data['chat'], 0, 1) .' ' . microtime_float());
+	// 	add_to_system_chat($char_data['char_id'], LGen('ArrayMan')->to_json(array('type' => 'yellow','text' => 'json_encode($asd)')));
+	// }
+	if ($char_data['chat'] !== '' && $char_data['chat'] !== $player_status['chat']) {
+		// set_player($char_data['char_id'], 'chat', substr($char_data['chat'], 0, 1) .' ' . microtime_float());
 		set_player($char_data['char_id'], 'chat', $char_data['chat']);
+	}
+
+	if ($char_data['char_current_action'] !== $player_status['char_current_action']) {
+		set_player($char_data['char_id'], 'char_current_action', $char_data['char_current_action']);
+	}
+		// set_player($char_data['char_id'], 'chat', $char_data['chat']);
 	// set_player($char_data['char_id'], 'chat', microtime_float());
 
 	// if (sizeof($char_data['tasklist']) !== 0)
@@ -955,20 +1232,31 @@ function post_char_data($char_data, $first_load = false) {
 	if (sizeof($char_data['pressed_keys']) > 0 || sizeof($player_status['pressed_keys']) > 0)
 		set_player($char_data['char_id'], 'pressed_keys', $char_data['pressed_keys']);
 
-	handle_map_change($char_data, $player_status);
-	handle_trading($char_data, $player_status);
-	handle_confirmation($char_data, $player_status);
-	handle_duel($char_data, $player_status);
-	handle_battle($char_data, $player_status);
-	handle_moving($char_data, $player_status);
-	handle_camera_direction($char_data);
-	handle_camera_position($char_data, $json);
+	handle_map_change($char_data, $player_status); /* fixed */
+	handle_trading($char_data, $player_status); /* fixed */
+	handle_confirmation($char_data, $player_status); /* fixed */
+	handle_duel($char_data, $player_status); /* fixed */
+	handle_battle($char_data, $player_status); /* fixed */
+
+	$is_camera_changed = handle_camera_direction($char_data); /* fixed */
+	if ($is_camera_changed) {
+  	LGen('ArrayMan')->rmv_by_val($char_data['pressed_keys'], top_key);
+  	LGen('ArrayMan')->rmv_by_val($char_data['pressed_keys'], bottom_key);
+  	LGen('ArrayMan')->rmv_by_val($char_data['pressed_keys'], right_key);
+  	LGen('ArrayMan')->rmv_by_val($char_data['pressed_keys'], left_key);
+	}
+	else {
+		handle_moving($char_data, $player_status); /* fixed */
+	}
+	handle_camera_position($char_data, $json); /* fixed */
 
 	/* Get all chars in current map. */
-	$char_names = get_chars_on_map($char_data['map_id']);
+	$char_names = get_all_char_id_on_map($char_data['map_id']);
 	if (!LGen('ArrayMan')->is_val_exist($char_names, $char_data['char_id'])) {
 		array_push($char_names, $char_data['char_id']);
 		LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
+		$key = 'maps/'.$char_data['map_id'];
+		apcu_store($key, $char_names, apc_time);
 	}
 
 	foreach ($char_names as $key => $value) {
@@ -976,6 +1264,8 @@ function post_char_data($char_data, $first_load = false) {
 		if ($p2_active_date === LGen('GlobVar')->failed) {
 			LGen('ArrayMan')->rmv_by_val($char_names, $value);
 			LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
+			$key = 'maps/'.$char_data['map_id'];
+			apcu_store($key, $char_names, apc_time);
 		}
 		else {
 			$start_date = ($p2_active_date); 
@@ -984,6 +1274,8 @@ function post_char_data($char_data, $first_load = false) {
 			if ($time >= 5) {
 				LGen('ArrayMan')->rmv_by_val($char_names, $value);
 				LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
+				$key = 'maps/'.$char_data['map_id'];
+				apcu_store($key, $char_names, apc_time);
 			}
 		}
 	}
@@ -1050,12 +1342,14 @@ function post_char_data($char_data, $first_load = false) {
 		$json['chars'][$value]['distance'] = get_distance(get_difference($json['chars'][$value]['position']['x'], $char_data['position']['x']), get_difference($json['chars'][$value]['position']['z'], $char_data['position']['z']));
 	}
 
+	$char_data = handle_attack_down($char_data, $player_status, $json);
 	$char_data = handle_attack($char_data, $player_status, $json);
+	// error_log($char_data['char_current_action']);
 
 	$npcs = get_npc_data($char_data['map_id'], false);
 	$char_data['size'] = calculate_collision_size($char_data);
 	// handle_collision_with_players($char_data, $player_status, $json);
-	handle_collision_with_properties($char_data, $player_status);
+	$json['props']['distances'] = handle_collision_with_properties($char_data, $player_status);
 	// handle_collision_with_npcs($char_data, $player_status, $npcs);
 
 	$json['props']['speak_to'] = handle_speak_to_npc($char_data, $npcs);
@@ -1070,15 +1364,42 @@ function post_char_data($char_data, $first_load = false) {
 	}
 
 	/* handle date and sun position */
-	$json['props']['sun_position']['x'] = 0;
-	$json['props']['sun_position']['y'] = 20;
-	$json['props']['sun_position']['z'] = 10;
-	$json['props']['datetime']['year'] = 1;
-	$json['props']['datetime']['month'] = 1;
-	$json['props']['datetime']['day'] = 1;
-	$json['props']['datetime']['hour'] = 1;
-	$json['props']['datetime']['minute'] = 1;
-	$json['props']['datetime']['second'] = 1;
+	// $json['props']['sun_position']['x'] = 0;
+	// $json['props']['sun_position']['y'] = 20;
+	// $json['props']['sun_position']['z'] = 10;
+	$minute = gmdate("i");
+	$minute = $minute%30;
+	if ($minute >= 1 && $minute <= 19)
+		$json['props']['day_state'] = 'day';
+	else if ($minute >= 20 && $minute <= 22)
+		$json['props']['day_state'] = 'afternoon';
+	else if ($minute >= 23 && $minute <= 27)
+		$json['props']['day_state'] = 'night';
+	else if ($minute >= 28 && $minute <= 30)
+		$json['props']['day_state'] = 'afternoon';
+
+	$x = $minute*24/30;
+	$json['props']['datetime'] = (int)$x;
+	// $json['props']['day_state'] = 'afternoon'; // temp
+
+	// $asd = explode('.', (string)$x);
+	// if (!LGen('ArrayMan')->is_key_exist($asd, 1))
+	// 	$asd[1] = 0;
+	// $min = 60*$asd[1]/10;
+	// $hour = $asd[0];
+	// if ((int)$hour<10) $hour = '0'.(string)$hour;
+	// else $hour = (string)$hour;
+	// if ((int)$min<10) $min = '0'.(string)$min;
+	// else $min = (string)$min;
+	// $json['props']['datetime'] = $hour.':'.$min;
+
+	// error_log(json_encode($asd));
+	// $json['props']['datetime']['year'] = 1;
+	// $json['props']['datetime']['month'] = 1;
+	// $json['props']['datetime']['day'] = 1;
+	// $json['props']['datetime']['hour'] = 1;
+	// $json['props']['datetime']['minute'] = 1;
+	// $json['props']['datetime']['second'] = 1;
 
 	$json['chars'][$char_data['char_id']] = $char_data;
 
@@ -1120,19 +1441,36 @@ function post_char_data($char_data, $first_load = false) {
 	return $json;
 }
 
-function get_chars_on_map($map_id) {
+function get_all_char_id() {
+	$key = 'all_char_id';
+	$all_char_id = apcu_fetch($key);
+	if (!$all_char_id) {
+		$_obj = [];
+		$_obj['namelist'] = ['char_id'];
+		$_obj['keep_key'] = 1;
+		$_obj['def'] = '@chars';
+		$_obj['bridge'] = [];
+		array_push($_obj['bridge'], LGen('StringMan')->to_json('{"id": "chars", "puzzled":false}'));
+		$all_char_id = LGen('SaviorMan2')->get_all($_obj);
+		$time = 5;
+		apcu_store($key, $all_char_id, apc_time);
+	}
+	return $all_char_id;
+}
+
+function get_all_char_id_on_map($map_id) {
 	$key = 'maps/'.$map_id;
 	$chars_on_map = apcu_fetch($key);
 	if (!$chars_on_map) {
 		$chars_on_map = LGen('JsonMan')->read(dir.'maps/'.$map_id.'/players');
-		$time = 5;
-		apcu_store($key, $chars_on_map, $time);
+		apcu_store($key, $chars_on_map, apc_time);
 	}
 	return $chars_on_map;
 }
 
 function is_speak_key_pressed($char_data) {
-  if (LGen('ArrayMan')->is_val_exist($char_data['pressed_keys'], cross_key) && LGen('ArrayMan')->is_val_exist($char_data['pressed_keys'], r2_key)) {
+	// error_log(json_encode($char_data['pressed_keys']) . ' '. select_key);
+  if (LGen('ArrayMan')->is_val_exist($char_data['pressed_keys'], select_key)) {
   	return true;
   }
   else {
@@ -1346,7 +1684,7 @@ function face_to(&$char_data, $direction) {
 }
 
 function move_top(&$char_data) {
-	if (is_key_pressed($char_data['pressed_keys'], triangle_key)) {
+	if (is_key_pressed($char_data['pressed_keys'], r1_key)) {
   	$_speed = speed;
 	}
   else {
@@ -1382,7 +1720,7 @@ function move_top(&$char_data) {
 }
 
 function move_bottom(&$char_data) {
-	if (is_key_pressed($char_data['pressed_keys'], triangle_key)) {
+	if (is_key_pressed($char_data['pressed_keys'], r1_key)) {
   	$_speed = speed;
 	}
   else {
@@ -1414,13 +1752,15 @@ function move_bottom(&$char_data) {
 
 function key_pressed($pressed_keys, $action) {
 	if ($action == 'jump')
-		return (sizeof($pressed_keys) == 1 && is_key_pressed($pressed_keys, cross_key) || 
-			is_key_pressed($pressed_keys, cross_key) && is_key_pressed($pressed_keys, triangle_key) ||
-			is_key_pressed($pressed_keys, cross_key) && is_key_pressed($pressed_keys, top_key) ||
-			is_key_pressed($pressed_keys, cross_key) && is_key_pressed($pressed_keys, bottom_key) ||
-			is_key_pressed($pressed_keys, cross_key) && is_key_pressed($pressed_keys, left_key) ||
-			is_key_pressed($pressed_keys, cross_key) && is_key_pressed($pressed_keys, right_key)
+		return (sizeof($pressed_keys) == 1 && is_key_pressed($pressed_keys, triangle_key) || 
+			is_key_pressed($pressed_keys, triangle_key) && is_key_pressed($pressed_keys, r1_key) ||
+			is_key_pressed($pressed_keys, triangle_key) && is_key_pressed($pressed_keys, top_key) ||
+			is_key_pressed($pressed_keys, triangle_key) && is_key_pressed($pressed_keys, bottom_key) ||
+			is_key_pressed($pressed_keys, triangle_key) && is_key_pressed($pressed_keys, left_key) ||
+			is_key_pressed($pressed_keys, triangle_key) && is_key_pressed($pressed_keys, right_key)
 		);
+	else if ($action == 'attack_down')
+		return (sizeof($pressed_keys) == 1 && is_key_pressed($pressed_keys, cross_key));
 	else if ($action == 'attack')
 		return (sizeof($pressed_keys) == 1 && is_key_pressed($pressed_keys, circle_key));
 	else if ($action == 'defense')
@@ -1434,13 +1774,13 @@ function key_pressed($pressed_keys, $action) {
 	else if ($action == 'map')
 		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, l1_key) && is_key_pressed($pressed_keys, circle_key));
 	else if ($action == 'zoomin')
-		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r1_key) && is_key_pressed($pressed_keys, cross_key));
+		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r2_key) && is_key_pressed($pressed_keys, top_key));
 	else if ($action == 'zoomout')
-		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r1_key) && is_key_pressed($pressed_keys, triangle_key));
+		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r2_key) && is_key_pressed($pressed_keys, bottom_key));
 	else if ($action == 'camera_right')
-		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r1_key) && is_key_pressed($pressed_keys, circle_key));
+		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r2_key) && is_key_pressed($pressed_keys, right_key));
 	else if ($action == 'camera_left')
-		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r1_key) && is_key_pressed($pressed_keys, square_key));
+		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r2_key) && is_key_pressed($pressed_keys, left_key));
 	else if ($action == 'poke')
 		return (sizeof($pressed_keys) == 2 && is_key_pressed($pressed_keys, r2_key) && is_key_pressed($pressed_keys, cross_key));
 	else if ($action == 'move')
@@ -1449,13 +1789,13 @@ function key_pressed($pressed_keys, $action) {
 			is_key_pressed($pressed_keys, bottom_key) || is_key_pressed($pressed_keys, left_key)
 		);
 	else if ($action == 'run')
-		return (is_key_pressed($pressed_keys, triangle_key) && key_pressed($pressed_keys, 'move'));
+		return (is_key_pressed($pressed_keys, r1_key) && key_pressed($pressed_keys, 'move'));
 	else 
 		return false;
 }
 
 function move_right(&$char_data) {
-	if (is_key_pressed($char_data['pressed_keys'], triangle_key)) {
+	if (is_key_pressed($char_data['pressed_keys'], r1_key)) {
   	$_speed = speed;
 	}
   else {
@@ -1488,7 +1828,7 @@ function move_right(&$char_data) {
 }
 
 function move_left(&$char_data) {
-	if (is_key_pressed($char_data['pressed_keys'], triangle_key)) {
+	if (is_key_pressed($char_data['pressed_keys'], r1_key)) {
   	$_speed = speed;
 	}
   else {
@@ -1557,9 +1897,9 @@ function get_item_data() {
 }
 
 function get_head_data() {
-	$hair_female = LGen('JsonMan')->read(dir.'others/hair_female');
-	$hair_male = LGen('JsonMan')->read(dir.'others/hair_male');
-	$headskin = LGen('JsonMan')->read(dir.'others/headskin');
+	$hair_female = LGen('JsonMan')->read(dir.'others/hair_female.lgd');
+	$hair_male = LGen('JsonMan')->read(dir.'others/hair_male.lgd');
+	$headskin = LGen('JsonMan')->read(dir.'others/headskin.lgd');
 
 	$json['hair']['female'] = $hair_female;
 	$json['hair']['male'] = $hair_male;
@@ -1609,25 +1949,27 @@ function get_buysell_items($npc_id) {
 }
 
 function get_npc_data($map_id, $encoded=true) {
+	$time = 5;
+	$key = 'npcs/'.$map_id.'/';
+
+	// $key = $key.$npc_name;
+	$npc_data = apcu_fetch($key);
+	if ($npc_data) {
+		return $npc_data;
+	}
+
 	$npc_names = LGen('JsonMan')->read(dir. 'maps/' .$map_id.'/'.'npcs');
 	$json = [];
 
-	$time = 5;
-	$key = 'npcs/';
-
-	foreach ($npc_names as $key => $npc_name) {
-		$key = $key.$npc_name;
-		$npc_data = apcu_fetch($key);
-		if (!$npc_data) {
-			$npc_data = get_npc($npc_name, 'all');
-			apcu_store($key, $npc_data, $time);
-		}
+	foreach ($npc_names as $npc_key => $npc_name) {
+		$npc_data = get_npc($npc_name, 'all');
 		$json[$npc_name] = $npc_data;
 		// $_json = LGen('JsonMan')->read(dir.'npcs/'.$npc_name);
 	}
 
 	// if ($encoded)
 	// 	$json = ($json);
+	apcu_store($key, $json, apc_time);
 	return $json;
 }
 
@@ -1655,18 +1997,19 @@ function get_quest2($player_id, $npc_id) {
 
 
 function get_property_data($map_id, $encoded=true) {
+	$time = 5;
+	$key = 'properties/'.$map_id.'/';
+
+	// $key = $key.$propval['prop'];
+	$prop = apcu_fetch($key);
+	if ($prop)
+		return $prop;
 	$properties = LGen('JsonMan')->read(dir.'maps/'. $map_id.'/'.'properties');
 	$default = LGen('JsonMan')->read(dir.'maps/default_keys');
 	$result = [];
 	$id = 0;
 
-	$time = 5;
-	$key = 'properties/';
-
 	foreach ($properties as $propkey => $propval) {
-		$key = $key.$propval['prop'];
-		$prop = apcu_fetch($key);
-		if (!$prop) {
 
 			$prop = LGen('JsonMan')->read(dir.'maps/properties/'.$propval['prop']);
 			$prop['building_id'] = $id;
@@ -1725,10 +2068,9 @@ function get_property_data($map_id, $encoded=true) {
 					$prop['p_pos'] = LGen('ArrayMan')->to_json(array("x"=>105,"y"=>0,"z"=>0));
 				}
 			}
-			apcu_store($key, $prop, $time);
-		}
 		array_push($result, $prop);
 	}
+	apcu_store($key, $result, apc_time);
 
 	return $result;
 }

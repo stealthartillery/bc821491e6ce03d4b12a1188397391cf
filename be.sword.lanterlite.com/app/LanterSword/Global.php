@@ -11,13 +11,16 @@ const rhand_key = 2;
 const lhand_key = 3;
 const total_item_limit = 50;
 
-const male_base_atk = 500;
-const male_base_def = 40;
-const female_base_atk = 500;
-const female_base_def = 60;
+const male_base_atk = 100;
+const male_base_def = 50;
+const female_base_atk = 100;
+const female_base_def = 50;
 
 const atk_stamina = 30;
 const def_stamina = 5;
+
+const select_key = 78;
+const start_key = 77;
 
 const left_key = 65;
 const top_key = 87;
@@ -33,5 +36,7 @@ const r1_key = 85;
 const r2_key = 79;
 const l1_key = 69;
 const l2_key = 81;
+
+const apc_time = 10;
 
 ?>

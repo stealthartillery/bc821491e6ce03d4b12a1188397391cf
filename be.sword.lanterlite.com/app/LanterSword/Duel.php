@@ -72,7 +72,7 @@ class Duel {
 		set_player($p2_id, 'enemies', $p2_enemies);
 
 		/* duel start in 20 seconds */
-		$duel_time = 20;
+		$duel_time = 60;
 		for ($i=$duel_time; $i>=0; $i--) {
 
 			$duel = LGen('JsonMan')->read(dir.'duels/' . $duel_id);

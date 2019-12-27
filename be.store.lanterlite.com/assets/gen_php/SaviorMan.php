@@ -18,6 +18,7 @@
 			if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = LGen('StringMan')->to_json('{}');// the gold.
 			// if (!LGen('JsonMan')->is_key_exist($obj,'val')) $obj['val'] = ""; else $obj['val'] = LGen('StringMan')->to_json(base64_decode($obj['val']));// the gold.
 			if (!LGen('JsonMan')->is_key_exist($obj,'bridge')) $obj['bridge'] = []; // way to the castle.
+			if (!LGen('JsonMan')->is_key_exist($obj,'note')) $obj['note'] = ''; // way to the castle.
 			if (!LGen('JsonMan')->is_key_exist($obj,'def')) $obj['def'] = ''; // default name.
 			if (!LGen('JsonMan')->is_key_exist($obj,'single')) $obj['single'] = false; // want to set for a single gold.
 			if (!LGen('JsonMan')->is_key_exist($obj,'total')) $obj['total'] = 0; // just total.
@@ -154,7 +155,10 @@
 				}
 			}
 
-			return $obj['name'];
+			if ($obj['note'] === 'return full')
+				return $default;
+			else
+				return $obj['name'];
 		}
 
 		public function update($obj) {
@@ -175,7 +179,7 @@
 			// }
 
 			$config_dir = HOME_DIR.'storages/'.$obj['gate'].'/'.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"config"}')).'/';
-			error_log('$config_dir -> '.$config_dir);
+			// error_log('$config_dir -> '.$config_dir);
 			$default = LGen('JsonMan')->read($config_dir.LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"default"}')));
 			$default = $default[$obj['def']];
 
@@ -251,9 +255,12 @@
 
 			$data = LGen('StringMan')->to_json('{}');
 			// return $obj['namelist'];
+			if ($obj['namelist'] === 'all')
+				$obj['namelist'] = array_keys($default);
+
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
-				error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');
+				// error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');
 				if (LGen('ArrayMan')->is_val_exist($filenames, $_val)) {
 					$_data = LGen('JsonMan')->read($dir.$_val);
 					$data[$value] = LGen('White')->get($_data);

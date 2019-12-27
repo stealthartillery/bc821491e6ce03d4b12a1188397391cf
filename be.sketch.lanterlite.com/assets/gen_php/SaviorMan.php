@@ -255,6 +255,9 @@
 
 			$data = LGen('StringMan')->to_json('{}');
 			// return $obj['namelist'];
+			if ($obj['namelist'] === 'all')
+				$obj['namelist'] = array_keys($default);
+
 			foreach ($obj['namelist'] as $key => $value) {
 				$_val = LGen('F')->gen_id(LGen('StringMan')->to_json('{"id":"'.$value.'"}')).'.lgd';
 				// error_log(LGen('JsonMan')->is_key_exist($default, $value)?$value . ' -> 1':$value . ' -> 0');

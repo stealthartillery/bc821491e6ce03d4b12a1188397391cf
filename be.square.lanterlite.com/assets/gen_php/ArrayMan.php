@@ -16,6 +16,10 @@
 			return isset($arr[$index]);
 		}
 
+		function is_key_exist($arr, $index) {
+			return isset($arr[$index]);
+		}
+
 		function is_val_exist($arr, $value) {
 			return in_array($value, $arr);
 		}

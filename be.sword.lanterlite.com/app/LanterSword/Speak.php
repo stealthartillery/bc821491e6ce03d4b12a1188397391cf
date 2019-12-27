@@ -11,6 +11,7 @@ class Speak {
 		for ($i=0; $i<sizeof($quest['answer']); $i++) {
 			$answer2 = strtolower($quest['answer'][$i]);
 			$answer2 = str_replace('\'', '', $answer2);
+			error_log($answer.' ' . $answer2);
 			if ($answer === $answer2)
 				return true;
 		}
@@ -284,9 +285,9 @@ class Speak {
 		}
 
 		if ($everything_ok) {
-			$char_exp = get_player($player_id, 'char_exp');
-			$char_exp['current'] += $quest['reward_exp'];
-			set_player($player_id, 'char_exp', $char_exp);
+			$exp_cur = get_player($player_id, 'exp_cur');
+			$exp_cur += $quest['reward_exp'];
+			set_player($player_id, 'exp_cur', $exp_cur);
 
 			$char_gold = get_player($player_id, 'gold');
 			$char_gold += $quest['reward_gold'];

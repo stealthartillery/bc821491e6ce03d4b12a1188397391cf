@@ -74,10 +74,12 @@ class Guild {
 	}
 
 	public function create_guild($char_id, $guild_id) {
-		$gold = get_player($char_id, 'gold');
-		if ($gold < 1000) {
+		$char = get_player($char_id, ['gold', 'char_level']);
+		$gold = $char['gold'];
+		if ($gold < 2000)
 			return 'Insufficient gold.';
-		}
+		if ($char['char_level'] < 3)
+			return 'You must at least level 3 to create guild.';
 
 		if (LGen('JsonMan')->read(dir. 'guilds/'.$guild_id) === LGen('GlobVar')->failed) {
 			$guild = LGen('JsonMan')->read(dir. 'guilds/default');
@@ -87,7 +89,7 @@ class Guild {
 
 			// $pearl = get_player($char_id, 'pearl')-1;
 			// set_player($char_id, 'pearl', $pearl);
-			$gold = $gold-1000;
+			$gold = $gold-2000;
 			set_player($char_id, 'gold', $gold);
 
 			LGen('JsonMan')->save(dir. 'guilds/', $guild_id, $guild);
@@ -190,6 +192,7 @@ class Guild {
 
 		$result['guild_id'] = $guild['guild_id'];
 		$result['leader'] = $guild['leader'];
+		$result['total_member'] = sizeof($guild['member']);
 		$result['member'] = [];
 		$result['online'] = [];
 

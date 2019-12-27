@@ -18,8 +18,10 @@ get data if static ip match
 	include BASE_DIR . 'assets/gen_php/ArrayMan.php';
 	include BASE_DIR . 'assets/gen_php/ArrJsonMan.php';
 	include BASE_DIR . 'assets/gen_php/SaviorMan.php';
+	include BASE_DIR . 'assets/gen_php/SaviorMan2.php';
 	include BASE_DIR . 'assets/gen_php/F.php';
 	include BASE_DIR . 'assets/gen_php/JsonMan.php';
+	include BASE_DIR . 'assets/gen_php/ObjMan.php';
 	include BASE_DIR . 'assets/gen_php/LogMan.php';
 	include BASE_DIR . 'assets/gen_php/PropKeyMan.php';
 	include BASE_DIR . 'assets/gen_php/UserInfo.php';

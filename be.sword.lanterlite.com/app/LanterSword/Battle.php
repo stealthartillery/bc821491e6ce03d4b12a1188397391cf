@@ -60,7 +60,7 @@ class Battle {
 			set_player($g2['member'][$i], 'enemies', $p_enemies);
 		}
 
-		for ($i=20; $i>=0; $i--) {
+		for ($i=300; $i>=0; $i--) {
 			$battle = LGen('JsonMan')->read(dir.'battles/' . $battle_id);
 			if ($this->is_guild_lose($g1_id))
 				$battle['winner'] = $g2_id;
