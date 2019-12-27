@@ -1,3 +1,12 @@
 {
-	"version" : "2.1.0"
+	"status" : "dep",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_search" : "https://play.google.com/search/apps/details?id=com.lanterlite.search",
+	"version" : "2.1.0",
+	"be_domain" : "be.search.lanterlite.com",
+	"domain" : "search.lanterlite.com",
+	"codename" : "lantersearch",
+	"name" : "search",
+	"fullname" : "Lanter search"
 }
