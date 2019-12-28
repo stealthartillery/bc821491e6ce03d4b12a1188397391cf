@@ -71,7 +71,7 @@ function stamina_changed($player_id) {
 		else if ($player_status['stamina_cur'] > 0 and is_defense_key_pressed($player_status)) {
 			$player_status['stamina_changed'] = 1;
 			set_player($player_id, 'stamina_changed', $player_status['stamina_changed']);
-			$player_status = decrease_stamina($player_status, 10);
+			$player_status = decrease_stamina($player_status, 2);
 			set_player($player_id, 'stamina_cur', $player_status['stamina_cur']);
 			// set_player($player_id, 'char_stamina', $player_status['char_stamina']);
 
@@ -1261,7 +1261,9 @@ function post_char_data($char_data, $first_load = false) {
 
 	foreach ($char_names as $key => $value) {
 		$p2_active_date = get_player($value, 'active_date');
-		if ($p2_active_date === LGen('GlobVar')->failed) {
+		if ($value === 'asd')
+			error_log($p2_active_date);
+		if ($p2_active_date === LGen('GlobVar')->not_found) {
 			LGen('ArrayMan')->rmv_by_val($char_names, $value);
 			LGen('JsonMan')->save(dir.'maps/'.$char_data['map_id'].'/', 'players', $char_names);
 			$key = 'maps/'.$char_data['map_id'];
