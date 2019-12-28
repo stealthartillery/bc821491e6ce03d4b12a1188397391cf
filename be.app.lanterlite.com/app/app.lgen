@@ -3,6 +3,7 @@
 	"platform" : "web",
 	"os" : "android",
 	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.www",
+	"windows_link" : "https://play.google.com/store/apps/details?id=com.lanterlite.www",
 	"version" : "2.4.0",
 	"be_domain" : "be.app.lanterlite.com",
 	"domain" : "www.lanterlite.com",
