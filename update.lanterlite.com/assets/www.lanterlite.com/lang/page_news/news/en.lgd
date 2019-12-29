@@ -1,5 +1,12 @@
 [
 	{
+		"title" : "2019 Final Release",
+		"date"	: "Dec 29, 2019",
+		"sub"	: "LanterApp last release in 2019.",
+		"img"	: "assets/www.lanterlite.com/img/2019_final_release.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191229')"}
+	},
+	{
 		"title" : "Lanter Square Released",
 		"date"	: "Dec 05, 2019",
 		"sub"	: "Lanterlite Social Network released.",

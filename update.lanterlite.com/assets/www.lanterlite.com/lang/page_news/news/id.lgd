@@ -1,7 +1,14 @@
 [
 	{
+		"title" : "2019 Final Release",
+		"date"	: "Des 29, 2019",
+		"sub"	: "Rilis terakhir LanterApp 2019.",
+		"img"	: "assets/www.lanterlite.com/img/2019_final_release.webp",
+		"link"	: { "title" : "Read", "func": "LGen.Page.change_by_url('news/191229')"}
+	},
+	{
 		"title" : "Lanter Square Dirilis",
-		"date"	: "Dec 05, 2019",
+		"date"	: "Des 05, 2019",
 		"sub"	: "Jejaring Sosial Lanterlite dirilis.",
 		"img"	: "assets/www.lanterlite.com/img/lsquare_released.webp",
 		"link"	: { "title" : "Baca", "func": "LGen.Page.change_by_url('news/191205')"}
