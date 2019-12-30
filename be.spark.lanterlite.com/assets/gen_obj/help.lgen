@@ -1,0 +1,14 @@
+[
+	{
+		"page_name": "terms",
+		"icon": "bell",
+		"name": "Privacy and Terms",
+		"func": "LGen.Page.change_by_url('terms')"
+	},
+	{
+		"page_name": "security",
+		"icon": "bell",
+		"name": "Lanterlite Account Security",
+		"func": "LGen.Page.change_by_url('security')"
+	}
+]
