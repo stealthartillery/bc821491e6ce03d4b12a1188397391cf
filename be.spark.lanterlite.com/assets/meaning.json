@@ -1,0 +1,46 @@
+[
+  {
+    "action":"get_current_date()",
+    "keywords":["tanggal", "berapa"]
+  },
+  {
+    "action":"get_current_day()",
+    "keywords":["hari", "apa"]
+  },
+  {
+    "action":"get_current_time()",
+    "keywords":["berapa", "jam"]
+  },
+  {
+    "action":"get_adzan_time()",
+    "keywords":["berapa", "jam", "waktu", "adzan"]
+  },
+  {
+    "action":"get_adzan_time(\"maghrib\")",
+    "keywords":["berapa", "jam", "waktu", "adzan", "maghrib"]
+  },
+  {
+    "action":"get_adzan_time(\"isya\")",
+    "keywords":["berapa", "jam", "waktu", "adzan", "isya"]
+  },
+  {
+    "action":"get_bot_desc()",
+    "keywords":["siapa", "kamu"]
+  },
+  {
+    "action":"get_bot_name()",
+    "keywords":["siapa", "namamu"]
+  },
+  {
+    "action":"get_adzan_time(\"subuh\")",
+    "keywords":["berapa", "jam", "waktu", "adzan", "subuh"]
+  },
+  {
+    "action":"get_adzan_time(\"dzuhur\")",
+    "keywords":["berapa", "jam", "waktu", "adzan", "dzuhur"]
+  },
+  {
+    "action":"get_adzan_time(\"ashar\")",
+    "keywords":["berapa", "jam", "waktu", "adzan", "ashar"]
+  }
+]

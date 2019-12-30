@@ -1,0 +1,9 @@
+{
+  "maghrib":["magrib"],
+  "isya":["isa"],
+  "ashar":["asar"],
+  "dzuhur":["duhur", "zuhur"],
+  "tanggal":["tgl"],
+  "kamu":["km"],
+  "berapa":["brp"]
+}

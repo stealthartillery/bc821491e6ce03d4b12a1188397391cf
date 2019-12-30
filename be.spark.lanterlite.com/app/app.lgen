@@ -1,0 +1,13 @@
+{
+	"status" : "test",
+	"platform" : "web",
+	"os" : "android",
+	"android_app_store" : "https://play.google.com/store/apps/details?id=com.lanterlite.spark",
+	"version" : "2.1.0",
+	"must_signin" : 1,
+	"be_domain" : "be.spark.lanterlite.com",
+	"domain" : "spark.lanterlite.com",
+	"codename" : "lanterspark",
+	"name" : "spark",
+	"fullname" : "Lanter Spark"
+}
