@@ -15,6 +15,11 @@
 	}
 
 
+  $obj = [];
+  $obj['pid'] = 'asd';
+  save_obj(__DIR__.'/', 'pid.json', $obj);
+
+
 	// echo exec('php --version');
 	// echo exec('php test_asd.php');
 	// echo exec('git --version');
