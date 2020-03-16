@@ -1,18 +1,18 @@
 <?php
 
-	$title = "PHP WebSocket";
-	$pid = getmypid(); // you can use this to see your process title in ps
+	// $title = "PHP WebSocket";
+	// $pid = getmypid(); // you can use this to see your process title in ps
 
-	if (!cli_set_process_title($title)) {
-	  echo "Unable to set process title for PID $pid...\n";
-	  exit(1);
-	} else {
-	  echo "The process title '$title' for PID $pid has been set for your process!\n";
-	  $obj = [];
-	  $obj['pid'] = $pid;
-	  save_obj(__DIR__.'/', 'pid.json', $obj);
-	  // sleep(5);
-	}
+	// if (!cli_set_process_title($title)) {
+	//   echo "Unable to set process title for PID $pid...\n";
+	//   exit(1);
+	// } else {
+	//   echo "The process title '$title' for PID $pid has been set for your process!\n";
+	//   $obj = [];
+	//   $obj['pid'] = $pid;
+	//   save_obj(__DIR__.'/', 'pid.json', $obj);
+	//   // sleep(5);
+	// }
 
 
   $obj = [];
