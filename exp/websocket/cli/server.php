@@ -27,7 +27,7 @@ require __DIR__ . '/../src/Application/Application.php';
 require __DIR__ . '/../src/Application/DemoApplication.php';
 require __DIR__ . '/../src/Application/StatusApplication.php';
 
-$server = new \Bloatless\WebSocket\Server('153.92.8.208', 2589);
+$server = new \Bloatless\WebSocket\Server('www.lanterlite.com', 443);
 
 // server settings:
 $server->setMaxClients(100);
