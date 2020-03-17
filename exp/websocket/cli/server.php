@@ -27,7 +27,7 @@ require __DIR__ . '/../src/Application/Application.php';
 require __DIR__ . '/../src/Application/DemoApplication.php';
 require __DIR__ . '/../src/Application/StatusApplication.php';
 
-$server = new \Bloatless\WebSocket\Server('153.92.8.208', 8000);
+$server = new \Bloatless\WebSocket\Server('153.92.8.208', 500);
 
 // server settings:
 $server->setMaxClients(100);
